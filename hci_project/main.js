@@ -725,7 +725,7 @@ var courseInfoData = {
         "certificates": [],
         "options": []
     },
-    "BQL, BC, IBA": {
+    "BQL, BV, IBA": {
         "commonInfos": [
             'Berufsqualifizierender Lehrgang (BQL)',
             'Berufsvorbereitende Maßnahme (BV)',
