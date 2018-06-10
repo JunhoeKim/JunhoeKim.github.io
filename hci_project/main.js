@@ -278,7 +278,7 @@ var Constants = /** @class */ (function () {
     Constants.COURSE_BERUFSFACHSCHULE = "Berufsfachschule";
     Constants.COURSE_BETRIEB = "Berufsschule und Betrieb";
     Constants.COURSE_VORBEREITUNG = "Vorbereitung";
-    Constants.COURSE_BQL = "BQL, BC, IBA";
+    Constants.COURSE_BQL = "BQL, BV, IBA";
     Constants.COURSE_FACHGYMNASIUM = "Fachgymnasium";
     Constants.COURSE_BERUFSEINSTIEGSSCHULE = "Berufseinstiegsschule";
     Constants.COURSE_UNIVERSITAT = 'Universitat and gleichwertige Institutionen';
@@ -727,8 +727,11 @@ var courseInfoData = {
     },
     "BQL, BC, IBA": {
         "commonInfos": [
+            'Berufsqualifizierender Lehrgang (BQL)',
+            'Berufsvorbereitende Maßnahme (BV)',
+            'Integrierte Berufsausbildungsvorbereitung (IBA)',
             'Berufsqualifizierende Lehrgänge',
-            'Vorbereitung für den Beushc einer Berufsfachschule'
+            'Vorbereitung für den Besuch einer Berufsfachschule'
         ],
         "certificates": [],
         "options": []
@@ -915,34 +918,6 @@ var courseNodeData = {
             new _course_node__WEBPACK_IMPORTED_MODULE_0__["CourseNode"](5, _constants__WEBPACK_IMPORTED_MODULE_1__["Constants"].COURSE_WEITERBILDUNG, 26, 29)
         ]
     ],
-};
-
-
-/***/ }),
-
-/***/ "./src/app/data/flex-font.ts":
-/*!***********************************!*\
-  !*** ./src/app/data/flex-font.ts ***!
-  \***********************************/
-/*! exports provided: flexFont */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flexFont", function() { return flexFont; });
-var flexFont = function () {
-    var divs = document.getElementsByClassName("flex-font");
-    console.log(divs);
-    console.log(divs.namedItem('div'));
-    console.log(divs.item(0));
-    console.log(divs[0]);
-    /*
-    divs.forEach(div => {
-      var relFontsize = div.offsetWidth * 0.07;
-      div.style.fontSize = relFontsize + 'px';
-      console.log(div.style.fontSize);
-    });
-    */
 };
 
 
@@ -1841,7 +1816,7 @@ module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\n#container 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-elem\">\n\n    </div>\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects\">\n      <ng-container *ngFor=\"let box of rectArray\">\n        <div [style.left.px]=\"box.x\" [style.top.px]=\"box.y - box.height\" [style.width.px]=\"box.width\" [style.height.px]=\"box.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(box)\">\n            <div *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n            <div *ngIf=\"currState == 0\" class=\"flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\">\n    </svg>\n  </div>\n</div>"
+module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-elem\">\n\n    </div>\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects\">\n      <ng-container *ngFor=\"let box of rectArray\">\n        <div [style.left.px]=\"box.x\" [style.top.px]=\"box.y - box.height\" [style.width.px]=\"box.width\" [style.height.px]=\"box.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(box)\">\n            <div #flexfont *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n            <div #flexfont *ngIf=\"currState == 0\" class=\"flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\">\n    </svg>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1849,11 +1824,12 @@ module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1
 /*!****************************************************!*\
   !*** ./src/app/main-graph/main-graph.component.ts ***!
   \****************************************************/
-/*! exports provided: MainGraphComponent */
+/*! exports provided: FlexFont, MainGraphComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlexFont", function() { return FlexFont; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainGraphComponent", function() { return MainGraphComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _d3_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../d3.service */ "./src/app/d3.service.ts");
@@ -1862,7 +1838,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/app/constants.ts");
 /* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
-/* harmony import */ var _data_flex_font__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data/flex-font */ "./src/app/data/flex-font.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1879,6 +1854,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+var FlexFont = /** @class */ (function () {
+    function FlexFont(el) {
+        this.el = el;
+    }
+    FlexFont.prototype.changeFont = function () {
+        var relFontsize = this.el.nativeElement.offsetWidth * 0.07;
+        this.el.nativeElement.style.fontSize = relFontsize + 'px';
+    };
+    FlexFont = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({ selector: '[flexfont]' }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
+    ], FlexFont);
+    return FlexFont;
+}());
 
 var MainGraphComponent = /** @class */ (function () {
     function MainGraphComponent(d3Service, areaService, eduService, stateService, recommendService) {
@@ -1887,17 +1876,19 @@ var MainGraphComponent = /** @class */ (function () {
         this.eduService = eduService;
         this.stateService = stateService;
         this.recommendService = recommendService;
+        this.currState = _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO;
     }
     MainGraphComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.layoutManager = this.d3Service.layoutManager;
         this.d3Service.applySVG(this.svg, _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH, _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_HEIGHT);
         this.d3Service.initYAxis();
+    };
+    MainGraphComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
         this.areaService.areaObservable.subscribe(function (area) {
             _this.eduService.applyArea(area);
             _this.layoutManager.updateRects(_this.currState >= _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL);
             _this.d3Service.updateLinks();
-            Object(_data_flex_font__WEBPACK_IMPORTED_MODULE_7__["flexFont"])();
         });
         this.stateService.stateObservable.subscribe(function (state) {
             if (_this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].OVERVIEW && state == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL) {
@@ -1943,6 +1934,9 @@ var MainGraphComponent = /** @class */ (function () {
             }
         }
     };
+    MainGraphComponent.prototype.ngAfterViewChecked = function () {
+        this.updateTextFonts();
+    };
     MainGraphComponent.prototype.selectPath = function (index) {
         this.recommendService.changePathIndex(index);
     };
@@ -1952,10 +1946,24 @@ var MainGraphComponent = /** @class */ (function () {
     MainGraphComponent.prototype.goToDetailMode = function () {
         this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL);
     };
+    MainGraphComponent.prototype.updateTextFonts = function () {
+        if (this.boxes != undefined) {
+            this.boxes.forEach(function (box) {
+                var el = box.nativeElement;
+                var relFontsize = el.offsetWidth * 0.07;
+                el.style.fontSize = relFontsize + 'px';
+            });
+        }
+        this.boxes = undefined;
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('svg'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
     ], MainGraphComponent.prototype, "svg", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChildren"])('flexfont'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"])
+    ], MainGraphComponent.prototype, "boxes", void 0);
     MainGraphComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-main-graph',
