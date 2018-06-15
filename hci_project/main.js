@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "../src/$$_lazy_route_resource lazy recursive":
-/*!***********************************************************!*\
-  !*** ../src/$$_lazy_route_resource lazy namespace object ***!
-  \***********************************************************/
+/***/ "./src/$$_lazy_route_resource lazy recursive":
+/*!**********************************************************!*\
+  !*** ./src/$$_lazy_route_resource lazy namespace object ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19,45 +19,45 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../src/$$_lazy_route_resource lazy recursive";
+webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "../src/app/app.component.css":
+/***/ "./src/app/app.component.css":
+/*!***********************************!*\
+  !*** ./src/app/app.component.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "h1 {\n  margin: auto;\n  text-align: center;\n}\n\n.side {\n  float: left;\n  /* margin: 20px 0px; */\n  margin: 20px 0px 20px 50px;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\napp-detail-panel {\n  float: left;\n  width: 40%;\n  height: 700px;\n  margin: 20px 0px;\n  padding: 20px;\n  border: solid 2px #b2b2b2;\n  border-radius: 5px;\n}\n\n#main-view {\n  width: 100%;\n  height: 800px;\n}\n\n#map-view {\n  width: 100%;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/app.component.html":
 /*!************************************!*\
-  !*** ../src/app/app.component.css ***!
+  !*** ./src/app/app.component.html ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\n  margin: auto;\n  text-align: center;\n}\n\n.side {\n  float: left;\n  /* margin: 20px 0px; */\n  margin: 20px auto;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\napp-detail-panel {\n  float: left;\n  width: 40%;\n  height: 700px;\n  margin: 20px 0px;\n  padding: 20px;\n  border: solid 2px #b2b2b2;\n  border-radius: 5px;\n}\n\n#main-view {\n  width: 100%;\n  height: 800px;\n}\n\n#map-view {\n  width: 100%;\n}\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h1> Deutsches Bildungssystem </h1>\n    </div>\n  </div>\n</div>\n\n<div class=\"side\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n\n\n<ng-container *ngIf=\"currState >= 2\">\n  <app-detail-panel></app-detail-panel>\n</ng-container>\n<div id=\"map-view\">\n  <ng-container *ngIf=\"currState >= 3\">\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </ng-container>\n</div>"
 
 /***/ }),
 
-/***/ "../src/app/app.component.html":
-/*!*************************************!*\
-  !*** ../src/app/app.component.html ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h1> Deutsches Bildungssystem </h1>\n    </div>\n  </div>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n<div class=\"side\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<ng-container *ngIf=\"currState >= 2\">\n  <app-detail-panel></app-detail-panel>\n</ng-container>\n<div id=\"map-view\">\n  <ng-container *ngIf=\"currState >= 3\">\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </ng-container>\n</div>"
-
-/***/ }),
-
-/***/ "../src/app/app.component.ts":
-/*!***********************************!*\
-  !*** ../src/app/app.component.ts ***!
-  \***********************************/
+/***/ "./src/app/app.component.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
 /*! exports provided: AppComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recommend.service */ "../src/app/recommend.service.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./state.service */ "../src/app/state.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recommend.service */ "./src/app/recommend.service.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./state.service */ "./src/app/state.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,8 +91,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "../src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "../src/app/app.component.css")]
+            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_recommend_service__WEBPACK_IMPORTED_MODULE_1__["RecommendService"], _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"]])
     ], AppComponent);
@@ -103,27 +103,27 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/app.module.ts":
-/*!********************************!*\
-  !*** ../src/app/app.module.ts ***!
-  \********************************/
+/***/ "./src/app/app.module.ts":
+/*!*******************************!*\
+  !*** ./src/app/app.module.ts ***!
+  \*******************************/
 /*! exports provided: AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "../node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser/animations */ "../node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "../node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "../src/app/app.component.ts");
-/* harmony import */ var _main_graph_main_graph_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main-graph/main-graph.component */ "../src/app/main-graph/main-graph.component.ts");
-/* harmony import */ var _edu_side_panel_edu_side_panel_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./edu-side-panel/edu-side-panel.component */ "../src/app/edu-side-panel/edu-side-panel.component.ts");
-/* harmony import */ var _user_modal_user_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user-modal/user-modal.component */ "../src/app/user-modal/user-modal.component.ts");
-/* harmony import */ var _detail_panel_detail_panel_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./detail-panel/detail-panel.component */ "../src/app/detail-panel/detail-panel.component.ts");
-/* harmony import */ var _map_view_map_view_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./map-view/map-view.component */ "../src/app/map-view/map-view.component.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _main_graph_main_graph_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main-graph/main-graph.component */ "./src/app/main-graph/main-graph.component.ts");
+/* harmony import */ var _edu_side_panel_edu_side_panel_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./edu-side-panel/edu-side-panel.component */ "./src/app/edu-side-panel/edu-side-panel.component.ts");
+/* harmony import */ var _user_modal_user_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user-modal/user-modal.component */ "./src/app/user-modal/user-modal.component.ts");
+/* harmony import */ var _detail_panel_detail_panel_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./detail-panel/detail-panel.component */ "./src/app/detail-panel/detail-panel.component.ts");
+/* harmony import */ var _map_view_map_view_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./map-view/map-view.component */ "./src/app/map-view/map-view.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -171,10 +171,10 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/area.service.ts":
-/*!**********************************!*\
-  !*** ../src/app/area.service.ts ***!
-  \**********************************/
+/***/ "./src/app/area.service.ts":
+/*!*********************************!*\
+  !*** ./src/app/area.service.ts ***!
+  \*********************************/
 /*! exports provided: AreaService, LatLng */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -182,8 +182,8 @@ var AppModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AreaService", function() { return AreaService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LatLng", function() { return LatLng; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -240,10 +240,10 @@ var LatLng = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/constants.ts":
-/*!*******************************!*\
-  !*** ../src/app/constants.ts ***!
-  \*******************************/
+/***/ "./src/app/constants.ts":
+/*!******************************!*\
+  !*** ./src/app/constants.ts ***!
+  \******************************/
 /*! exports provided: Constants */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -292,10 +292,10 @@ var Constants = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/course-node.ts":
-/*!*********************************!*\
-  !*** ../src/app/course-node.ts ***!
-  \*********************************/
+/***/ "./src/app/course-node.ts":
+/*!********************************!*\
+  !*** ./src/app/course-node.ts ***!
+  \********************************/
 /*! exports provided: CourseNode, CourseInfo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -303,7 +303,7 @@ var Constants = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseNode", function() { return CourseNode; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseInfo", function() { return CourseInfo; });
-/* harmony import */ var _data_course_info_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/course-info-data */ "../src/app/data/course-info-data.ts");
+/* harmony import */ var _data_course_info_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/course-info-data */ "./src/app/data/course-info-data.ts");
 
 var CourseNode = /** @class */ (function () {
     function CourseNode(layer, name, fromAge, toAge) {
@@ -333,22 +333,22 @@ var CourseInfo = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/d3.service.ts":
-/*!********************************!*\
-  !*** ../src/app/d3.service.ts ***!
-  \********************************/
+/***/ "./src/app/d3.service.ts":
+/*!*******************************!*\
+  !*** ./src/app/d3.service.ts ***!
+  \*******************************/
 /*! exports provided: D3Service */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D3Service", function() { return D3Service; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "../node_modules/d3/index.js");
-/* harmony import */ var _graph_course_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graph/course-link */ "../src/app/graph/course-link.ts");
-/* harmony import */ var _graph_layout_manager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graph/layout-manager */ "../src/app/graph/layout-manager.ts");
-/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edu-structure.service */ "../src/app/edu-structure.service.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "../src/app/constants.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _graph_course_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graph/course-link */ "./src/app/graph/course-link.ts");
+/* harmony import */ var _graph_layout_manager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graph/layout-manager */ "./src/app/graph/layout-manager.ts");
+/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edu-structure.service */ "./src/app/edu-structure.service.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./src/app/constants.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -505,10 +505,10 @@ var D3Service = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/data/course-info-data.ts":
-/*!*******************************************!*\
-  !*** ../src/app/data/course-info-data.ts ***!
-  \*******************************************/
+/***/ "./src/app/data/course-info-data.ts":
+/*!******************************************!*\
+  !*** ./src/app/data/course-info-data.ts ***!
+  \******************************************/
 /*! exports provided: courseInfoData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -720,7 +720,7 @@ var courseInfoData = {
     "Weiterbildung": {
         "commonInfos": [
             "Vertiefung und Erweiterung der vorhandenen beruflichen Vorbildung Fachliche Ausrichtung bisher weiter vertieft oder Fortbildung im eigenen Fach: Erweiterung vorhandenen Wissens bzw",
-            "Kompetenzen Formen der beruflichen Weiterbildung: Ärztliche Weiterbildung, APO-IT, Ph. D., Habilitation, Verwaltungs- und Wirtschaftsakademie, Meisterprüfung, Staatlich geprüfter Betriebswirt, staatlich geprüfter Gestalter im Handwerk, Staatlich geprüfter Restaurator im Handwerk, Staatlich geprüfter Techniker, Corporate University, Betriebsinformatiker, Lerninseln, Weiterbildende, nicht-konsekutive Master¬studiengänge"
+            "Kompetenzen Formen der beruflichen Weiterbildung: Ärztliche Weiterbildung, APO-IT, Ph. D., Habilitation, Verwaltungs- und Wirtschaftsakademie, Meisterprüfung, Staatlich geprüfter Betriebswirt, staatlich geprüfter Gestalter im Handwerk, Staatlich geprüfter Restaurator im Handwerk, Staatlich geprüfter Techniker, Corporate University, Betriebsinformatiker, Lerninseln, Weiterbildende, nicht-konsekutive Masterstudiengänge"
         ],
         "certificates": [],
         "options": []
@@ -757,18 +757,18 @@ var courseInfoData = {
 
 /***/ }),
 
-/***/ "../src/app/data/course-node-data.ts":
-/*!*******************************************!*\
-  !*** ../src/app/data/course-node-data.ts ***!
-  \*******************************************/
+/***/ "./src/app/data/course-node-data.ts":
+/*!******************************************!*\
+  !*** ./src/app/data/course-node-data.ts ***!
+  \******************************************/
 /*! exports provided: courseNodeData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "courseNodeData", function() { return courseNodeData; });
-/* harmony import */ var _course_node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../course-node */ "../src/app/course-node.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "../src/app/constants.ts");
+/* harmony import */ var _course_node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../course-node */ "./src/app/course-node.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./src/app/constants.ts");
 
 
 var courseNodeData = {
@@ -923,10 +923,10 @@ var courseNodeData = {
 
 /***/ }),
 
-/***/ "../src/app/data/school-info-data.ts":
-/*!*******************************************!*\
-  !*** ../src/app/data/school-info-data.ts ***!
-  \*******************************************/
+/***/ "./src/app/data/school-info-data.ts":
+/*!******************************************!*\
+  !*** ./src/app/data/school-info-data.ts ***!
+  \******************************************/
 /*! exports provided: schoolInfoData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1246,10 +1246,10 @@ var schoolInfoData = {
 
 /***/ }),
 
-/***/ "../src/app/detail-panel/detail-panel.component.css":
-/*!**********************************************************!*\
-  !*** ../src/app/detail-panel/detail-panel.component.css ***!
-  \**********************************************************/
+/***/ "./src/app/detail-panel/detail-panel.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/detail-panel/detail-panel.component.css ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1257,10 +1257,10 @@ module.exports = "\nbutton.btn.btn-light.back {\n  margin: 0;\n  width: 100%;\n}
 
 /***/ }),
 
-/***/ "../src/app/detail-panel/detail-panel.component.html":
-/*!***********************************************************!*\
-  !*** ../src/app/detail-panel/detail-panel.component.html ***!
-  \***********************************************************/
+/***/ "./src/app/detail-panel/detail-panel.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/detail-panel/detail-panel.component.html ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1268,20 +1268,20 @@ module.exports = "<div>\n  <button class=\"btn btn-light back\" (click)=\"clickB
 
 /***/ }),
 
-/***/ "../src/app/detail-panel/detail-panel.component.ts":
-/*!*********************************************************!*\
-  !*** ../src/app/detail-panel/detail-panel.component.ts ***!
-  \*********************************************************/
+/***/ "./src/app/detail-panel/detail-panel.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/detail-panel/detail-panel.component.ts ***!
+  \********************************************************/
 /*! exports provided: DetailPanelComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailPanelComponent", function() { return DetailPanelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _major_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../major-info */ "../src/app/major-info.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state.service */ "../src/app/state.service.ts");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../recommend.service */ "../src/app/recommend.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _major_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../major-info */ "./src/app/major-info.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1339,8 +1339,8 @@ var DetailPanelComponent = /** @class */ (function () {
     DetailPanelComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-detail-panel',
-            template: __webpack_require__(/*! ./detail-panel.component.html */ "../src/app/detail-panel/detail-panel.component.html"),
-            styles: [__webpack_require__(/*! ./detail-panel.component.css */ "../src/app/detail-panel/detail-panel.component.css")]
+            template: __webpack_require__(/*! ./detail-panel.component.html */ "./src/app/detail-panel/detail-panel.component.html"),
+            styles: [__webpack_require__(/*! ./detail-panel.component.css */ "./src/app/detail-panel/detail-panel.component.css")]
         }),
         __metadata("design:paramtypes", [_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"], _recommend_service__WEBPACK_IMPORTED_MODULE_3__["RecommendService"]])
     ], DetailPanelComponent);
@@ -1351,21 +1351,21 @@ var DetailPanelComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/edu-side-panel/edu-side-panel.component.css":
-/*!**************************************************************!*\
-  !*** ../src/app/edu-side-panel/edu-side-panel.component.css ***!
-  \**************************************************************/
+/***/ "./src/app/edu-side-panel/edu-side-panel.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/edu-side-panel/edu-side-panel.component.css ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 300px;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 300px;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\n#detail-view {\n  margin: 20px 10px;\n  width: 300px;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 160px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 250px;\n  margin: 10px 0px;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n"
+module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 300px;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 300px;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\ni {\n  color: #749DD8;\n}\n#detail-view {\n  margin: 20px 10px;\n  width: 300px;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 160px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 250px;\n  margin: 10px 0px;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n"
 
 /***/ }),
 
-/***/ "../src/app/edu-side-panel/edu-side-panel.component.html":
-/*!***************************************************************!*\
-  !*** ../src/app/edu-side-panel/edu-side-panel.component.html ***!
-  \***************************************************************/
+/***/ "./src/app/edu-side-panel/edu-side-panel.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/edu-side-panel/edu-side-panel.component.html ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1373,21 +1373,21 @@ module.exports = "<div #dropdown *ngIf=\"currState <= 1\" id=\"dropdown\" class=
 
 /***/ }),
 
-/***/ "../src/app/edu-side-panel/edu-side-panel.component.ts":
-/*!*************************************************************!*\
-  !*** ../src/app/edu-side-panel/edu-side-panel.component.ts ***!
-  \*************************************************************/
+/***/ "./src/app/edu-side-panel/edu-side-panel.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/edu-side-panel/edu-side-panel.component.ts ***!
+  \************************************************************/
 /*! exports provided: EduSidePanelComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EduSidePanelComponent", function() { return EduSidePanelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../area.service */ "../src/app/area.service.ts");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../recommend.service */ "../src/app/recommend.service.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state.service */ "../src/app/state.service.ts");
-/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../edu-structure.service */ "../src/app/edu-structure.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../area.service */ "./src/app/area.service.ts");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
+/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../edu-structure.service */ "./src/app/edu-structure.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1453,8 +1453,8 @@ var EduSidePanelComponent = /** @class */ (function () {
     EduSidePanelComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-edu-side-panel',
-            template: __webpack_require__(/*! ./edu-side-panel.component.html */ "../src/app/edu-side-panel/edu-side-panel.component.html"),
-            styles: [__webpack_require__(/*! ./edu-side-panel.component.css */ "../src/app/edu-side-panel/edu-side-panel.component.css")]
+            template: __webpack_require__(/*! ./edu-side-panel.component.html */ "./src/app/edu-side-panel/edu-side-panel.component.html"),
+            styles: [__webpack_require__(/*! ./edu-side-panel.component.css */ "./src/app/edu-side-panel/edu-side-panel.component.css")]
         }),
         __metadata("design:paramtypes", [_area_service__WEBPACK_IMPORTED_MODULE_1__["AreaService"], _recommend_service__WEBPACK_IMPORTED_MODULE_2__["RecommendService"], _state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"], _edu_structure_service__WEBPACK_IMPORTED_MODULE_4__["EduStructureService"]])
     ], EduSidePanelComponent);
@@ -1465,19 +1465,19 @@ var EduSidePanelComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/edu-structure.service.ts":
-/*!*******************************************!*\
-  !*** ../src/app/edu-structure.service.ts ***!
-  \*******************************************/
+/***/ "./src/app/edu-structure.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/edu-structure.service.ts ***!
+  \******************************************/
 /*! exports provided: EduStructureService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EduStructureService", function() { return EduStructureService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _data_course_node_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/course-node-data */ "../src/app/data/course-node-data.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _data_course_node_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/course-node-data */ "./src/app/data/course-node-data.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1537,10 +1537,10 @@ var EduStructureService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/graph/course-link.ts":
-/*!***************************************!*\
-  !*** ../src/app/graph/course-link.ts ***!
-  \***************************************/
+/***/ "./src/app/graph/course-link.ts":
+/*!**************************************!*\
+  !*** ./src/app/graph/course-link.ts ***!
+  \**************************************/
 /*! exports provided: CourseLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1589,10 +1589,10 @@ var CourseLink = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/graph/layer.ts":
-/*!*********************************!*\
-  !*** ../src/app/graph/layer.ts ***!
-  \*********************************/
+/***/ "./src/app/graph/layer.ts":
+/*!********************************!*\
+  !*** ./src/app/graph/layer.ts ***!
+  \********************************/
 /*! exports provided: Layer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1612,24 +1612,25 @@ var Layer = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/graph/layout-manager.ts":
-/*!******************************************!*\
-  !*** ../src/app/graph/layout-manager.ts ***!
-  \******************************************/
+/***/ "./src/app/graph/layout-manager.ts":
+/*!*****************************************!*\
+  !*** ./src/app/graph/layout-manager.ts ***!
+  \*****************************************/
 /*! exports provided: LayoutManager */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutManager", function() { return LayoutManager; });
-/* harmony import */ var _layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layer */ "../src/app/graph/layer.ts");
-/* harmony import */ var _rect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rect */ "../src/app/graph/rect.ts");
+/* harmony import */ var _layer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layer */ "./src/app/graph/layer.ts");
+/* harmony import */ var _rect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rect */ "./src/app/graph/rect.ts");
 
 
 var LayoutManager = /** @class */ (function () {
     function LayoutManager(courseNodes) {
         this.courseNodes = courseNodes;
         this.rects = [];
+        this.totalRectCount = 0;
         this.selectedCourseNodes = [];
         this.generateRects();
     }
@@ -1650,6 +1651,7 @@ var LayoutManager = /** @class */ (function () {
             });
             _this.rects.push(rectArray);
         });
+        this.totalRectCount = this.getTotalRectCount();
     };
     LayoutManager.prototype.updateRects = function (isDetailMode) {
         var _this = this;
@@ -1672,6 +1674,7 @@ var LayoutManager = /** @class */ (function () {
                 _this.rects[index].push(new _rect__WEBPACK_IMPORTED_MODULE_1__["Rect"](arr[i], layer, i));
             }
         });
+        this.totalRectCount = this.getTotalRectCount();
     };
     LayoutManager.prototype.trimRects = function (careerPath) {
         var _this = this;
@@ -1681,6 +1684,14 @@ var LayoutManager = /** @class */ (function () {
             _this.rects[index][0].goToDetailMode();
             _this.rects[index + 1][0].goToDetailMode();
         });
+        this.totalRectCount = this.getTotalRectCount();
+    };
+    LayoutManager.prototype.getTotalRectCount = function () {
+        var count = 0;
+        this.rects.forEach(function (rectArr) {
+            rectArr.forEach(function (rect) { return count++; });
+        });
+        return count;
     };
     return LayoutManager;
 }());
@@ -1689,17 +1700,17 @@ var LayoutManager = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/graph/rect.ts":
-/*!********************************!*\
-  !*** ../src/app/graph/rect.ts ***!
-  \********************************/
+/***/ "./src/app/graph/rect.ts":
+/*!*******************************!*\
+  !*** ./src/app/graph/rect.ts ***!
+  \*******************************/
 /*! exports provided: Rect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rect", function() { return Rect; });
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "../src/app/constants.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./src/app/constants.ts");
 
 var Rect = /** @class */ (function () {
     function Rect(courseNode, layer, index) {
@@ -1755,10 +1766,10 @@ var Rect = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/job-info.ts":
-/*!******************************!*\
-  !*** ../src/app/job-info.ts ***!
-  \******************************/
+/***/ "./src/app/job-info.ts":
+/*!*****************************!*\
+  !*** ./src/app/job-info.ts ***!
+  \*****************************/
 /*! exports provided: JobInfo, CareerPath, CareerSubPath, JobMetadata */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1798,46 +1809,46 @@ var JobMetadata = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/main-graph/main-graph.component.css":
+/***/ "./src/app/main-graph/main-graph.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/main-graph/main-graph.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  color: #749dd8;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border-bottom: 4px solid #ddd;\n  /* background: linear-gradient(white, white 80%, #eee); */\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n  cursor: pointer;\n}\n\n.inner-box:hover {\n  transition:all 0.3s;\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #749DD8;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.inner-box.clicked {\n  background: #749DD8;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 40%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n  background-color: #eee;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color: #749dd8;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\n\n.card-body .btn.btn-light.selected {\n  box-shadow: 0 0 0.2rem #749dd8 inset;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/main-graph/main-graph.component.html":
 /*!******************************************************!*\
-  !*** ../src/app/main-graph/main-graph.component.css ***!
+  !*** ./src/app/main-graph/main-graph.component.html ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n  transition-timing-function: linear;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border: 1px solid #ddd;\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n}\n\n.inner-box:hover {\n  transition:all 0.5s;\n  box-shadow:\n    0 5px 10px 0  #00000044;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #447dd3;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 40%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n  background-color: #eee;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color: #447dd3;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\n\n.card-body .btn.btn-light.selected {\n  box-shadow: 0 0 0.2rem #447dd3 inset;\n}\n"
+module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects let i = index\">\n      <ng-container *ngFor=\"let rect of rectArray\">\n        <div [style.left.px]=\"rect.x\" [style.top.px]=\"rect.y - rect.height\" [style.width.px]=\"rect.width\" [style.height.px]=\"rect.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div [@initAnimation]=\"{value: initState, params: {delay: ((5 - i) * 500)}}\" \n              (@initAnimation.done)=\"initAnimationDone($event)\"\n              [class.clicked]=\"selectedRect == rect\"\n              class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(rect)\">\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center\">\n              {{ rect.courseNode.name }}\n            </div>\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n              {{ rect.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <ng-container *ngIf=\"currState == 0\">\n      <div class=\"position-absolute\" [style.margin-top.px]=\"'3'\" [style.font-size.em]=\"'1.1'\" >\n        <i class=\"fas fa-arrow-down\"></i>\n        Select the course to show the detail information\n        <i class=\"fas fa-arrow-down\"></i>\n      </div>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\" />\n  </div>\n</div>"
 
 /***/ }),
 
-/***/ "../src/app/main-graph/main-graph.component.html":
-/*!*******************************************************!*\
-  !*** ../src/app/main-graph/main-graph.component.html ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-elem\">\n\n    </div>\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects\">\n      <ng-container *ngFor=\"let box of rectArray\">\n        <div [style.left.px]=\"box.x\" [style.top.px]=\"box.y - box.height\" [style.width.px]=\"box.width\" [style.height.px]=\"box.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(box)\">\n            <div #flexfont *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n            <div #flexfont *ngIf=\"currState == 0\" class=\"flex-font\">\n              {{ box.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\">\n    </svg>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "../src/app/main-graph/main-graph.component.ts":
-/*!*****************************************************!*\
-  !*** ../src/app/main-graph/main-graph.component.ts ***!
-  \*****************************************************/
-/*! exports provided: FlexFont, MainGraphComponent */
+/***/ "./src/app/main-graph/main-graph.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/main-graph/main-graph.component.ts ***!
+  \****************************************************/
+/*! exports provided: MainGraphComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlexFont", function() { return FlexFont; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainGraphComponent", function() { return MainGraphComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _d3_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../d3.service */ "../src/app/d3.service.ts");
-/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../area.service */ "../src/app/area.service.ts");
-/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../edu-structure.service */ "../src/app/edu-structure.service.ts");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recommend.service */ "../src/app/recommend.service.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "../src/app/constants.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state.service */ "../src/app/state.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _d3_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../d3.service */ "./src/app/d3.service.ts");
+/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../area.service */ "./src/app/area.service.ts");
+/* harmony import */ var _edu_structure_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../edu-structure.service */ "./src/app/edu-structure.service.ts");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/app/constants.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1854,20 +1865,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var FlexFont = /** @class */ (function () {
-    function FlexFont(el) {
-        this.el = el;
-    }
-    FlexFont.prototype.changeFont = function () {
-        var relFontsize = this.el.nativeElement.offsetWidth * 0.07;
-        this.el.nativeElement.style.fontSize = relFontsize + 'px';
-    };
-    FlexFont = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({ selector: '[flexfont]' }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
-    ], FlexFont);
-    return FlexFont;
-}());
 
 var MainGraphComponent = /** @class */ (function () {
     function MainGraphComponent(d3Service, areaService, eduService, stateService, recommendService) {
@@ -1877,6 +1874,8 @@ var MainGraphComponent = /** @class */ (function () {
         this.stateService = stateService;
         this.recommendService = recommendService;
         this.currState = _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO;
+        this.initState = 'init';
+        this.initAnimationCount = 0;
     }
     MainGraphComponent.prototype.ngOnInit = function () {
         this.layoutManager = this.d3Service.layoutManager;
@@ -1920,6 +1919,7 @@ var MainGraphComponent = /** @class */ (function () {
         });
     };
     MainGraphComponent.prototype.showInfo = function (selectedRect) {
+        this.selectedRect = selectedRect;
         if (this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO) {
             this.eduService.selectCourseNode(selectedRect.courseNode);
         }
@@ -1935,7 +1935,6 @@ var MainGraphComponent = /** @class */ (function () {
         }
     };
     MainGraphComponent.prototype.ngAfterViewChecked = function () {
-        this.updateTextFonts();
     };
     MainGraphComponent.prototype.selectPath = function (index) {
         this.recommendService.changePathIndex(index);
@@ -1946,29 +1945,47 @@ var MainGraphComponent = /** @class */ (function () {
     MainGraphComponent.prototype.goToDetailMode = function () {
         this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL);
     };
-    MainGraphComponent.prototype.updateTextFonts = function () {
-        if (this.boxes != undefined) {
-            this.boxes.forEach(function (box) {
-                var el = box.nativeElement;
-                var relFontsize = el.offsetWidth * 0.07;
-                el.style.fontSize = relFontsize + 'px';
-            });
+    MainGraphComponent.prototype.getFlexFont = function (rect) {
+        var maxWidth = 0;
+        switch (this.currState) {
+            case _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO:
+                maxWidth = Math.min(rect.width, 300);
+                return '' + (maxWidth / 280);
+            default:
+                maxWidth = Math.min(rect.width, 250);
+                return '' + (maxWidth / 300);
         }
-        this.boxes = undefined;
+    };
+    MainGraphComponent.prototype.initAnimationDone = function () {
+        this.initAnimationCount++;
+        if (this.initAnimationCount == this.layoutManager.totalRectCount) {
+            this.initState = 'done';
+        }
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('svg'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
     ], MainGraphComponent.prototype, "svg", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChildren"])('flexfont'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"])
-    ], MainGraphComponent.prototype, "boxes", void 0);
     MainGraphComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-main-graph',
-            template: __webpack_require__(/*! ./main-graph.component.html */ "../src/app/main-graph/main-graph.component.html"),
-            styles: [__webpack_require__(/*! ./main-graph.component.css */ "../src/app/main-graph/main-graph.component.css")]
+            template: __webpack_require__(/*! ./main-graph.component.html */ "./src/app/main-graph/main-graph.component.html"),
+            styles: [__webpack_require__(/*! ./main-graph.component.css */ "./src/app/main-graph/main-graph.component.css")],
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('initAnimation', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => init', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('0.3s ' + "{{delay}}ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1.0, 1.1)', backgroundColor: '#749dd8' })),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('0.3s 0.3s', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1.0)', backgroundColor: '#fff' })),
+                    ], { params: { delay: 0 } }),
+                    // transition('void => done', [
+                    //   animate('0.3s', style({ transform: 'scale(1.0, 1.1)', backgroundColor: '#749dd8' })),
+                    //   animate('0.3s', style({ transform: 'scale(1.0)', backgroundColor: '#fff' })),
+                    // ], { params: { delay: 0 } }),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('init => done', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(0, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#fff' }))
+                    ])
+                ]),
+            ]
         }),
         __metadata("design:paramtypes", [_d3_service__WEBPACK_IMPORTED_MODULE_1__["D3Service"],
             _area_service__WEBPACK_IMPORTED_MODULE_2__["AreaService"],
@@ -1983,10 +2000,10 @@ var MainGraphComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/major-info.ts":
-/*!********************************!*\
-  !*** ../src/app/major-info.ts ***!
-  \********************************/
+/***/ "./src/app/major-info.ts":
+/*!*******************************!*\
+  !*** ./src/app/major-info.ts ***!
+  \*******************************/
 /*! exports provided: MajorInfo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2004,10 +2021,10 @@ var MajorInfo = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/map-view/map-view.component.css":
-/*!**************************************************!*\
-  !*** ../src/app/map-view/map-view.component.css ***!
-  \**************************************************/
+/***/ "./src/app/map-view/map-view.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/map-view/map-view.component.css ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2015,10 +2032,10 @@ module.exports = "#map-ground {\n  width: 100%;\n  margin: 50px;\n  height: 400p
 
 /***/ }),
 
-/***/ "../src/app/map-view/map-view.component.html":
-/*!***************************************************!*\
-  !*** ../src/app/map-view/map-view.component.html ***!
-  \***************************************************/
+/***/ "./src/app/map-view/map-view.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/map-view/map-view.component.html ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2026,21 +2043,21 @@ module.exports = "<div id=\"map-ground\">\n  <div #gmap id=\"map-panel\">\n\n  <
 
 /***/ }),
 
-/***/ "../src/app/map-view/map-view.component.ts":
-/*!*************************************************!*\
-  !*** ../src/app/map-view/map-view.component.ts ***!
-  \*************************************************/
+/***/ "./src/app/map-view/map-view.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/map-view/map-view.component.ts ***!
+  \************************************************/
 /*! exports provided: MapViewComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapViewComponent", function() { return MapViewComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-data */ "../src/app/user-data.ts");
-/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../area.service */ "../src/app/area.service.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state.service */ "../src/app/state.service.ts");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recommend.service */ "../src/app/recommend.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _user_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-data */ "./src/app/user-data.ts");
+/* harmony import */ var _area_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../area.service */ "./src/app/area.service.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2164,8 +2181,8 @@ var MapViewComponent = /** @class */ (function () {
     MapViewComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map-view',
-            template: __webpack_require__(/*! ./map-view.component.html */ "../src/app/map-view/map-view.component.html"),
-            styles: [__webpack_require__(/*! ./map-view.component.css */ "../src/app/map-view/map-view.component.css")]
+            template: __webpack_require__(/*! ./map-view.component.html */ "./src/app/map-view/map-view.component.html"),
+            styles: [__webpack_require__(/*! ./map-view.component.css */ "./src/app/map-view/map-view.component.css")]
         }),
         __metadata("design:paramtypes", [_area_service__WEBPACK_IMPORTED_MODULE_2__["AreaService"], _state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"],
             _recommend_service__WEBPACK_IMPORTED_MODULE_4__["RecommendService"]])
@@ -2177,21 +2194,21 @@ var MapViewComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/recommend.service.ts":
-/*!***************************************!*\
-  !*** ../src/app/recommend.service.ts ***!
-  \***************************************/
+/***/ "./src/app/recommend.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/recommend.service.ts ***!
+  \**************************************/
 /*! exports provided: RecommendService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecommendService", function() { return RecommendService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _job_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./job-info */ "../src/app/job-info.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "../src/app/constants.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "../node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _data_school_info_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/school-info-data */ "../src/app/data/school-info-data.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _job_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./job-info */ "./src/app/job-info.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/app/constants.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _data_school_info_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/school-info-data */ "./src/app/data/school-info-data.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2727,18 +2744,18 @@ var RecommendService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/state.service.ts":
-/*!***********************************!*\
-  !*** ../src/app/state.service.ts ***!
-  \***********************************/
+/***/ "./src/app/state.service.ts":
+/*!**********************************!*\
+  !*** ./src/app/state.service.ts ***!
+  \**********************************/
 /*! exports provided: StateService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateService", function() { return StateService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2784,10 +2801,10 @@ var StateService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/user-data.ts":
-/*!*******************************!*\
-  !*** ../src/app/user-data.ts ***!
-  \*******************************/
+/***/ "./src/app/user-data.ts":
+/*!******************************!*\
+  !*** ./src/app/user-data.ts ***!
+  \******************************/
 /*! exports provided: UserData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2804,10 +2821,10 @@ var UserData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/user-modal/user-modal.component.css":
-/*!******************************************************!*\
-  !*** ../src/app/user-modal/user-modal.component.css ***!
-  \******************************************************/
+/***/ "./src/app/user-modal/user-modal.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/user-modal/user-modal.component.css ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2815,10 +2832,10 @@ module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  
 
 /***/ }),
 
-/***/ "../src/app/user-modal/user-modal.component.html":
-/*!*******************************************************!*\
-  !*** ../src/app/user-modal/user-modal.component.html ***!
-  \*******************************************************/
+/***/ "./src/app/user-modal/user-modal.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/user-modal/user-modal.component.html ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2826,19 +2843,19 @@ module.exports = "<ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    
 
 /***/ }),
 
-/***/ "../src/app/user-modal/user-modal.component.ts":
-/*!*****************************************************!*\
-  !*** ../src/app/user-modal/user-modal.component.ts ***!
-  \*****************************************************/
+/***/ "./src/app/user-modal/user-modal.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/user-modal/user-modal.component.ts ***!
+  \****************************************************/
 /*! exports provided: UserModalComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModalComponent", function() { return UserModalComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "../node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state.service */ "../src/app/state.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2912,8 +2929,8 @@ var UserModalComponent = /** @class */ (function () {
     UserModalComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-user-modal',
-            template: __webpack_require__(/*! ./user-modal.component.html */ "../src/app/user-modal/user-modal.component.html"),
-            styles: [__webpack_require__(/*! ./user-modal.component.css */ "../src/app/user-modal/user-modal.component.css")]
+            template: __webpack_require__(/*! ./user-modal.component.html */ "./src/app/user-modal/user-modal.component.html"),
+            styles: [__webpack_require__(/*! ./user-modal.component.css */ "./src/app/user-modal/user-modal.component.css")]
         }),
         __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"],
             _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"]])
@@ -2925,10 +2942,10 @@ var UserModalComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/environments/environment.ts":
-/*!******************************************!*\
-  !*** ../src/environments/environment.ts ***!
-  \******************************************/
+/***/ "./src/environments/environment.ts":
+/*!*****************************************!*\
+  !*** ./src/environments/environment.ts ***!
+  \*****************************************/
 /*! exports provided: environment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2952,19 +2969,19 @@ var environment = {
 
 /***/ }),
 
-/***/ "../src/main.ts":
-/*!**********************!*\
-  !*** ../src/main.ts ***!
-  \**********************/
+/***/ "./src/main.ts":
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "../src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "../src/environments/environment.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
@@ -2979,13 +2996,13 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /***/ }),
 
 /***/ 0:
-/*!****************************!*\
-  !*** multi ../src/main.ts ***!
-  \****************************/
+/*!***************************!*\
+  !*** multi ./src/main.ts ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/junhoe/Git/HCIProject/my-app/src/main.ts */"../src/main.ts");
+module.exports = __webpack_require__(/*! /Users/junhoe/Git/HCIProject/my-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
