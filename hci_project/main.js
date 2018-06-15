@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\n  margin: auto;\n  text-align: center;\n}\n\n.side {\n  float: left;\n  /* margin: 20px 0px; */\n  margin: 20px 0px 20px 50px;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\napp-detail-panel {\n  float: left;\n  width: 40%;\n  height: 700px;\n  margin: 20px 0px;\n  padding: 20px;\n  border: solid 2px #b2b2b2;\n  border-radius: 5px;\n}\n\n#main-view {\n  width: 100%;\n  height: 800px;\n}\n\n#map-view {\n  width: 100%;\n}\n"
+module.exports = "#title {\n  margin: auto;\n  text-align: left;\n  background-color:  #447dd3;\n  padding: 10px;\n  padding-left: 60px;\n  font-size: 1.3em;\n  color: white;\n}\n\ni {\n  margin-right: 5px;\n}\n\n.side {\n  float: left;\n  /* margin: 20px 0px; */\n  margin: 20px 0px 20px 80px;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\napp-detail-panel {\n  float: left;\n  width: 40%;\n  height: 700px;\n  margin: 20px 0px;\n  padding: 20px;\n  border: solid 2px #b2b2b2;\n  border-radius: 5px;\n}\n\n#main-view {\n  width: 100%;\n  height: 800px;\n}\n\n#map-view {\n  width: 100%;\n}\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "h1 {\n  margin: auto;\n  text-align: center;\n}\n\n.side {\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h1> Deutsches Bildungssystem </h1>\n    </div>\n  </div>\n</div>\n\n<div class=\"side\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n\n\n<ng-container *ngIf=\"currState >= 2\">\n  <app-detail-panel></app-detail-panel>\n</ng-container>\n<div id=\"map-view\">\n  <ng-container *ngIf=\"currState >= 3\">\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </ng-container>\n</div>"
+module.exports = "<div id=\"title\">\n  <i class=\"fas fa-beer\"></i>\n  German Education System\n</div>\n<div class=\"side\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n\n\n<ng-container *ngIf=\"currState >= 2\">\n  <app-detail-panel></app-detail-panel>\n</ng-container>\n<div id=\"map-view\">\n  <ng-container *ngIf=\"currState >= 3\">\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </ng-container>\n</div>"
 
 /***/ }),
 
@@ -453,14 +453,15 @@ var D3Service = /** @class */ (function () {
         var yScale = d3__WEBPACK_IMPORTED_MODULE_1__["scaleLinear"]().range([_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_HEIGHT - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_BOTTOM, _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_TOP])
             .domain([minAge, maxAge]);
         this.svg.append('g')
+            .attr('class', 'axis')
             .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2, 0))
             .call(d3__WEBPACK_IMPORTED_MODULE_1__["axisLeft"](yScale));
         this.svg.append('text')
             .attr('class', 'legend')
-            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2 - 50, 10))
+            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2 - 20, 5))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text("Jahre");
+            .text("Years");
     };
     D3Service.prototype.setYAxisMode = function (isDetail) {
         var width = isDetail ? _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_DETAIL_WIDTH : _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH;
@@ -1358,7 +1359,7 @@ var DetailPanelComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 300px;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 300px;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\ni {\n  color: #749DD8;\n}\n#detail-view {\n  margin: 20px 10px;\n  width: 300px;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 160px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 250px;\n  margin: 10px 0px;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n"
+module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 300px;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 300px;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\n#dropdown i {\n  color: #447dd3;\n  margin-right: 3px;\n}\n#dropdown.open i {\n  color: white;\n  margin-right: 3px;\n}\ni {\n  color: #749DD8;\n}\n#detail-view {\n  margin: 20px 10px;\n  width: 300px;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 160px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 250px;\n  margin: 10px 0px;\n  font-size: 0.9em;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n.btn-light.selected {\n  background-color: #447dd3;\n  color: white;\n}\n"
 
 /***/ }),
 
@@ -1369,7 +1370,7 @@ module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div #dropdown *ngIf=\"currState <= 1\" id=\"dropdown\" class=\"ddmenu\" (click)=\"toggleDropdown()\" [class.open]=\"dropdownOpened\">\n  <ng-container *ngIf=\"!isAreaSelected\">\n    Wählen Sie den Bereich aus\n  </ng-container>\n  <ng-container *ngIf=\"isAreaSelected\">\n    {{ selectedArea }}\n  </ng-container>\n  <ul [class.open]=\"dropdownOpened\">\n    <li *ngFor=\"let area of areas\">\n      <ng-container *ngIf=\"area == selectedArea; else other\">\n        <a (click)=\"onClickArea(area)\">{{area}} (ausgewählt)</a>\n      </ng-container>\n      <ng-template #other>\n        <a (click)=\"onClickArea(area)\">{{area}}</a>\n      </ng-template>\n    </li>\n  </ul>\n</div>\n\n<ng-container *ngIf=\"currState == 0\">\n  <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n    <ng-container *ngIf=\"selectedCourseNode\">\n      <ng-container *ngIf=\"selectedCourseNode.courseInfo.certificates.length != 0\">\n        <div class=\"card elem\">\n          <div class=\"card-header text-white\">\n            Mögliche Schulabschlüsse\n          </div>\n          <div class=\"card-body\">\n            <ul>\n              <ng-container *ngFor=\"let certificate of selectedCourseNode.courseInfo.certificates\">\n                <li>\n                  <span>{{certificate}}</span>\n                </li>\n              </ng-container>\n            </ul>\n          </div>\n        </div>\n        <div class=\"card elem\">\n          <div class=\"card-header text-white\">\n            Anschließende Möglichkeiten:\n          </div>\n          <div class=\"card-body\">\n            <ul>\n              <ng-container *ngFor=\"let option of selectedCourseNode.courseInfo.options\">\n                <li>\n                  <span>{{option}} </span>\n                </li>\n              </ng-container>\n            </ul>\n          </div>\n        </div>\n      </ng-container>\n      <ng-container *ngIf=\"selectedCourseNode.courseInfo.commonInfos.length != 0\">\n        <div class=\"card elem\">\n          <div class=\"card-header text-white\">\n            Allgemeine Informationen\n          </div>\n          <div class=\"card-body\">\n            <ul>\n              <ng-container *ngFor=\"let commonInfo of selectedCourseNode.courseInfo.commonInfos\">\n                <li>\n                  <span>{{commonInfo}}</span>\n                </li>\n              </ng-container>\n            </ul>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n  </div>\n\n</ng-container>\n\n<ng-container *ngIf=\"currState != 0\">\n  <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n    <ng-container *ngIf=\"currState == 1\">\n      <div class=\"card elem\">\n        <div class=\"card-header text-white\">\n          Suche einen Job aus\n        </div>\n        <div class=\"card-body\">\n          <ng-container *ngFor=\"let jobInfo of jobInfos let i = index\">\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"changeCurrentJobIndex(i)\">{{ jobInfo.jobMetadata.name }}</button>\n          </ng-container>\n        </div>\n      </div>\n    </ng-container>\n    <div class=\"card elem\">\n      <div class=\"card-header text-white\">\n        Jobinformationen\n      </div>\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Durchschnittl. Gehalt</h5>\n        <p class=\"card-text\">\n          {{ jobInfos[currJobIndex].jobMetadata.salary }}\n        </p>\n        <h5 class=\"card-title\">Arbeit & Freizeit: </h5>\n        <p class=\"card-text\">\n          {{ jobInfos[currJobIndex].jobMetadata.balance }}\n        </p>\n        <h5 class=\"card-title\"> Generelle Beschreibung: </h5>\n        <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.reviews\">\n          <p class=\"card-text\">\n            {{ review }}\n          </p>\n        </ng-container>\n        <ng-container *ngFor=\"let generalDesc of jobInfos[currJobIndex].jobMetadata.generalDescs\">\n          <p class=\"card-text\">\n            {{ generalDesc }}\n          </p>\n        </ng-container>\n        <h5 class=\"card-title\"> Generelle Bewertung: </h5>\n        <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.generalReviews\">\n          <p class=\"card-text\">\n            {{ review }}\n          </p>\n          </ng-container> \n      </div>\n    </div>\n  </div>\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"currState <= 1\">\n  <div #dropdown *ngIf=\"currState <= 1\" id=\"dropdown\" class=\"ddmenu\" (click)=\"toggleDropdown()\" [class.open]=\"dropdownOpened\">\n    <ng-container *ngIf=\"!isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      Choose the Area\n    </ng-container>\n    <ng-container *ngIf=\"isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      {{ selectedArea }}\n    </ng-container>\n    <ul [class.open]=\"dropdownOpened\">\n      <li *ngFor=\"let area of areas\">\n        <ng-container *ngIf=\"area == selectedArea; else other\">\n          <a (click)=\"onClickArea(area)\">{{area}} (ausgewählt)</a>\n        </ng-container>\n        <ng-template #other>\n          <a (click)=\"onClickArea(area)\">{{area}}</a>\n        </ng-template>\n      </li>\n    </ul>\n  </div>\n\n  <ng-container *ngIf=\"currState == 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"selectedCourseNode\">\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.certificates.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Mögliche Schulabschlüsse\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let certificate of selectedCourseNode.courseInfo.certificates\">\n                  <li>\n                    <span>{{certificate}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Anschließende Möglichkeiten:\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let option of selectedCourseNode.courseInfo.options\">\n                  <li>\n                    <span>{{option}} </span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.commonInfos.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Allgemeine Informationen\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let commonInfo of selectedCourseNode.courseInfo.commonInfos\">\n                  <li>\n                    <span>{{commonInfo}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n      </ng-container>\n    </div>\n\n  </ng-container>\n\n  <ng-container *ngIf=\"currState != 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"currState == 1\">\n        <div class=\"card elem\">\n          <div class=\"card-header text-white\">\n            Suche einen Job aus\n          </div>\n          <div class=\"card-body\">\n            <ng-container *ngFor=\"let jobInfo of jobInfos let i = index\">\n              <button class=\"btn btn-light\" [class.selected]=\"i == currJobIndex\"\n              (click)=\"changeCurrentJobIndex(i)\">{{ jobInfo.jobMetadata.name }}</button>\n            </ng-container>\n          </div>\n        </div>\n      </ng-container>\n      <div class=\"card elem\">\n        <div class=\"card-header text-white\">\n          Jobinformationen\n        </div>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Durchschnittl. Gehalt</h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.salary }}\n          </p>\n          <h5 class=\"card-title\">Arbeit & Freizeit: </h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.balance }}\n          </p>\n          <h5 class=\"card-title\"> Generelle Beschreibung: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.reviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n          <ng-container *ngFor=\"let generalDesc of jobInfos[currJobIndex].jobMetadata.generalDescs\">\n            <p class=\"card-text\">\n              {{ generalDesc }}\n            </p>\n          </ng-container>\n          <h5 class=\"card-title\"> Generelle Bewertung: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.generalReviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n        </div>\n      </div>\n    </div>\n  </ng-container>\n</ng-container>"
 
 /***/ }),
 
@@ -1816,7 +1817,7 @@ var JobMetadata = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  color: #749dd8;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border-bottom: 4px solid #ddd;\n  /* background: linear-gradient(white, white 80%, #eee); */\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n  cursor: pointer;\n}\n\n.inner-box:hover {\n  transition:all 0.3s;\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #749DD8;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.inner-box.clicked {\n  background: #749DD8;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 40%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n  background-color: #eee;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color: #749dd8;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\n\n.card-body .btn.btn-light.selected {\n  box-shadow: 0 0 0.2rem #749dd8 inset;\n}\n"
+module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  color: #749dd8;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border-bottom: 4px solid #ddd;\n  /* background: linear-gradient(white, white 80%, #eee); */\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n  cursor: pointer;\n}\n\n.inner-box.clicked {\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box:hover {\n  transition:all 0.3s;\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #749DD8;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 40%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n  background-color: #eee;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color:  #447dd3;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\n\n.card-body .btn.btn-light.selected {\n  background: #447dd3;\n  color: white;\n}\n\nsvg .axis .tick text{\n  font-size: 14px;\n}"
 
 /***/ }),
 
@@ -1827,7 +1828,7 @@ module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects let i = index\">\n      <ng-container *ngFor=\"let rect of rectArray\">\n        <div [style.left.px]=\"rect.x\" [style.top.px]=\"rect.y - rect.height\" [style.width.px]=\"rect.width\" [style.height.px]=\"rect.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div [@initAnimation]=\"{value: initState, params: {delay: ((5 - i) * 500)}}\" \n              (@initAnimation.done)=\"initAnimationDone($event)\"\n              [class.clicked]=\"selectedRect == rect\"\n              class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(rect)\">\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center\">\n              {{ rect.courseNode.name }}\n            </div>\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n              {{ rect.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <ng-container *ngIf=\"currState == 0\">\n      <div class=\"position-absolute\" [style.margin-top.px]=\"'3'\" [style.font-size.em]=\"'1.1'\" >\n        <i class=\"fas fa-arrow-down\"></i>\n        Select the course to show the detail information\n        <i class=\"fas fa-arrow-down\"></i>\n      </div>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\" />\n  </div>\n</div>"
+module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects let i = index\">\n      <ng-container *ngFor=\"let rect of rectArray\">\n        <div [style.left.px]=\"rect.x\" [style.top.px]=\"rect.y - rect.height\" [style.width.px]=\"rect.width\" [style.height.px]=\"rect.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div [@initAnimation]=\"{value: initState, params: {delay: ((5 - i) * 500)}}\" \n              (@initAnimation.done)=\"initAnimationDone($event)\"\n              [class.clicked]=\"selectedRect == rect\"\n              class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(rect)\">\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center\">\n              {{ rect.courseNode.name }}\n            </div>\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n              {{ rect.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <ng-container *ngIf=\"currState == 0\">\n      <div class=\"position-absolute\" [style.margin-top.px]=\"'3'\" [style.font-size.em]=\"'1.1'\" >\n        <i class=\"fas fa-arrow-down\"></i>\n        Click a course to show the detail information\n        <i class=\"fas fa-arrow-down\"></i>\n      </div>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\" />\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1896,6 +1897,7 @@ var MainGraphComponent = /** @class */ (function () {
             else if (_this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL && state == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].OVERVIEW) {
                 _this.d3Service.changeOverviewMode(_this.jobInfos[_this.currJobIndex].paths, _this.currPathIndex);
             }
+            _this.selectedRect = null;
             _this.currState = state;
         });
         this.recommendService.recommendJobInfoObservable.subscribe(function (jobInfos) {
@@ -2484,210 +2486,6 @@ var RecommendService = /** @class */ (function () {
                     ]
                 }
             ]),
-            new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: 'Qualitätsmanager/in ',
-                salary: '60.540 €/Jahr',
-                balance: ' intensiv/anspruchsvoll ',
-                generalDescs: ['Die Nachfrage nach fähigen Qualitätsmanagern steigt immer mehr. Da Abläufe und Prozesse mittels der Digitalisierung immer schneller werden, verlangen Kunden binnen kurzer Zeit neue Produkte. Jedoch muss nichtdestotrotz stets auf die Qualität geachtet werden, um das Vertrauen zu dem Kunden beizubehalten. Hier kommen Qualitätsmanager ins Spiel, die Qualitätsmängel erkennen und dafür sorgen, dass Produkte, Dienstleistungen und Prozesse verbessert werden.'],
-                generalReviews: ['Meine Arbeitsstelle ist sehr anspruchsvoll. Nahezu jeden Tag muss ich mich auf neue Herausforderungen gefasst machen und mögliche Lösungswege und Herangehensweisen entwickeln. Ich arbeite mit verschiedenen Gruppen von Menschen zusammen, die alle einen verschiedenen Hintergrund besitzen. Ich lerne viel und kann mich rapide im Job weiterentwickeln.']
-            }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
-            ]),
-            new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: 'Unternehmensberater/in',
-                salary: '55.000€/Jahr ',
-                balance: 'wenig Platz für Freizeit ',
-                generalDescs: ['Als Consultant bietest Du anderen Unternehmen eine Beratung (Consulting) als entsprechende Dienstleistung an.  Oftmals ist das Management des Auftraggebers bzw. Klientens Gegenstand Deiner Beratung. Häufig ist die Beratung aber auch ausschließlich auf Veränderungen innerhalb eines Unternehmens oder auf die Optimierung von fachlichen Entscheidungen fokussiert. Dies kommt vor allem in Verbindungen mit speziellen IT- oder Ingenieurleistungen, mit einer umfassenden Wirtschaftsprüfung oder mit Personalfragen vor. Als Consultant agierst Du diesbezüglich quasi als Problemlöser.'],
-                generalReviews: ['Frische und innovative Ideen sind stets willkommen. Als Unternehmensberater habe ich die Möglichkeit, meine Potenziale zu entdecken und an ihnen zu arbeiten. Das Arbeitsumfeld ist international und man trifft immer wieder auf neue Leute, von denen man wiederrum sehr viel mitnehmen und lernen kann.']
-            }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
-            ]),
-            new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: ' Psychologischer Psychotherapeut',
-                salary: '44.532€/Jahr',
-                balance: 'ausgewogen ',
-                generalDescs: ['PsychotherapeutInnen führen eigenständig Behandlungen von Menschen mit psychischen oder psychosomatischen Problemen oder Erkrankungen durch. Sie betreuen ihre KlientInnen in beruflichen, persönlichen oder familiären Krisen- und Entscheidungssituationen. PsychotherapeutInnen haben sich in mindestens einer Psychotherapie-Methode, wie z. B. Systemische Familientherapie, Verhaltenstherapie, Gesprächspsychotherapie (=Klientenzentrierte Psychotherapie) oder Psychoanalyse spezialisiert. Entsprechend ihrer Spezialisierung planen sie die Behandlung und setzen gezielt psychotherapeutische Interventionen. Ihr Ziel ist, die bestehenden Probleme oder Symptome gemeinsam mit den KlientInnen zu mildern oder zu beseitigen.'],
-                generalReviews: ['Mein Beruf ist sehr vielfältig. Jeden Tag treffe ich auf neue Leute, die verschiedene Probleme haben und unterschiedliche Hintergründe besitzen. Ich habe die Möglichkeit, Menschen zu helfen und sie in eine positive Richtung zu führen. Meistens nach einem langen Arbeitstag verspüre ich, dass ich etwas Großes geleistet habe.']
-            }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
-            ]),
         ];
         this.recommendJobInfos = newJobInfos;
         this.recommendJobInfoSubject.next(newJobInfos);
@@ -2828,7 +2626,7 @@ var UserData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  background-color: #292b2c;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #447dd3;\n}\n.open-btn {\n  border-color: #447dd3;\n  width: 300px;\n  font-size: 0.9em;\n  margin-top: 20px;\n  margin-left: 10px;\n  color: #447dd3;\n}\n.open-btn:hover {\n  background-color: white;\n  color: #898989;\n}\n.modal-body {\n  max-height: 650px;\n  overflow: scroll;\n}\n.register-btn {\n  pointer-events: none;\n}\n.register-btn.actived {\n  pointer-events: all;\n  background-color: #447dd3;\n}\n"
+module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  background-color: #292b2c;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #447dd3;\n}\ni {\n  color: #447dd3;\n  margin-right: 5px;\n}\n.open-btn {\n  border-color: #447dd3;\n  width: 300px;\n  font-size: 0.9em;\n  margin-top: 20px;\n  margin-left: 10px;\n  color: #447dd3;\n  text-align: left;\n}\n.open-btn:hover {\n  background-color: white;\n  color: #898989;\n}\n.modal-body {\n  max-height: 650px;\n  overflow: scroll;\n}\n.register-btn {\n  pointer-events: none;\n}\n.register-btn.actived {\n  pointer-events: all;\n  background-color: #447dd3;\n}\n"
 
 /***/ }),
 
@@ -2839,7 +2637,7 @@ module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\"> Benutzereingaben </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <h2>Gib hier deine Daten ein:</h2>\n                    <form action=\"\" method=\"\">\n                        <div class=\"form-group\">\n                            <label for=\"currentGrade\">Deine momentane Klasse</label>\n                            <input [(ngModel)]=\"currentGrade\" class=\"form-control\" name=\"currentGrade\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"gpa\">Deine Durchschnittsnote</label>\n                            <input [(ngModel)]=\"gpa\" class=\"form-control\" name=\"gpa\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"address\">Deine Adresse</label>\n                            <input [(ngModel)]=\"address\" class=\"form-control\" name=\"address\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"postalcode\">Deine Postleitzahl</label>\n                            <input [(ngModel)]=\"postalCode\" class=\"form-control\" name=\"postalCode\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"school\">Welche Art von Mittelschule hast du besucht (Gymnasium, Real-, Gesamt-, Hauptschule)?</label>\n                            <input [(ngModel)]=\"school\" class=\"form-control\" name=\"school\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"major\">Bevorzugtes Studienfach (optional)</label>\n                            <input [(ngModel)]=\"major\" class=\"form-control\" name=\"major\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"dreamjob\">Traumjob (optional)</label>\n                            <input [(ngModel)]=\"dreamJob\" class=\"form-control\" name=\"dreamJob\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"strongestSub\">Dein bestes Fach</label>\n                            <input [(ngModel)]=\"strongestSub\" class=\"form-control\" name=\"strongestSub\" />\n                        </div>\n                        <h2>Was sind deine Interessen?\n                            <span style=\"color:red\">(*Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let interest of interests\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkInterest(interest)\">\n                                            <span class=\"label-text\">{{interest}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                        <h2>Was sind deine Stärken?\n                            <span style=\"color:red\">(* Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let strength of strengths\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkStrength(strength)\">\n                                            <span class=\"label-text\">{{strength}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"currentGrade && gpa && address\n      && postalCode && school && strongestSub \n      && checkedInterests.length > 0 && checkedStrengths.length > 0\" (click)=\"registerUserInput()\">Abschicken</button>\n      <!-- <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"true\" (click)=\"registerUserInput()\">Register</button> -->\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"c('Close click')\">Schließen</button>\n    </div>\n</ng-template>\n\n<ng-container>\n    <button class=\"btn btn-outline-primary mb-2 mr-2 open-btn\" (click)=\"openModal(content)\">Gib deine Nutzereingaben bitte ein</button>\n</ng-container>\n"
+module.exports = "<ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\"> Benutzereingaben </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <h2>Gib hier deine Daten ein:</h2>\n                    <form action=\"\" method=\"\">\n                        <div class=\"form-group\">\n                            <label for=\"currentGrade\">Deine momentane Klasse</label>\n                            <input [(ngModel)]=\"currentGrade\" class=\"form-control\" name=\"currentGrade\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"gpa\">Deine Durchschnittsnote</label>\n                            <input [(ngModel)]=\"gpa\" class=\"form-control\" name=\"gpa\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"address\">Deine Adresse</label>\n                            <input [(ngModel)]=\"address\" class=\"form-control\" name=\"address\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"postalcode\">Deine Postleitzahl</label>\n                            <input [(ngModel)]=\"postalCode\" class=\"form-control\" name=\"postalCode\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"school\">Welche Art von Mittelschule hast du besucht (Gymnasium, Real-, Gesamt-, Hauptschule)?</label>\n                            <input [(ngModel)]=\"school\" class=\"form-control\" name=\"school\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"major\">Bevorzugtes Studienfach (optional)</label>\n                            <input [(ngModel)]=\"major\" class=\"form-control\" name=\"major\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"dreamjob\">Traumjob (optional)</label>\n                            <input [(ngModel)]=\"dreamJob\" class=\"form-control\" name=\"dreamJob\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"strongestSub\">Dein bestes Fach</label>\n                            <input [(ngModel)]=\"strongestSub\" class=\"form-control\" name=\"strongestSub\" />\n                        </div>\n                        <h2>Was sind deine Interessen?\n                            <span style=\"color:red\">(*Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let interest of interests\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkInterest(interest)\">\n                                            <span class=\"label-text\">{{interest}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                        <h2>Was sind deine Stärken?\n                            <span style=\"color:red\">(* Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let strength of strengths\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkStrength(strength)\">\n                                            <span class=\"label-text\">{{strength}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"currentGrade && gpa && address\n      && postalCode && school && strongestSub \n      && checkedInterests.length > 0 && checkedStrengths.length > 0\" (click)=\"registerUserInput()\">Abschicken</button>\n        <!-- <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"true\" (click)=\"registerUserInput()\">Register</button> -->\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"c('Close click')\">Schließen</button>\n    </div>\n</ng-template>\n\n<ng-container>\n    <button class=\"btn btn-outline-primary mb-2 mr-2 open-btn\" (click)=\"openModal(content)\">\n        <i class=\"fas fa-user\"></i>\n        Input the user information\n    </button>\n</ng-container>"
 
 /***/ }),
 
