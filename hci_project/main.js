@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#title {\n  margin: auto;\n  text-align: left;\n  background-color:  #447dd3;\n  padding: 10px;\n  padding-left: 60px;\n  font-size: 1.3em;\n  color: white;\n}\n\ni {\n  margin-right: 5px;\n}\n\n.side {\n  float: left;\n  /* margin: 20px 0px; */\n  margin: 20px 0px 20px 80px;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\napp-detail-panel {\n  float: left;\n  width: 40%;\n  height: 700px;\n  margin: 20px 0px;\n  padding: 20px;\n  border: solid 2px #b2b2b2;\n  border-radius: 5px;\n}\n\n#main-view {\n  width: 100%;\n  height: 800px;\n}\n\n#map-view {\n  width: 100%;\n}\n"
+module.exports = "#title {\n  margin: auto;\n  text-align: left;\n  background-color:  #447dd3;\n  padding: 10px;\n  padding-left: 60px;\n  margin-bottom: 15px;\n  font-size: 1.3em;\n  color: white;\n}\n\ni {\n  margin-right: 5px;\n}\n\n.side {\n  float: left;\n  width: 22%;\n  /* margin: 20px 0px; */\n  margin: 20px 0px 20px 50px;\n}\n\n.side.detail-mode {\n  display: none;\n}\n\napp-main-graph {\n  float: left;\n  margin: 20px 50px;\n}\n\n#detail {\n  margin: 20px 0px;\n  float: left;\n  width: 75%;\n}\n\napp-detail-panel {\n  width: 100%;\n  height: 400px;\n  margin: 20px 0px;\n  border-radius: 5px;\n}"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "#title {\n  margin: auto;\n  text-align: left;\n  background-c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"title\">\n  <i class=\"fas fa-beer\"></i>\n  German Education System\n</div>\n<div class=\"side\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n\n\n<ng-container *ngIf=\"currState >= 2\">\n  <app-detail-panel></app-detail-panel>\n</ng-container>\n<div id=\"map-view\">\n  <ng-container *ngIf=\"currState >= 3\">\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </ng-container>\n</div>"
+module.exports = "<div id=\"title\">\n  <i class=\"fas fa-graduation-cap\"></i>\n  German Education System\n</div>\n\n<div class=\"side\" [class.detail-mode]=\"currState >= 2\">\n  <app-edu-side-panel></app-edu-side-panel>\n  <app-user-modal *ngIf=\"currState <= 1\" (userData)=\"applyUserData($event)\"></app-user-modal>\n</div>\n\n<app-main-graph (courseNode)=\"onSelectCourseNode($event)\"></app-main-graph>\n\n<ng-container *ngIf=\"currState == 2\">\n  <div id=\"detail\">\n    <app-detail-panel></app-detail-panel>\n    <app-map-view [userData]=\"userData\"></app-map-view>\n  </div>\n</ng-container>"
 
 /***/ }),
 
@@ -75,7 +75,6 @@ var AppComponent = /** @class */ (function () {
         this.recommendService = recommendService;
         this.stateService = stateService;
         this.currentRecommendResult = null;
-        this.isDetailMode = false;
         this.schoolInfos = [];
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -253,7 +252,7 @@ __webpack_require__.r(__webpack_exports__);
 var Constants = /** @class */ (function () {
     function Constants() {
     }
-    Constants.GRAPH_WIDTH = 1100;
+    Constants.GRAPH_WIDTH = 1150;
     Constants.GRAPH_DETAIL_WIDTH = 300;
     Constants.GRAPH_HEIGHT = 700;
     Constants.GRAPH_MARGIN_SIDE = 70;
@@ -262,29 +261,29 @@ var Constants = /** @class */ (function () {
     Constants.GRAPH_RECT_MARGIN = 5;
     Constants.GRAPH_RECT_HEIGHT_UNIT = 24;
     Constants.COURSE_KINDERGARTEN = 'Kindergarten';
-    Constants.COURSE_GRUNDSCHULE = 'Grundschule';
+    Constants.COURSE_GRUNDSCHULE = 'Primary school';
     Constants.COURSE_GYMNASIUM = 'Gymnasium';
     Constants.COURSE_OBERSCHULE = "Oberschule";
     Constants.COURSE_GEASAMTSCHULE = "Gesamtschule";
-    Constants.COURSE_GEASAMTSCHULE_INTEGRIERTE = "Gesamtschule Integrierte und kooperative";
+    Constants.COURSE_GEASAMTSCHULE_INTEGRIERTE = "Integrated and Cooperative Gesamtschule";
     Constants.COURSE_REALSCHULE = "Realschule";
     Constants.COURSE_HAUPTSCHULE = "Hauptschule";
-    Constants.COURSE_INTEGRIERTE_SEKUNDARSCHULE = "Integrierte Sekundarschule";
-    Constants.COURSE_GEMEINSCHAFTSSCHULE = "Gemeinschaftsschule";
-    Constants.COURSE_STADTTEILSCHULE = "Stadtteilschule";
+    Constants.COURSE_INTEGRIERTE_SEKUNDARSCHULE = "Integrated secondary school";
+    Constants.COURSE_GEMEINSCHAFTSSCHULE = "Comprehensive school";
+    Constants.COURSE_STADTTEILSCHULE = "District school";
     Constants.COURSE_GYMNASIALE = 'Gymnasiale Oberstufe';
     Constants.COURSE_BERUFSOBERSCHULE = "Berufsoberschule";
     Constants.COURSE_FACHOBERSCHULE = 'Fachoberschule';
     Constants.COURSE_BERUFSFACHSCHULE = "Berufsfachschule";
-    Constants.COURSE_BETRIEB = "Berufsschule und Betrieb";
+    Constants.COURSE_BETRIEB = "Vocational school and factory";
     Constants.COURSE_VORBEREITUNG = "Vorbereitung";
     Constants.COURSE_BQL = "BQL, BV, IBA";
     Constants.COURSE_FACHGYMNASIUM = "Fachgymnasium";
     Constants.COURSE_BERUFSEINSTIEGSSCHULE = "Berufseinstiegsschule";
-    Constants.COURSE_UNIVERSITAT = 'Universitat and gleichwertige Institutionen';
-    Constants.COURSE_BERUFSAKADEMIE = "Berufsakadamie";
-    Constants.COURSE_FACHHOCH = 'Fachhoch- und Verwaltungshochschule';
-    Constants.COURSE_WEITERBILDUNG = 'Weiterbildung';
+    Constants.COURSE_UNIVERSITAT = 'University and equivalent institutions';
+    Constants.COURSE_BERUFSAKADEMIE = "Vocational academy";
+    Constants.COURSE_FACHHOCH = 'Fachhoch- and Verwaltungshochschule';
+    Constants.COURSE_WEITERBILDUNG = 'Continuing education';
     return Constants;
 }());
 
@@ -417,6 +416,8 @@ var D3Service = /** @class */ (function () {
         this.links = this.links.filter(function (link) { return detailIndex == link.detailIndex; });
         this.svg.selectAll('.link')
             .data(this.links)
+            .attr('stroke-width', 6)
+            .style('opacity', 1)
             .exit()
             .remove();
         this.updateLinksWithNoTransition();
@@ -454,27 +455,27 @@ var D3Service = /** @class */ (function () {
             .domain([minAge, maxAge]);
         this.svg.append('g')
             .attr('class', 'axis')
-            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2, 0))
-            .call(d3__WEBPACK_IMPORTED_MODULE_1__["axisLeft"](yScale));
+            .style('font-size', 14)
+            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 3, 0))
+            .call(d3__WEBPACK_IMPORTED_MODULE_1__["axisRight"](yScale));
         this.svg.append('text')
             .attr('class', 'legend')
-            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2 - 20, 5))
+            .attr("transform", this.translate(_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 3, 5))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text("Years");
+            .text("Age");
     };
     D3Service.prototype.setYAxisMode = function (isDetail) {
-        var width = isDetail ? _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_DETAIL_WIDTH : _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_WIDTH;
-        var rightMargin = isDetail ? _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 3 : _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 2;
+        var rightMargin = isDetail ? _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 3 : _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_SIDE / 3;
         var minAge = 3;
         var maxAge = 31;
         var yScale = d3__WEBPACK_IMPORTED_MODULE_1__["scaleLinear"]().range([_constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_HEIGHT - _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_BOTTOM, _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].GRAPH_MARGIN_TOP])
             .domain([minAge, maxAge]);
         this.svg.select('g')
-            .attr("transform", this.translate(width - rightMargin, 0))
-            .call(d3__WEBPACK_IMPORTED_MODULE_1__["axisLeft"](yScale));
+            .attr("transform", this.translate(rightMargin, 0))
+            .call(d3__WEBPACK_IMPORTED_MODULE_1__["axisRight"](yScale));
         this.svg.select('.legend')
-            .attr("transform", this.translate(width - rightMargin - 50, 10));
+            .attr("transform", this.translate(rightMargin, 10));
     };
     D3Service.prototype.changeDetailMode = function (recommendResult, detailIndex) {
         var careerPath = recommendResult.paths[detailIndex];
@@ -519,15 +520,15 @@ __webpack_require__.r(__webpack_exports__);
 var courseInfoData = {
     "Kindergarten": {
         "commonInfos": [
-            "Elementarstufe des Bildungssystems",
-            "Betreuung, Bildung und Erziehung der Kinder"
+            "Elementary level of education system",
+            "Care and education of children"
         ],
         "certificates": [],
         "options": []
     },
-    "Grundschule": {
+    "Primary school": {
         "commonInfos": [
-            "Bildung des Fundaments für weiterführende Schulbildung (Gymnasium, Real-, Haupt- und Gesamtschule) durch Vermittlung grundlegender Lern- und Arbeitsformen, mathematische, sprachliche und sachunterrichtliche Kenntnisse "
+            "Building the foundation for further school education (Gymnasium, Real-, Haupt- and Gesamtschule) through teaching topics such as fundamental approaches of learning and work, math, languages, and general sciences"
         ],
         "certificates": [],
         "options": []
@@ -535,20 +536,22 @@ var courseInfoData = {
     "Gymnasium": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            "Mittlere Reife (after 10th grade)",
+            "Hauptschulabschluss (after 9th grade)",
+            "(Specifically in Berlin) Allgemeine Hochschulreife (Abitur) (after 13th grade) => some secondary schools have their own gymnasiale Oberstufe or otherwise transition to gymnasiale Oberstufe at a regular Gymnasium"
         ],
         "options": [
-            "nahtloser Übergang zur gymnasialen Oberstufe",
-            "Fachoberschulreife (nach 11. Klasse) -> häufig muss praktischer Teil (Praktikum) nachgeholt werden",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse) Oder Berechtigung zum Besuch von Schulformen der Sekundarstufe II z. B Fachoberschule und Berufskolleg oder Lehre/Ausbildung"
+            "Seamless transition to gymnasiale Oberstufe",
+            "Fachoberschulreife (after 11th grade) => oftentimes practical part needs to be made up (internship)",
+            "Allgemeine Hochschulreife (Abitur) (after 12th grade)"
         ]
     },
     "Oberschule": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            'Hauptschulabschluss (after 9th grade)',
+            'Mittlere Reife (after 10th grade)',
+            'Allgemeine Hochschulreife (Abitur) (after 13th grade)  some secondary schools have their own gymnasiale Oberstufe or otherwise transition to gymnasiale Oberstufe at a regular Gymnasium'
         ],
         "options": [
             "nahtloser Übergang zur gymnasialen Oberstufe",
@@ -558,93 +561,99 @@ var courseInfoData = {
     "Gesamtschule": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            "Mittlere Reife (after 10th grade)",
+            "Hauptschulabschluss (after 9th grade)"
         ],
         "options": [
-            "nahtloser Übergang zur gymnasialen Oberstufe",
-            "Berechtigung zum Besuch von Schulformen der Sekundarstufe II z. B Fachoberschule und Berufskolleg oder Lehre/Ausbildung"
+            "Seamless transition to gymnasiale Oberstufe",
+            "Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg or education or vocational training"
         ]
     },
-    "Gesamtschule Integrierte und kooperative": {
+    "Integrated and Cooperative Gesamtschule": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            "Integrated Gesamtschule: Some schools also consist of the gymnasiale Oberstufe, whereas others do not provide it. This school form provides advanced courses for the main subjects to give courses at different difficulty levels.",
+            "Cooperative Gesamtschule: Some schools provide classes until the gymnasiale Oberstufe, whereas others do not. Students with different knowledge levels treated equally. The distinct school forms like Gymnasium, Real- and Hauptschule are considered as strongly related to each other in terms of the Cooperative Gesamtschule.",
+            "Hauptschulabschluss (after 9th grade)",
+            'Mittlere Reife (after 10th grade)',
+            'Allgemeine Hochschulreife (Abitur) (after 13th grade) => some secondary schools have their own gymnasiale Oberstufe or otherwise transition to gymnasiale Oberstufe at a regular Gymnasium'
         ],
         "options": [
-            "nahtloser Übergang zur gymnasialen Oberstufe",
-            "Berechtigung zum Besuch von Schulformen der Sekundarstufe II z. B Fachoberschule und Berufskolleg oder Lehre/Ausbildung"
+            'Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training'
         ]
     },
     "Realschule": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            "Mittlere Reife (after 10th grade)",
+            "Hauptschulabschluss (after 9th grade)"
         ],
         "options": [
-            "Berechtigung zum Besuch von Schulformen der Sekundarstufe II z. B Fachoberschule, Berufskolleg, gymnasiale Oberstufe (mittels Qualifikation) oder Lehre/Ausbildung"
+            "Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training"
         ]
     },
     "Hauptschule": {
         "commonInfos": [],
         "certificates": [
-            "Mittlere Reife (nach 10. Klasse)",
-            "Hauptschulabschluss (nach 9. Klasse)"
+            "Mittlere Reife (after 10th grade)",
+            "Hauptschulabschluss (after 9th grade)"
         ],
         "options": [
-            "Berechtigung zum Besuch von Schulformen der Sekundarstufe II z. B Fachoberschule, Berufskolleg, gymnasiale Oberstufe (mittels Qualifikation) oder Lehre/Ausbildung"
+            "Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training"
         ]
     },
-    "Integrierte Sekundarschule": {
+    "Integrated secondary school": {
         "commonInfos": [],
         "certificates": [
             "Fachoberschulreife (nach 11. Klasse) -> häufig muss praktischer Teil (Praktikum) nachgeholt werden",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)"
+            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)",
+            "(Specifically in Berlin) Allgemeine Hochschulreife (Abitur) (after 13th grade) => some secondary schools have their own gymnasiale Oberstufe or otherwise transition to gymnasiale Oberstufe at a regular Gymnasium"
         ],
         "options": [
-            "Berechtigung zum Besuch der Universität und gleichwertigen Institutionen"
+            'Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training'
         ]
     },
-    "Gemeinschaftsschule": {
+    "Comprehensive school": {
         "commonInfos": [],
         "certificates": [
             "Fachoberschulreife (nach 11. Klasse) -> häufig muss praktischer Teil (Praktikum) nachgeholt werden",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)"
+            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)",
+            "(Specifically in Berlin) Allgemeine Hochschulreife (Abitur) (after 13th grade) => some secondary schools have their own gymnasiale Oberstufe or otherwise transition to gymnasiale Oberstufe at a regular Gymnasium"
         ],
         "options": [
-            "Berechtigung zum Besuch der Universität und gleichwertigen Institutionen"
+            'Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training'
         ]
     },
-    "Stadtteilschule": {
+    "District school": {
         "commonInfos": [],
         "certificates": [
-            "Fachoberschulreife (nach 11. Klasse) -> häufig muss praktischer Teil (Praktikum) nachgeholt werden",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)"
+            'Hauptschulabschluss (after 9th grade)',
+            'Mittlere Reife (after 10th grade)',
+            'Allgemeine Hochschulreife (Abitur) (after 13th grade)'
         ],
         "options": [
-            "Berechtigung zum Besuch der Universität und gleichwertigen Institutionen"
+            'Entitled to attend school forms of the upper secondary level e.g. Fachoberschule, Berufskolleg, gymnasiale Oberstufe (through qualifications) or education or vocational training'
         ]
     },
     "Gymnasiale Oberstufe": {
         "commonInfos": [],
         "certificates": [
-            "Fachoberschulreife (nach 11. Klasse) -> häufig muss praktischer Teil (Praktikum) nachgeholt werden",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)"
+            "Fachoberschulreife (after 11th grade) => oftentimes practical part needs to be made up (internship)",
+            "Allgemeine Hochschulreife (Abitur) (after 12th grade)",
+            "(Specifically in Niedersachsen) Allgemeine Hochschulreife (Abitur) (after 12th grade  after 2019 Abitur after completion of 13th grade)"
         ],
         "options": [
-            "Berechtigung zum Besuch der Universität und gleichwertigen Institutionen"
+            "Entitled to attend university and equivalent educational institutions"
         ]
     },
     "Berufsoberschule": {
         "commonInfos": [],
         "certificates": [
-            "Fachoberschulreife (nach 11. Klasse)",
-            "Allgemeine Hochschulreife (Abitur) (nach 12. Klasse)"
+            "Fachoberschulreife (after 11th grade)",
+            "Allgemeine Hochschulreife (Abitur) (after 12th grade)"
         ],
         "options": [
-            "Berechtigung zum Besuch der Universität und gleichwertigen Institutionen"
+            "Entitled to attend university and equivalent educational institutions"
         ]
     },
     "Fachoberschule": {
@@ -660,19 +669,20 @@ var courseInfoData = {
     "Berufsfachschule": {
         "commonInfos": [],
         "certificates": [
-            "Berufsschulabschluss"
+            "Fachoberschulreife (after 11th grade)",
+            "Allgemeine Hochschulreife (Abitur) (after 13th grade)"
         ],
         "options": [
-            "Weiterbildung oder Berechtigung zum Besuch mancher Universitäten möglich"
+            "Entitled to attend university and equivalent educational institutions like Fachhochschulen"
         ]
     },
-    "Berufsschule und Betrieb": {
+    "Vocational school and factory": {
         "commonInfos": [],
         "certificates": [
-            "Berufsschulabschluss"
+            "Vocational qualification"
         ],
         "options": [
-            "Berufsschulabschluss','Weiterbildung oder Berechtigung zum Besuch mancher Universitäten möglich"
+            "Continuing education or entitlement to attend certain universities"
         ]
     },
     "Vorbereitung": {
@@ -684,7 +694,7 @@ var courseInfoData = {
             "Berufsschulabschluss','Weiterbildung oder Berechtigung zum Besuch mancher Universitäten möglich"
         ]
     },
-    "Universitat and gleichwertige Institutionen": {
+    "University and equivalent institutions": {
         "commonInfos": [],
         "certificates": [
             "Bachelor-",
@@ -697,31 +707,47 @@ var courseInfoData = {
             "Weiterbildung"
         ]
     },
-    "Berufsakadamie": {
+    "Vocational academy": {
         "commonInfos": [],
         "certificates": [
-            "Diplom- (jeweilige Studiengang) oder Bachelor"
+            "Diploma or Bachelor degree"
         ],
         "options": [
-            "Master-Abschluss an einer Universität oder einer Fachhochschule",
-            "Einstieg in den Beruf",
-            "Weiterbildung"
+            "Pursuing a Master degree at university or Fachhochschule",
+            "Enter the profession",
+            "Continuing education"
         ]
     },
-    "Fachhoch- und Verwaltungshochschule": {
+    "Fachhoch- and Verwaltungshochschule": {
         "commonInfos": [],
         "certificates": [
-            "Bachelor",
-            "und Masterabschluss"
+            "Bachelor degree",
+            "Master degree"
         ],
         "options": [
-            "Einstieg in den Beruf oder Weiterbildung"
+            "Enter the profession",
+            "Continuing education"
         ]
     },
-    "Weiterbildung": {
+    "Continuing education": {
         "commonInfos": [
-            "Vertiefung und Erweiterung der vorhandenen beruflichen Vorbildung Fachliche Ausrichtung bisher weiter vertieft oder Fortbildung im eigenen Fach: Erweiterung vorhandenen Wissens bzw",
-            "Kompetenzen Formen der beruflichen Weiterbildung: Ärztliche Weiterbildung, APO-IT, Ph. D., Habilitation, Verwaltungs- und Wirtschaftsakademie, Meisterprüfung, Staatlich geprüfter Betriebswirt, staatlich geprüfter Gestalter im Handwerk, Staatlich geprüfter Restaurator im Handwerk, Staatlich geprüfter Techniker, Corporate University, Betriebsinformatiker, Lerninseln, Weiterbildende, nicht-konsekutive Masterstudiengänge"
+            "Consolidation and expanding on existing education in a given career",
+            "Further deepening of specialized direction or advanced training in own field:",
+            "Enhancement of prior knowledge respectively skills",
+            "Form of continuing training: ",
+            "Postgraduate medical training",
+            "APO-IT (further training in the information technology sector)",
+            "Ph. D. (highest degree of postgraduate degree)",
+            "habilitation (classical path towards professorship)",
+            "Academy of Administration and Economics",
+            "Master Craftsman’s certificate",
+            "State Certified Management Expert",
+            "State Certified Designer in the craft’s sector",
+            "State Certified restorer in the craft’s sector",
+            "State certified technician, corporate university (operated by company for training and further training of employees)",
+            "Business Information Technology Specialist",
+            "learning islands (case-based learning  form of continuing training)",
+            "non-consecutive Master programs (major of master different than major of bachelor’s program)"
         ],
         "certificates": [],
         "options": []
@@ -935,30 +961,31 @@ var courseNodeData = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "schoolInfoData", function() { return schoolInfoData; });
 var schoolInfoData = {
-    'Polizist im gehobenen Dienst:': [
+    'Police in higher service': [
         {
             name: 'Polizeiakademie Niedersachsen',
             latlng: { lat: 51.427, lng: 9.644 },
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                ' Du hast die deutsche Staatsbürgerschaft, die eines anderen EU-Staates, eines Staates aus dem europäischen Wirtschaftsraum oder Du bist im Besitz einer gültigen Niederlassungserlaubnis. Darüber hinaus sind bei einem dringenden dienstlichen Interesse weitere Einzelfallregelungen möglich.',
-                ' Du hast das Abitur, eine Fachhochschulreife oder einen als gleichwertig anerkannten Bildungsabschluss.',
-                ' Du hast sechs Jahre Englischunterricht besucht oder kannst ein Zertifikat über eine abgelegte Prüfung gemäß des gemeinsamen europäischen Referenzrahmens für Sprachen, Level B 1 (entspricht dem Leistungsstand der Klasse 10, Sekundarstufe 1) vorlegen.',
-                ' Du bist gerichtlich nicht bestraft.',
-                ' Du bist am Tag der Einstellung nicht älter als 31 Jahre.',
-                ' Du bist als Bewerberin mindestens 1,63 m und als Bewerber mindestens 1,68 m groß (Abweichungen nach unten sind im Einzelfall bis zu vier Zentimetern möglich).',
-                ' Du bist im Besitz der Fahrerlaubnis der Klasse B.',
-                ' Du hast das Jugendschwimmabzeichen in Bronze (oder höherwertig).',
-                ' Du bist darüber hinaus gesund und sportlich.'
+                'German citizenship, citizenship from another EU country or of the European Economic Area or possession of a valid settlement permit',
+                'Individual ruling possible in terms of urgent interests of service',
+                'Abitur, Fachhochschulreife or an equivalent approved educational qualification',
+                '6 years of English lessons  or proof of passed exam through a certificate according the Common European Framework of Reference for Languages (level B1)',
+                'Legally not punished',
+                'Day of recruitment not older than 31 years old',
+                'At least 163 cm (female) and at least 168 cm (male) (deviations up to 4 cms possible)',
+                'Possession of driving licence of class B',
+                'Swimming badge in bronze (or higher)',
+                'Healthy and athletic'
             ],
             curriculums: [
                 'https://www.polizei-studium.de/studium,35.html'
             ],
             reviews: [
-                ' Die Studieninhalte sind genau so, wie man sie im Dienst brauchen wird. Die Dozenten sind wie an jeder Uni. Es gibt besonders tolle und welche, die man nicht so mag. Die Bibliothek ist zwar klein, bietet aber genau das, was man im Studium braucht. Nur ist leider die Mensa nicht ansprechend. Das Essen ist ziemlich teuer und die Qualität ziemlich schlecht. Dafür wurde jetzt eine neue Sporthalle gebaut. Sie sieht echt super aus. Für die neuen Jahrgänge könnte sie echt ein Highlight sein. Aber vorallem hat sich im Studiengang viel geändert. Ich werde dieses Jahr noch eine Abschlussprüfung haben. Die wird wahrscheinlich für die folgenden Jahrgänge angeschafft. Das Studium wird sich sehr ändern und das in meinen Augen ins Positive. Die Studieninhalte bleiben aber gleich.',
-                'Lehrpersonal: 4/5',
-                ' Lebenshaltungskosten: 736 €'
+                ' The study content is exactly how you are going to use it when you are on a duty. The lecturer are similar as other lecturer from other universities. Some are extremely competent, then there are some rather don’t like. The library may be small, but it provides everything you are looking for. Unfortunately, the cafeteria is not that appealing. The food is rather expensive and the quality is rather bad. On the other hand, a gym has been built and it looks fantastic. For the freshmen that should be a great highlight. In particular, the major has been altered a lot. In my case I still have the final examination, however for the subsequent years it will be abolished. In my perspective the study program is going to change positively.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): 736 €'
             ]
         },
         {
@@ -967,25 +994,25 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Allgemeine Hochschulreife',
+                'Allgemeine Hochschulreife (Abitur)',
                 'Fachhochschulreife',
-                'Weitere Anforderungen:',
-                'Das Höchstalter beträgt 34 Jahre bei Einstellung',
-                'die Mindestkörpergröße beträgt 160 cm',
-                'keine sichtbaren Körpermodifikationen (z.B. Tätowierungen oder Flesh-Tunnel), die beim Tragen der Uniform (langärmeliges Diensthemd, Rundhalsausschnitt beim T-Shirt) sichtbar sind oder die eine besondere Eigengefährdung im polizeilichen Alltag begründen',
-                'Fahrerlaubnis der Klasse B muss spätestens zum Ende des Studiums vorliegen',
-                'Schwimmnachweis (Schwimmabzeichen in Bronze oder Jugendschwimmabzeichen in Bronze/Freischwimmer) ',
-                'Polizeidiensttauglichkeit',
-                'Erfolgreiche Teilnahme am Einstellungsverfahren',
-                'Verfassungstreue'
+                'Further requirements: ',
+                'Maximum age is 34 for the recruitment',
+                'Minimum body height is 160 cm',
+                'No visible body modifications (e. g. tatoo or flesh tunnel) that are visible when wearing the uniform (long-sleeved service shirt, round neck shirt) or that can depict a self-endangement',
+                'Driving licence of class B by the end of the of the studies the latest',
+                'Swimming certificate (swimming badge in bronze or youth swimming badges in bronze or “Freischwimmer”)',
+                'Suitability to become a policeman',
+                'Successful participation in the recruitment procedure',
+                'Allegiance to the constitution'
             ],
             curriculums: [
-                'Studieninhalte: https://akademie-der-polizei.hamburg.de/contentblob/4334106/02c8819681e6f18a77774b5b96abd2ce/data/la-i-ausbildungs-und-pruefungsordnung.pdf'
+                'https://akademie-der-polizei.hamburg.de/contentblob/4334106/02c8819681e6f18a77774b5b96abd2ce/data/la-i-ausbildungs-und-pruefungsordnung.pdf'
             ],
             reviews: [
-                'Super interessant, nicht alltäglich. Viele neue Inhalte werden angeboten. Die Dozenten bereiten praxisrelevante Fälle vor und vermischen diese mit einigen Beispielen. Jeder ist bemüht die Studenten mitzuziehen und ausreichende Erklärung zu geben. Ein abwechslungsreiches Studium.',
-                'Lehrpersonal: 4/5',
-                'Lebenshaltungskosten: bis zu 1150 €'
+                ' Super interesting, not commonplace. Many new contents are provided. The lecturer prepare practice-oriented cases and combine them with lively examples. Every is trying hard to engage the students and to give them sufficient explanations. It’s a very varied study program.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 1150€ '
             ]
         },
         {
@@ -994,22 +1021,28 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                ' Deutsche/r im Sinne des Artikel 116 des Grundgesetzes der Bundesrepublik Deutschland oder Staatsangehörige/r eines Mitgliedslandes der Europäischen Union ist (Für Angehörige anderer Nationalitäten gelten Sonderregelungen – bei Bedarf bitte erfragen.),',
-                ' die Gewähr dafür bietet, dass sie/er jederzeit für die freiheitliche demokratische Grundordnung im Sinne des Grundgesetzes und der Verfassung von Berlin eintritt,',
-                'den Besitz einer Fahrerlaubnis für Personenkraftwagen mit Schaltgetriebe nachweist (muss in der Ausbildung bis zum Ende des 3. Semesters bzw. im Studium bis zum Ende des 2. Semesters nachgereicht werden), ',
-                ' die Fähigkeit besitzt, eine Strecke von mindestens 200 m ohne Unterbrechung schwimmen zu können und einen entsprechenden Schwimmfähigkeitsnachweis erbringt (z. B. Schwimmabzeichen “Bronze”)',
-                'als Bewerberin mindestens 160 cm und als Bewerber mindestens 165 cm groß ist, ',
-                'die Einstellungsprüfung besteht, ',
-                'nach polizeiärztlicher Untersuchung vollzugsdiensttauglich ist. Auch Brillenträger können eingestellt werden, wenn eine für den Polizeivollzugsdienst ausreichende Sehfähigkeit nach einer Untersuchung durch den Polizeiarzt festgestellt wird. Die Regelungen für die Mindestsehleistungen im Polizeivollzugsdienst entnehmen Sie bitte den Hinweisen zur Polizeidiensttauglichkeit.',
-                'nach ihrer/seiner Persönlichkeit für den Polizeivollzugsdienst geeignet ist (einwandfreier Leumund, insbesondere keine Vorstrafen),'
+                'German According to article 116 of the Basic Law from the Federal Republic of Germany or citizen of one of the member state of the European Union (For member from other nationalities special provisions apply – if required please inquire)',
+                'Possession of driving licence of class B',
+                'Abitur, Fachhochschulreife or an equivalent approved educational qualification',
+                '6 years of English lessons  or proof of passed exam through a certificate according the Common European Framework of Reference for Languages (level B1)',
+                'Legally not punished',
+                'Day of recruitment not older than 31 years old',
+                'At least 163 cm (female) and at least 168 cm (male) (deviations up to 4 cms possible)',
+                'Possession of driving licence of class B (During the vocational training it has to be handed it later at least at the end of 3rd semester respectively during the degree program at the end of the 2nd semester)',
+                'Ability to at least swim for 200 m without any interruptions and proof of swimming certificate (e. g. swimming badge in bronze)',
+                'At least 160 cm (female) and at least 165 cm (male)',
+                'Successfully passed recruitment test',
+                'After police medical examination whether fit for service',
+                'Spectacle wearers can be employed, as well, if after police medical examination sufficient eyesight has been determined',
+                'Personality suitable for the occupation policeman (perfect reputation and no criminal record)'
             ],
             curriculums: [
                 'https://www.hwr-berlin.de/fachbereich-polizei-und-sicherheitsmanagement/studiengaenge/polizeivollzugsdienst-bachelor/#c22960'
             ],
             reviews: [
-                ' Das Studium erfordert viel Disziplin, ist aber machbar. Gelegentlich stößt man an seine Grenzen, aber man lernt sehr viel dazu. Viele Dozenten gehen auf die sehr unterschiedlichen Wissensstände und Bedarfe der Studenten ein und passen Ihre Vorlesungen inhaltlich entsprechend an. Man hat jederzeit die Möglichkeit Fragen zu stellen.',
-                'Lehrpersonal: 5/5',
-                'Lebenshaltungskosten: bis zu 760,2 €'
+                ' This study program involves a lot of discipline, but it is definitely manageable. Occasionally you are going to encounter your limits, however you experience and learn a lot. The lecturer in particular show interests on the different knowledge levels and the demands of the students. Subsequently, they adjust their lecture in accordance with the students’ level. You always have the opportunity to pose questions.',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 760,2 €'
             ]
         },
         {
@@ -1018,43 +1051,65 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Vorliegen des Abiturs oder Fachabiturs',
-                'Nachweis 6 Jahre Englischunterricht ab Sekundarstufe I oder Sprachkenntnisse der EU-Amtssprache Englisch mit Level B1',
-                'Nachweis Schwimmabzeichen mind. Bronze',
-                'Tag der Einstellung darf 37. Lebensjahr noch nicht vollendet haben',
-                'BMI darf nicht kleiner als 18 und nicht größer sein als 27,5',
-                'Mindestgröße für Frauen und Männer bei 163 cm',
-                'Sehfähigkeit: Bis zum 20. Lebensjahr 50 % der Restsehschärfe auf jedem Auge, ab dem 20. Lebensjahr mind. 30 % der Sehschärfe',
-                'Fahrerlaubnis Klasse B für Fahrzeuge mit Schaltgetriebe als beglaubigte Kopie',
-                'Deutsches Sportabzeichen mind. Bronze',
-                'Jugendliche: 800-m-Lauf oder Dauer-/Geländelauf (hier muss über eine bestimmte Zeit ununterbrochen gelaufen werden), Erwachsene: 3.000-m-Lauf oder 10.000-m-Lauf.  (Nach der Vollendung 18. Lebensjahr diese Nachweise erforderlich) '
+                'Allgemeine Hochschulreife (Abitur) or Fachhochschulreife (Fachabitur)',
+                'Proof of 6 years English classes from secondary level 1 or language skills of the EU official language with level B1',
+                'Proof swimming badge at least in bronze',
+                'On day of recruitment not older than 37 years old',
+                'BMI should not lower than 18, but also not greater than 27,5',
+                'Minimum height for women and men 163 cm',
+                'Eyesight: until 20th year of life 50 % of the residual vision on both eyes, from the 20th year onwards at least 30 % of the residual vision',
+                'Driving licence of class B as certified copy',
+                'German Sports Badge',
+                'As adolescent: 800-m course endurance/trail run (for a certain period of time run continuously)',
+                'as adults: 3000-m run or 10000-m run (after reaching the age of 18 prove necessary)'
             ],
             curriculums: [
-                'https://www.polizeibewerbung.nrw.de/'
+                'https://polizei.nrw/aus-und-fortbildung-der-polizei-nordrhein-westfalen'
             ],
             reviews: [
-                'Es gibt sehr viele interessante und praxisrelevante Studieninhalte. Das Rechtswesen spielt dabei eine wichtige Rolle allerdings war das am Anfang des Studiums neu für mich mit Gesetzestexten zu arbeiten.Die erste große Hürde war dann die ersten Klausuren zu meistern und nicht in einen Zweitversuch zu müssen. Das hat bei mir leider in einen von fünf Fächern nicht geklappt. Also musste man nocheinmal lernen und weiter vier Wochen auf dein Ergebnis warten...Am Ergebnistag gab es sowohl positive als auch negative Nachrichten. Positiv ich hatte bestanden, negativ zwei aus meinem Kurs leider nicht. Diese mussten direkt ihre Kündigung unterschreiben.Aber bis jetzt läuft das Studium gut und ich kann es jedem empfehlen der sich für den Polizeiberuf interessiert!',
-                'Lehrpersonal: 4/5',
-                'Lebenshaltungskosten: bis zu 822,00 €'
+                'There are many interesting and practice-oriented aspects regarding the study content. The law plays an essential role. In my case at the beginning it was very new to operate with legal texts. The first big obstacle for me was it to manage the first exams and not run into the second attempt. Unfortunately, that intention could not work out with 5 subjects. That’s why I had to study again for these subjects and wait for another one month to get my results. On the announcement of the results there were good and bad news. But, eventually I could pass these exams. But, now the studies are going well and I can just recommend everyone this study program who is interested in the occupation in field of police.',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 822,00 €'
             ]
         }
     ],
-    'Sportwissenschaften': [
+    'Sport Sciences': [
         {
             name: 'Humboldt-Universität zu Berlin',
             latlng: { lat: 53.489, lng: 13.397 },
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Sportpraktische Affinität und Sporteignung: Nachweis von insgesamt mindestens 33 Notenpunkten im Unterrichtsfach Sport aus 3 Halbjahren der letzten vier Halbjahre des Abiturs (Qualifikationsphase) bzw. entsprechende schulische Leistungen auf einem vergleichbaren Qualifikationsniveau. Bei Belegung des Faches Sport als Leistungskurs genügt bereits ein Leistungsstand von insgesamt mindestens 30 Notenpunkten. Oder bestandener Sporteignungstest einer anderen Hochschule',
-                'Sporttauglichkeit: ärztliches Attest (nicht älter als 1 Jahr)'
+                'Allgemeine Hochschulreife (Abitur)',
+                'Practical sport affinity and suitability for sports: Proof of in total 33 grade points in the PE class in the last 3 half-years from the 4 half-years.or a corresponding academic performance at a comparable level of qualification. By taking sports as an advanced course 30 grade points are sufficient. Or successfully pass the sport aptitude test provided by the university.',
+                'Sports capability: medical certificate (not older than one year)'
             ],
             curriculums: [
                 'https://www.hu-berlin.de/de/studium/beratung/angebot/sgb/sportmono'
             ],
             reviews: [
-                'Es lohnt sich an der HU Sportwissenschaft zu studieren. Das Institut besteht aus einem Team bestehend aus sympathischen, jungen und klugen Köpfen. Man lernt wahnsinnig viel über sportliche Themen wie alles rundum Bewegung, aber auch viel über Bildung und Lehrmethoden, was sehr spannend für mich gewesen war.',
-                'Lehrpersonal: 4/5'
+                ' It is absolutely worth it to study Sports Sciences at the HU. The institution consists of a very nice, young and intelligent team. You not only learn a lot about sports topics, but also everything regarding movement, education, and teaching methods what is tremendously excited and interesting for me.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 760,2 €'
+            ]
+        },
+        {
+            name: 'Bergische Universität Wuppertal',
+            latlng: { lat: 51.245, lng: 7.148694 },
+            commuteTime: 80,
+            learningEffort: '180 ECTS',
+            qualifications: [
+                'Allgemeine Hochschulreife (Abitur)',
+                'Succesfully pass the sports aptitude test provided by the university',
+                'All applicants got admitted, but normally region related NC'
+            ],
+            curriculums: [
+                ' https://www.sportwissenschaft.uni-wuppertal.de/fileadmin/sportwissenschaft/pdf/BA_Studienverlauf_HRG-Gym-BK_ab_2011.pdf '
+            ],
+            reviews: [
+                'I have a lot of fun while listening to the classes. The professors and the students are very kind. The professors are very competent and very helpful and likewise are the staff members of the university. I cannot imagine a better university and I feel very comfortable here in this university.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 1300 €'
             ]
         }
     ],
@@ -1088,18 +1143,18 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Abitur (Allgemeine Hochschulreife)/Fachabitur',
-                'Vorpraktikum (12 Wochen)',
-                'Nachweis qualifizierter Englischkenntnisse',
-                'NC: 2.0 (neuster Stand)'
+                '(Allgemeine Hochschulreife)/Fachabitur',
+                'pre-study internship',
+                'Proof of qualifying english language skills',
+                'NC: 2.0 (updated)'
             ],
             curriculums: [
                 ' Studieninhalte: https://wiwi.hs-duesseldorf.de/studium/studiengaenge/bachelor-international-management/studieninhalt-aufbau/aufbau-und-inhalte'
             ],
             reviews: [
-                ' Gute, anerkannte Hochschule mit sehr guten Dozenten und dem Angebot dual oder berufsbegleitend zu studieren. Würde das Studium jedem weiterempfehlen, der nebenberuflich/dual eine Weiterbildung. Die Kombination von Studium und gleichzeitiger Berufserfahrung ist bei den allermeisten Unternehmen hoch angesehen und eröffnet tolle Karrieremöglichkeiten.',
-                'Lehrpersonal: 4/5',
-                'Lebenshaltungskosten: ~ 900 Euro'
+                'Good, recognized college with extremely good professors and with the opportunity to study on a part-time basis, as well. I would recommend the study program who would like to study while pursuing an occupation and who would like to gain further knowledge. The combination of studying and working is highly regarded among the companies and opens up great career opportunities. ',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 900 €'
             ]
         },
         {
@@ -1109,38 +1164,39 @@ var schoolInfoData = {
             learningEffort: '180 ECTS',
             qualifications: [
                 'Allgemeine Hochschulreife oder Fachhochschulreife',
-                'Oder berufliche Qualifikation oder gleichwertige anerkannte Vorbildung',
-                'Nachweis qualifizierter Englischkenntnisse'
+                'Or vocational qualificatioin or of prior training recognized as equivalent',
+                'Proof of qualifying english language skills',
+                'NC: 2.0 (updated)'
             ],
             curriculums: [
                 ' Studieninhalte: https://www.h-brs.de/de/wiwi/international-business'
             ],
             reviews: [
-                ' Im Studium beschäftigt man sich mit der Frage, wie sich Menschen in einem ökonomischen Umfeld verhalten. So erfährt man welche Kaufentscheidungen Menschen treffen oder wie ein Unternehmen den passenden Bewerber finden kann. Je nach Schwerpunkt kannst man sein Wissen in einem der Bereiche weiter vervollständigen. Mit der Wahl meines Studiengangs bin ich mehr als zufrieden.',
-                'Lehrpersonal: 4/5',
-                ' Lebenshaltungskosten: 700 - 800€'
+                'In this study program you deal with the question how the human behaves in the economic environment. So, you comprehend which kinds of purchase decisions the humans make or how enterprises find the suitable applicants. Depending on the focus you can deepen your knowledge in one of these fields. I don’t regret my choice of selecting this program. I am more than satisfied.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): 700-800 €'
             ]
         }
     ],
-    'Betriebswirtschaftslehre': [
+    'Business Administration': [
         {
             name: 'Universität zu Köln ',
             latlng: { lat: 50.928, lng: 6.928 },
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Allgemeine Hochschulreife',
-                'Mathematisches Verständnis',
-                'gute sprachliche Ausdrucksfähigkeit in Deutsch und Englisch',
-                'NC: 1.3 (neuster Stand) '
+                ' Allgemeine Hochschulreife',
+                'Mathematical understanding',
+                'Good verbal skills in German and English',
+                'NC: 1.3 (updated)'
             ],
             curriculums: [
                 ' Studieninhalte: https://www.wiso.uni-koeln.de/de/studium/bachelor/bwl-bachelor/'
             ],
             reviews: [
-                ' Es wird viel Grundlagenwissen vermittelt, die Schwerpunktmodule sind eine gute Hilfe um später eine Vertiefung zu finden und um eine Richtung nach dem Bachelorstudium einzuschlagen. Grundlegend gefällt mir allerdings der reine Frontalunterricht nicht so gut, mehr Praxis wäre toll, ist aber natürlich bei der riesigen Zahl Studierenden schwierig.',
-                'Lehrpersonal: 3,5/5',
-                'Lebenshaltungskosten: bis zu 822,00 €'
+                'Basic knowledge will be conveyed. The focus modules are very helpful to find the specialization later and to find a distinct direction after the completion of the degree program. Basically, I don’t like the traditional teaching approach. I would appreciate it, if there is more practice. But due to the great number of the students that can be difficult. ',
+                'Teaching personnel: 3,5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 822,00 €'
             ]
         },
         {
@@ -1159,28 +1215,31 @@ var schoolInfoData = {
                 'http://www.rwth-aachen.de/go/id/bpxl?#aaaaaaaaaaabpxm'
             ],
             reviews: [
-                'Sowohl die Studieninhalte als auch das Studentenleben gefallen mir super! Wir behandeln zeitgerechte relevante Themen in den Vorlesungen. Ich bin sehr froh über die Entscheidung, meine Heimat verlassen und in Aachen meine perfekte Studentenstadt gefunden zu haben. Obwohl die Uni so groß ist, ist sie immer noch top organisiert.',
-                'Lehrpersonal: 5/5',
-                'Lebenshaltungskosten: bis zu 1.110 €'
+                ' I like and enjoy both the study content and the study life. We discuss about modern and relevant topics in the lectures. I am very glad that I have left my home and that I have decided to come to Aachen. Aachen ist he perfect city for students. Even though the university is huge, everything is well organized.',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 1110 €'
             ]
         },
         {
-            name: 'Universität Bielefeld ',
+            name: 'Universität Bielefeld',
             latlng: { lat: 52.036, lng: 8.495 },
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Hochschulzugangsberechtigung',
-                'Unterliegt Zulassungsbeschränkung (Numerus Clausus), daher gesonderte Bewerbung bei der Stiftung für Hochschulzulassung (hochschulstart.de) und dann Bewerbung an der Universität Bielefeld',
-                'NC: 2.0 (neuster Stand)'
+                'Allgemeine Hochschulreife (Abitur)',
+                'Underlies NC',
+                'That’s why a separate application to the foundation for university admission (hochschulstart.de) is necessary afterwards application at Universität Bielefeld',
+                'Proof of participation in the RWTH study field self-assessment',
+                'Economic sciences should be shown at enrollment',
+                'NC: 2.0 (updated)'
             ],
             curriculums: [
                 'https://ekvv.uni-bielefeld.de/sinfo/publ/variante/22966220'
             ],
             reviews: [
-                ' Ich finde sowohl die Uni als auch das Fach einfach perfekt! Macht Spaß, ist abwechslungsreich und man ist freigestellt, auf was man sich spezialisiert. Ich finde es super, dass die Uni ein Campus ist und man somit auch in Kontakt mit anderen Studiengängen ist.',
-                'Lehrpersonal: 5/5',
-                ' Lebenshaltungskosten: 1392€'
+                'I like the university, but also the major is just perfect! Ich finde sowohl die Uni als auch das Fach einfach perfekt! The major gives me joy and it’s very varied. And you are free to decide in what field you want to specify. I also like that on the campus you can easily get to know other people from other majors. ',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 1392 €'
             ]
         },
         {
@@ -1189,19 +1248,19 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Allgemeine Hochschulreife (Abitur) ',
-                '12 Wochen berufspraktische Tätigkeit',
-                'Solide Englischkenntnisse',
-                'Mathematische Affinität',
-                'Starkes Interesse am aktiven und passiven Arbeiten mit Texten (Buchwissenschaften)'
+                'Allgemeine Hochschulreife (Abitur)',
+                '12 weeks of occupational training',
+                'Mathematic affinity',
+                'Strong interest in operating actively and passively with texts (book science)',
+                'NC: 2.0 (updated)'
             ],
             curriculums: [
                 'https://www.msm.uni-due.de/studium/bachelor-of-science-in-betriebswirtschaftslehre/'
             ],
             reviews: [
-                'Manche der Fächer, welche man in der BWL absolvieren muss sind super spannend und andere sind sehr langweilig. So ist es mal angenehm und mal muss man sich durchbeißen. Grundsätzlich braucht man für das Studium viel Fleiß und Lernbereitschaft, sonst packt man es nicht!',
-                'Lehrpersonal: 3,5/5',
-                ' Lebenshaltungskosten: 750-850€'
+                'Some of the subjects that you have to complete are very exciting and other subjects on the other hand are rather boring. So, sometimes it is pleasant and on other days you have to work really hard. Basically, for this study program you need a lot of diligence and the willingness to learn. Otherwise, you are not able to manage this study program.',
+                'Teaching personnel: 3,5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): 750-850 €'
             ]
         },
         {
@@ -1210,16 +1269,16 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Hochschulzugangsberechtigung: Abitur',
-                'NC 1.8 (neuster Stand)'
+                'Allgemeine Hochschulreife (Abitur)',
+                'NC: 1.8 (updated)'
             ],
             curriculums: [
                 'https://www.hu-berlin.de/de/studium/beratung/angebot/sgb/bwl/'
             ],
             reviews: [
-                'Man meint BWL ist trocken, aber hier an der Humboldt-Universität lerne ich viele essentielle Themen und Trends, die von den kompetenten Dozenten im Detail besprochen und mit lebhaften Beispielen untermauert werden. Ich kann mich gar nicht beschweren. Ich lerne sehr viel, was für meine Zukunft und Karriere sehr bedeutsam ist.',
-                'Lehrpersonal: 5/5',
-                ' Lebenshaltungskosten: bis zu 760,2 €'
+                'Many people say that Business Administration is rather dry and boring, but at the Humboldt university I could learn so many essential topics and trends that were explained by the competent professors in a very vivid way. I cannot complain one bit. I learn so much what is essential for my future.',
+                'Teaching personnel: 5/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 760,2 €'
             ]
         },
         {
@@ -1228,17 +1287,17 @@ var schoolInfoData = {
             commuteTime: 80,
             learningEffort: '180 ECTS',
             qualifications: [
-                'Hochschulzugangsberechtigung (Abitur)',
-                'Nachweis von Englischkenntnissen (Niveau B2)',
-                'NC: 1.5 (neuster Stand)'
+                'Allgemeine Hochschulreife (Abitur)',
+                'Proof of English language skills (B2 level)',
+                'NC: 1.5 (updated)'
             ],
             curriculums: [
                 'https://www.fu-berlin.de/studium/studienangebot/grundstaendige/betriebswirtschaftslehre_mono/index.html'
             ],
             reviews: [
-                ' Nach drei schönen, aber auch anstrengenden Jahren an der FU bereue ich es nicht, dieses Studium gewählt zu haben. Zwar stimmt es, dass BWL an der FU durchaus anspruchsvoller ist, jedoch habe ich gerade dadurch während meines Studiums Disziplin, Ehrgeiz und ein Zeitmanagement entwickelt, welches ich vorher von mir selbst nicht kannte. Nachdem ich vorher BWL in Cottbus begonnen hatte, war ich anfangs von dem Arbeitsaufwand und den teilweise sehr anspruchsvollen Klausuren (Mathe, Jahresabschluss&Steuern..) überfordert. Mit entsprechendem Engagement und Fleiß lief es dann aber auch wieder gut. Ich habe zum Glück auch schnell mitbekommen, dass es durchaus üblich ist 1-2 Semster länger zu studieren und sich somit mehr Zeit für die Module nehmen zu können (Qualität vs. Quantität). Insofern kann ich zukünftigen Studenten nur empfehlen: Lieber mal eine Klausur weniger im Semester, dafür aber bessere Noten und auch das ein oder andere Praktikum! Vor allem die ersten Semester sind hart, da man sich durch die Grundmodule kämpfen muss. Danach macht es umso mehr Spaß, da man sich je nach Interesse in den Bereichen Wirtschaftsinformatik, Controlling, Marketing, Management, Personal etc. vertiefen kann. Außerdem sind die Kurse hier deutlich leerer und bestehen teilweise nur noch aus 30-50 Studenten. Ein großer Pluspunkt an der FU ist auch die Mensa sowie die beiden großen, gut ausgestatteten Bibliotheken.',
-                'Lehrpersonal: 4/5',
-                'Lebenshaltungskosten: bis zu 760,2 €'
+                ' After 3 beautiful, but also tough years at the FU, I don’t regret that I have chosen this major. Of course, I have to admit that studying Business Administration at the FU is more sophisticated than other universities. However, due to this aspect I could develop a better sense for self-discipline, ambition, and time management that I did not know that I had these capabilities. Initially, I was very overwhelmed with the course work and the difficult exams (Math & Annual accounts and taxes). But, with a lot of diligence and engagement everything has worked out well. I could realize that it is normal to study one or two semesters longer and concentrate on the difficult modules. Better is it to have one exam less, instead you have better grades and can find some time to pursue an internship. One big plus point is definitely the cafeteria of the FU and also the both huge libraries.',
+                'Teaching personnel: 4/5',
+                'Living expenses (e.g. rental fee, study fee, food, etc.): up to 760,2 €'
             ]
         }
     ]
@@ -1254,7 +1313,7 @@ var schoolInfoData = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\nbutton.btn.btn-light.back {\n  margin: 0;\n  width: 100%;\n}\n\nbutton.btn.btn-light {\n  width: 350px;\n  margin: 10px 0px;\n}\n\nbutton.btn.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n\nspan.card-title {\n  display: flex;\n  line-height: 50px;\n  justify-content: center;\n  align-items: center;\n}\n\n.card {\n  width: 100%;\n  margin: 20px 0px;\n}\n\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow: scroll;\n}"
+module.exports = "\nbutton.btn.btn-light.back {\n  margin: 0;\n  width: 100%;\n}\n\nbutton.btn.btn-light {\n  width: 350px;\n  margin: 10px 0px;\n}\n\nbutton.btn.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n\nbutton.btn.btn-light.selected {\n  background-color: #447dd3;\n  color: white;\n}\n\nspan.card-title {\n  display: flex;\n  line-height: 50px;\n  justify-content: center;\n  align-items: center;\n}\n\n.card {\n  width: 100%;\n  margin-top: 20px;\n}\n\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n\n.card-body {\n  height: 30vh;\n  overflow: scroll;\n}\n\n.col {\n  padding-left: 15px;\n  padding-right: 15px;\n}"
 
 /***/ }),
 
@@ -1265,7 +1324,7 @@ module.exports = "\nbutton.btn.btn-light.back {\n  margin: 0;\n  width: 100%;\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <button class=\"btn btn-light back\" (click)=\"clickBackBtn()\">Zurück</button>\n</div>\n<ng-container *ngIf=\"currState == 2\">\n  <div>\n    <span class=\"card-title\">\n      <h3>Detail-Ansicht über das Studienfach</h3>\n    </span>\n  </div>\n</ng-container>\n<ng-container *ngIf=\"currState == 3\">\n  <div class=\"card\">\n    <div class=\"card-header text-white\">\n      Empfohlene Studienfächer\n    </div>\n    <div class=\"card-body\">\n      <ng-container *ngFor=\"let majorInfo of majorInfos let i = index\">\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"selectMajorInfo(majorInfo, i)\">{{ majorInfo.name }}</button>\n      </ng-container>\n    </div>\n  </div>\n</ng-container>\n<ng-container *ngIf=\"selectedMajorInfo != null && currState == 4\">\n  <div class=\"card-body\">\n    <h4 class=\"card-title\">{{ selectedMajorInfo.name }} </h4>\n    <p class=\"card-text\">\n      {{ selectedMajorInfo.description }}\n    </p>\n    <h4 class=\"card-title\">Lernaufwand: {{ selectedMajorInfo.learningEffort }}</h4>\n    <h4 class=\"card-title\">Durchschnitts-NC-Wert: {{ selectedMajorInfo.ncValue }}</h4>\n  </div>\n</ng-container>"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <button class=\"btn btn-light back\" (click)=\"clickBackBtn()\">\n      <i class=\"fas fa-undo\"></i>\n      Back to main results\n    </button>\n  </div>\n  <div class=\"row\">\n    <div class=\"col card-header text-white\">\n      {{ currCourseNode.name }}\n    </div>\n  </div>\n  <div class=\"row\" *ngIf=\"majorInfos.length > 0\">\n    <div class=\"col\">\n      <div class=\"card\">\n        <div class=\"card-header text-white\">\n          Possible Major list\n        </div>\n        <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">\n          <ng-container *ngFor=\"let majorInfo of majorInfos let i = index\">\n            <button type=\"button\" class=\"btn btn-light\" [class.selected]=\"majorInfo == selectedMajorInfo\" (click)=\"selectMajorInfo(majorInfo, i)\">{{ majorInfo.name }}</button>\n          </ng-container>\n        </div>\n      </div>\n    </div>\n    <div class=\"col\">\n      <div class=\"card\" id=\"major-info\">\n        <div class=\"card-header text-white\">\n          Major information\n        </div>\n        <div class=\"card-body\">\n          <ng-container *ngIf=\"selectedMajorInfo != null\">\n            <h4 class=\"card-title\">{{ selectedMajorInfo.name }} </h4>\n            <p class=\"card-text\">\n              {{ selectedMajorInfo.description }}\n            </p>\n            <h4 class=\"card-title\">Average NC-value : {{ selectedMajorInfo.ncValue }}</h4>\n          </ng-container>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1280,9 +1339,8 @@ module.exports = "<div>\n  <button class=\"btn btn-light back\" (click)=\"clickB
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailPanelComponent", function() { return DetailPanelComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _major_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../major-info */ "./src/app/major-info.ts");
-/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
-/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
+/* harmony import */ var _state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state.service */ "./src/app/state.service.ts");
+/* harmony import */ var _recommend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../recommend.service */ "./src/app/recommend.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1295,45 +1353,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var DetailPanelComponent = /** @class */ (function () {
     function DetailPanelComponent(stateService, recommendService) {
         this.stateService = stateService;
         this.recommendService = recommendService;
-        this.majorInfos = [_major_info__WEBPACK_IMPORTED_MODULE_1__["MajorInfo"].NONE];
+        this.majorInfos = [];
     }
     DetailPanelComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.stateService.stateObservable.subscribe(function (state) {
-            if (state == _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].MAJOR) {
+        // 본인이 속해있는 곳으로 initialize
+        this.currCourseNode = this.recommendService.userCourseNode;
+        this.recommendService.selectSchool(this.currCourseNode);
+        this.recommendService.selectedCourseNodeObservable.subscribe(function (courseNode) {
+            _this.currCourseNode = courseNode;
+            if (courseNode.layer == 4) {
                 _this.majorInfos = _this.recommendService.getMajorInfos();
             }
-            else if (state == _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].SCHOOL) {
+            else {
+                _this.majorInfos = [];
+                _this.recommendService.selectSchool(_this.currCourseNode);
             }
-            _this.currState = state;
         });
     };
     DetailPanelComponent.prototype.clickBackBtn = function () {
-        switch (this.currState) {
-            case _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].DETAIL:
-                this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].OVERVIEW);
-                this.majorInfos = null;
-                this.selectedMajorInfo = null;
-                break;
-            case _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].MAJOR:
-                this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].DETAIL);
-                this.majorInfos = null;
-                this.selectedMajorInfo = null;
-                break;
-            case _state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].SCHOOL:
-                this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].DETAIL);
-                this.majorInfos = null;
-                this.selectedMajorInfo = null;
-                break;
-        }
+        this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_1__["StateService"].OVERVIEW);
+        this.majorInfos = null;
+        this.selectedMajorInfo = null;
     };
     DetailPanelComponent.prototype.selectMajorInfo = function (majorInfo, index) {
-        this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"].SCHOOL);
         this.recommendService.selectMajorInfo(majorInfo, index);
         this.selectedMajorInfo = majorInfo;
     };
@@ -1343,7 +1390,7 @@ var DetailPanelComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./detail-panel.component.html */ "./src/app/detail-panel/detail-panel.component.html"),
             styles: [__webpack_require__(/*! ./detail-panel.component.css */ "./src/app/detail-panel/detail-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [_state_service__WEBPACK_IMPORTED_MODULE_2__["StateService"], _recommend_service__WEBPACK_IMPORTED_MODULE_3__["RecommendService"]])
+        __metadata("design:paramtypes", [_state_service__WEBPACK_IMPORTED_MODULE_1__["StateService"], _recommend_service__WEBPACK_IMPORTED_MODULE_2__["RecommendService"]])
     ], DetailPanelComponent);
     return DetailPanelComponent;
 }());
@@ -1359,7 +1406,7 @@ var DetailPanelComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 300px;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 300px;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\n#dropdown i {\n  color: #447dd3;\n  margin-right: 3px;\n}\n#dropdown.open i {\n  color: white;\n  margin-right: 3px;\n}\ni {\n  color: #749DD8;\n}\n#detail-view {\n  margin: 20px 10px;\n  width: 300px;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 160px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.card-body {\n  min-height: 150px;\n  max-height: 350px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 250px;\n  margin: 10px 0px;\n  font-size: 0.9em;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n.btn-light.selected {\n  background-color: #447dd3;\n  color: white;\n}\n"
+module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg');\n#dropdown {\n  display: block;\n  padding: 7px 8px;\n  width: 100%;\n  margin: 0px 10px;\n  position: relative;\n  cursor: pointer;\n  border-left: 4px solid #739cda;\n  background: #fff;\n  font-size: 1em;\n  color: #656565;\n  font-weight: normal;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  transition: all 0.15s linear;\n}\n#dropdown:hover { color: #898989; }\n#dropdown.open {\n  background: #5a90e0;\n  color: #fff;\n  border-left-color: #6c6d70;\n}\n#dropdown ul {\n  position: absolute;\n  top: 70%;\n  left: -4px;\n  width: 100%;\n  padding: 0px 0px;\n  pointer-events: none;\n  opacity: 0;\n  border-left: 4px solid #8e9196;\n  background: #fff;\n  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n  list-style-type: none;\n  transition: height 0.3s, opacity 0.3s, top 0.3s;;\n}\n#dropdown ul li { font-size: 0.9em; }\n#dropdown ul li a {\n  text-decoration: none;\n  display: block;\n  color: #447dd3;\n  padding: 5px 8px;\n}\n#dropdown ul li a:hover {\n  color: #6fa0e9;\n  background: #e7f0f7;\n}\n#dropdown ul.open {\n  pointer-events: all;\n  display:block;\n  opacity: 1;\n  top: 100%;\n}\n#dropdown i {\n  color: #447dd3;\n  margin-right: 3px;\n}\n#dropdown.open i {\n  color: white;\n  margin-right: 3px;\n}\ni {\n  color: #749DD8;\n  margin-right: 8px;\n}\n#detail-view {\n  margin: 10px 10px;\n  width: 100%;\n  transition: margin 0.3s;\n}\n#detail-view.open {\n  margin: 150px 10px 0px 10px;\n  transition: margin 0.3s;\n}\n.card-body ul {\n  margin: 0;\n  padding: 0;\n}\n.card-body li {\n  color: #447dd3;\n  margin-left: 0.8em;\n}\n.card-body li span {\n  margin-left: -0.2em;\n  color: black;\n}\n.elem {\n  margin-top: 15px;\n}\n.card-header {\n  background-color: #447dd3;\n  font-weight: 400;\n  font-size: 1.1em;\n  height: 40px;\n  padding: .75rem 8px\n}\n.card-body {\n  min-height: 130px;\n  max-height: 320px;\n  overflow-y: auto;\n}\n.btn-light {\n  width: 80%;\n  margin: 10px 0px;\n  font-size: 0.9em;\n}\n.btn-light:hover {\n  background-color: #447dd3;\n  color: white;\n}\n.btn-light.selected {\n  background-color: #447dd3;\n  color: white;\n}\n"
 
 /***/ }),
 
@@ -1370,7 +1417,7 @@ module.exports = "@import url('https://fonts.googleapis.com/css?family=Oldenburg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"currState <= 1\">\n  <div #dropdown *ngIf=\"currState <= 1\" id=\"dropdown\" class=\"ddmenu\" (click)=\"toggleDropdown()\" [class.open]=\"dropdownOpened\">\n    <ng-container *ngIf=\"!isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      Choose the Area\n    </ng-container>\n    <ng-container *ngIf=\"isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      {{ selectedArea }}\n    </ng-container>\n    <ul [class.open]=\"dropdownOpened\">\n      <li *ngFor=\"let area of areas\">\n        <ng-container *ngIf=\"area == selectedArea; else other\">\n          <a (click)=\"onClickArea(area)\">{{area}} (ausgewählt)</a>\n        </ng-container>\n        <ng-template #other>\n          <a (click)=\"onClickArea(area)\">{{area}}</a>\n        </ng-template>\n      </li>\n    </ul>\n  </div>\n\n  <ng-container *ngIf=\"currState == 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"selectedCourseNode\">\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.certificates.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Mögliche Schulabschlüsse\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let certificate of selectedCourseNode.courseInfo.certificates\">\n                  <li>\n                    <span>{{certificate}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Anschließende Möglichkeiten:\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let option of selectedCourseNode.courseInfo.options\">\n                  <li>\n                    <span>{{option}} </span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.commonInfos.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Allgemeine Informationen\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let commonInfo of selectedCourseNode.courseInfo.commonInfos\">\n                  <li>\n                    <span>{{commonInfo}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n      </ng-container>\n    </div>\n\n  </ng-container>\n\n  <ng-container *ngIf=\"currState != 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"currState == 1\">\n        <div class=\"card elem\">\n          <div class=\"card-header text-white\">\n            Suche einen Job aus\n          </div>\n          <div class=\"card-body\">\n            <ng-container *ngFor=\"let jobInfo of jobInfos let i = index\">\n              <button class=\"btn btn-light\" [class.selected]=\"i == currJobIndex\"\n              (click)=\"changeCurrentJobIndex(i)\">{{ jobInfo.jobMetadata.name }}</button>\n            </ng-container>\n          </div>\n        </div>\n      </ng-container>\n      <div class=\"card elem\">\n        <div class=\"card-header text-white\">\n          Jobinformationen\n        </div>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Durchschnittl. Gehalt</h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.salary }}\n          </p>\n          <h5 class=\"card-title\">Arbeit & Freizeit: </h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.balance }}\n          </p>\n          <h5 class=\"card-title\"> Generelle Beschreibung: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.reviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n          <ng-container *ngFor=\"let generalDesc of jobInfos[currJobIndex].jobMetadata.generalDescs\">\n            <p class=\"card-text\">\n              {{ generalDesc }}\n            </p>\n          </ng-container>\n          <h5 class=\"card-title\"> Generelle Bewertung: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.generalReviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n        </div>\n      </div>\n    </div>\n  </ng-container>\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"currState <= 1\">\n  <div #dropdown *ngIf=\"currState <= 1\" id=\"dropdown\" class=\"ddmenu\" (click)=\"toggleDropdown()\" [class.open]=\"dropdownOpened\">\n    <ng-container *ngIf=\"!isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      Select the federal state\n    </ng-container>\n    <ng-container *ngIf=\"isAreaSelected\">\n      <i class=\"fas fa-map-marker-alt\"></i>\n      {{ selectedArea }}\n    </ng-container>\n    <ul [class.open]=\"dropdownOpened\">\n      <li *ngFor=\"let area of areas\">\n        <ng-container *ngIf=\"area == selectedArea; else other\">\n          <a (click)=\"onClickArea(area)\">{{area}} (selected)</a>\n        </ng-container>\n        <ng-template #other>\n          <a (click)=\"onClickArea(area)\">{{area}}</a>\n        </ng-template>\n      </li>\n    </ul>\n  </div>\n\n  <ng-container *ngIf=\"currState == 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"selectedCourseNode\">\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.certificates.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Possible school-leaving qualification\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let certificate of selectedCourseNode.courseInfo.certificates\">\n                  <li>\n                    <span>{{certificate}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              Subsequent possibilities\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let option of selectedCourseNode.courseInfo.options\">\n                  <li>\n                    <span>{{option}} </span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n        <ng-container *ngIf=\"selectedCourseNode.courseInfo.commonInfos.length != 0\">\n          <div class=\"card elem\">\n            <div class=\"card-header text-white\">\n              General Information\n            </div>\n            <div class=\"card-body\">\n              <ul>\n                <ng-container *ngFor=\"let commonInfo of selectedCourseNode.courseInfo.commonInfos\">\n                  <li>\n                    <span>{{commonInfo}}</span>\n                  </li>\n                </ng-container>\n              </ul>\n            </div>\n          </div>\n        </ng-container>\n      </ng-container>\n    </div>\n\n  </ng-container>\n\n  <ng-container *ngIf=\"currState != 0\">\n    <div id=\"detail-view\" [class.open]=\"dropdownOpened\">\n      <ng-container *ngIf=\"currState == 1\">\n        <div class=\"card elem\">\n          <div class=\"card-header text-white d-flex align-items-center\">\n            <i class=\"far fa-id-card text-white\"></i>\n            Select the job\n          </div>\n          <div class=\"card-body d-flex flex-column align-items-center\">\n            <ng-container *ngFor=\"let jobInfo of jobInfos let i = index\">\n              <button class=\"btn btn-light\" [class.selected]=\"i == currJobIndex\" (click)=\"changeCurrentJobIndex(i)\">{{ jobInfo.jobMetadata.name }}</button>\n            </ng-container>\n          </div>\n        </div>\n      </ng-container>\n      <div class=\"card elem\">\n        <div class=\"card-header text-white d-flex align-items-center\">\n          <i class=\"fas fa-info-circle text-white\"></i>\n          Job Information\n        </div>\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Average salary</h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.salary }}\n          </p>\n          <h5 class=\"card-title\">Work & Balance</h5>\n          <p class=\"card-text\">\n            {{ jobInfos[currJobIndex].jobMetadata.balance }}\n          </p>\n          <h5 class=\"card-title\">General Description: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.reviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n          <ng-container *ngFor=\"let generalDesc of jobInfos[currJobIndex].jobMetadata.generalDescs\">\n            <p class=\"card-text\">\n              {{ generalDesc }}\n            </p>\n          </ng-container>\n          <h5 class=\"card-title\"> General Review: </h5>\n          <ng-container *ngFor=\"let review of jobInfos[currJobIndex].jobMetadata.generalReviews\">\n            <p class=\"card-text\">\n              {{ review }}\n            </p>\n          </ng-container>\n        </div>\n      </div>\n    </div>\n  </ng-container>\n</ng-container>"
 
 /***/ }),
 
@@ -1728,10 +1775,10 @@ var Rect = /** @class */ (function () {
         this.height = rectHeight;
     }
     Rect.prototype.getStartPos = function () {
-        return [Math.floor(this.x + this.width / 2), Math.floor(this.y - this.height * 0.71)];
+        return [Math.floor(this.x + this.width / 2), Math.floor(this.y - this.height * 0.74)];
     };
     Rect.prototype.getEndPos = function () {
-        return [Math.floor(this.x + this.width / 2), Math.floor(this.y - this.height * 0.31)];
+        return [Math.floor(this.x + this.width / 2), Math.floor(this.y - this.height * 0.26)];
     };
     Rect.prototype.updateRect = function (courseNode, layer, index) {
         this.courseNode = courseNode;
@@ -1739,7 +1786,7 @@ var Rect = /** @class */ (function () {
     };
     Rect.prototype.goToDetailMode = function () {
         this.width = 200;
-        this.x = 50;
+        this.x = 70;
     };
     Rect.prototype.updateInOverviewMode = function (layer, index) {
         var graphWidth = _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_MARGIN_SIDE * 2;
@@ -1747,15 +1794,6 @@ var Rect = /** @class */ (function () {
         var rectHeight = (this.courseNode.toAge - this.courseNode.fromAge + 1)
             * _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_HEIGHT_UNIT - _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_MARGIN;
         this.x = index * (rectWidth + _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_MARGIN) + _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_MARGIN_SIDE;
-        this.y = _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_HEIGHT - layer.from * _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_HEIGHT_UNIT;
-        this.width = rectWidth;
-        this.height = rectHeight;
-    };
-    Rect.prototype.updateInDetailMode = function (layer) {
-        var graphWidth = _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_DETAIL_WIDTH - _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_MARGIN_SIDE * 2;
-        var rectWidth = 200;
-        var rectHeight = (this.courseNode.toAge - this.courseNode.fromAge + 1) * _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_HEIGHT_UNIT;
-        this.x = 50;
         this.y = _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_HEIGHT - layer.from * _constants__WEBPACK_IMPORTED_MODULE_0__["Constants"].GRAPH_RECT_HEIGHT_UNIT;
         this.width = rectWidth;
         this.height = rectHeight;
@@ -1789,8 +1827,28 @@ var JobInfo = /** @class */ (function () {
 }());
 
 var CareerPath = /** @class */ (function () {
-    function CareerPath() {
+    function CareerPath(name, courses, currCourseName) {
+        this.name = name;
+        this.courses = courses;
+        this.currCourseName = currCourseName;
+        this.paths = this.getPaths();
+        this.currIndex = this.getCurrentIndex();
     }
+    CareerPath.prototype.getPaths = function () {
+        var paths = [];
+        var isPrev = true;
+        for (var i = 0; i < this.courses.length - 1; i++) {
+            if (this.courses[i] == this.currCourseName) {
+                isPrev = false;
+            }
+            paths.push({ from: this.courses[i], to: this.courses[i + 1], isPrev: isPrev });
+        }
+        return paths;
+    };
+    CareerPath.prototype.getCurrentIndex = function () {
+        var _this = this;
+        return this.courses.findIndex(function (course) { return course == _this.currCourseName; });
+    };
     return CareerPath;
 }());
 
@@ -1817,7 +1875,7 @@ var JobMetadata = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  color: #749dd8;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border-bottom: 4px solid #ddd;\n  /* background: linear-gradient(white, white 80%, #eee); */\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n  cursor: pointer;\n}\n\n.inner-box.clicked {\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box:hover {\n  transition:all 0.3s;\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #749DD8;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 40%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n  background-color: #eee;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color:  #447dd3;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n}\n\n.card-body .btn.btn-light.selected {\n  background: #447dd3;\n  color: white;\n}\n\nsvg .axis .tick text{\n  font-size: 14px;\n}"
+module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  color: #749dd8;\n  margin: 0px 5px;\n}\n\n#container {\n  border: 1px #ddd solid;\n  border-radius: 5px;\n}\n\n#ground {\n  position: relative;\n  background: #eee;\n}\n\n#ground.detail-mode {\n  width: 300px;\n}\n\n#svg-ground {\n  position: relative;\n  left: 0;\n  bottom: 0;\n}\n\n.edge {\n  position: absolute;\n}\n\n.box {\n  display: flex;\n  position: absolute;\n  justify-content: center;\n}\n\n.box.info-mode {\n  transition: 0.5s width, height, top, left linear;\n}\n\n.inner-box {\n  display: flex;\n  position: absolute;\n  border-bottom: 4px solid #ddd;\n  /* background: linear-gradient(white, white 80%, #eee); */\n  background: white;\n  box-sizing: border-box;\n  border-radius: 5px;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  word-wrap: break-word;\n  cursor: pointer;\n}\n\n.inner-box.clicked {\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box.overview {\n  border: none\n}\n\n.inner-box:hover {\n  transition:all 0.3s;\n  background: #749DD8;\n  border-bottom: 4px solid #12508C;\n  color: white;\n}\n\n.inner-box:hover > .text-box {\n  transition:all 0.5s;\n  background-color: #749DD8;\n  color: white;\n}\n\n.inner-box > div {\n  width: 95%;\n  max-width: 200px;\n}\n\n.text-box {\n  display: block;\n  border-radius: 5px;\n  height: 50%;\n  width: 95%;\n  max-width: 200px;\n  font-weight: 500;\n}\n\n.text-box.curr-course {\n  border: 6px green solid;\n}\n\n.text-box.before-course {\n  border: 2px green solid;\n}\n\n.text-box.after-course {\n  border: 2px red solid;\n}\n\nline {\n  stroke:black;\n  stroke-width: 2px;\n  transition: x2 0.3s;\n}\n\nsvg.consume-events {\n  pointer-events: none;\n}\n\n.card-header {\n  background-color:  #447dd3;\n  color: white;\n}\n\n.card-body {\n  padding-top: 6px;\n  padding-bottom: 6px;\n  height: 45px;\n}\n\n.card-body .btn.btn-light.selected {\n  background: #447dd3;\n  color: white;\n}\n\nsvg .axis .tick text{\n  font-size: 14px;\n}\n\n#tutorial {\n  position: absolute;\n  font-size: 2.0em;\n  top: 80px;\n  right: 450px;\n  text-align: right;\n  pointer-events: none;\n  width: 50px;\n}\n\n#tutorial i {\n  color: black;\n}\n\n.text-box i {\n  color: inherit;\n}"
 
 /***/ }),
 
@@ -1828,7 +1886,7 @@ module.exports = "div {\n  text-align: center;\n  width: 100%;\n}\n\ni {\n  colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div>\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Wähle deinen Weg aus\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Gehe zu den Details \n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects let i = index\">\n      <ng-container *ngFor=\"let rect of rectArray\">\n        <div [style.left.px]=\"rect.x\" [style.top.px]=\"rect.y - rect.height\" [style.width.px]=\"rect.width\" [style.height.px]=\"rect.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div [@initAnimation]=\"{value: initState, params: {delay: ((5 - i) * 500)}}\" \n              (@initAnimation.done)=\"initAnimationDone($event)\"\n              [class.clicked]=\"selectedRect == rect\"\n              class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(rect)\">\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState != 0\" class=\"text-box d-flex align-items-center justify-content-center\">\n              {{ rect.courseNode.name }}\n            </div>\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n              {{ rect.courseNode.name }}\n            </div>\n          </div>\n        </div>\n      </ng-container>\n    </ng-container>\n    <ng-container *ngIf=\"currState == 0\">\n      <div class=\"position-absolute\" [style.margin-top.px]=\"'3'\" [style.font-size.em]=\"'1.1'\" >\n        <i class=\"fas fa-arrow-down\"></i>\n        Click a course to show the detail information\n        <i class=\"fas fa-arrow-down\"></i>\n      </div>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\" />\n  </div>\n</div>"
+module.exports = "<div id=\"container\">\n  <ng-container *ngIf=\"currState == 1\">\n    <!-- <div class=\"card-header\">\n      empfohlene Arbeit : {{ jobInfos[currJobIndex].jobMetadata.name }}\n    </div> -->\n    <div class=\"card-body d-flex justify-content-between\">\n      <div class=\"text-left d-flex align-items-center\">\n        Please select your path\n      </div>\n      <div>\n        <ng-container *ngFor=\"let path of jobInfos[currJobIndex].paths let i = index\">\n          <button class=\"btn btn-light mx-2\" (click)=\"selectPath(i)\" [class.selected]=\"i == currPathIndex\">\n            <span>{{path.name}}</span>\n          </button>\n        </ng-container>\n      </div>\n      <div class=\"text-right\">\n        <button class=\"btn btn-light\" (click)=\"goToDetailMode()\">\n          Go to the details\n        </button>\n      </div>\n    </div>\n  </ng-container>\n  <ng-container *ngIf=\"currState == 0 || currState >= 2\">\n    <div class=\"card-body d-flex justify-content-center align-items-center\" [style.font-size.em]='1.3'>\n      <ng-container *ngIf=\"currState == 0\">\n        <i class=\"fas fa-arrow-down\"></i>\n        Click an educational institution to show the detail information\n        <i class=\"fas fa-arrow-down\"></i>\n      </ng-container>\n      <ng-container *ngIf=\"currState >= 2\">\n        <div [@click-indicator]=\"clickAnimState\" (@click-indicator.done)=\"onClickAnimationDone($event)\">\n          <i class=\"fas fa-arrow-down\"></i>\n          Click here!\n          <i class=\"fas fa-arrow-down\"></i>\n        </div>\n      </ng-container>\n    </div>\n  </ng-container>\n  <div id=\"ground\" [class.detail-mode]=\"currState == 2\">\n    <ng-container *ngFor=\"let rectArray of layoutManager.rects let i = index\">\n      <ng-container *ngFor=\"let rect of rectArray\">\n        <div [style.left.px]=\"rect.x\" [style.top.px]=\"rect.y - rect.height\" [style.width.px]=\"rect.width\" [style.height.px]=\"rect.height\"\n          class=\"box\" [class.info-mode]=\"currState == 0\">\n          <div *ngIf=\"i != 5; else initelem\" [class.clicked]=\"selectedRect == rect\" [class.overview]=\"currState == 1\" class=\"inner-box d-flex align-items-center justify-content-center\"\n            (click)=\"showInfo(rect)\">\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState != 0\" \n              [class.after-course]=\"currCoursePath.currIndex < i && currCoursePath.courses[i] == rect.courseNode.name\"\n              [class.before-course]=\"currCoursePath.currIndex > i && currCoursePath.courses[i] == rect.courseNode.name\"\n              [class.curr-course]=\"currCoursePath.currCourseName == rect.courseNode.name\" class=\"text-box d-flex align-items-center justify-content-center\">\n              <ng-container *ngIf=\"currCoursePath.currCourseName == rect.courseNode.name\">\n                <i class=\"fas fa-child\" [style.font-size.em]=\"'1.3'\"></i>\n              </ng-container>\n              {{ rect.courseNode.name }}\n            </div>\n            <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n              {{ rect.courseNode.name }}\n            </div>\n          </div>\n          <ng-template #initelem>\n            <div [@initAnimation]=\"initAnimState\" (@initAnimation.done)=\"onInitAnimationDone($event)\" [class.clicked]=\"selectedRect == rect\"\n              [class.overview]=\"currState == 1\" class=\"inner-box d-flex align-items-center justify-content-center\" (click)=\"showInfo(rect)\">\n              <div *ngIf=\"currState != 0\" \n              class=\"text-box d-flex align-items-center justify-content-center\"\n              [class.after-course]=\"currCoursePath.currIndex < i && currCoursePath.courses[i] == rect.courseNode.name\"\n              [class.before-course]=\"currCoursePath.currIndex > i && currCoursePath.courses[i] == rect.courseNode.name\"\n              [class.curr-course]=\"currCoursePath.currCourseName == rect.courseNode.name\"\n              [style.font-size.em]=\"getFlexFont(rect)\">\n                <ng-container *ngIf=\"currCoursePath.currCourseName == rect.courseNode.name\">\n                  <i class=\"fas fa-child\" [style.font-size.em]=\"'1.3'\"></i>\n                </ng-container>\n                {{ rect.courseNode.name }}\n              </div>\n              <div [style.font-size.em]=\"getFlexFont(rect)\" *ngIf=\"currState == 0\">\n                {{ rect.courseNode.name }}\n              </div>\n            </div>\n          </ng-template>\n        </div>\n      </ng-container>\n    </ng-container>\n    <ng-container *ngIf=\"currState == 0 && selectedRect == null\">\n      <div [@pointer]=\"enter\" id=\"tutorial\">\n        <i class=\"fas fa-mouse-pointer\"></i>\n      </div>\n    </ng-container>\n    <svg #svg id=\"svg-ground\" [class.consume-events]=\"currState == 0 || currState == 2\" />\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1875,7 +1933,8 @@ var MainGraphComponent = /** @class */ (function () {
         this.stateService = stateService;
         this.recommendService = recommendService;
         this.currState = _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO;
-        this.initState = 'init';
+        this.initAnimState = 'on';
+        this.clickAnimState = 'on';
         this.initAnimationCount = 0;
     }
     MainGraphComponent.prototype.ngOnInit = function () {
@@ -1891,13 +1950,19 @@ var MainGraphComponent = /** @class */ (function () {
             _this.d3Service.updateLinks();
         });
         this.stateService.stateObservable.subscribe(function (state) {
+            _this.selectedRect = null;
+            if (state >= _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].OVERVIEW) {
+                _this.initAnimState = 'none';
+                _this.recommendService.applyUserCourseNode(_this.getUserRect().courseNode);
+            }
             if (_this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].OVERVIEW && state == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL) {
+                _this.selectedRect = _this.getUserRect();
+                _this.showInfo(_this.selectedRect);
                 _this.d3Service.changeDetailMode(_this.jobInfos[_this.currJobIndex], _this.currPathIndex);
             }
             else if (_this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL && state == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].OVERVIEW) {
                 _this.d3Service.changeOverviewMode(_this.jobInfos[_this.currJobIndex].paths, _this.currPathIndex);
             }
-            _this.selectedRect = null;
             _this.currState = state;
         });
         this.recommendService.recommendJobInfoObservable.subscribe(function (jobInfos) {
@@ -1914,26 +1979,22 @@ var MainGraphComponent = /** @class */ (function () {
             _this.d3Service.deleteLinks();
             _this.d3Service.initLinks(_this.jobInfos[jobIndex].paths);
             _this.d3Service.highlightLinks(_this.currPathIndex);
+            _this.currCoursePath = _this.jobInfos[_this.currJobIndex].paths[_this.currPathIndex];
         });
         this.recommendService.currPathIndexObservable.subscribe(function (pathIndex) {
             _this.currPathIndex = pathIndex;
             _this.d3Service.highlightLinks(pathIndex);
+            _this.currCoursePath = _this.jobInfos[_this.currJobIndex].paths[_this.currPathIndex];
         });
     };
     MainGraphComponent.prototype.showInfo = function (selectedRect) {
         this.selectedRect = selectedRect;
+        this.initAnimState = 'none';
         if (this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO) {
             this.eduService.selectCourseNode(selectedRect.courseNode);
         }
         else if (this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].DETAIL) {
-            // 대학교를 골랐을 때
-            if (selectedRect.courseNode.layer == 4) {
-                this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].MAJOR);
-                // 그 외의 학교
-            }
-            else {
-                this.stateService.changeState(_state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].SCHOOL);
-            }
+            this.recommendService.selectCourseNode(selectedRect.courseNode);
         }
     };
     MainGraphComponent.prototype.ngAfterViewChecked = function () {
@@ -1958,11 +2019,24 @@ var MainGraphComponent = /** @class */ (function () {
                 return '' + (maxWidth / 300);
         }
     };
-    MainGraphComponent.prototype.initAnimationDone = function () {
-        this.initAnimationCount++;
-        if (this.initAnimationCount == this.layoutManager.totalRectCount) {
-            this.initState = 'done';
+    MainGraphComponent.prototype.onInitAnimationDone = function () {
+        if (this.selectedRect == null && this.currState == _state_service__WEBPACK_IMPORTED_MODULE_6__["StateService"].INFO) {
+            this.initAnimState = this.initAnimState === 'on' ? 'off' : 'on';
         }
+    };
+    MainGraphComponent.prototype.onClickAnimationDone = function () {
+        this.clickAnimState = this.clickAnimState === 'on' ? 'off' : 'on';
+    };
+    MainGraphComponent.prototype.getUserRect = function () {
+        var userRect;
+        this.layoutManager.rects.forEach(function (rectArr) {
+            return rectArr.forEach(function (rect) {
+                if (rect.courseNode.name == _constants__WEBPACK_IMPORTED_MODULE_5__["Constants"].COURSE_GYMNASIUM) {
+                    userRect = rect;
+                }
+            });
+        });
+        return userRect;
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('svg'),
@@ -1975,18 +2049,37 @@ var MainGraphComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./main-graph.component.css */ "./src/app/main-graph/main-graph.component.css")],
             animations: [
                 Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('initAnimation', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => init', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('0.3s ' + "{{delay}}ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1.0, 1.1)', backgroundColor: '#749dd8' })),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('0.3s 0.3s', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1.0)', backgroundColor: '#fff' })),
-                    ], { params: { delay: 0 } }),
-                    // transition('void => done', [
-                    //   animate('0.3s', style({ transform: 'scale(1.0, 1.1)', backgroundColor: '#749dd8' })),
-                    //   animate('0.3s', style({ transform: 'scale(1.0)', backgroundColor: '#fff' })),
-                    // ], { params: { delay: 0 } }),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('init => done', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(0, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#fff' }))
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('void => on', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms 1200ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#749dd8' }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => off', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#fff' }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => on', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#749dd8' }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('* => none', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('100ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ backgroundColor: '#fff' }))
                     ])
                 ]),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('pointer', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateX(1000%) scale(1.3)' }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateX(0%) scale(1.3)' })),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])(300, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'scale(1.0)' }))
+                    ])
+                ]),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('click-indicator', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('on => off', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 0 }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])('off => on', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ opacity: 1 }))
+                    ])
+                ])
             ]
         }),
         __metadata("design:paramtypes", [_d3_service__WEBPACK_IMPORTED_MODULE_1__["D3Service"],
@@ -2002,27 +2095,6 @@ var MainGraphComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/major-info.ts":
-/*!*******************************!*\
-  !*** ./src/app/major-info.ts ***!
-  \*******************************/
-/*! exports provided: MajorInfo */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MajorInfo", function() { return MajorInfo; });
-var MajorInfo = /** @class */ (function () {
-    function MajorInfo() {
-    }
-    MajorInfo.NONE = { name: 'none', description: '', ncValue: 0 };
-    return MajorInfo;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/map-view/map-view.component.css":
 /*!*************************************************!*\
   !*** ./src/app/map-view/map-view.component.css ***!
@@ -2030,7 +2102,7 @@ var MajorInfo = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#map-ground {\n  width: 100%;\n  margin: 50px;\n  height: 400px;\n  float: left;\n}\n\n#gmap {\n  width: 45%;\n  height: 400px;\n  float: left;\n}\n\n.card-header {\n  background: #447dd3;\n  color: white;\n}\n\n#map-panel {\n  width:40%; \n  height:400px;\n  float: left;\n}\n\n#detail-panel {\n  width: 40%;\n  float: left;\n  margin-left: 40px;\n}\n\n#detail-content {\n  height: 350px;\n  overflow: scroll;\n  border: 1px gray solid;\n  border-radius: 5px;\n}\n\n"
+module.exports = "#map-ground {\n  margin-top: 20px;\n}\n\n.card-header {\n  background: #447dd3;\n  color: white;\n}\n\n#map-panel {\n  width: 50%; \n  height: 35vh;\n}\n\n#detail-panel {\n  width: 50%;\n  height: 35vh;\n}\n\n#detail-panel > .card-header {\n  height: 20%;\n}\n\n#detail-content {\n  height: 80%;\n  overflow: scroll;\n  border: 1px #eee solid;\n  border-radius: 5px;\n}"
 
 /***/ }),
 
@@ -2041,7 +2113,7 @@ module.exports = "#map-ground {\n  width: 100%;\n  margin: 50px;\n  height: 400p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map-ground\">\n  <div #gmap id=\"map-panel\">\n\n  </div>\n  <div id=\"detail-panel\">\n    <div class=\"card-header text-white\">\n      Informationen über die Institution\n    </div>\n    <div class=\"card-body\" id=\"detail-content\">\n      <ng-container *ngIf=\"selectedSchoolInfo == null\">\n        <h4 class=\"card-title\">Wähle deine bevorzugte Bildungsinstitution aus</h4>\n      </ng-container>\n      <ng-container *ngIf=\"selectedSchoolInfo\">\n        <h5 class=\"card-title\">{{selectedSchoolInfo.name}}</h5>\n        <p class=\"card-text\">\n            Entfernung: {{distance}} km\n        </p>\n        <p class=\"card-text\">\n            Dauer: {{ duration }}\n        </p>\n        <h5 class=\"card-title\">Zugangsvoraussetzungen</h5>\n        <ul>\n          <ng-container *ngFor=\"let qualification of selectedSchoolInfo.qualifications\">\n            <li class=\"card-text\">\n              {{ qualification }}\n            </li>\n          </ng-container>\n        </ul>\n        <h5 class=\"card-title\">Curriculum</h5>\n        <ul>\n          <ng-container *ngFor=\"let curriculum of selectedSchoolInfo.curriculums\">\n            <li class=\"card-text\">\n              {{ curriculum }}\n            </li>\n          </ng-container>\n        </ul>\n        <h5 class=\"card-title\">Bewertung</h5>\n        <ul>\n          <ng-container *ngFor=\"let review of selectedSchoolInfo.reviews\">\n            <li class=\"card-text\">\n              {{ review }}\n            </li>\n          </ng-container>\n        </ul>\n      </ng-container>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container-fluid\" id=\"map-ground\">\n  <div class=\"row\">\n    <div #gmap id=\"map-panel\" class=\"col\">\n    </div>\n    <div id=\"detail-panel\" class=\"col\">\n      <div class=\"card-header text-white d-flex align-items-center\">\n        Information about the institution\n      </div>\n      <div class=\"card-body\" id=\"detail-content\">\n        <ng-container *ngIf=\"selectedSchoolInfo\">\n          <h5 class=\"card-title\">{{selectedSchoolInfo.name}}</h5>\n          <p class=\"card-text\">\n            Distance: {{distance}} km\n          </p>\n          <p class=\"card-text\">\n            Duration: {{ duration }}\n          </p>\n          <h5 *ngIf=\"selectedSchoolInfo.qualifications.length > 0\" class=\"card-title\">Admission requirements</h5>\n          <ul>\n            <ng-container *ngFor=\"let qualification of selectedSchoolInfo.qualifications\">\n              <li class=\"card-text\">\n                {{ qualification }}\n              </li>\n            </ng-container>\n          </ul>\n          <h5 class=\"card-title\">Curriculum</h5>\n          <ul>\n            <ng-container *ngFor=\"let curriculum of selectedSchoolInfo.curriculums\">\n              <li class=\"card-text\">\n                {{ curriculum }}\n              </li>\n            </ng-container>\n          </ul>\n          <h5 *ngIf=\"selectedSchoolInfo.reviews.length > 0\" class=\"card-title\">Review</h5>\n          <ul>\n            <ng-container *ngFor=\"let review of selectedSchoolInfo.reviews\">\n              <li class=\"card-text\">\n                {{ review }}\n              </li>\n            </ng-container>\n          </ul>\n        </ng-container>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -2079,6 +2151,7 @@ var MapViewComponent = /** @class */ (function () {
         this.areaService = areaService;
         this.stateService = stateService;
         this.recommendService = recommendService;
+        this.schoolInfos = [];
         this.schoolMarkers = [];
         this.directionRenderer = new google.maps.DirectionsRenderer();
     }
@@ -2235,7 +2308,7 @@ var RecommendService = /** @class */ (function () {
         this.currPathIndexSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.courseNodeSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.majorIndexSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-        this.schoolInfoSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.schoolInfoSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]([]);
         this.recommendJobInfoObservable = this.recommendJobInfoSubject.asObservable();
         this.currJobIndexObservable = this.currJobIndexSubject.asObservable();
         this.currPathIndexObservable = this.currPathIndexSubject.asObservable();
@@ -2243,6 +2316,9 @@ var RecommendService = /** @class */ (function () {
         this.majorIndexObservable = this.majorIndexSubject.asObservable();
         this.schoolInfoObservable = this.schoolInfoSubject.asObservable();
     }
+    RecommendService.prototype.applyUserCourseNode = function (courseNode) {
+        this.userCourseNode = courseNode;
+    };
     RecommendService.prototype.changeJobIndex = function (index) {
         this.currJobIndex = index;
         this.currJobIndexSubject.next(index);
@@ -2257,6 +2333,7 @@ var RecommendService = /** @class */ (function () {
     RecommendService.prototype.selectCourseNode = function (courseNode) {
         this.selectedCourseNode = courseNode;
         this.courseNodeSubject.next(courseNode);
+        this.selectSchool(courseNode);
     };
     RecommendService.prototype.selectMajorInfo = function (majorInfo, index) {
         this.currMajorIndex = index;
@@ -2267,224 +2344,172 @@ var RecommendService = /** @class */ (function () {
             this.schoolInfoSubject.next(this.getSchoolInfos(majorInfo, index));
         }
     };
+    RecommendService.prototype.selectSchool = function (courseNode) {
+        if (courseNode.layer == 2) {
+            this.schoolInfoSubject.next([
+                {
+                    name: 'Leibniz Gymnasium',
+                    latlng: { lat: 52.489, lng: 13.397 },
+                    commuteTime: 80,
+                    learningEffort: '180 ECTS',
+                    qualifications: [],
+                    curriculums: [
+                        'https://www.leibnizschule-berlin.de/'
+                    ],
+                    reviews: []
+                },
+                {
+                    name: 'Helene Lange Gymnasium',
+                    latlng: { lat: 53.573, lng: 9.975 },
+                    commuteTime: 80,
+                    learningEffort: '180 ECTS',
+                    qualifications: [],
+                    curriculums: [
+                        'http://www.hlg-hamburg.de/'
+                    ],
+                    reviews: []
+                },
+                {
+                    name: 'Fellx-Klein-Gymnasium',
+                    latlng: { lat: 51.525, lng: 9.930 },
+                    commuteTime: 80,
+                    learningEffort: '180 ECTS',
+                    qualifications: [],
+                    curriculums: [
+                        'http://www.fkg-goettingen.de/'
+                    ],
+                    reviews: []
+                },
+                {
+                    name: 'Georg-Büchner-Gymnasium',
+                    latlng: { lat: 51.253, lng: 6.761 },
+                    commuteTime: 80,
+                    learningEffort: '180 ECTS',
+                    qualifications: [],
+                    curriculums: [
+                        'https://gbg-duesseldorf.lms.schulon.org'
+                    ],
+                    reviews: []
+                }
+            ]);
+        }
+        else {
+            this.schoolInfoSubject.next([]);
+        }
+    };
     RecommendService.prototype.recommendJobs = function (userData) {
         var newJobInfos = [
             new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: 'Polizist/in im gehobenen Dienst',
-                salary: 'bis zu 54000€/Jahr',
-                balance: 'wenig Freizeit',
+                name: 'Police in higher service',
+                salary: 'up to 54000€/year',
+                balance: 'less free time',
                 generalDescs: [
-                    'überdurchschnittliches Gehalt',
-                    'Unkündbar, krisensicher',
-                    'automatische Beförderungen möglich',
-                    'alle Versicherungen günstiger',
-                    'alle Kredite günstiger',
+                    'Policemen in higher services perform management, stuff, and administrative functions in variable areas of responsibility',
+                    'Among other things tasks such as border and railway police duties, tasks in regarding air safety, protection of the federal body, and supporting the police force in the federal states are included in the areas of responsiblity'
                 ],
                 generalReviews: [
-                    'nach den ersten paar Jahren Einarbeitung wird es ein ziemlich lockerer Job.Frühverrentung ist ebenfalls sehr einfach möglich. Ich habe sehr viel Freude und Spaß bei diesem Job.'
+                    'I have a lot of pleasure and joy by conducting the job as a policeman in higher services. There are also a lot of advantages which come along with this job. They look as the following:',
+                    'above average salary',
+                    'contract is rarely cancellable, crisis-proof',
+                    'automatic career promotions',
+                    'all insurances more inexpensive',
+                    'all credits more inexpensive',
+                    'after the first years in this job, the work will become easy-going',
+                    'Early retirement is very easily possible',
+                    'I definitely cannot complain about my job.'
                 ]
             }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Primary', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]("Alternative1", [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_BERUFSOBERSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Alternative2', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
             ]),
             new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: 'Sportpädagoge/Sportpädagogin:',
-                salary: 'bis zu 31.200 €/Jahr (Berufsanfänger) im späteren Verlauf 3.800 €/monatlich oder höher möglich',
-                balance: 'guter Ausgleich zwischen Arbeit und Freizeit, Generelle Bewertung: Der Beruf als Sportspädagoge ist sehr vielfältig. Arbeitsplätze finden sich in Schulen, Universitäten, Sportstudios, Vereine oder Verbänden (vorwiegend gemeinnützige Einrichtungen). Darüber hinaus sind die Tätigkeiten eines Sportpädagogen sehr vielfältig. ',
-                reviews: [
-                    'Der Beruf als Sportspädagoge ist sehr vielfältig. Arbeitsplätze finden sich in Schulen, Universitäten, Sportstudios, Vereine oder Verbänden (vorwiegend gemeinnützige Einrichtungen). Darüber hinaus sind die Tätigkeiten eines Sportpädagogen sehr vielfältig.',
-                    'Mögliche Tätigkeiten:',
-                    '• Durchführen von Sportunterricht',
-                    '• Gesundheitlicher Sport/medizinische Vorbeugung von Erkrankungen durch Sport',
-                    'Sportpädagogik mit Behinderten und schwer erziehbaren Kindern Die Tätigkeit als Sportpädagoge bereitet mir jeden Tag viel Freude und Spaß. Ich habe die Möglichkeit, das Potenzial meiner Teilnehmer zu entfalten, sie zu motivieren, und ich kann ihnen die Freude an der Bewegung vermitteln.',
+                name: 'Sports educationist',
+                salary: '31200€/year (young professionals), During the subsequent course 45600/year or higher possible',
+                balance: 'Good balance between work and leisure',
+                generalDescs: [
+                    'The occupation as a sports educationist is very diverse. Job opportunities can be found in schools, universities, sport studios, clubs and associations. (predominantely non-profit institutions). Possible occupations of a sports educationist can look like the following: ',
+                    'Conducting PE classes',
+                    'Health sport/medical prevention of diseases with the aid of sports',
+                    'Sports pedagogy with disabled people and difficult children'
+                ],
+                generalReviews: [
+                    'The occupation as a sports educationist gives me every single day fun and joy. I have the opportunity to develop the potential of my participants, to motivate them, and can convey them the joy of exercise and movement.'
                 ]
             }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_BERUFSOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_BERUFSOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Primary', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Alternative1', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Alternative2', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_BERUFSOBERSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM)
             ]),
             new _job_info__WEBPACK_IMPORTED_MODULE_1__["JobInfo"]({
-                name: ' Projektmanager/in',
-                salary: '50700 €/Jahr ',
-                balance: ' mittelmäßig ',
-                generalDescs: ['Projektmanager befassen sich mit der Organisation, Steuerung und Kontrolle von Projekten. Diese können zum Beispiel technische, kaufmännische oder informationstechnische Lösungen sein – von der Entwicklung eines neuen Bauteils bis zur Einführung einer modernen IT-Anlage. Der Projektmanager muss im Laufe seines jeweiligen Projektes Zeit und Kosten im Blick haben, um aus den verfügbaren Ressourcen das optimale Ergebnis herauszuholen.'],
-                generalReviews: ['In meinem Job als Projektmanager habe ich stets die Möglichkeit, stets an spannenden Projekten teilzunehmen, mein Durchhaltevermögen wird öfter unter die Probe gestellt und muss mich oftmals größeren Herausforderungen stellen. ']
+                name: 'Project manager',
+                salary: '50700 €/year',
+                balance: 'fairly balanced',
+                generalDescs: [
+                    'Project managers are responsible for the organization, management, and control of projects. These projects can depict technical, business, or information technology solutions – from the development of a novel component up to an introduction of a modern information technology system. During the course of a project the project manager has to keep an eye on the available time and the costs to obtain the most optimal result from the available resources.'
+                ],
+                generalReviews: [
+                    'By working as a project manager, I always have the opportunity to participate in exciting projects. Furthermore, constantly my perseverance is put to the test and I have to confront myself with great challenges.'
+                ]
             }, [
-                {
-                    name: 'Primär',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                },
-                {
-                    name: 'Alternative Wege',
-                    paths: [
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            isPrev: true
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            isPrev: false
-                        },
-                        {
-                            from: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
-                            to: _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG,
-                            isPrev: false
-                        }
-                    ]
-                }
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Primary', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIALE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_UNIVERSITAT,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
+                new _job_info__WEBPACK_IMPORTED_MODULE_1__["CareerPath"]('Alternatives', [
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_KINDERGARTEN,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GRUNDSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHOBERSCHULE,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_FACHHOCH,
+                    _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_WEITERBILDUNG
+                ], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"].COURSE_GYMNASIUM),
             ]),
         ];
         this.recommendJobInfos = newJobInfos;
@@ -2492,38 +2517,48 @@ var RecommendService = /** @class */ (function () {
         this.currJobIndexSubject.next(0);
     };
     RecommendService.prototype.getMajorInfos = function () {
-        if (this.recommendJobInfos[this.currJobIndex].jobMetadata.name == 'Polizist/in im gehobenen Dienst') {
-            return [
-                {
-                    name: 'Polizist im gehobenen Dienst:',
-                    description: ' Der Fachbereich Polizei der Hochschule für den öffentlichen Dienst in Bayern bietet das Studium zum Einstieg in die Ämter der 3. Qualifikationsebene (3. QE, früher gehobener Dienst) und in die Ämter der vierten Qualifikationsebene (4. QE, früher höherer Dienst), den Masterstudiengang "Öffentliche Verwaltung - Polizeimanagement", an. (allgemeine Info)',
-                    ncValue: 3.2
-                }
-            ];
-        }
-        else {
-            return [
-                {
-                    name: 'Sportwissenschaften:',
-                    description: 'Das Bachelorstudium Sportwissenschaft vermittelt breites und integriertes Grundlagenwissen des Faches. Die Studierenden erwerben ein kritisches Verständnis wichtiger Theorien, Prinzipien und Methoden mit einem besonderen Profil im Bereich "Sport, Bewegung und Bildung". Ziel des sportwissenschaftlichen Studiums ist es, Expertinnen und Experten im Feld Sport, Bewegung und Bildung auszubilden, die in unterschiedlichen bildungsbezogenen Settings Sport- und Bewegungsangebote entwickeln, planen, durchführen, bewerten und evaluieren können.',
-                    ncValue: 1.9
-                },
-                {
-                    name: 'Psychologie:',
-                    description: ' Psychologie beschreibt und erklärt das menschliche Handeln. In Experimenten versuchen Psychologen vorherzusagen, wie sich ihre Versuchspersonen in einer bestimmten Situation verhalten. Um selbst forschen zu können, erhältst Du im Psychologie Bachelor Studium alle nötigen Grundlagen. Neben Einführungskursen, die Dich an das wissenschaftliche Arbeiten heranführen, hält der Studiengang eine umfassende Methodenausbildung für Dich bereit. Dazu gehören Veranstaltungen wie Statistik, Versuchsplanung und Forschungsmethoden. ',
-                    ncValue: 1.2
-                },
-                {
-                    name: 'International Management',
-                    description: ' Unsere Wirtschaft unterliegt stetigen Änderungen und Herausforderungen: steigende Mobilität, technische Weiterentwicklungen und die Globalisierung sind hierfür die Ursachen und Hauptauslöser. Der Studiengang Internationales Management und die fachverwandten Studiengänge mit Spezialisierungen bereiten dich auf zukünftige Managementaufgaben in internationalen Unternehmen vor.',
-                    ncValue: 2.0
-                },
-                {
-                    name: 'Betriebswirtschaftslehre',
-                    description: ' Die Betriebswirtschaftslehre (BWL) ist Teil der Wirtschaftswissenschaften. Sie befasst sich mit den wirtschaftlichen Zusammenhängen und Gesetzmäßigkeiten einzelner Unternehmen und liefert Erkenntnisse über betriebliche Strukturen und Prozesse. Die Fachgebiete und die Forschungsgegenstände des BWL-Bachelor ergeben sich somit aus Fragestellungen, mit denen die verschiedenen Unternehmensbereiche konfrontiert werden.',
-                    ncValue: 1.8
-                }
-            ];
+        switch (this.recommendJobInfos[this.currJobIndex].jobMetadata.name) {
+            case 'Police in higher service':
+                return [
+                    {
+                        name: 'Police in higher service',
+                        description: ' In terms of theory you are mainly involved with the criminology, laws, and police science and regarding the practical training modules you get firing and safety training. Furthermore, you will be able to accompany experienced colleagues and you will get to know the daily life of the police. With the dual course of study, you will complete one of the most sophisticated police trainings. You will not just acquire the theory knowledge, but also develop your social skills and in the training modules you will be physically challenged.',
+                        ncValue: '3.2'
+                    }
+                ];
+            case 'Sports educationist':
+                return [{
+                        name: 'Sport Sciences',
+                        description: 'The Bachelor program Sports Sciences impart a broad and integrated foundation. The students acquire a critical comprehension of crucial theories, principles, and methods with a particular profile in the field of sports, movement, and education. The objective of this major is it to train and develop experts in the field of sports, movement, and education, that are able to work in varied educational related settings where they have to create sports and movement programs, plan them, conduct them, and evaluate them.',
+                        ncValue: '1.9'
+                    }
+                ];
+            case 'Project manager':
+                return [
+                    {
+                        name: 'International Management',
+                        description: 'Our economy is subject to constant changes and challenges: increasing mobility, technical development and the globalization are the causes and the primary driver. The study program International Management and the related majors can prepare you well for future management tasks in terms of the international enterprises.',
+                        ncValue: '2.0'
+                    },
+                    {
+                        name: 'Business Administration',
+                        description: ' Business Administration is part of economic sciences. It deals with the economic interrelations and regularities of individual enterprises and deliver findings about structures and processes. The fields and research areas of the Business Administration major are a result of questions that the business units have to encounter.',
+                        ncValue: '1.8'
+                    }
+                ];
+            default:
+                return [
+                    {
+                        name: 'International Management',
+                        description: 'Our economy is subject to constant changes and challenges: increasing mobility, technical development and the globalization are the causes and the primary driver. The study program International Management and the related majors can prepare you well for future management tasks in terms of the international enterprises.',
+                        ncValue: '2.0'
+                    },
+                    {
+                        name: 'Business Administration',
+                        description: 'Business Administration is part of economic sciences. It deals with the economic interrelations and regularities of individual enterprises and deliver findings about structures and processes. The fields and research areas of the Business Administration major are a result of questions that the business units have to encounter.',
+                        ncValue: '1.8'
+                    }
+                ];
         }
     };
     RecommendService.prototype.getSchoolInfos = function (majorInfo, majorIndex) {
@@ -2583,8 +2618,6 @@ var StateService = /** @class */ (function () {
     StateService.INFO = 0;
     StateService.OVERVIEW = 1;
     StateService.DETAIL = 2;
-    StateService.MAJOR = 3;
-    StateService.SCHOOL = 4;
     StateService = StateService_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -2626,7 +2659,7 @@ var UserData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  background-color: #292b2c;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #447dd3;\n}\ni {\n  color: #447dd3;\n  margin-right: 5px;\n}\n.open-btn {\n  border-color: #447dd3;\n  width: 300px;\n  font-size: 0.9em;\n  margin-top: 20px;\n  margin-left: 10px;\n  color: #447dd3;\n  text-align: left;\n}\n.open-btn:hover {\n  background-color: white;\n  color: #898989;\n}\n.modal-body {\n  max-height: 650px;\n  overflow: scroll;\n}\n.register-btn {\n  pointer-events: none;\n}\n.register-btn.actived {\n  pointer-events: all;\n  background-color: #447dd3;\n}\n"
+module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  background-color: #292b2c;\n  color: white;\n}\n.dark-modal .close {\n  color: white;\n}\n.light-blue-backdrop {\n  background-color: #447dd3;\n}\ni {\n  color: #447dd3;\n  margin-right: 5px;\n}\n.open-btn {\n  border-color: #447dd3;\n  width: 100%;\n  font-size: 0.9em;\n  margin-top: 20px;\n  margin-left: 10px;\n  color: #447dd3;\n  text-align: left;\n}\n.open-btn:hover {\n  background-color: white;\n  color: #898989;\n}\n.modal-body {\n  max-height: 650px;\n  overflow: scroll;\n}\n.register-btn {\n  pointer-events: none;\n}\n.register-btn.actived {\n  pointer-events: all;\n  background-color: #447dd3;\n}\n"
 
 /***/ }),
 
@@ -2637,7 +2670,7 @@ module.exports = "h2 {\n  font-size: 1.5em;\n}\n.dark-modal .modal-content {\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\"> Benutzereingaben </h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <h2>Gib hier deine Daten ein:</h2>\n                    <form action=\"\" method=\"\">\n                        <div class=\"form-group\">\n                            <label for=\"currentGrade\">Deine momentane Klasse</label>\n                            <input [(ngModel)]=\"currentGrade\" class=\"form-control\" name=\"currentGrade\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"gpa\">Deine Durchschnittsnote</label>\n                            <input [(ngModel)]=\"gpa\" class=\"form-control\" name=\"gpa\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"address\">Deine Adresse</label>\n                            <input [(ngModel)]=\"address\" class=\"form-control\" name=\"address\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"postalcode\">Deine Postleitzahl</label>\n                            <input [(ngModel)]=\"postalCode\" class=\"form-control\" name=\"postalCode\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"school\">Welche Art von Mittelschule hast du besucht (Gymnasium, Real-, Gesamt-, Hauptschule)?</label>\n                            <input [(ngModel)]=\"school\" class=\"form-control\" name=\"school\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"major\">Bevorzugtes Studienfach (optional)</label>\n                            <input [(ngModel)]=\"major\" class=\"form-control\" name=\"major\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"dreamjob\">Traumjob (optional)</label>\n                            <input [(ngModel)]=\"dreamJob\" class=\"form-control\" name=\"dreamJob\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"strongestSub\">Dein bestes Fach</label>\n                            <input [(ngModel)]=\"strongestSub\" class=\"form-control\" name=\"strongestSub\" />\n                        </div>\n                        <h2>Was sind deine Interessen?\n                            <span style=\"color:red\">(*Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let interest of interests\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkInterest(interest)\">\n                                            <span class=\"label-text\">{{interest}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                        <h2>Was sind deine Stärken?\n                            <span style=\"color:red\">(* Mehrfachauswahl möglich)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let strength of strengths\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkStrength(strength)\">\n                                            <span class=\"label-text\">{{strength}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"currentGrade && gpa && address\n      && postalCode && school && strongestSub \n      && checkedInterests.length > 0 && checkedStrengths.length > 0\" (click)=\"registerUserInput()\">Abschicken</button>\n        <!-- <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"true\" (click)=\"registerUserInput()\">Register</button> -->\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"c('Close click')\">Schließen</button>\n    </div>\n</ng-template>\n\n<ng-container>\n    <button class=\"btn btn-outline-primary mb-2 mr-2 open-btn\" (click)=\"openModal(content)\">\n        <i class=\"fas fa-user\"></i>\n        Input the user information\n    </button>\n</ng-container>"
+module.exports = "<ng-template #content let-c=\"close\" let-d=\"dismiss\">\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Please enter your data</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <form action=\"\" method=\"\">\n                        <div class=\"form-group\">\n                            <label for=\"currentGrade\">Your current grade</label>\n                            <input [(ngModel)]=\"currentGrade\" class=\"form-control\" name=\"currentGrade\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"gpa\">Your current average GPA</label>\n                            <input [(ngModel)]=\"gpa\" class=\"form-control\" name=\"gpa\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"address\">Your address</label>\n                            <input [(ngModel)]=\"address\" class=\"form-control\" name=\"address\" value=\"Berlin\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"postalcode\">Your postal code</label>\n                            <input [(ngModel)]=\"postalCode\" class=\"form-control\" name=\"postalCode\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"school\">Which form of middle school have you attended (Gymnasium, Real-, Gesamt-, or Hauptschule)? </label>\n                            <input [(ngModel)]=\"school\" class=\"form-control\" name=\"school\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"major\">Preferred major (optional)</label>\n                            <input [(ngModel)]=\"major\" class=\"form-control\" name=\"major\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"dreamjob\">Dream job (optional)</label>\n                            <input [(ngModel)]=\"dreamJob\" class=\"form-control\" name=\"dreamJob\" />\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"strongestSub\">Your best subject</label>\n                            <input [(ngModel)]=\"strongestSub\" class=\"form-control\" name=\"strongestSub\" />\n                        </div>\n                        <h2>What are your interests?\n                            <span style=\"color:red\">(*Multiple selection possible)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let interest of interests\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkInterest(interest)\">\n                                            <span class=\"label-text\">{{interest}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                        <h2>What are your strengths?\n                            <span style=\"color:red\">(* Multiple selection possible)</span>\n                        </h2>\n                        <div class=\"row\">\n                            <ng-container *ngFor=\"let strength of strengths\">\n                                <div class=\"col-lg-6\">\n                                    <div class=\"form-check\">\n                                        <label>\n                                            <input type=\"checkbox\" name=\"check\" (click)=\"checkStrength(strength)\">\n                                            <span class=\"label-text\">{{strength}}</span>\n                                        </label>\n                                    </div>\n                                </div>\n                            </ng-container>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"currentGrade && gpa && address\n      && postalCode && school && strongestSub \n      && checkedInterests.length > 0 && checkedStrengths.length > 0\" (click)=\"registerUserInput()\">Send</button>\n        <!-- <button type=\"button\" class=\"btn btn-light register-btn\" [class.actived]=\"true\" (click)=\"registerUserInput()\">Register</button> -->\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"c('Close click')\">Cancel</button>\n    </div>\n</ng-template>\n\n<ng-container>\n    <button class=\"btn btn-outline-primary mb-2 mr-2 open-btn\" (click)=\"openModal(content)\">\n        <i class=\"fas fa-user\"></i>\n        Input the user information\n    </button>\n</ng-container>"
 
 /***/ }),
 
@@ -2672,11 +2705,11 @@ var UserModalComponent = /** @class */ (function () {
         this.stateService = stateService;
         this.userDataEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.interests = [
-            'Produktion', 'BWL', 'Organisation', 'Sport', 'Musik', 'Kunst', 'Naturwissenschaften', 'Sprachen'
+            'Production', 'Business Administration', 'Organization', 'Sport', 'Music', 'Art', 'Natural Science', 'Languages'
         ];
         this.strengths = [
-            'Leadership', 'Kreativität', 'athlethisch', 'Fleiß', 'Starkes Durchhaltevermögen', 'Starkes Durchsetzungsvermögen', 'Selbstständigkeit', 'Sorgfalt',
-            'Teamfähigkeit', 'Kommunikationsfähigkeit', 'Verantwortungsbewusstsein'
+            'Leadership', 'Strong perseverance', 'Athletic', 'Independence', 'Ability to work in a team', 'Sense of responsibility', 'Creativity', 'Diligence',
+            'Strong assertiveness', 'Accurateness', 'Communication skills'
         ];
         this.checkedInterests = [];
         this.checkedStrengths = [];
