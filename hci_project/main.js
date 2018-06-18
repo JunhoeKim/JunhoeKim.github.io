@@ -2172,6 +2172,8 @@ var MapViewComponent = /** @class */ (function () {
                 _this.homeMarker = homeMarker;
                 _this.recommendService.schoolInfoObservable.subscribe(function (schoolInfos) {
                     _this.schoolInfos = schoolInfos;
+                    _this.selectedSchoolInfo = null;
+                    _this.directionRenderer.setMap(null);
                     _this.updateGoogleMap();
                 });
             })
@@ -2204,7 +2206,6 @@ var MapViewComponent = /** @class */ (function () {
                     travelMode: google.maps.TravelMode.TRANSIT
                 }, function (response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
-                        console.log(response);
                         _this.directionRenderer.setMap(_this.map);
                         _this.directionRenderer.setDirections(response);
                         _this.duration = response.routes[0].legs[0].duration.text;
