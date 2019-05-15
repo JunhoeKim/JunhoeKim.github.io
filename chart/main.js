@@ -1298,7 +1298,7 @@ __webpack_require__.r(__webpack_exports__);
 var NetworkService = /** @class */ (function () {
     function NetworkService(http) {
         this.http = http;
-        this.BASE_URL = 'http://147.46.240.21:1218/';
+        this.BASE_URL = 'https://147.46.240.21:1218/';
     }
     NetworkService.prototype.getTotalImageLength = function () {
         return this.http.get(this.BASE_URL + 'image_length')
