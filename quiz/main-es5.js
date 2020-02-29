@@ -15567,7 +15567,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: true,
-      mode: 'demo',
+      mode: 'quiz',
       locale: 'ko'
     };
     /***/
