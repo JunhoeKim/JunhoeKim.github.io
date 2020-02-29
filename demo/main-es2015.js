@@ -9881,7 +9881,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: true,
     mode: 'demo',
-    locale: 'en'
+    locale: 'ko'
 };
 
 
