@@ -61,7 +61,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <div class=\"validate-feedback\">\r\n        * Press 'n' to move on the next step <br/>\r\n        * Press 'd' or 'delete' to remove the selected box\r\n    </div>\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        Submit\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <div class=\"validate-feedback\">\r\n        <ng-container *ngFor=\"let msg of L.keyMessages\">\r\n            {{ msg }} <br/>\r\n        </ng-container>\r\n    </div>\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -121,7 +121,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100\" [formGroup]=\"group\" #wrapper>\r\n    <div class=\"w-100 d-flex flex-wrap\" #title>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput formControlName=\"title\"\r\n                placeholder=\"Title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\">\r\n        <div #dir class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>Direction</mat-label>\r\n                <input matInput *ngIf=\"auto\" formControlName=\"dir\" readonly>\r\n                <mat-select\r\n                    *ngIf=\"!auto\"\r\n                    formControlName=\"dir\">\r\n                    <mat-option value=\"x\">X</mat-option>\r\n                    <mat-option value=\"y\">Y</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('dir')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #type class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>Type</mat-label>\r\n                <mat-select\r\n                    (selectionChange)=\"onValueTypeChange($event)\"\r\n                    formControlName=\"type\">\r\n                    <mat-option value=\"nominal\">nominal</mat-option>\r\n                    <mat-option value=\"quantitative\">quantitative</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('type')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #unit\r\n            *ngIf=\"group.get('type').value === 'quantitative'\"\r\n            class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>Unit</mat-label>\r\n                <mat-select\r\n                    value=\"\"\r\n                    formControlName=\"unit\" >\r\n                    <mat-option value=\"integer\">Integer</mat-option>\r\n                    <mat-option value=\"decimal\">Decimal</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('unit')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #labels>\r\n        <app-label-chip-list\r\n            formKey=\"labels\"\r\n            [editable]=\"false\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n    <div\r\n        *ngIf=\"hasMarkLabels\"\r\n        class=\"w-100 my-1\"\r\n        #markLabels>\r\n        <div class=\"w-100\">\r\n            <mat-checkbox formControlName=\"labeled\">\r\n                Target of Mark Labels\r\n            </mat-checkbox>\r\n        </div>\r\n        <ng-container *ngIf=\"group.get('labeled').value\">\r\n            <app-label-chip-list\r\n                formKey=\"markLabels\"\r\n                [editable]=\"true\"\r\n                [formGroup]=\"group\"\r\n                [focusedFeedback]=\"focusedFeedback\"\r\n                [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n            </app-label-chip-list>\r\n        </ng-container>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100\" [formGroup]=\"group\" #wrapper>\r\n    <div class=\"w-100 d-flex flex-wrap\" #title>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput formControlName=\"title\"\r\n                [placeholder]=\"L.title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\">\r\n        <div #dir class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.dir }}</mat-label>\r\n                <input matInput *ngIf=\"auto\" formControlName=\"dir\" readonly>\r\n                <mat-select\r\n                    *ngIf=\"!auto\"\r\n                    formControlName=\"dir\">\r\n                    <mat-option value=\"x\">X</mat-option>\r\n                    <mat-option value=\"y\">Y</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('dir')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #type class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.type }}</mat-label>\r\n                <mat-select\r\n                    (selectionChange)=\"onValueTypeChange($event)\"\r\n                    formControlName=\"type\">\r\n                    <mat-option value=\"nominal\">nominal</mat-option>\r\n                    <mat-option value=\"quantitative\">quantitative</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('type')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #unit\r\n            *ngIf=\"group.get('type').value === 'quantitative'\"\r\n            class=\"mr-3\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.unit }}</mat-label>\r\n                <mat-select\r\n                    value=\"\"\r\n                    formControlName=\"unit\" >\r\n                    <mat-option value=\"integer\">{{ L.integer }} </mat-option>\r\n                    <mat-option value=\"decimal\">{{ L.decimal }}</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('unit')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #labels>\r\n        <app-label-chip-list\r\n            formKey=\"labels\"\r\n            [editable]=\"false\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n    <div\r\n        *ngIf=\"hasMarkLabels\"\r\n        class=\"w-100 my-1\"\r\n        #markLabels>\r\n        <div class=\"w-100\">\r\n            <mat-checkbox formControlName=\"labeled\">\r\n                {{ L.target }}\r\n            </mat-checkbox>\r\n        </div>\r\n        <ng-container *ngIf=\"group.get('labeled').value\">\r\n            <app-label-chip-list\r\n                formKey=\"markLabels\"\r\n                [editable]=\"true\"\r\n                [formGroup]=\"group\"\r\n                [focusedFeedback]=\"focusedFeedback\"\r\n                [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n            </app-label-chip-list>\r\n        </ng-container>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -161,7 +161,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 py-2\" [formGroup]=\"group\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"title\"></app-sub-header>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"close()\">\r\n            <mat-icon>clear</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #titleRef>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput formControlName=\"title\"\r\n                placeholder=\"Title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\">\r\n        <div #type class=\"mr-3\">\r\n            <mat-form-field class=\"mr-3\">\r\n                <mat-label>Type</mat-label>\r\n                <mat-select\r\n                    formControlName=\"type\"\r\n                    (selectionChange)=\"onValueTypeChange($event)\">\r\n                    <mat-option value=\"nominal\">nominal</mat-option>\r\n                    <mat-option value=\"quantitative\">quantitative</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('type')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #unit class=\"mr-3\">\r\n            <mat-form-field *ngIf=\"valueType === 'quantitative'\">\r\n                <mat-label>Unit</mat-label>\r\n                <mat-select\r\n                    value=\"\"\r\n                    formControlName=\"unit\">\r\n                    <mat-option value=\"integer\">Integer</mat-option>\r\n                    <mat-option value=\"decimal\">Decimal</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('unit')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div\r\n        *ngIf=\"hasMarkLabels\"\r\n        class=\"w-100 my-1 d-flex align-items-center flex-wrap\" #labels>\r\n        <mat-checkbox formControlName=\"labeled\"\r\n            class=\"w-100\"\r\n            (change)=\"checkLabeledByMarks($event)\">\r\n            Target of Mark Labels\r\n        </mat-checkbox>\r\n        <app-label-chip-list\r\n            *ngIf=\"labeledByMarks\"\r\n            formKey=\"markLabels\"\r\n            [editable]=\"true\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 py-2\" [formGroup]=\"group\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"title\"></app-sub-header>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"close()\">\r\n            <mat-icon>clear</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #titleRef>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput\r\n                formControlName=\"title\"\r\n                [placeholder]=\"L.title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\">\r\n        <div #type class=\"mr-3\">\r\n            <mat-form-field class=\"mr-3\">\r\n                <mat-label>{{ L.type }}</mat-label>\r\n                <mat-select\r\n                    formControlName=\"type\"\r\n                    (selectionChange)=\"onValueTypeChange($event)\">\r\n                    <mat-option value=\"nominal\">nominal</mat-option>\r\n                    <mat-option value=\"quantitative\">quantitative</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('type')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div #unit class=\"mr-3\">\r\n            <mat-form-field *ngIf=\"valueType === 'quantitative'\">\r\n                <mat-label>{{ L.unit }}</mat-label>\r\n                <mat-select\r\n                    value=\"\"\r\n                    formControlName=\"unit\">\r\n                    <mat-option value=\"integer\">{{ L.integer }}</mat-option>\r\n                    <mat-option value=\"decimal\">{{ L.decimal }}</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedElemWithKey('unit')\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div\r\n        *ngIf=\"hasMarkLabels\"\r\n        class=\"w-100 my-1 d-flex align-items-center flex-wrap\" #labels>\r\n        <mat-checkbox formControlName=\"labeled\"\r\n            class=\"w-100\"\r\n            (change)=\"checkLabeledByMarks($event)\">\r\n            {{ L.target }}\r\n        </mat-checkbox>\r\n        <app-label-chip-list\r\n            *ngIf=\"labeledByMarks\"\r\n            formKey=\"markLabels\"\r\n            [editable]=\"true\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -181,7 +181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 d-flex flex-wrap\" [formGroup]=\"formGroup\">\r\n    <mat-form-field class=\"w-100\">\r\n        <mat-chip-list #chipList [formArrayName]=\"formKey\">\r\n            <mat-chip *ngFor=\"let label of labels\"\r\n                color=\"primary\"\r\n                [selectable]=\"editable\"\r\n                [removable]=\"editable\"\r\n                (removed)=\"remove(label)\">\r\n                {{ label }}\r\n                <mat-icon matChipRemove>cancel</mat-icon>\r\n            </mat-chip>\r\n            <input\r\n                *ngIf=\"editable\"\r\n                placeholder='Register labels'\r\n                [matChipInputAddOnBlur]=\"true\"\r\n                [matChipInputFor]=\"chipList\"\r\n                [matChipInputSeparatorKeyCodes]=\"separatorKeyCodes\"\r\n                (matChipInputTokenEnd)=\"add($event)\"\r\n                >\r\n        </mat-chip-list>\r\n    </mat-form-field>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey === formKey\"\r\n        class=\"feedback-region\">\r\n        <div class=\"mr-2\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 d-flex flex-wrap\" [formGroup]=\"formGroup\">\r\n    <mat-form-field class=\"w-100\">\r\n        <mat-chip-list #chipList [formArrayName]=\"formKey\">\r\n            <mat-chip *ngFor=\"let label of labels\"\r\n                color=\"primary\"\r\n                [selectable]=\"editable\"\r\n                [removable]=\"editable\"\r\n                (removed)=\"remove(label)\">\r\n                {{ label }}\r\n                <mat-icon matChipRemove>cancel</mat-icon>\r\n            </mat-chip>\r\n            <input\r\n                *ngIf=\"editable\"\r\n                [placeholder]=\"L.registerLabel\"\r\n                [matChipInputAddOnBlur]=\"true\"\r\n                [matChipInputFor]=\"chipList\"\r\n                [matChipInputSeparatorKeyCodes]=\"separatorKeyCodes\"\r\n                (matChipInputTokenEnd)=\"add($event)\"\r\n                >\r\n        </mat-chip-list>\r\n    </mat-form-field>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey === formKey\"\r\n        class=\"feedback-region\">\r\n        <div class=\"mr-2\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -201,7 +201,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100\" [formGroup]=\"group\">\r\n    <div class=\"w-100 d-flex flex-wrap\" #title>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput formControlName=\"title\"\r\n                placeholder=\"Title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #labels>\r\n        <app-label-chip-list\r\n            formKey=\"labels\"\r\n            [editable]=\"false\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n</div>\r\n\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100\" [formGroup]=\"group\">\r\n    <div class=\"w-100 d-flex flex-wrap\" #title>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput formControlName=\"title\"\r\n                [placeholder]=\"L.title\">\r\n        </mat-form-field>\r\n        <div\r\n            *ngIf= \"focusedElemWithKey('title')\"\r\n            class=\"feedback-region title\">\r\n            <div>\r\n                {{ focusedFeedback.comment }}\r\n            </div>\r\n            <app-resolve-button></app-resolve-button>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-100 d-flex flex-wrap\" #labels>\r\n        <app-label-chip-list\r\n            formKey=\"labels\"\r\n            [editable]=\"false\"\r\n            [formGroup]=\"group\"\r\n            [focusedFeedback]=\"focusedFeedback\"\r\n            [focusedFeedbackKey]=\"focusedFeedbackKey\">\r\n        </app-label-chip-list>\r\n    </div>\r\n</div>\r\n\r\n";
     /***/
   },
 
@@ -221,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\">\r\n        <mat-button-toggle value=\"text\">\r\n            Text Mode\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\">\r\n            Mark Mode\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ task.inputMode === 'rect' ? 'Mark Boxes' : 'Mark Points' }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <ng-container *ngIf=\"task.inputType === 'rect'\">\r\n        <mat-checkbox (change)=\"onCheckBoxRegression($event)\">\r\n            Apply Box Regression By Color\r\n        </mat-checkbox>\r\n    </ng-container>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            Point Mark Radius\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">Text Boxes</div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ label }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (blur)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header title=\"Specification\"></app-sub-header>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\" placeholder=\"Title\" (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly placeholder=\"Number of Marks\" [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            title=\"Axes\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header title=\"Legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                Add Custom Column\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">Raw Data</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << Prev Stage\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> Next Stage\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (blur)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -261,7 +261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"styled-scroll raw-table w-100\" [formGroup]=\"formGroup\" #table>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"d-flex\" style=\"padding-left: 80px;\">\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2 column-title\">\r\n            {{ column.title }}\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex\">\r\n        <div class=\"index-cell align-self-center\">\r\n            Index\r\n        </div>\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2\">\r\n            <mat-form-field>\r\n                <mat-label>Encoding</mat-label>\r\n                <select matNativeControl\r\n                    [value]=\"column.encoding ? column.encoding.value: ''\"\r\n                    (change)=\"onSelectEncoding($event, column)\">\r\n                    <option value=\"x-position\">Position (x)</option>\r\n                    <option value=\"y-position\">Position (y)</option>\r\n                    <option value=\"height\">Height</option>\r\n                    <option value=\"width\">Width</option>\r\n                    <option value=\"area\">Area (Ratio)</option>\r\n                    <option value=\"color\">Color(Required)</option>\r\n                    <option value=\"none\">None (Only for custom column)</option>\r\n                </select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedFeedbackKey === column.path\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <ng-container *ngIf=\"allChannelsEncoded\">\r\n        <div *ngFor=\"let row of rows let i = index\">\r\n            <div [formGroup]=\"row.group\" class=\"d-flex focus-box\"\r\n                (click)=\"updateFocus(row.markKey)\"\r\n                [class.focused]=\"focusedBoxIndex === row.markKey\">\r\n                <div class=\"index-cell\">\r\n                    {{ i }}\r\n                </div>\r\n                <div *ngFor=\"let column of columns; let j = index\" class=\"column content-cell\">\r\n                    <ng-container\r\n                        *ngIf=\"!column.labels || column.labels.length == 0\">\r\n                        <input [formControlName]=\"column.title\">\r\n                    </ng-container>\r\n                    <ng-container\r\n                        *ngIf=\"column.labels && column.labels.length > 0\">\r\n                        <svg *ngIf=\"column.encoding\r\n                            && column.encoding.value === 'color'\"\r\n                            class=\"patch\"\r\n                        >\r\n                            <rect\r\n                            [attr.fill]=\"row.attrs[column.title] || '#000'\">\r\n                            </rect>\r\n                        </svg>\r\n                        <app-canvas-patch\r\n                            class=\"patch\"\r\n                            *ngIf=\"column.encoding\r\n                                && column.encoding.value === 'shape'\"\r\n                            [data]=\"row.attrs[column.title]\">\r\n                        </app-canvas-patch>\r\n                        <select [formControlName]=\"column.title\"\r\n                            (change)=\"onChangeLabel(column, row, i)\"\r\n                            class=\"w-100\">\r\n                            <option *ngFor=\"let label of column.labels\" [value]=\"label\">\r\n                                {{ label }}\r\n                            </option>\r\n                        </select>\r\n                    </ng-container>\r\n                </div>\r\n            </div>\r\n            <div\r\n                *ngIf=\"row.markKey === focusedFeedbackKey\"\r\n                class=\"feedback-region justify-content-start my-1\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n<div class=\"w-100 mt-2 d-flex align-items-center\">\r\n    <!-- <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"addRow()\">\r\n        Add Row\r\n    </button> -->\r\n    <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"clear()\">\r\n        Clear\r\n    </button>\r\n    <button\r\n        mat-flat-button color=\"primary\" (click)=\"runPrediction()\">\r\n        Predict\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"styled-scroll raw-table w-100\" [formGroup]=\"formGroup\" #table>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"d-flex\" style=\"padding-left: 80px;\">\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2 column-title\">\r\n            {{ column.title }}\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex\">\r\n        <div class=\"index-cell align-self-center\">\r\n            Index\r\n        </div>\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.encoding }}</mat-label>\r\n                <select matNativeControl\r\n                    [value]=\"column.encoding ? column.encoding.value: ''\"\r\n                    (change)=\"onSelectEncoding($event, column)\">\r\n                    <option value='' disabled></option>\r\n                    <option *ngFor=\"let encoding of encodings\"\r\n                        [value]=\"encoding\">\r\n                        {{ L.encodingLabel(encoding) }}\r\n                    </option>\r\n                </select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedFeedbackKey === column.path\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <ng-container *ngIf=\"allChannelsEncoded\">\r\n        <div *ngFor=\"let row of rows let i = index\">\r\n            <div [formGroup]=\"row.group\" class=\"d-flex focus-box\"\r\n                (click)=\"updateFocus(row.markKey)\"\r\n                [class.focused]=\"focusedBoxIndex === row.markKey\">\r\n                <div class=\"index-cell\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div *ngFor=\"let column of columns; let j = index\" class=\"column content-cell\">\r\n                    <ng-container\r\n                        *ngIf=\"!column.labels || column.labels.length == 0\">\r\n                        <input [formControlName]=\"column.title\">\r\n                    </ng-container>\r\n                    <ng-container\r\n                        *ngIf=\"column.labels && column.labels.length > 0\">\r\n                        <svg *ngIf=\"column.encoding\r\n                            && column.encoding.value === 'color'\"\r\n                            class=\"patch\"\r\n                        >\r\n                            <rect\r\n                            [attr.fill]=\"row.attrs[column.title] || '#000'\">\r\n                            </rect>\r\n                        </svg>\r\n                        <app-canvas-patch\r\n                            class=\"patch\"\r\n                            *ngIf=\"column.encoding\r\n                                && column.encoding.value === 'shape'\"\r\n                            [data]=\"row.attrs[column.title]\">\r\n                        </app-canvas-patch>\r\n                        <select [formControlName]=\"column.title\"\r\n                            (change)=\"onChangeLabel(column, row, i)\"\r\n                            class=\"w-100\">\r\n                            <option *ngFor=\"let label of column.labels\" [value]=\"label\">\r\n                                {{ label }}\r\n                            </option>\r\n                        </select>\r\n                    </ng-container>\r\n                </div>\r\n            </div>\r\n            <div\r\n                *ngIf=\"row.markKey === focusedFeedbackKey\"\r\n                class=\"feedback-region justify-content-start my-1\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n<div class=\"w-100 mt-2 d-flex align-items-center\">\r\n    <!-- <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"addRow()\">\r\n        Add Row\r\n    </button> -->\r\n    <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"clear()\">\r\n        {{ L.clear }}\r\n    </button>\r\n    <button\r\n        mat-flat-button\r\n            color=\"primary\"\r\n            (click)=\"runPrediction()\"\r\n            [disabled]=\"!allChannelsEncoded\">\r\n        {{ L.predict }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -361,7 +361,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<button mat-stroked-button\r\n    class=\"resolve-button\"\r\n    (click)=\"fs.resolve()\">\r\n    Resolve\r\n</button>\r\n";
+    __webpack_exports__["default"] = "<button mat-stroked-button\r\n    class=\"resolve-button\"\r\n    (click)=\"fs.resolve()\">\r\n    {{ L.resolveBtn }}\r\n</button>\r\n";
     /***/
   },
 
@@ -381,7 +381,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div\r\n    *ngIf=\"feedbacks\"\r\n    class=\"w-100 ml-3 p-2 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header title=\"Feedback List\"></app-sub-header>\r\n    <app-feedback-mark\r\n        class=\"mr-2\"\r\n        *ngFor=\"let feedback of feedbacks let index = i;\"\r\n        [feedback]=\"feedback\"\r\n        [focused]=\"focusedKey === feedback.key\"\r\n        (focus)=\"onFeedbackFocused($event)\">\r\n    </app-feedback-mark>\r\n    <div *ngIf=\"!feedbacks || feedbacks.length === 0\">\r\n        <i>There are no feedbacks.</i>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div\r\n    *ngIf=\"feedbacks\"\r\n    class=\"w-100 ml-3 p-2 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header [title]=\"L.title\"></app-sub-header>\r\n    <app-feedback-mark\r\n        class=\"mr-2\"\r\n        *ngFor=\"let feedback of feedbacks let index = i;\"\r\n        [feedback]=\"feedback\"\r\n        [focused]=\"focusedKey === feedback.key\"\r\n        (focus)=\"onFeedbackFocused($event)\">\r\n    </app-feedback-mark>\r\n    <div *ngIf=\"!feedbacks || feedbacks.length === 0\">\r\n        <i>{{ L.msg }}</i>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -406,6 +406,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/demo/quiz-complete-dialog.component.html":
+  /*!*****************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/demo/quiz-complete-dialog.component.html ***!
+    \*****************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppEditDemoQuizCompleteDialogComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div>\r\n    <h1 mat-dialog-title> 귀하께선 퀴즈를 통과하셨습니다. </h1>\r\n    <div mat-dialog-content style=\"height: 150px;\">\r\n        <div class=\"w-100\">\r\n            귀하께선 이 퀴즈를 통과함으로서 본 연구에 참여할 자격이 주어졌습니다. <br/>\r\n            아래의 링크에 접속하셔서 연구 참여에 대한 설명을 읽어보시고 참여를 원하시면 동의와 함께 네이버 아이디를 입력해주세요.\r\n        </div>\r\n        <div class=\"w-100\">\r\n            <a href=\"https://forms.gle/7LQgSnQi8jxx4TMr5\">\r\n                구글 폼 링크\r\n            </a>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/edit.component.html":
   /*!********************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/edit.component.html ***!
@@ -421,7 +441,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-sidenav-container class=\"w-100 h-100\">\r\n    <mat-sidenav mode=\"side\" opened id=\"side-nav\">\r\n        <app-side-nav\r\n            (remove)=\"onRemoveImage()\"\r\n            [event]=\"eventSubject.asObservable()\">\r\n        </app-side-nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <div\r\n            class=\"w-100 h-100 d-flex\">\r\n            <div class=\"w-50 h-100\">\r\n                <div class=\"w-100 p-2 d-flex align-items-center edit-header\">\r\n                    MODE:\r\n                    {{ mode.toUpperCase() }}\r\n                    <b *ngIf=\"config\">\r\n                        {{ config.service === 'normal'\r\n                            ? ''\r\n                            : '[' + config.service.toUpperCase() + ']'\r\n                        }}\r\n                    </b>\r\n                </div>\r\n                <div id=\"image-zone\" class=\"w-100 h-75\r\n            d-flex justify-content-center align-items-center\r\n            position-relative\"\r\n                    [class.selected]=\"selectedImage\"\r\n                    #imgZone>\r\n                    <div class=\"position-absolute image-region\" [class.selected]=\"selectedImage\">\r\n                        <img #img>\r\n                    </div>\r\n\r\n                    <div class=\"position-absolute image-region\" [class.selected]=\"selectedImage\">\r\n                        <svg #svg></svg>\r\n                    </div>\r\n                    <div *ngIf=\"noImagesLeft\"\r\n                        class=\"position-absolute w-100 h-100\r\n                            d-flex flex-column justify-content-center align-items-center\">\r\n                        <h3 class=\"w-100 mb-3 text-center\">\r\n                            COMPLETE\r\n                        </h3>\r\n                        <div class=\"px-4 desc\">\r\n                            Congratulations! You have annotated all the images.\r\n                            <br/>\r\n                            There are no more images left.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"w-50 h-100 right-panel\"\r\n                *ngIf=\"mode !== 'verification'\">\r\n                <app-annotation-module\r\n                    *ngIf=\"formGroup\"\r\n                    [formGroup]=\"formGroup\"\r\n                    [config]=\"config\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [spacePressed]=\"spacePressed\"\r\n                    [svgS]=\"svgS\"\r\n                    [event]=\"eventSubject.asObservable()\"\r\n                    [mode]=\"mode\"\r\n                    (submitEmitter)=\"submit()\">\r\n                </app-annotation-module>\r\n            </div>\r\n            <div *ngIf=\"mode === 'verification' && config\"\r\n                class=\"w-50 h-100 right-panel\" >\r\n                <app-verification-module\r\n                    [config]=\"config\"\r\n                    [verificationDatas]=\"verificationDatas\"\r\n                    [onImageLoad]=\"onImageLoad\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [svgS]=\"svgS\"\r\n                    (reviewEmitter)=\"onReviewSubmitted()\"\r\n                >\r\n                </app-verification-module>\r\n            </div>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n<app-feedback-modal></app-feedback-modal>\r\n";
+    __webpack_exports__["default"] = "<mat-sidenav-container class=\"w-100 h-100\">\r\n    <mat-sidenav mode=\"side\" opened id=\"side-nav\">\r\n        <app-side-nav\r\n            (remove)=\"onRemoveImage()\"\r\n            [event]=\"eventSubject.asObservable()\">\r\n        </app-side-nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <div\r\n            class=\"w-100 h-100 d-flex\">\r\n            <div class=\"w-50 h-100\">\r\n                <div class=\"w-100 p-2 d-flex align-items-center edit-header\">\r\n                    {{ L.mode }}:\r\n                    {{ L.currMode(mode) }}\r\n                    <b *ngIf=\"config\">\r\n                        {{ config.service === 'normal'\r\n                            ? ''\r\n                            : '[' + L.service(config.service) + ']'\r\n                        }}\r\n                    </b>\r\n                </div>\r\n                <div id=\"image-zone\" class=\"w-100 h-75\r\n            d-flex justify-content-center align-items-center\r\n            position-relative\"\r\n                    [class.selected]=\"selectedImage\"\r\n                    #imgZone>\r\n                    <div class=\"position-absolute image-region\" [class.selected]=\"selectedImage\">\r\n                        <img #img>\r\n                    </div>\r\n\r\n                    <div class=\"position-absolute svg-region\" [class.selected]=\"selectedImage\">\r\n                        <svg #svg></svg>\r\n                    </div>\r\n                    <div *ngIf=\"noImagesLeft\"\r\n                        class=\"position-absolute w-100 h-100\r\n                            d-flex flex-column justify-content-center align-items-center\">\r\n                        <h3 class=\"w-100 mb-3 text-center\">\r\n                            COMPLETE\r\n                        </h3>\r\n                        <div class=\"px-4 desc\">\r\n                            {{ L.completeMsg1 }}\r\n                            <br/>\r\n                            {{ L.completeMsg2 }}\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"w-50 right-panel styled-scroll\"\r\n                *ngIf=\"mode !== 'verification'\">\r\n                <app-annotation-module\r\n                    *ngIf=\"formGroup\"\r\n                    [formGroup]=\"formGroup\"\r\n                    [config]=\"config\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [spacePressed]=\"spacePressed\"\r\n                    [svgS]=\"svgS\"\r\n                    [event]=\"eventSubject.asObservable()\"\r\n                    [mode]=\"mode\"\r\n                    (submitEmitter)=\"submit()\">\r\n                </app-annotation-module>\r\n            </div>\r\n            <div *ngIf=\"mode === 'verification' && config\"\r\n                class=\"w-50 right-panel styled-scroll\" >\r\n                <app-verification-module\r\n                    [config]=\"config\"\r\n                    [verificationDatas]=\"verificationDatas\"\r\n                    [onImageLoad]=\"onImageLoad\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [svgS]=\"svgS\"\r\n                    (reviewEmitter)=\"onReviewSubmitted()\"\r\n                >\r\n                </app-verification-module>\r\n            </div>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n<app-feedback-modal></app-feedback-modal>\r\n";
     /***/
   },
 
@@ -441,7 +461,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        Progress:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        USER NAME:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Use Suggestions</div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.service === 'normal'\">\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                REMOVE THIS IMAGE\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div>\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
+    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <!-- <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div> -->\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
     /***/
   },
 
@@ -461,7 +481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div\r\n    [formGroup]=\"form\"\r\n    [class.focused]=\"feedback.key === focusedKey\"\r\n    (click)=\"onFocus()\"\r\n    class=\"w-100 wrapper\">\r\n    <mat-divider class=\"w-100 my-1\"></mat-divider>\r\n    <div class=\"w-100 d-flex justify-content-between\">\r\n        <div class=\"w-100 d-flex align-items-center\">\r\n            <mat-form-field\r\n                *ngIf=\"!directInput\"\r\n                class=\"w-50\">\r\n                <mat-label>Comment</mat-label>\r\n                <mat-select\r\n                    appStopPropagation\r\n                    formControlName=\"comment\">\r\n                    <mat-option *ngFor=\"let comment of comments\" [value]=\"comment\">\r\n                        {{ comment }}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <mat-form-field\r\n                *ngIf=\"directInput\"\r\n                class=\"w-50\">\r\n                <input\r\n                    appStopPropagation matInput\r\n                    formControlName=\"comment\" placeholder=\"Comment\" />\r\n            </mat-form-field>\r\n            <mat-checkbox\r\n                appStopPropagation\r\n                class=\"ml-3\"\r\n                (change)=\"checkWriteMode($event)\">\r\n                Write directly\r\n            </mat-checkbox>\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"remove.emit(form)\">\r\n            <mat-icon>clear</mat-icon>\r\n        </button>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div\r\n    [formGroup]=\"form\"\r\n    [class.focused]=\"feedback.key === focusedKey\"\r\n    (click)=\"onFocus()\"\r\n    class=\"w-100 wrapper\">\r\n    <mat-divider class=\"w-100 my-1\"></mat-divider>\r\n    <div class=\"w-100 d-flex justify-content-between\">\r\n        <div class=\"w-100 d-flex align-items-center\">\r\n            <mat-form-field\r\n                *ngIf=\"!directInput\"\r\n                class=\"w-50\">\r\n                <mat-label>\r\n                    {{ L.feedbackCard.comment }}\r\n                </mat-label>\r\n                <mat-select\r\n                    appStopPropagation\r\n                    formControlName=\"comment\">\r\n                    <mat-option *ngFor=\"let comment of comments\" [value]=\"comment\">\r\n                        {{ comment }}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n            <mat-form-field\r\n                *ngIf=\"directInput\"\r\n                class=\"w-50\">\r\n                <input\r\n                    appStopPropagation matInput\r\n                    formControlName=\"comment\" placeholder=\"Comment\" />\r\n            </mat-form-field>\r\n            <mat-checkbox\r\n                appStopPropagation\r\n                class=\"ml-3\"\r\n                (change)=\"checkWriteMode($event)\">\r\n                {{ L.feedbackCard.writeDirect }}\r\n            </mat-checkbox>\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"remove.emit(form)\">\r\n            <mat-icon>clear</mat-icon>\r\n        </button>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -501,7 +521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Axis\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.dir.key\"\r\n            (click)=\"emit(data.dir)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Direction\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.dir.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Type\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Unit\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.unit.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Encoding\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.encoding.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.labels.key\"\r\n            (click)=\"emit(data.labels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Labels\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ labels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\"\r\n        *ngIf=\"data.markLabels && data.markLabels.value.length > 0\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Mark Labels\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.axis }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.dir.key\"\r\n            (click)=\"emit(data.dir)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.dir }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.dir.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.type }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.unit }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.unit.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.encoding }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ L.encodingLabel(data.encoding.value) }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.labels.key\"\r\n            (click)=\"emit(data.labels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.labels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ labels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\"\r\n        *ngIf=\"data.markLabels && data.markLabels.value.length > 0\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.markLabels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -521,7 +541,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Custom\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Type\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Unit\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.unit.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-50\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-25 p-2 cell-title\">\r\n                Encoding\r\n            </div>\r\n            <div class=\"w-75 p-2\">\r\n                {{ data.encoding.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Mark Labels\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.custom }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.type }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.unit }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.unit.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-50\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-25 p-2 cell-title\">\r\n                {{ L.encoding }}\r\n            </div>\r\n            <div class=\"w-75 p-2\">\r\n                {{ L.encodingLabel(data.encoding.value) }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.markLabels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -541,7 +561,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                Legend\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                Encoding\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.encoding.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"d-flex w-75\">\r\n            <div class=\"focus-unit w-100\"\r\n                [class.focused]=\"focusedKey === data.labels.key\"\r\n                (click)=\"emit(data.labels)\">\r\n                <div class=\"w-25 p-2 cell-title\">\r\n                    Labels\r\n                </div>\r\n                <div class=\"w-75 p-2\">\r\n                    {{ labels }}\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.legend }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.encoding }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ L.encodingLabel(data.encoding.value) }}\r\n            </div>\r\n        </div>\r\n        <div class=\"d-flex w-75\">\r\n            <div class=\"focus-unit w-100\"\r\n                [class.focused]=\"focusedKey === data.labels.key\"\r\n                (click)=\"emit(data.labels)\">\r\n                <div class=\"w-25 p-2 cell-title\">\r\n                    {{ L.labels }}\r\n\r\n                </div>\r\n                <div class=\"w-75 p-2\">\r\n                    {{ labels }}\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -561,7 +581,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 styled-scroll wrapper\">\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header title=\"Marks\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div\r\n            *ngFor=\"let mark of data.marks; let i = index\"\r\n            class=\"mr-2 mark-label\"\r\n            [class.focused]=\"focusedKey === mark.key\"\r\n            (click)=\"clickMark(mark)\">\r\n            {{ i }}\r\n        </div>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addMarkFeedback()\">\r\n            Add Marks Feedback\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of markFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"markComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeMarkFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header title=\"Texts\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div class=\"d-flex w-100 align-items-center text-label title\">\r\n            <div class=\"label-cell px-2\">\r\n                Label\r\n            </div>\r\n            <div class=\"label-cell px-2\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <mat-divider class=\"w-100\"></mat-divider>\r\n        <div\r\n            *ngFor=\"let text of data.texts; let i = index\"\r\n            class=\"d-flex w-100 align-items-center text-label\"\r\n            [class.focused]=\"focusedKey === text.key\"\r\n            [class.odd-row]=\"i % 2 === 1\"\r\n            (click)=\"clickText(text)\">\r\n            <div class=\"label-cell px-2\">\r\n                {{ text.label }}\r\n            </div>\r\n            <div class=\"text-cell px-2\">\r\n                {{ text.text }}\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addTextFeedback()\">\r\n            Add Texts Feedback\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of textFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"textComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeTextFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header title=\"Spec\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div class=\"w-100 spec-table\">\r\n            <div class=\"d-flex w-100 focus-unit\"\r\n                [class.focused]=\"data.spec.title.key === focusedKey\"\r\n                (click)=\"clickCell(data.spec.title.key)\">\r\n                <div class=\"w-125 p-2 cell-title\">\r\n                    Title\r\n                </div>\r\n                <div class=\"w-875 p-2\">\r\n                    {{ data.spec.title.value }}\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <app-axis-spec-card\r\n            *ngFor=\"let axis of data.spec.axes; let i = index\"\r\n            [data]=\"axis\"\r\n            [index]=\"i\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-axis-spec-card>\r\n        <app-legend-spec-card\r\n            *ngIf=\"data.spec.legend\"\r\n            [data]=\"data.spec.legend\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-legend-spec-card>\r\n        <app-custom-spec-card\r\n            *ngFor=\"let custom of data.spec.customs; let i = idnex\"\r\n            [data]=\"custom\"\r\n            [index]=\"i\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-custom-spec-card>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addSpecFeedback()\">\r\n            Add Spec Feedback\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of specFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"specComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeSpecFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header title=\"Raw\"></app-sub-header>\r\n    <div *ngIf=\"data\"\r\n        class=\"w-100 raw-table\">\r\n        <div class=\"d-flex w-100 align-items-center text-label title\">\r\n            <div *ngFor=\"let key of data.raw.keys\" class=\"label-cell px-2\">\r\n                {{ key }}\r\n            </div>\r\n        </div>\r\n        <mat-divider class=\"w-100\"></mat-divider>\r\n        <div\r\n            *ngFor=\"let row of data.raw.rows; let i = index\"\r\n            class=\"d-flex w-100 align-items-center text-label\"\r\n            [class.focused]=\"focusedKey === row.key\"\r\n            [class.odd-row]=\"i % 2 === 1\"\r\n            (click)=\"clickRow(row)\">\r\n            <div\r\n                *ngFor=\"let key of data.raw.keys\"\r\n                class=\"label-cell px-2\">\r\n                {{ row.value[key] }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addRawFeedback()\">\r\n            Add Raw Feedback\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of rawFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"rawComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeRawFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 styled-scroll wrapper\">\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header [title]=\"L.marks\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div\r\n            *ngFor=\"let mark of data.marks; let i = index\"\r\n            class=\"mr-2 mark-label\"\r\n            [class.focused]=\"focusedKey === mark.key\"\r\n            (click)=\"clickMark(mark)\">\r\n            {{ i + 1 }}\r\n        </div>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addMarkFeedback()\">\r\n            {{ L.addMarksFeedback }}\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of markFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"markComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeMarkFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header [title]=\"L.texts\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div class=\"d-flex w-100 align-items-center text-label title\">\r\n            <div class=\"label-cell px-2\">\r\n                Label\r\n            </div>\r\n            <div class=\"label-cell px-2\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <mat-divider class=\"w-100\"></mat-divider>\r\n        <div\r\n            *ngFor=\"let text of data.texts; let i = index\"\r\n            class=\"d-flex w-100 align-items-center text-label\"\r\n            [class.focused]=\"focusedKey === text.key\"\r\n            [class.odd-row]=\"i % 2 === 1\"\r\n            (click)=\"clickText(text)\">\r\n            <div class=\"label-cell px-2\">\r\n                {{ L.label(text.label) }}\r\n            </div>\r\n            <div class=\"text-cell px-2\">\r\n                {{ text.text }}\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addTextFeedback()\">\r\n            {{ L.addTextsFeedback }}\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of textFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"textComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeTextFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n    <ng-container *ngIf=\"data\">\r\n        <div class=\"w-100 spec-table\">\r\n            <div class=\"d-flex w-100 focus-unit\"\r\n                [class.focused]=\"data.spec.title.key === focusedKey\"\r\n                (click)=\"clickCell(data.spec.title.key)\">\r\n                <div class=\"w-125 p-2 cell-title\">\r\n                    {{ L.title }}\r\n                </div>\r\n                <div class=\"w-875 p-2\">\r\n                    {{ data.spec.title.value }}\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <app-axis-spec-card\r\n            *ngFor=\"let axis of data.spec.axes; let i = index\"\r\n            [data]=\"axis\"\r\n            [index]=\"i\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-axis-spec-card>\r\n        <app-legend-spec-card\r\n            *ngIf=\"data.spec.legend\"\r\n            [data]=\"data.spec.legend\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-legend-spec-card>\r\n        <app-custom-spec-card\r\n            *ngFor=\"let custom of data.spec.customs; let i = idnex\"\r\n            [data]=\"custom\"\r\n            [index]=\"i\"\r\n            [focusedKey]=\"focusedKey\"\r\n            (focus)=\"clickCell($event)\">\r\n        </app-custom-spec-card>\r\n    </ng-container>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addSpecFeedback()\">\r\n            {{ L.addSpecFeedback }}\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of specFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"specComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeSpecFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n\r\n<div class=\"w-100 d-flex align-items-center flex-wrap\">\r\n    <app-sub-header [title]=\"L.rawData\"></app-sub-header>\r\n    <div *ngIf=\"data\"\r\n        class=\"w-100 raw-table\">\r\n        <div class=\"d-flex w-100 align-items-center text-label title\">\r\n            <div *ngFor=\"let key of data.raw.keys\" class=\"label-cell px-2\">\r\n                {{ key }}\r\n            </div>\r\n        </div>\r\n        <mat-divider class=\"w-100\"></mat-divider>\r\n        <div\r\n            *ngFor=\"let row of data.raw.rows; let i = index\"\r\n            class=\"d-flex w-100 align-items-center text-label\"\r\n            [class.focused]=\"focusedKey === row.key\"\r\n            [class.odd-row]=\"i % 2 === 1\"\r\n            (click)=\"clickRow(row)\">\r\n            <div\r\n                *ngFor=\"let key of data.raw.keys\"\r\n                class=\"label-cell px-2\">\r\n                {{ row.value[key] }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div\r\n        class=\"w-100 my-2 mt-3 d-flex justify-content-end\">\r\n        <button mat-stroked-button (click)=\"addRawFeedback()\">\r\n            {{ L.addRawFeedback }}\r\n        </button>\r\n    </div>\r\n    <app-feedback-card\r\n        *ngFor=\"let form of rawFeedbacks\"\r\n        [form]=\"form\"\r\n        [focusedKey]=\"focusedKey\"\r\n        [comments]=\"rawComments\"\r\n        (focus)=\"focus.emit($event)\"\r\n        (remove)=\"removeRawFeedback($event)\">\r\n    </app-feedback-card>\r\n</div>\r\n\r\n</div>\r\n";
     /***/
   },
 
@@ -581,7 +601,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    #stepper>\r\n    <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n        <mat-step>\r\n            <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n            <ng-container [ngSwitch]=\"task.taskType\">\r\n                <ng-container *ngSwitchCase=\"'C'\">\r\n                    <app-v-classification\r\n                        [task]=\"task\"\r\n                        [data]=\"verificationDatas[i]\"\r\n                        (addFeedback)=\"onAddFeedback($event)\"\r\n                        (removeFeedback)=\"onRemoveFeedback($event)\">\r\n                    </app-v-classification\r\n>\r\n                </ng-container>\r\n            </ng-container>\r\n            <ng-container [ngSwitch]=\"task.taskType\">\r\n                <ng-container *ngSwitchCase=\"'O'\">\r\n                    <app-v-overall\r\n                        [task]=\"task\"\r\n                        [data]=\"verificationDatas[i]\"\r\n                        [onImageLoad]=\"onImageLoad\"\r\n                        [imgRef]=\"imgRef\"\r\n                        [svgS]=\"svgS\"\r\n                        [focusedKey]=\"focusedKey\"\r\n                        (add)=\"onAddFeedback($event)\"\r\n                        (remove)=\"onRemoveFeedback($event)\"\r\n                        (focus)=\"focusedKey = $event\">\r\n                    </app-v-overall>\r\n                </ng-container>\r\n            </ng-container>\r\n        </mat-step>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel\r\n    [feedbackForms]=\"feedbackForms\"\r\n    [focusedKey]=\"focusedKey\"\r\n    (focus)=\"focusedKey = $event\">\r\n</app-review-panel>\r\n<div class=\"w-100 d-flex justify-content-end align-items-center pr-3\">\r\n    <button mat-flat-button\r\n        class=\"mr-3\"\r\n        color=\"primary\"\r\n        [disabled]=\"feedbackForms.length > 0\"\r\n        (click)=\"sendReview(true)\">\r\n        Accept\r\n    </button>\r\n    <button mat-flat-button\r\n        color=\"primary\"\r\n        [disabled]=\"feedbackForms.length === 0\"\r\n        (click)=\"sendReview(false)\">\r\n        Reject\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    #stepper>\r\n    <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n        <mat-step>\r\n            <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n            <ng-container [ngSwitch]=\"task.taskType\">\r\n                <ng-container *ngSwitchCase=\"'C'\">\r\n                    <app-v-classification\r\n                        [task]=\"task\"\r\n                        [data]=\"verificationDatas[i]\"\r\n                        (addFeedback)=\"onAddFeedback($event)\"\r\n                        (removeFeedback)=\"onRemoveFeedback($event)\">\r\n                    </app-v-classification\r\n>\r\n                </ng-container>\r\n            </ng-container>\r\n            <ng-container [ngSwitch]=\"task.taskType\">\r\n                <ng-container *ngSwitchCase=\"'O'\">\r\n                    <app-v-overall\r\n                        [task]=\"task\"\r\n                        [data]=\"verificationDatas[i]\"\r\n                        [onImageLoad]=\"onImageLoad\"\r\n                        [imgRef]=\"imgRef\"\r\n                        [svgS]=\"svgS\"\r\n                        [focusedKey]=\"focusedKey\"\r\n                        (add)=\"onAddFeedback($event)\"\r\n                        (remove)=\"onRemoveFeedback($event)\"\r\n                        (focus)=\"focusedKey = $event\">\r\n                    </app-v-overall>\r\n                </ng-container>\r\n            </ng-container>\r\n        </mat-step>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel\r\n    [feedbackForms]=\"feedbackForms\"\r\n    [focusedKey]=\"focusedKey\"\r\n    (focus)=\"focusedKey = $event\">\r\n</app-review-panel>\r\n<div class=\"w-100 d-flex justify-content-end align-items-center pr-3\">\r\n    <button mat-flat-button\r\n        class=\"mr-3\"\r\n        color=\"primary\"\r\n        [disabled]=\"feedbackForms.length > 0\"\r\n        (click)=\"sendReview(true)\">\r\n        {{ L.verModule.accept }}\r\n    </button>\r\n    <button mat-flat-button\r\n        color=\"primary\"\r\n        [disabled]=\"feedbackForms.length === 0\"\r\n        (click)=\"sendReview(false)\">\r\n        {{ L.verModule.reject }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -1577,15 +1597,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
     /*! ./edit/common/resolve-button/resolve-button.component */
     "./src/app/edit/common/resolve-button/resolve-button.component.ts");
+    /* harmony import */
+
+
+    var _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    /*! ./edit/demo/quiz-complete-dialog.component */
+    "./src/app/edit/demo/quiz-complete-dialog.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _edit_file_drop_directive__WEBPACK_IMPORTED_MODULE_7__["FileDropDirective"], _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__["StopPropagationDirective"], _edit_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_14__["SideNavComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ClassificationComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RegressionComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["BoundingBoxComponent"], _non_active_page_non_active_page_component__WEBPACK_IMPORTED_MODULE_15__["NonActivePageComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["TextComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["OverallComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AxisSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RawTableComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["LegendSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["CanvasPatchComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VerificationModuleComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VClassificationComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["VSubTitleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackMarkComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AnnotationModuleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["ReviewPanelComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackModalComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VOverallComponent"], _edit_annotation_module_overall_custom_spec_custom_spec_component__WEBPACK_IMPORTED_MODULE_17__["CustomSpecComponent"], _edit_annotation_module_overall_label_chip_list_label_chip_list_component__WEBPACK_IMPORTED_MODULE_18__["LabelChipListComponent"], _edit_verification_module_feedback_card_feedback_card_component__WEBPACK_IMPORTED_MODULE_19__["FeedbackCardComponent"], _edit_verification_module_v_overall_axis_spec_card_axis_spec_card_component__WEBPACK_IMPORTED_MODULE_20__["AxisSpecCardComponent"], _edit_verification_module_v_overall_legend_spec_card_legend_spec_card_component__WEBPACK_IMPORTED_MODULE_21__["LegendSpecCardComponent"], _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"], _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"]],
-      entryComponents: [_edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatStepperModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatChipsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSliderModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _edit_file_drop_directive__WEBPACK_IMPORTED_MODULE_7__["FileDropDirective"], _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__["StopPropagationDirective"], _edit_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_14__["SideNavComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ClassificationComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RegressionComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["BoundingBoxComponent"], _non_active_page_non_active_page_component__WEBPACK_IMPORTED_MODULE_15__["NonActivePageComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["TextComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["OverallComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AxisSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RawTableComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["LegendSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["CanvasPatchComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VerificationModuleComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VClassificationComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["VSubTitleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackMarkComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AnnotationModuleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["ReviewPanelComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackModalComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VOverallComponent"], _edit_annotation_module_overall_custom_spec_custom_spec_component__WEBPACK_IMPORTED_MODULE_17__["CustomSpecComponent"], _edit_annotation_module_overall_label_chip_list_label_chip_list_component__WEBPACK_IMPORTED_MODULE_18__["LabelChipListComponent"], _edit_verification_module_feedback_card_feedback_card_component__WEBPACK_IMPORTED_MODULE_19__["FeedbackCardComponent"], _edit_verification_module_v_overall_axis_spec_card_axis_spec_card_component__WEBPACK_IMPORTED_MODULE_20__["AxisSpecCardComponent"], _edit_verification_module_v_overall_legend_spec_card_legend_spec_card_component__WEBPACK_IMPORTED_MODULE_21__["LegendSpecCardComponent"], _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"], _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]],
+      entryComponents: [_edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatStepperModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatChipsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSliderModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSlideToggleModule"]],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })], AppModule);
@@ -1637,7 +1663,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, Config);
 
         this.key = raw['key'];
-        this.sharedDataset = raw['shared_dataset'] || false;
+        this.sharedDataset = raw['sharedDataset'] || false;
         this.verification = raw['verification'] || false;
         this.service = raw['service'];
         this.tasks = raw['tasks'].map(function (task) {
@@ -1681,28 +1707,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return task.parseForVerification(data.annotation[task.key]);
           });
         }
-      }], [{
-        key: "getDemo",
-        value: function getDemo() {
-          return new Config({
-            key: 'demo',
-            shared_dataset: true,
-            verification: true,
-            service: 'demo',
-            tasks: [{
-              key: 'key_0',
-              name: 'demo',
-              task_type: 'O',
-              command: '[데모] 다음 막대 차트를 어노테이션 해보세요',
-              msgs: ['본 버전은 데모용으로서 Annotation, Verification, Revision을 순서대로 진행할 수 있습니다.', '각 모드 당 2번씩 총 6장의 이미지가 데모용으로 준비되어 있습니다.'],
-              input_type: 'rect',
-              predictionScore: {
-                Text: 0.92,
-                Mark: 0.878,
-                TextRole: 0.973
-              }
-            }]
-          });
+      }, {
+        key: "isNormalMode",
+        get: function get() {
+          return this.service === 'normal';
         }
       }]);
 
@@ -2656,6 +2664,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var targetCenter = center(raw);
             var texts = Object.values(group.controls).filter(function (d) {
               return d.contains('text');
+            }).filter(function (d) {
+              return ![KEY_TITLE, KEY_X_AXIS_TITLE, KEY_Y_AXIS_TITLE].includes(d.get('label').value);
             });
 
             if (texts.length === 0) {
@@ -4688,7 +4698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcYW5ub3RhdGlvbi1tb2R1bGVcXGFubm90YXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L2Fubm90YXRpb24tbW9kdWxlL2Fubm90YXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvYW5ub3RhdGlvbi1tb2R1bGUvYW5ub3RhdGlvbi1tb2R1bGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuIiwiLnZhbGlkYXRlLWZlZWRiYWNrIHtcbiAgY29sb3I6ICNmNDQzMzY7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n:host {\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcYW5ub3RhdGlvbi1tb2R1bGVcXGFubm90YXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L2Fubm90YXRpb24tbW9kdWxlL2Fubm90YXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURFQTtFQUNJLGNBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvYW5ub3RhdGlvbi1tb2R1bGUvYW5ub3RhdGlvbi1tb2R1bGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbjpob3N0IHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcbiIsIi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG59Il19 */";
     /***/
   },
 
@@ -4783,11 +4793,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _demo_quiz_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ../demo/quiz.service */
     "./src/app/edit/demo/quiz.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var AnnotationModuleComponent =
     /*#__PURE__*/
     function () {
-      function AnnotationModuleComponent(network, edit, fs, demo, quiz) {
+      function AnnotationModuleComponent(network, edit, fs, demo, quiz, L) {
         _classCallCheck(this, AnnotationModuleComponent);
 
         this.network = network;
@@ -4795,6 +4811,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.fs = fs;
         this.demo = demo;
         this.quiz = quiz;
+        this.L = L;
         this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.currIndex = 0;
         this.submitReady = false;
@@ -4856,7 +4873,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.sub2 = this.fs.resolveObservable.subscribe(function (feedback) {
             var findIndex = _this22.review.feedbacks.findIndex(function (d) {
-              console.log(d.annotationKey, d.taskKey);
               return d.annotationKey === feedback.annotationKey && d.taskKey === feedback.taskKey;
             });
 
@@ -4950,6 +4966,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _demo_demo_service__WEBPACK_IMPORTED_MODULE_10__["DemoService"]
       }, {
         type: _demo_quiz_service__WEBPACK_IMPORTED_MODULE_11__["QuizService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"]
       }];
     };
 
@@ -4972,7 +4990,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./annotation-module.component.scss */
       "./src/app/edit/annotation-module/annotation-module.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_8__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_7__["EditService"], _common_feedback_service__WEBPACK_IMPORTED_MODULE_9__["FeedbackService"], _demo_demo_service__WEBPACK_IMPORTED_MODULE_10__["DemoService"], _demo_quiz_service__WEBPACK_IMPORTED_MODULE_11__["QuizService"]])], AnnotationModuleComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_8__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_7__["EditService"], _common_feedback_service__WEBPACK_IMPORTED_MODULE_9__["FeedbackService"], _demo_demo_service__WEBPACK_IMPORTED_MODULE_10__["DemoService"], _demo_quiz_service__WEBPACK_IMPORTED_MODULE_11__["QuizService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"]])], AnnotationModuleComponent);
     /***/
   },
 
@@ -5128,7 +5146,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! src/app/common/task */
     "./src/app/common/task/index.ts");
 
-    var NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,]/g;
+    var NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,|B|b]/g;
 
     var AnnotationBox =
     /*#__PURE__*/
@@ -5217,7 +5235,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function isNumberText(v) {
-      return !isNaN(+v.replace(NUM_REG, ''));
+      var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      var findNum = false;
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        var _loop = function _loop() {
+          var c = _step2.value;
+          findNum = findNum || nums.findIndex(function (n) {
+            return n === c;
+          }) !== -1;
+        };
+
+        for (var _iterator2 = v[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          _loop();
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+            _iterator2["return"]();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+
+      return findNum && !isNaN(+v.replace(NUM_REG, ''));
     }
 
     function removeEventArea(comp) {
@@ -5239,10 +5289,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         newBoxIndex = (comp.autoIncBoxIndex + 1).toString();
         var x = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetX;
         var y = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetY;
-        comp.g.append('rect').attr('class', "rect-".concat(newBoxIndex)).attr('x', x).attr('y', y).attr('stroke-width', 2).attr('stroke', 'red').attr('fill', 'rgba(255, 0, 0, 0)');
+        comp.g.append('rect').attr('class', "rect-".concat(newBoxIndex)).attr('x', x).attr('y', y).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark');
         pivotX = x;
         pivotY = y;
         comp.isDrawing = true;
+        comp.writeForm(newBoxIndex, x, y, 0, 0);
       };
 
       var drawRect = function drawRect() {
@@ -5261,7 +5312,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var x = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetX;
         var y = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetY;
         var r = comp.pointRadius;
-        var circleS = comp.g.append('circle').attr('class', "rect-".concat(newBoxIndex)).attr('cx', x).attr('cy', y).attr('r', r).attr('fill-opacity', 0).attr('stroke-width', 2).attr('stroke', 'darkorange');
+        var circleS = comp.g.append('circle').attr('class', "rect-".concat(newBoxIndex)).attr('cx', x).attr('cy', y).attr('r', r).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark');
         comp.writeForm(newBoxIndex, x - r, y - r, 2 * r, 2 * r);
         comp.updateFocus(newBoxIndex);
         addCircleDragEvent(comp, newBoxIndex, circleS);
@@ -5275,11 +5326,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var width = +rectS.attr('width');
         var height = +rectS.attr('height');
         var handles = getRectHandles(x, y, width, height);
-        var circleS = g.selectAll(".circle-".concat(newBoxIndex)).data(handles).enter().append('circle').attr('class', "circle-".concat(newBoxIndex, " handle")).classed('focused', comp.focusedBoxIndex === newBoxIndex).attr('cx', function (d) {
+        var circleS = g.selectAll(".circle-".concat(newBoxIndex)).data(handles).enter().append('circle').attr('class', "circle-".concat(newBoxIndex, " handle")).classed('focused', comp.focusedBoxIndex === newBoxIndex).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark').attr('cx', function (d) {
           return d.cx;
         }).attr('cy', function (d) {
           return d.cy;
-        }).attr('r', 3).attr('fill', 'darkorange');
+        }).attr('r', 3);
         comp.updateFocus(newBoxIndex);
         addCircleEvent(comp, newBoxIndex, rectS, circleS);
         comp.addRectEvent(newBoxIndex, rectS, circleS);
@@ -5367,13 +5418,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var y = y0 * imgElem.height + 10;
       var width = (x1 - x0) * imgElem.width;
       var height = (y1 - y0) * imgElem.height;
-      var rectS = comp.g.append('rect').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('x', x).attr('y', y).attr('width', width).attr('height', height).attr('stroke-width', 2).attr('stroke', 'red').attr('fill', 'rgba(255, 0, 0, 0)');
+      var rectS = comp.g.append('rect').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('x', x).attr('y', y).attr('width', width).attr('height', height).classed('text', box.isText).classed('mark', !box.isText);
       var handles = getRectHandles(x, y, width, height);
-      var circleS = comp.g.selectAll(".circle-".concat(boxIndex)).data(handles).enter().append('circle').attr('class', "circle-".concat(boxIndex, " handle")).classed('focused', comp.focusedBoxIndex === boxIndex).attr('cx', function (d) {
+      var circleS = comp.g.selectAll(".circle-".concat(boxIndex)).data(handles).enter().append('circle').attr('class', "circle-".concat(boxIndex, " handle")).classed('focused', comp.focusedBoxIndex === boxIndex).classed('text', box.isText).classed('mark', !box.isText).attr('cx', function (d) {
         return d.cx;
       }).attr('cy', function (d) {
         return d.cy;
-      }).attr('r', 3).attr('fill', 'darkorange');
+      }).attr('r', 3);
       comp.addRectEvent(boxIndex, rectS, circleS);
       addCircleEvent(comp, boxIndex, rectS, circleS);
     }
@@ -5391,7 +5442,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var boxIndex = box.key;
       var x = (x0 + x1) * imgElem.width / 2 + 10;
       var y = (y0 + y1) * imgElem.height / 2 + 10;
-      var circleS = comp.g.append('circle').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('cx', x).attr('cy', y).attr('r', r).attr('fill-opacity', 0).attr('stroke-width', 2).attr('stroke', 'darkorange');
+      var circleS = comp.g.append('circle').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('cx', x).attr('cy', y).attr('r', r).classed('text', box.isText).classed('mark', !box.isText);
       addCircleDragEvent(comp, boxIndex, circleS);
     }
 
@@ -5458,6 +5509,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function addCircleEvent(comp, boxIndex, rectS, circleS) {
       var horLine = comp.g.select('.guide-horizontal');
       var verLine = comp.g.select('.guide-vertical');
+      circleS.on('click', function () {
+        d3__WEBPACK_IMPORTED_MODULE_1__["event"].stopPropagation();
+      });
       circleS.call(d3__WEBPACK_IMPORTED_MODULE_1__["drag"]().on('start', function () {
         if (comp.spacePressed || comp.stage !== 0) {
           return;
@@ -5756,7 +5810,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       });
       var directions = [[-1, 0], [1, 0], [0, 1], [0, -1]];
 
-      var _loop = function _loop() {
+      var _loop2 = function _loop2() {
         var currIndex = queue[0];
         queue.shift();
 
@@ -5789,7 +5843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
 
       while (queue.length > 0) {
-        _loop();
+        _loop2();
       }
 
       return points;
@@ -5810,7 +5864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return d.y;
       }) + 1, height) + 10;
 
-      if ((y1 - y0) * (x1 - x0) > width * height * 0.9) {
+      if ((y1 - y0) * (x1 - x0) > width * height * 0.96) {
         return;
       }
 
@@ -6505,11 +6559,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var AxisSpecComponent =
     /*#__PURE__*/
     function () {
-      function AxisSpecComponent(fs) {
+      function AxisSpecComponent(fs, _L) {
         _classCallCheck(this, AxisSpecComponent);
 
         this.fs = fs;
@@ -6517,6 +6577,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.hasMarkLabels = false;
         this.focusedFeedbackKey = '';
+        this.L = _L.axisSpec;
       }
 
       _createClass(AxisSpecComponent, [{
@@ -6602,6 +6663,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AxisSpecComponent.ctorParameters = function () {
       return [{
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]
       }];
     };
 
@@ -6642,7 +6705,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/axis-spec/axis-spec.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"]])], AxisSpecComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]])], AxisSpecComponent);
     /***/
   },
 
@@ -6827,11 +6890,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var CustomSpecComponent =
     /*#__PURE__*/
     function () {
-      function CustomSpecComponent(fs) {
+      function CustomSpecComponent(fs, _L) {
         _classCallCheck(this, CustomSpecComponent);
 
         this.fs = fs;
@@ -6839,6 +6908,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.markLabels = [];
         this.focusedFeedbackKey = '';
+        this.L = _L.customSpec;
       }
 
       _createClass(CustomSpecComponent, [{
@@ -6910,8 +6980,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return;
           }
 
-          this.markLabels.forEach(function (label) {
-            if (_this29.valueType === 'nominal' || Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(label.text.value)) {
+          var filterList = [];
+
+          for (var i = 0; i < this.index; i++) {
+            filterList = filterList.concat(this.group.parent.at(i).get('markLabels').value);
+          }
+
+          var filteredMarkLabels = this.markLabels.filter(function (markLabel) {
+            return filterList.findIndex(function (el) {
+              return el === markLabel.text.value;
+            }) === -1;
+          });
+          filteredMarkLabels.forEach(function (label) {
+            var isNumber = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(label.text.value);
+
+            if (_this29.valueType === 'nominal' && !isNumber || _this29.valueType === 'quantitative' && isNumber) {
               labelForms.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](label.text.value));
             }
           });
@@ -6958,7 +7041,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "title",
         get: function get() {
-          return "Custom Column ".concat(this.index + 1);
+          return this.L.getTitle(this.index);
         }
       }, {
         key: "valueType",
@@ -6978,6 +7061,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     CustomSpecComponent.ctorParameters = function () {
       return [{
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
@@ -7011,7 +7096,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/edit-module.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]])], CustomSpecComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], CustomSpecComponent);
     /***/
   },
 
@@ -7179,14 +7264,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var LabelChipListComponent =
     /*#__PURE__*/
     function () {
-      function LabelChipListComponent(fs) {
+      function LabelChipListComponent(fs, L) {
         _classCallCheck(this, LabelChipListComponent);
 
         this.fs = fs;
+        this.L = L;
         this.separatorKeyCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__["TAB"]];
       }
 
@@ -7228,6 +7320,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     LabelChipListComponent.ctorParameters = function () {
       return [{
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
@@ -7246,7 +7340,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/label-chip-list/label-chip-list.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]])], LabelChipListComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], LabelChipListComponent);
     /***/
   },
 
@@ -7319,15 +7413,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var LegendSpecComponent =
     /*#__PURE__*/
     function () {
-      function LegendSpecComponent(fs) {
+      function LegendSpecComponent(fs, _L) {
         _classCallCheck(this, LegendSpecComponent);
 
         this.fs = fs;
         this.scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.L = _L.legendSpec;
       }
 
       _createClass(LegendSpecComponent, [{
@@ -7397,6 +7498,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     LegendSpecComponent.ctorParameters = function () {
       return [{
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]
       }];
     };
 
@@ -7420,7 +7523,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/legend-spec/legend-spec.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"]])], LegendSpecComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]])], LegendSpecComponent);
     /***/
   },
 
@@ -7440,7 +7543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".subtitle {\n  color: #777;\n  font-size: 1.2rem;\n  width: 120px;\n}\n\n.spec {\n  color: #212529;\n  padding: 0.2rem;\n}\n\n.spec div {\n  padding: 0rem 0.3rem !important;\n}\n\n.key {\n  font-size: 1.1rem;\n  color: rgba(0, 0, 0, 0.54);\n  min-width: 100px;\n  margin-bottom: 0.3rem;\n}\n\n.feature-cell {\n  width: 7% !important;\n  text-align: center;\n  font-size: 0.85rem;\n  line-height: 24px;\n}\n\n.input-cell {\n  width: 47% !important;\n  text-align: center;\n  line-height: 24px;\n}\n\n.input-cell input {\n  font-size: 1rem;\n  width: 100%;\n}\n\n.even {\n  background-color: #F5F5F5;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.feedback-region {\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: end;\n          justify-content: flex-end;\n  margin-top: -0.4rem;\n  padding: 0.2rem;\n  color: #f44336;\n  background-color: rgba(0, 0, 0, 0);\n  font-size: 0.9rem;\n}\n\n.feedback-region div {\n  margin: 0.2rem;\n  color: #f44336;\n}\n\n.feedback-region.title {\n  width: 100%;\n  border-top: 2px solid #f44336;\n  margin-top: -1.3rem;\n  max-width: 100%;\n}\n\n.feedback-region.select {\n  border-top: 2px solid #f44336;\n  margin-top: -1.3rem;\n  max-width: 180px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9vdmVyYWxsL0M6XFxVc2Vyc1xcanVuaG9lXFxIQ0lMXFxkZXZcXEF1dG90YXRvclxcY2xpZW50L3NyY1xcYXBwXFxlZGl0XFxhbm5vdGF0aW9uLW1vZHVsZVxcb3ZlcmFsbFxcb3ZlcmFsbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9vdmVyYWxsL292ZXJhbGwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0FDQ0o7O0FERUE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQ0NKOztBREFJO0VBQ0ksK0JBQUE7QUNFUjs7QURFQTtFQUNJLGlCQUFBO0VBQ0EsMEJBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0FDQ0o7O0FERUE7RUFDSSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtBQ0NKOztBREVBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0FDQ0o7O0FEQ0k7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQ0NSOztBREdBO0VBQ0kseUJBQUE7QUNBSjs7QURHQTtFQUNJLHFCQUFBO0FDQUo7O0FER0E7RUFDSSxvQkFBQTtFQUFBLGFBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7VUFBQSxtQkFBQTtFQUNBLHFCQUFBO1VBQUEseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0VBQ0Esa0NBQUE7RUFDQSxpQkFBQTtBQ0FKOztBREVJO0VBQ0ksY0FBQTtFQUNBLGNBQUE7QUNBUjs7QURHSTtFQUNJLFdBQUE7RUFDQSw2QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQ0RSOztBRElJO0VBQ0ksNkJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FDRlIiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2Fubm90YXRpb24tbW9kdWxlL292ZXJhbGwvb3ZlcmFsbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdWJ0aXRsZSB7XHJcbiAgICBjb2xvcjogIzc3NztcclxuICAgIGZvbnQtc2l6ZTogMS4ycmVtO1xyXG4gICAgd2lkdGg6IDEyMHB4O1xyXG59XHJcblxyXG4uc3BlYyB7XHJcbiAgICBjb2xvcjogIzIxMjUyOTtcclxuICAgIHBhZGRpbmc6IDAuMnJlbTtcclxuICAgIGRpdiB7XHJcbiAgICAgICAgcGFkZGluZzogMHJlbSAwLjNyZW0gIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuLmtleSB7XHJcbiAgICBmb250LXNpemU6IDEuMXJlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG4gICAgbWluLXdpZHRoOiAxMDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDAuM3JlbTtcclxufVxyXG5cclxuLmZlYXR1cmUtY2VsbCB7XHJcbiAgICB3aWR0aDogNyUgIWltcG9ydGFudDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGZvbnQtc2l6ZTogMC44NXJlbTtcclxuICAgIGxpbmUtaGVpZ2h0OiAyNHB4O1xyXG59XHJcblxyXG4uaW5wdXQtY2VsbCB7XHJcbiAgICB3aWR0aDogNDclICFpbXBvcnRhbnQ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBsaW5lLWhlaWdodDogMjRweDtcclxuXHJcbiAgICBpbnB1dCB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxcmVtO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG59XHJcblxyXG4uZXZlbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjVGNUY1O1xyXG59XHJcblxyXG4udy0yMCB7XHJcbiAgICB3aWR0aDogMjAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5mZWVkYmFjay1yZWdpb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgbWFyZ2luLXRvcDogLTAuNHJlbTtcclxuICAgIHBhZGRpbmc6IDAuMnJlbTtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwKTtcclxuICAgIGZvbnQtc2l6ZTogMC45cmVtO1xyXG5cclxuICAgIGRpdiB7XHJcbiAgICAgICAgbWFyZ2luOiAwLjJyZW07XHJcbiAgICAgICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICB9XHJcblxyXG4gICAgJi50aXRsZSB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgYm9yZGVyLXRvcDogMnB4IHNvbGlkICNmNDQzMzY7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogLTEuM3JlbTtcclxuICAgICAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbiAgICB9XHJcblxyXG4gICAgJi5zZWxlY3Qge1xyXG4gICAgICAgIGJvcmRlci10b3A6IDJweCBzb2xpZCAjZjQ0MzM2O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IC0xLjNyZW07XHJcbiAgICAgICAgbWF4LXdpZHRoOiAxODBweDtcclxuICAgIH1cclxufVxyXG4iLCIuc3VidGl0bGUge1xuICBjb2xvcjogIzc3NztcbiAgZm9udC1zaXplOiAxLjJyZW07XG4gIHdpZHRoOiAxMjBweDtcbn1cblxuLnNwZWMge1xuICBjb2xvcjogIzIxMjUyOTtcbiAgcGFkZGluZzogMC4ycmVtO1xufVxuLnNwZWMgZGl2IHtcbiAgcGFkZGluZzogMHJlbSAwLjNyZW0gIWltcG9ydGFudDtcbn1cblxuLmtleSB7XG4gIGZvbnQtc2l6ZTogMS4xcmVtO1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbiAgbWluLXdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWJvdHRvbTogMC4zcmVtO1xufVxuXG4uZmVhdHVyZS1jZWxsIHtcbiAgd2lkdGg6IDclICFpbXBvcnRhbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1zaXplOiAwLjg1cmVtO1xuICBsaW5lLWhlaWdodDogMjRweDtcbn1cblxuLmlucHV0LWNlbGwge1xuICB3aWR0aDogNDclICFpbXBvcnRhbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG59XG4uaW5wdXQtY2VsbCBpbnB1dCB7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5ldmVuIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Y1RjVGNTtcbn1cblxuLnctMjAge1xuICB3aWR0aDogMjAlICFpbXBvcnRhbnQ7XG59XG5cbi5mZWVkYmFjay1yZWdpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG1hcmdpbi10b3A6IC0wLjRyZW07XG4gIHBhZGRpbmc6IDAuMnJlbTtcbiAgY29sb3I6ICNmNDQzMzY7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7XG4gIGZvbnQtc2l6ZTogMC45cmVtO1xufVxuLmZlZWRiYWNrLXJlZ2lvbiBkaXYge1xuICBtYXJnaW46IDAuMnJlbTtcbiAgY29sb3I6ICNmNDQzMzY7XG59XG4uZmVlZGJhY2stcmVnaW9uLnRpdGxlIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci10b3A6IDJweCBzb2xpZCAjZjQ0MzM2O1xuICBtYXJnaW4tdG9wOiAtMS4zcmVtO1xuICBtYXgtd2lkdGg6IDEwMCU7XG59XG4uZmVlZGJhY2stcmVnaW9uLnNlbGVjdCB7XG4gIGJvcmRlci10b3A6IDJweCBzb2xpZCAjZjQ0MzM2O1xuICBtYXJnaW4tdG9wOiAtMS4zcmVtO1xuICBtYXgtd2lkdGg6IDE4MHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".subtitle {\n  color: #777;\n  font-size: 1.2rem;\n  width: 120px;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n}\n\n#text-mode-button {\n  color: #3f51b5;\n}\n\n#mark-mode-button {\n  color: red;\n}\n\n.spec {\n  color: #212529;\n  padding: 0.2rem;\n}\n\n.spec div {\n  padding: 0rem 0.3rem !important;\n}\n\n.key {\n  font-size: 1.1rem;\n  color: rgba(0, 0, 0, 0.54);\n  min-width: 100px;\n  margin-bottom: 0.3rem;\n}\n\n.feature-cell {\n  width: 7% !important;\n  text-align: center;\n  font-size: 0.85rem;\n  line-height: 24px;\n}\n\n.label-cell {\n  text-align: center;\n  line-height: 24px;\n  font-size: 0.9rem;\n}\n\n.input-cell {\n  width: 47% !important;\n  text-align: center;\n  line-height: 24px;\n  font-size: 0.9rem;\n}\n\n.input-cell input {\n  font-size: 1rem;\n  width: 100%;\n}\n\n.even {\n  background-color: #F5F5F5;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.feedback-region {\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: end;\n          justify-content: flex-end;\n  margin-top: -0.4rem;\n  padding: 0.2rem;\n  color: #f44336;\n  background-color: rgba(0, 0, 0, 0);\n  font-size: 0.9rem;\n}\n\n.feedback-region div {\n  margin: 0.2rem;\n  color: #f44336;\n}\n\n.feedback-region.title {\n  width: 100%;\n  border-top: 2px solid #f44336;\n  margin-top: -1.3rem;\n  max-width: 100%;\n}\n\n.feedback-region.select {\n  border-top: 2px solid #f44336;\n  margin-top: -1.3rem;\n  max-width: 180px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9vdmVyYWxsL0M6XFxVc2Vyc1xcanVuaG9lXFxIQ0lMXFxkZXZcXEF1dG90YXRvclxcY2xpZW50L3NyY1xcYXBwXFxlZGl0XFxhbm5vdGF0aW9uLW1vZHVsZVxcb3ZlcmFsbFxcb3ZlcmFsbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9hbm5vdGF0aW9uLW1vZHVsZS9vdmVyYWxsL292ZXJhbGwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFBQSxhQUFBO0VBQ0EseUJBQUE7VUFBQSxtQkFBQTtBQ0NKOztBREVBO0VBQ0ksY0FBQTtBQ0NKOztBREVBO0VBQ0ksVUFBQTtBQ0NKOztBREVBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURBSTtFQUNJLCtCQUFBO0FDRVI7O0FERUE7RUFDSSxpQkFBQTtFQUNBLDBCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQkFBQTtBQ0NKOztBREVBO0VBQ0ksb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtBQ0NKOztBREVBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsaUJBQUE7QUNDSjs7QURDSTtFQUNJLGVBQUE7RUFDQSxXQUFBO0FDQ1I7O0FER0E7RUFDSSx5QkFBQTtBQ0FKOztBREdBO0VBQ0kscUJBQUE7QUNBSjs7QURHQTtFQUNJLG9CQUFBO0VBQUEsYUFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0EscUJBQUE7VUFBQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxrQ0FBQTtFQUNBLGlCQUFBO0FDQUo7O0FERUk7RUFDSSxjQUFBO0VBQ0EsY0FBQTtBQ0FSOztBREdJO0VBQ0ksV0FBQTtFQUNBLDZCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FDRFI7O0FESUk7RUFDSSw2QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7QUNGUiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvYW5ub3RhdGlvbi1tb2R1bGUvb3ZlcmFsbC9vdmVyYWxsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN1YnRpdGxlIHtcclxuICAgIGNvbG9yOiAjNzc3O1xyXG4gICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB3aWR0aDogMTIwcHg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuI3RleHQtbW9kZS1idXR0b24ge1xyXG4gICAgY29sb3I6ICMzZjUxYjU7XHJcbn1cclxuXHJcbiNtYXJrLW1vZGUtYnV0dG9uIHtcclxuICAgIGNvbG9yOiByZWQ7XHJcbn1cclxuXHJcbi5zcGVjIHtcclxuICAgIGNvbG9yOiAjMjEyNTI5O1xyXG4gICAgcGFkZGluZzogMC4ycmVtO1xyXG4gICAgZGl2IHtcclxuICAgICAgICBwYWRkaW5nOiAwcmVtIDAuM3JlbSAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4ua2V5IHtcclxuICAgIGZvbnQtc2l6ZTogMS4xcmVtO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XHJcbiAgICBtaW4td2lkdGg6IDEwMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMC4zcmVtO1xyXG59XHJcblxyXG4uZmVhdHVyZS1jZWxsIHtcclxuICAgIHdpZHRoOiA3JSAhaW1wb3J0YW50O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1zaXplOiAwLjg1cmVtO1xyXG4gICAgbGluZS1oZWlnaHQ6IDI0cHg7XHJcbn1cclxuXHJcbi5sYWJlbC1jZWxsIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGxpbmUtaGVpZ2h0OiAyNHB4O1xyXG4gICAgZm9udC1zaXplOiAwLjlyZW07XHJcbn1cclxuXHJcbi5pbnB1dC1jZWxsIHtcclxuICAgIHdpZHRoOiA0NyUgIWltcG9ydGFudDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGxpbmUtaGVpZ2h0OiAyNHB4O1xyXG4gICAgZm9udC1zaXplOiAwLjlyZW07XHJcblxyXG4gICAgaW5wdXQge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxufVxyXG5cclxuLmV2ZW4ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0Y1RjVGNTtcclxufVxyXG5cclxuLnctMjAge1xyXG4gICAgd2lkdGg6IDIwJSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZmVlZGJhY2stcmVnaW9uIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICAgIG1hcmdpbi10b3A6IC0wLjRyZW07XHJcbiAgICBwYWRkaW5nOiAwLjJyZW07XHJcbiAgICBjb2xvcjogI2Y0NDMzNjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMCk7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbTtcclxuXHJcbiAgICBkaXYge1xyXG4gICAgICAgIG1hcmdpbjogMC4ycmVtO1xyXG4gICAgICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgfVxyXG5cclxuICAgICYudGl0bGUge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGJvcmRlci10b3A6IDJweCBzb2xpZCAjZjQ0MzM2O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IC0xLjNyZW07XHJcbiAgICAgICAgbWF4LXdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgICYuc2VsZWN0IHtcclxuICAgICAgICBib3JkZXItdG9wOiAycHggc29saWQgI2Y0NDMzNjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAtMS4zcmVtO1xyXG4gICAgICAgIG1heC13aWR0aDogMTgwcHg7XHJcbiAgICB9XHJcbn1cclxuIiwiLnN1YnRpdGxlIHtcbiAgY29sb3I6ICM3Nzc7XG4gIGZvbnQtc2l6ZTogMS4ycmVtO1xuICB3aWR0aDogMTIwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbiN0ZXh0LW1vZGUtYnV0dG9uIHtcbiAgY29sb3I6ICMzZjUxYjU7XG59XG5cbiNtYXJrLW1vZGUtYnV0dG9uIHtcbiAgY29sb3I6IHJlZDtcbn1cblxuLnNwZWMge1xuICBjb2xvcjogIzIxMjUyOTtcbiAgcGFkZGluZzogMC4ycmVtO1xufVxuLnNwZWMgZGl2IHtcbiAgcGFkZGluZzogMHJlbSAwLjNyZW0gIWltcG9ydGFudDtcbn1cblxuLmtleSB7XG4gIGZvbnQtc2l6ZTogMS4xcmVtO1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbiAgbWluLXdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWJvdHRvbTogMC4zcmVtO1xufVxuXG4uZmVhdHVyZS1jZWxsIHtcbiAgd2lkdGg6IDclICFpbXBvcnRhbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1zaXplOiAwLjg1cmVtO1xuICBsaW5lLWhlaWdodDogMjRweDtcbn1cblxuLmxhYmVsLWNlbGwge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICBmb250LXNpemU6IDAuOXJlbTtcbn1cblxuLmlucHV0LWNlbGwge1xuICB3aWR0aDogNDclICFpbXBvcnRhbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIGZvbnQtc2l6ZTogMC45cmVtO1xufVxuLmlucHV0LWNlbGwgaW5wdXQge1xuICBmb250LXNpemU6IDFyZW07XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXZlbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNGNUY1RjU7XG59XG5cbi53LTIwIHtcbiAgd2lkdGg6IDIwJSAhaW1wb3J0YW50O1xufVxuXG4uZmVlZGJhY2stcmVnaW9uIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiB3cmFwO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xuICBtYXJnaW4tdG9wOiAtMC40cmVtO1xuICBwYWRkaW5nOiAwLjJyZW07XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDApO1xuICBmb250LXNpemU6IDAuOXJlbTtcbn1cbi5mZWVkYmFjay1yZWdpb24gZGl2IHtcbiAgbWFyZ2luOiAwLjJyZW07XG4gIGNvbG9yOiAjZjQ0MzM2O1xufVxuLmZlZWRiYWNrLXJlZ2lvbi50aXRsZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBib3JkZXItdG9wOiAycHggc29saWQgI2Y0NDMzNjtcbiAgbWFyZ2luLXRvcDogLTEuM3JlbTtcbiAgbWF4LXdpZHRoOiAxMDAlO1xufVxuLmZlZWRiYWNrLXJlZ2lvbi5zZWxlY3Qge1xuICBib3JkZXItdG9wOiAycHggc29saWQgI2Y0NDMzNjtcbiAgbWFyZ2luLXRvcDogLTEuM3JlbTtcbiAgbWF4LXdpZHRoOiAxODBweDtcbn0iXX0= */";
     /***/
   },
 
@@ -7517,11 +7620,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _common_feedback_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var OverallComponent =
     /*#__PURE__*/
     function () {
-      function OverallComponent(edit, fb, fs, changeDetector) {
+      function OverallComponent(edit, fb, fs, changeDetector, _L) {
         _classCallCheck(this, OverallComponent);
 
         this.edit = edit;
@@ -7542,10 +7651,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.texts = [];
         this.isDrawing = false;
         this.isMerging = false;
-        this.boxMode = 'text';
+        this._boxMode = 'text';
         this.pointRadius = 8;
+        this.sortText = true;
         this.subscriptions = [];
         this._stage = 0;
+        this.L = _L.overall;
       }
 
       _createClass(OverallComponent, [{
@@ -7712,7 +7823,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeTempBox"])(this);
           }
 
-          if ((event.key === 'Delete' || event.key === 'd') && this.focusedBoxIndex && this._stage === 0) {
+          if ((event.key === 'Delete' || event.key === 'd') && this.focusedBoxIndex && this._stage === 0 && !this.isDrawing) {
             this.deleteBox(this.focusedBoxIndex);
           }
 
@@ -7782,8 +7893,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (_this32.isMerging) {
               Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeMergeLine"])(_this32);
               d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
-            } else if (_this32.task.inputType === 'rect' && _this32.boxMode === 'mark') {
+            } else if (_this32.task.inputType === 'rect' && _this32.boxMode === 'mark' && !_this32.isDrawing) {
+              _this32.isDrawing = true;
               Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["drawBoxBySelectedPixel"])(_this32);
+              _this32.isDrawing = false;
             }
 
             d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
@@ -7907,7 +8020,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value = _entry2[1];
 
             return new _annotation_util__WEBPACK_IMPORTED_MODULE_5__["AnnotationBox"](key, value);
-          }).sort(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["boxComparator"]);
+          });
+
+          if (this.sortText) {
+            this.boxes = this.boxes.sort(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["boxComparator"]);
+          }
+
           this.marks = this.boxes.filter(function (d) {
             return !d.isText;
           });
@@ -8151,15 +8269,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "onCheckBoxRegression",
-        value: function onCheckBoxRegression(change) {
-          if (change.checked) {
-            Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["regressBoxesByColor"])(this);
-          }
+        value: function onCheckBoxRegression() {
+          var _this36 = this;
+
+          Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["regressBoxesByColor"])(this);
+          this.marks.forEach(function (mark) {
+            _this36.sortDrawOrder(mark.key, false);
+          });
         }
       }, {
         key: "onPointSizeChange",
         value: function onPointSizeChange(change) {
-          var _this36 = this;
+          var _this37 = this;
 
           var pointSymbol = this.pointMark.nativeElement;
           var r = change.value;
@@ -8169,13 +8290,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).forEach(function (mark) {
             var boxIndex = mark.key;
 
-            var sel = _this36.g.select(".rect-".concat(boxIndex));
+            var sel = _this37.g.select(".rect-".concat(boxIndex));
 
             sel.attr('r', r);
             var x = +sel.attr('cx');
             var y = +sel.attr('cy');
 
-            _this36.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
+            _this37.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
           });
           this.updateBoxes();
         }
@@ -8196,7 +8317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapBoxesToLegend",
         value: function mapBoxesToLegend() {
-          var _this37 = this;
+          var _this38 = this;
 
           var titleBox = this.boxes.find(function (d) {
             return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_LEGEND_TITLE"];
@@ -8214,7 +8335,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           legendBoxes.map(function (d) {
             return d.text.value;
           }).forEach(function (legend) {
-            group.get('labels').push(_this37.fb.control(legend));
+            group.get('labels').push(_this38.fb.control(legend));
           });
           this.specGroup.setControl('legend', group);
           return true;
@@ -8222,7 +8343,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapMarkLabelToAxis",
         value: function mapMarkLabelToAxis() {
-          var _this38 = this;
+          var _this39 = this;
 
           var markLabelBoxes = this.boxes.filter(function (d) {
             return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
@@ -8247,7 +8368,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 group.get('labeled').setValue(labeled);
                 var markLabelsForm = group.get('markLabels');
                 markLabelBoxes.forEach(function (box) {
-                  markLabelsForm.push(_this38.fb.control(box.text.value));
+                  markLabelsForm.push(_this39.fb.control(box.text.value));
                 });
               } else {
                 var axisLabels = group.get('labels').value;
@@ -8259,11 +8380,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 var _markLabelsForm = group.get('markLabels');
 
                 markLabelBoxes.forEach(function (box) {
-                  _markLabelsForm.push(_this38.fb.control(box.text.value));
+                  _markLabelsForm.push(_this39.fb.control(box.text.value));
                 });
               }
             } else {
-              group.addControl('labeled', _this38.fb.control(false));
+              group.addControl('labeled', _this39.fb.control(false));
             }
           });
         }
@@ -8301,6 +8422,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.subscriptions.forEach(function (sub) {
             sub.unsubscribe();
           });
+        }
+      }, {
+        key: "updateTextSortOption",
+        value: function updateTextSortOption(change) {
+          if (change.checked) {
+            this.sortText = true;
+            this.updateBoxes();
+          }
         }
       }, {
         key: "specGroup",
@@ -8350,6 +8479,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this._stage = value;
           this.visited[value] = true;
         }
+      }, {
+        key: "boxMode",
+        get: function get() {
+          return this._boxMode;
+        },
+        set: function set(value) {
+          this.svgS.selectAll('line').attr('stroke', value === 'text' ? 'rgba(61, 81, 181, 0.6)' : 'rgba(255, 0, 0, 0.6)');
+          this._boxMode = value;
+        }
       }]);
 
       return OverallComponent;
@@ -8364,6 +8502,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _common_feedback_service__WEBPACK_IMPORTED_MODULE_8__["FeedbackService"]
       }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"]
       }];
     };
 
@@ -8402,7 +8542,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../../edit-module.scss */
       "./src/app/edit/edit-module.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_6__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _common_feedback_service__WEBPACK_IMPORTED_MODULE_8__["FeedbackService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])], OverallComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_6__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _common_feedback_service__WEBPACK_IMPORTED_MODULE_8__["FeedbackService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"]])], OverallComponent);
     /***/
   },
 
@@ -8517,6 +8657,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var ColumnAdditionDialogComponent =
     /*#__PURE__*/
@@ -8581,7 +8727,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RawTableComponent =
     /*#__PURE__*/
     function () {
-      function RawTableComponent(fb, dialog, edit, predictService, fs) {
+      function RawTableComponent(fb, dialog, edit, predictService, fs, _L) {
         _classCallCheck(this, RawTableComponent);
 
         this.fb = fb;
@@ -8596,13 +8742,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.rows = [];
         this.allChannelsEncoded = false;
         this.focusedFeedbackKey = '';
+        this.encodings = ['x-position', 'y-position', 'height', 'width', 'area', 'color', 'none'];
         this.re = /[m|mm|km|s|g|kg|K|M|%|$|,]/g;
+        this.L = _L.rawTable;
       }
 
       _createClass(RawTableComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this39 = this;
+          var _this40 = this;
 
           var specGroup = this.formGroup.get('spec');
           specGroup.get('axis').controls.forEach(function (group, i) {
@@ -8611,7 +8759,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "axis.".concat(i)
             };
 
-            var targetGroup = _this39.fromPath(specGroup, column.path);
+            var targetGroup = _this40.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -8619,7 +8767,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('labels').value;
             }
 
-            _this39.columns.push(column);
+            _this40.columns.push(column);
           });
           specGroup.get('custom').controls.forEach(function (group, i) {
             var column = {
@@ -8627,7 +8775,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "custom.".concat(i)
             };
 
-            var targetGroup = _this39.fromPath(specGroup, column.path);
+            var targetGroup = _this40.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -8635,7 +8783,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('markLabels').value;
             }
 
-            _this39.columns.push(column);
+            _this40.columns.push(column);
           });
 
           if (this.hasLegend) {
@@ -8659,10 +8807,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.rawGroup = this.formGroup.get('raw');
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this39.focusedFeedbackKey = '';
-            _this39.focusedFeedback = null;
+            _this40.focusedFeedbackKey = '';
+            _this40.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this39.task.key) {
+            if (feedback.taskKey !== _this40.task.key) {
               return;
             }
 
@@ -8670,19 +8818,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var lastKey = splited[splited.length - 1];
 
             if (lastKey === 'encoding') {
-              _this39.focusedFeedback = feedback;
-              _this39.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
+              _this40.focusedFeedback = feedback;
+              _this40.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
             } else if (splited[0] === 'raw') {
-              _this39.focusedFeedback = feedback;
+              _this40.focusedFeedback = feedback;
 
               if (splited[1] === 'other') {
-                _this39.focusedFeedbackKey = 'other';
+                _this40.focusedFeedbackKey = 'other';
               } else {
-                _this39.focusedFeedbackKey = _this39.marks[+splited[1]].key;
+                _this40.focusedFeedbackKey = _this40.marks[+splited[1]].key;
               }
 
               setTimeout(function () {
-                _this39.focusEmitter.emit(_this39.focusedFeedbackKey);
+                _this40.focusEmitter.emit(_this40.focusedFeedbackKey);
               }, 0);
             } else {
               return;
@@ -8728,15 +8876,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onSelectEncoding(event, column) {
           var target = event.target;
           var targetGroup = this.fromPath(this.formGroup.get('spec'), column.path);
-          console.log(this.rows.map(function (d) {
-            return d.group.value;
-          }));
           this.rows.forEach(function (row) {
             row.attrs[column.title] = undefined;
             row.clusterLabels[column.title] = undefined;
 
             if (row.group.contains(column.title)) {
-              row.group.get(column.title).setValue('');
+              row.group.get([column.title]).setValue('');
             }
           });
 
@@ -8756,16 +8901,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee2() {
-            var _this40 = this;
+            var _this41 = this;
 
-            var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, column, encoding;
+            var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, column, encoding;
 
             return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
                     this.allChannelsEncoded = this.columns.every(function (column) {
-                      var targetGroup = _this40.fromPath(_this40.formGroup.get('spec'), column.path);
+                      var targetGroup = _this41.fromPath(_this41.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding');
                     });
@@ -8775,19 +8920,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       break;
                     }
 
-                    _iteratorNormalCompletion2 = true;
-                    _didIteratorError2 = false;
-                    _iteratorError2 = undefined;
+                    _iteratorNormalCompletion3 = true;
+                    _didIteratorError3 = false;
+                    _iteratorError3 = undefined;
                     _context2.prev = 5;
-                    _iterator2 = this.columns[Symbol.iterator]();
+                    _iterator3 = this.columns[Symbol.iterator]();
 
                   case 7:
-                    if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
+                    if (_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done) {
                       _context2.next = 21;
                       break;
                     }
 
-                    column = _step2.value;
+                    column = _step3.value;
                     encoding = column.encoding.value;
                     _context2.t0 = encoding;
                     _context2.next = _context2.t0 === 'color' ? 13 : _context2.t0 === 'shape' ? 15 : 17;
@@ -8805,7 +8950,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     return _context2.abrupt("break", 18);
 
                   case 18:
-                    _iteratorNormalCompletion2 = true;
+                    _iteratorNormalCompletion3 = true;
                     _context2.next = 7;
                     break;
 
@@ -8816,26 +8961,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 23:
                     _context2.prev = 23;
                     _context2.t1 = _context2["catch"](5);
-                    _didIteratorError2 = true;
-                    _iteratorError2 = _context2.t1;
+                    _didIteratorError3 = true;
+                    _iteratorError3 = _context2.t1;
 
                   case 27:
                     _context2.prev = 27;
                     _context2.prev = 28;
 
-                    if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-                      _iterator2["return"]();
+                    if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                      _iterator3["return"]();
                     }
 
                   case 30:
                     _context2.prev = 30;
 
-                    if (!_didIteratorError2) {
+                    if (!_didIteratorError3) {
                       _context2.next = 33;
                       break;
                     }
 
-                    throw _iteratorError2;
+                    throw _iteratorError3;
 
                   case 33:
                     return _context2.finish(30);
@@ -8857,9 +9002,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee3() {
-            var _this41 = this;
+            var _this42 = this;
 
-            var path, k, boxes, formData, _ref3, centers, labels;
+            var path, k, boxes, _ref3, centers, labels;
 
             return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
@@ -8879,8 +9024,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     boxes = this.marks.map(function (d) {
                       return d.pointValues;
                     });
-                    formData = new FormData();
-                    _context3.next = 8;
+                    _context3.next = 7;
                     return this.predictService.clusterMarks({
                       encoding: 'color',
                       path: path,
@@ -8888,12 +9032,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       boxes: boxes
                     });
 
-                  case 8:
+                  case 7:
                     _ref3 = _context3.sent;
                     centers = _ref3.centers;
                     labels = _ref3.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this41.rows.find(function (d) {
+                      var row = _this42.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -8902,7 +9046,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       row.clusterLabels[column.title] = label;
                     });
 
-                  case 12:
+                  case 11:
                   case "end":
                     return _context3.stop();
                 }
@@ -8916,7 +9060,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee4() {
-            var _this42 = this;
+            var _this43 = this;
 
             var path, k, boxes, _ref4, centerPatches, labels;
 
@@ -8942,7 +9086,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centerPatches = _ref4.centerPatches;
                     labels = _ref4.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this42.rows.find(function (d) {
+                      var row = _this43.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -8963,9 +9107,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onChangeLabel",
         value: function onChangeLabel(column, row, i) {
           var key = column.title;
-          var changedValue = row.group.get(key).value;
+          var changedValue = row.group.get([key]).value;
           var targetRow = this.rows.find(function (d, j) {
-            return d.group.get(key).value === changedValue && i !== j;
+            return d.group.get([key]).value === changedValue && i !== j;
           });
 
           if (targetRow) {
@@ -8978,35 +9122,76 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "runPrediction",
         value: function runPrediction() {
-          var _this43 = this;
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee6() {
+            var _this44 = this;
 
-          this.columns.forEach(function (column) {
-            var targetGroup = _this43.fromPath(_this43.formGroup.get('spec'), column.path);
+            var colorEncodingIndex, title;
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    _context6.next = 2;
+                    return Promise.all(this.columns.map(function (column) {
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this44, void 0, void 0,
+                      /*#__PURE__*/
+                      regeneratorRuntime.mark(function _callee5() {
+                        var targetGroup;
+                        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+                          while (1) {
+                            switch (_context5.prev = _context5.next) {
+                              case 0:
+                                targetGroup = this.fromPath(this.formGroup.get('spec'), column.path);
 
-            if (!targetGroup.contains('encoding')) {
-              return;
-            }
+                                if (targetGroup.contains('encoding')) {
+                                  _context5.next = 3;
+                                  break;
+                                }
 
-            _this43.predict(column, targetGroup.get('encoding').value);
+                                return _context5.abrupt("return");
 
-            if (targetGroup.contains('labeled') && targetGroup.get('labeled').value) {
-              _this43.assignMarkLabels(targetGroup, column);
-            }
-          });
-          var colorEncodingIndex = this.columns.findIndex(function (column) {
-            var targetGroup = _this43.fromPath(_this43.formGroup.get('spec'), column.path);
+                              case 3:
+                                _context5.next = 5;
+                                return this.predict(column, targetGroup.get('encoding').value);
 
-            return targetGroup.contains('encoding') && targetGroup.get('encoding').value === 'color';
-          });
+                              case 5:
+                                if (targetGroup.contains('labeled') && targetGroup.get('labeled').value) {
+                                  this.assignMarkLabels(targetGroup, column);
+                                }
 
-          if (colorEncodingIndex !== -1) {
-            var title = this.columns[colorEncodingIndex].title;
-            this.rows = this.rows.sort(function (a, b) {
-              var aValue = a.group.get(title).value;
-              var bValue = b.group.get(title).value;
-              return aValue.toLowerCase().localeCompare(bValue.toLowerCase());
-            });
-          }
+                              case 6:
+                              case "end":
+                                return _context5.stop();
+                            }
+                          }
+                        }, _callee5, this);
+                      }));
+                    }));
+
+                  case 2:
+                    colorEncodingIndex = this.columns.findIndex(function (column) {
+                      var targetGroup = _this44.fromPath(_this44.formGroup.get('spec'), column.path);
+
+                      return targetGroup.contains('encoding') && targetGroup.get('encoding').value === 'color';
+                    });
+
+                    if (colorEncodingIndex !== -1) {
+                      title = this.columns[colorEncodingIndex].title;
+                      this.rows = this.rows.sort(function (a, b) {
+                        var aValue = a.group.get([title]).value;
+                        var bValue = b.group.get([title]).value;
+                        return aValue.toLowerCase().localeCompare(bValue.toLowerCase());
+                      });
+                    }
+
+                  case 4:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6, this);
+          }));
         }
       }, {
         key: "clear",
@@ -9017,50 +9202,89 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predict",
         value: function predict(column, encoding) {
-          var targetGroup = this.fromPath(this.formGroup.get('spec'), column.path);
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee7() {
+            var targetGroup;
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    targetGroup = this.fromPath(this.formGroup.get('spec'), column.path);
+                    _context7.t0 = encoding;
+                    _context7.next = _context7.t0 === 'width' ? 4 : _context7.t0 === 'height' ? 7 : _context7.t0 === 'x-position' ? 10 : _context7.t0 === 'y-position' ? 13 : _context7.t0 === 'color' ? 16 : _context7.t0 === 'shape' ? 19 : _context7.t0 === 'area' ? 22 : _context7.t0 === 'none' ? 25 : 26;
+                    break;
 
-          switch (encoding) {
-            case 'width':
-              this.predictWidth(targetGroup, column);
-              break;
+                  case 4:
+                    _context7.next = 6;
+                    return this.predictWidth(targetGroup, column);
 
-            case 'height':
-              this.predictHeight(targetGroup, column);
-              break;
+                  case 6:
+                    return _context7.abrupt("break", 27);
 
-            case 'x-position':
-              this.predictPosition(targetGroup, column, 'x');
-              break;
+                  case 7:
+                    _context7.next = 9;
+                    return this.predictHeight(targetGroup, column);
 
-            case 'y-position':
-              this.predictPosition(targetGroup, column, 'y');
-              break;
+                  case 9:
+                    return _context7.abrupt("break", 27);
 
-            case 'color':
-              this.predictByClusterLabels(column);
-              break;
+                  case 10:
+                    _context7.next = 12;
+                    return this.predictPosition(targetGroup, column, 'x');
 
-            case 'shape':
-              this.predictByClusterLabels(column);
-              break;
+                  case 12:
+                    return _context7.abrupt("break", 27);
 
-            case 'area':
-              this.predictArea(targetGroup, column);
-              break;
+                  case 13:
+                    _context7.next = 15;
+                    return this.predictPosition(targetGroup, column, 'y');
 
-            case 'none':
-              break;
+                  case 15:
+                    return _context7.abrupt("break", 27);
 
-            default:
-              break;
-          }
+                  case 16:
+                    _context7.next = 18;
+                    return this.predictByClusterLabels(column);
 
-          this.submitEmitter.emit();
+                  case 18:
+                    return _context7.abrupt("break", 27);
+
+                  case 19:
+                    _context7.next = 21;
+                    return this.predictByClusterLabels(column);
+
+                  case 21:
+                    return _context7.abrupt("break", 27);
+
+                  case 22:
+                    _context7.next = 24;
+                    return this.predictArea(targetGroup, column);
+
+                  case 24:
+                    return _context7.abrupt("break", 27);
+
+                  case 25:
+                    return _context7.abrupt("break", 27);
+
+                  case 26:
+                    return _context7.abrupt("break", 27);
+
+                  case 27:
+                    this.submitEmitter.emit();
+
+                  case 28:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7, this);
+          }));
         }
       }, {
         key: "initTable",
         value: function initTable() {
-          var _this44 = this;
+          var _this45 = this;
 
           var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           this.rows = [];
@@ -9069,18 +9293,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
 
           var initCells = function initCells() {
-            var _loop2 = function _loop2(i) {
-              var group = _this44.fb.group({});
+            var _loop3 = function _loop3(i) {
+              var group = _this45.fb.group({});
 
-              _this44.columns.forEach(function (column) {
-                group.addControl(column.title, _this44.fb.control(''));
+              _this45.columns.forEach(function (column) {
+                group.addControl(column.title, _this45.fb.control(''));
               });
 
-              _this44.rawGroup.push(group);
+              _this45.rawGroup.push(group);
             };
 
             for (var i = 0; i < markIndices.length; i++) {
-              _loop2(i);
+              _loop3(i);
             }
           }; // check the raw group is empty
 
@@ -9131,7 +9355,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictWidth",
         value: function predictWidth(targetGroup, column) {
-          var _this45 = this;
+          var _this46 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative') {
             return;
@@ -9171,13 +9395,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.width * imgWidth) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get(column.title).setValue(_this45.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this46.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictHeight",
         value: function predictHeight(targetGroup, column) {
-          var _this46 = this;
+          var _this47 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative') {
             return;
@@ -9217,13 +9441,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.height * imgHeight) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get(column.title).setValue(_this46.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this47.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictPosition",
         value: function predictPosition(targetGroup, column, dir) {
-          var _this47 = this;
+          var _this48 = this;
 
           var _this$imgRef$nativeEl2 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl2.width,
@@ -9269,12 +9493,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var maxValue = +maxLabel.text.value.replace(this.re, '');
             centers.forEach(function (center) {
               var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
-              result.push(_this47.format(currValue, pre, unit));
+              result.push(_this48.format(currValue, pre, unit));
             });
           }
 
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get(column.title).setValue(result[i]);
+            control.get([column.title]).setValue(result[i]);
           });
         }
       }, {
@@ -9282,11 +9506,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function predictArea(targetGroup, column) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee5() {
+          regeneratorRuntime.mark(function _callee8() {
             var boxes, path, body, areas, sumOfAreas, ratios, unit;
-            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
               while (1) {
-                switch (_context5.prev = _context5.next) {
+                switch (_context8.prev = _context8.next) {
                   case 0:
                     boxes = this.marks.map(function (d) {
                       return d.pointValues;
@@ -9294,22 +9518,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     path = this.edit.image.path;
 
                     if (!(boxes.length === 0 || !targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative')) {
-                      _context5.next = 4;
+                      _context8.next = 4;
                       break;
                     }
 
-                    return _context5.abrupt("return");
+                    return _context8.abrupt("return");
 
                   case 4:
                     body = {
                       path: path,
                       boxes: boxes
                     };
-                    _context5.next = 7;
+                    _context8.next = 7;
                     return this.predictService.predictAreas(body);
 
                   case 7:
-                    areas = _context5.sent;
+                    areas = _context8.sent;
                     sumOfAreas = d3__WEBPACK_IMPORTED_MODULE_4__["sum"](areas);
                     ratios = areas.map(function (area) {
                       return area / sumOfAreas;
@@ -9319,21 +9543,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     unit = targetGroup.get('unit').value;
                     this.rawGroup.controls.forEach(function (control, i) {
                       var value = unit === 'integer' ? Math.round(+ratios[i] * 100).toString() : ratios[i];
-                      control.get(column.title).setValue(value);
+                      control.get([column.title]).setValue(value);
                     });
 
                   case 12:
                   case "end":
-                    return _context5.stop();
+                    return _context8.stop();
                 }
               }
-            }, _callee5, this);
+            }, _callee8, this);
           }));
         }
       }, {
         key: "assignMarkLabels",
         value: function assignMarkLabels(targetGroup, column) {
-          var _this48 = this;
+          var _this49 = this;
 
           var targetMarkLabels = targetGroup.get('markLabels').value;
           var markLabelBoxes = this.boxes.filter(function (d) {
@@ -9346,20 +9570,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           markLabelBoxes.forEach(function (box) {
             var value = box.text.value;
 
-            var targetIndex = _this48.findNearestBoxIndex(box, targetGroup);
+            var targetIndex = _this49.findNearestBoxIndex(box, targetGroup);
 
-            _this48.rows[targetIndex].group.get(column.title).setValue(value);
+            _this49.rows[targetIndex].group.get([column.title]).setValue(value);
           });
         }
       }, {
         key: "findNearestBoxIndex",
         value: function findNearestBoxIndex(queryBox, targetGroup) {
-          var _this49 = this;
+          var _this50 = this;
 
           var axisDir = targetGroup.contains('dir') ? targetGroup.get('dir').value : 'none'; // First, find the marks which contains the target mark label
 
           var innerRows = this.rows.filter(function (row) {
-            var mark = _this49.marks.find(function (m) {
+            var mark = _this50.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9373,7 +9597,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           var rowsForSearch = innerRows.length > 0 ? innerRows : this.rows;
           var minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinElem"])(rowsForSearch, function (row) {
-            var mark = _this49.marks.find(function (m) {
+            var mark = _this50.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9442,15 +9666,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictByClusterLabels",
         value: function predictByClusterLabels(column) {
-          var _this50 = this;
+          var _this51 = this;
 
           var key = column.title;
           var definedPairs = this.marks.map(function (mark, i) {
-            var group = _this50.rawGroup.at(i);
+            var group = _this51.rawGroup.at(i);
 
             return {
-              value: group.get(key).value,
-              label: _this50.rows.find(function (d) {
+              value: group.get([key]).value,
+              label: _this51.rows.find(function (d) {
                 return d.markKey === mark.key;
               }).clusterLabels[key]
             };
@@ -9463,21 +9687,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.rawGroup.controls.forEach(function (control, i) {
-            var row = _this50.rows.find(function (d) {
-              return d.markKey === _this50.marks[i].key;
+            var row = _this51.rows.find(function (d) {
+              return d.markKey === _this51.marks[i].key;
             });
 
             var defined = definedPairs.find(function (d) {
               return d.label === row.clusterLabels[key];
             });
             var value = defined ? defined.value : '';
-            control.get(key).setValue(value);
+            control.get([key]).setValue(value);
           });
         }
       }, {
         key: "addColumn",
         value: function addColumn() {
-          var _this51 = this;
+          var _this52 = this;
 
           var dialogRef = this.dialog.open(ColumnAdditionDialogComponent, {
             width: '500px',
@@ -9490,32 +9714,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           dialogRef.afterClosed().subscribe(function (newColumn) {
             var path = "custom-".concat(newColumn.title);
 
-            var specGroup = _this51.formGroup.get('spec');
+            var specGroup = _this52.formGroup.get('spec');
 
             newColumn.path = path;
-            specGroup.addControl(path, _this51.fb.group({
-              title: _this51.fb.control(newColumn.title)
+            specGroup.addControl(path, _this52.fb.group({
+              title: _this52.fb.control(newColumn.title)
             }));
 
             if (newColumn.labels && newColumn.labels.length > 0) {
-              specGroup.get(path).addControl('labels', _this51.fb.array(newColumn.labels));
+              specGroup.get(path).addControl('labels', _this52.fb.array(newColumn.labels));
             }
 
-            _this51.columns.push(newColumn);
+            _this52.columns.push(newColumn);
 
-            _this51.rawGroup.controls.forEach(function (control) {
-              control.addControl(newColumn.title, _this51.fb.control(''));
+            _this52.rawGroup.controls.forEach(function (control) {
+              control.addControl(newColumn.title, _this52.fb.control(''));
             });
           });
         }
       }, {
         key: "addRow",
         value: function addRow() {
-          var _this52 = this;
+          var _this53 = this;
 
           var group = this.fb.group({});
           this.columns.forEach(function (column) {
-            group.addControl(column.title, _this52.fb.control(''));
+            group.addControl(column.title, _this53.fb.control(''));
           });
           this.rawGroup.push(group);
           this.rows.push({
@@ -9569,6 +9793,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"]
       }, {
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"]
       }];
     };
 
@@ -9599,7 +9825,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/edit-module.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"], src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"], src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"]])], RawTableComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"], src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"], src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"]])], RawTableComponent);
     /***/
   },
 
@@ -9692,11 +9918,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RegressionComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this53 = this;
+          var _this54 = this;
 
           this.event.subscribe(function (key) {
-            if (key === 'predict' && _this53.edit.autoCompleteSubject.getValue()[_this53.task.key]) {
-              _this53.task.applyPrediction(_this53.formGroup);
+            if (key === 'predict' && _this54.edit.autoCompleteSubject.getValue()[_this54.task.key]) {
+              _this54.task.applyPrediction(_this54.formGroup);
             }
           });
         }
@@ -9842,21 +10068,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TextComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this54 = this;
+          var _this55 = this;
 
           this.event.subscribe(function (key) {
-            _this54.isDrawing = false;
-            _this54.isMerging = false;
+            _this55.isDrawing = false;
+            _this55.isMerging = false;
 
-            if (key === 'predict' && _this54.edit.autoCompleteSubject.getValue()[_this54.task.key]) {
-              _this54.task.registerControl(_this54.formGroup, _this54.fb);
+            if (key === 'predict' && _this55.edit.autoCompleteSubject.getValue()[_this55.task.key]) {
+              _this55.task.registerControl(_this55.formGroup, _this55.fb);
 
-              _this54.task.applyPrediction(_this54.formGroup);
+              _this55.task.applyPrediction(_this55.formGroup);
 
-              _this54.updateBoxes();
+              _this55.updateBoxes();
 
-              if (_this54.currIndex === _this54.index) {
-                _this54.createEventArea();
+              if (_this55.currIndex === _this55.index) {
+                _this55.createEventArea();
               }
             }
           });
@@ -10178,23 +10404,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this55 = this;
+          var _this56 = this;
 
           this.sub = this.fs.showObservable.subscribe(function (data) {
-            _this55.displayModal = true;
+            _this56.displayModal = true;
             var left = data.left,
                 top = data.top,
                 feedback = data.feedback;
-            _this55.feedback = feedback;
+            _this56.feedback = feedback;
 
-            _this55.changeDetector.detectChanges();
+            _this56.changeDetector.detectChanges();
 
-            var el = _this55.ref.nativeElement;
+            var el = _this56.ref.nativeElement;
             var rect = el.getBoundingClientRect();
 
-            _this55.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
+            _this56.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
 
-            _this55.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
+            _this56.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
           });
         }
       }, {
@@ -10469,14 +10695,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _feedback_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../feedback.service */
     "./src/app/edit/common/feedback.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var ResolveButtonComponent =
     /*#__PURE__*/
     function () {
-      function ResolveButtonComponent(fs) {
+      function ResolveButtonComponent(fs, L) {
         _classCallCheck(this, ResolveButtonComponent);
 
         this.fs = fs;
+        this.L = L;
       }
 
       _createClass(ResolveButtonComponent, [{
@@ -10490,6 +10723,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ResolveButtonComponent.ctorParameters = function () {
       return [{
         type: _feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
       }];
     };
 
@@ -10501,7 +10736,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./resolve-button.component.scss */
       "./src/app/edit/common/resolve-button/resolve-button.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"]])], ResolveButtonComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], ResolveButtonComponent);
     /***/
   },
 
@@ -10521,7 +10756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvY29tbW9uL3Jldmlldy1wYW5lbC9yZXZpZXctcGFuZWwuY29tcG9uZW50LnNjc3MifQ== */";
+    __webpack_exports__["default"] = ":host {\n  display: block;\n  width: 95% !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9jb21tb24vcmV2aWV3LXBhbmVsL0M6XFxVc2Vyc1xcanVuaG9lXFxIQ0lMXFxkZXZcXEF1dG90YXRvclxcY2xpZW50L3NyY1xcYXBwXFxlZGl0XFxjb21tb25cXHJldmlldy1wYW5lbFxccmV2aWV3LXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L2NvbW1vbi9yZXZpZXctcGFuZWwvcmV2aWV3LXBhbmVsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLHFCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2NvbW1vbi9yZXZpZXctcGFuZWwvcmV2aWV3LXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogOTUlICFpbXBvcnRhbnQ7XHJcbn1cclxuIiwiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDk1JSAhaW1wb3J0YW50O1xufSJdfQ== */";
     /***/
   },
 
@@ -10562,14 +10797,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var ReviewPanelComponent =
     /*#__PURE__*/
     function () {
-      function ReviewPanelComponent() {
+      function ReviewPanelComponent(_L) {
         _classCallCheck(this, ReviewPanelComponent);
 
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.L = _L.reviewPanel;
       }
 
       _createClass(ReviewPanelComponent, [{
@@ -10599,6 +10841,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return ReviewPanelComponent;
     }();
 
+    ReviewPanelComponent.ctorParameters = function () {
+      return [{
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)], ReviewPanelComponent.prototype, "feedbacks", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)], ReviewPanelComponent.prototype, "feedbackForms", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], ReviewPanelComponent.prototype, "focusedKey", void 0);
@@ -10611,7 +10859,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./review-panel.component.scss */
       "./src/app/edit/common/review-panel/review-panel.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], ReviewPanelComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], ReviewPanelComponent);
     /***/
   },
 
@@ -10831,24 +11079,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getAnnotationElem() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee6() {
+          regeneratorRuntime.mark(function _callee9() {
             var paths, path, elem, meta, blob;
-            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+            return regeneratorRuntime.wrap(function _callee9$(_context9) {
               while (1) {
-                switch (_context6.prev = _context6.next) {
+                switch (_context9.prev = _context9.next) {
                   case 0:
-                    _context6.next = 2;
+                    _context9.next = 2;
                     return this.network.getPaths();
 
                   case 2:
-                    paths = _context6.sent;
+                    paths = _context9.sent;
 
                     if (!(this.index >= paths.length)) {
-                      _context6.next = 7;
+                      _context9.next = 7;
                       break;
                     }
 
-                    return _context6.abrupt("return", null);
+                    return _context9.abrupt("return", null);
 
                   case 7:
                     this.currMode = this.getNextMode();
@@ -10859,11 +11107,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       feedbacks: null,
                       annotation: null
                     };
-                    _context6.next = 13;
+                    _context9.next = 13;
                     return this.network.getImage(meta.path);
 
                   case 13:
-                    blob = _context6.sent;
+                    blob = _context9.sent;
 
                     if (this.currMode === 'revision') {
                       meta.feedbacks = elem.feedbacks.map(function (d) {
@@ -10872,14 +11120,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       meta.annotation = elem.annotation;
                     }
 
-                    return _context6.abrupt("return", [new src_app_common_edit_data__WEBPACK_IMPORTED_MODULE_3__["AnnotationMeta"](meta), blob]);
+                    return _context9.abrupt("return", [new src_app_common_edit_data__WEBPACK_IMPORTED_MODULE_3__["AnnotationMeta"](meta), blob]);
 
                   case 16:
                   case "end":
-                    return _context6.stop();
+                    return _context9.stop();
                 }
               }
-            }, _callee6, this);
+            }, _callee9, this);
           }));
         }
       }, {
@@ -10887,45 +11135,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getVerificationElem() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee7() {
+          regeneratorRuntime.mark(function _callee10() {
             var paths, path, blob, annotatedMeta;
-            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+            return regeneratorRuntime.wrap(function _callee10$(_context10) {
               while (1) {
-                switch (_context7.prev = _context7.next) {
+                switch (_context10.prev = _context10.next) {
                   case 0:
-                    _context7.next = 2;
+                    _context10.next = 2;
                     return this.network.getPaths();
 
                   case 2:
-                    paths = _context7.sent;
+                    paths = _context10.sent;
 
                     if (!(this.index >= paths.length)) {
-                      _context7.next = 7;
+                      _context10.next = 7;
                       break;
                     }
 
-                    return _context7.abrupt("return", null);
+                    return _context10.abrupt("return", null);
 
                   case 7:
                     path = paths[this.index];
                     this.currMode = this.getNextMode();
-                    _context7.next = 11;
+                    _context10.next = 11;
                     return this.network.getImage(path);
 
                   case 11:
-                    blob = _context7.sent;
+                    blob = _context10.sent;
                     annotatedMeta = new src_app_common_edit_data__WEBPACK_IMPORTED_MODULE_3__["AnnotatedImageData"]({
                       path: path,
                       annotation: this.data[this.index].annotation
                     });
-                    return _context7.abrupt("return", [annotatedMeta, blob]);
+                    return _context10.abrupt("return", [annotatedMeta, blob]);
 
                   case 14:
                   case "end":
-                    return _context7.stop();
+                    return _context10.stop();
                 }
               }
-            }, _callee7, this);
+            }, _callee10, this);
           }));
         }
       }, {
@@ -10933,25 +11181,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getReview(path) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee8() {
+          regeneratorRuntime.mark(function _callee11() {
             var reviewRaw;
-            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+            return regeneratorRuntime.wrap(function _callee11$(_context11) {
               while (1) {
-                switch (_context8.prev = _context8.next) {
+                switch (_context11.prev = _context11.next) {
                   case 0:
                     reviewRaw = {
                       path: path,
                       approved: false,
                       feedbacks: this.data[this.index].feedbacks
                     };
-                    return _context8.abrupt("return", new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_5__["Review"](reviewRaw));
+                    return _context11.abrupt("return", new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_5__["Review"](reviewRaw));
 
                   case 2:
                   case "end":
-                    return _context8.stop();
+                    return _context11.stop();
                 }
               }
-            }, _callee8, this);
+            }, _callee11, this);
           }));
         }
       }, {
@@ -11000,6 +11248,62 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function srcAppEditDemoDemo_bar_dataJson(module) {
     module.exports = JSON.parse("[{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.4\",\"comment\":\"Refine the bound\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.encoding\",\"comment\":\"Height가 되어야합니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.other\",\"comment\":\"바뀐 encoding에 맞춰서 Degree값이 모두 바뀌어야 합니다.\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.234,0.293,0.297,0.798],\"label\":\"object\"},{\"bound\":[0.504,0.306,0.567,0.798],\"label\":\"object\"},{\"bound\":[0.433,0.281,0.496,0.798],\"label\":\"object\"},{\"bound\":[0.703,0.293,0.766,0.798],\"label\":\"object\"},{\"bound\":[0.64,0.306,0.703,0.798],\"label\":\"object\"},{\"bound\":[0.297,0.437,0.36,0.798],\"label\":\"object\"},{\"bound\":[0.567,0.241,0.63,0.798],\"label\":\"object\"},{\"bound\":[0.369,0.229,0.433,0.798],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.396,0.163,0.606,0.204],\"label\":\"title\",\"text\":\"Bar Degree by Fruit\"},{\"bound\":[0.884,0.204,0.952,0.236],\"label\":\"legend-label\",\"text\":\"Female\"},{\"bound\":[0.884,0.242,0.93,0.274],\"label\":\"legend-label\",\"text\":\"Male\"},{\"bound\":[0.15,0.449,0.174,0.563],\"label\":\"y-axis-title\",\"text\":\"Degree\"},{\"bound\":[0.173,0.258,0.194,0.293],\"label\":\"y-axis-label\",\"text\":\"4\"},{\"bound\":[0.176,0.397,0.19,0.423],\"label\":\"y-axis-label\",\"text\":\"3\"},{\"bound\":[0.176,0.528,0.19,0.557],\"label\":\"y-axis-label\",\"text\":\"2\"},{\"bound\":[0.176,0.659,0.188,0.682],\"label\":\"y-axis-label\",\"text\":\"1\"},{\"bound\":[0.17,0.78,0.196,0.817],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.476,0.921,0.526,0.953],\"label\":\"x-axis-title\",\"text\":\"Fruit\"},{\"bound\":[0.286,0.819,0.308,0.898],\"label\":\"x-axis-label\",\"text\":\"apple\"},{\"bound\":[0.42,0.819,0.442,0.921],\"label\":\"x-axis-label\",\"text\":\"banana\"},{\"bound\":[0.558,0.819,0.58,0.901],\"label\":\"x-axis-label\",\"text\":\"grape\"},{\"bound\":[0.694,0.819,0.716,0.915],\"label\":\"x-axis-label\",\"text\":\"orange\"}],\"spec\":{\"title\":\"Bar Degree by Fruit\",\"axis\":[{\"dir\":\"x\",\"title\":\"Fruit\",\"type\":\"nominal\",\"labels\":[\"apple\",\"banana\",\"grape\",\"orange\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Degree\",\"type\":\"quantitative\",\"labels\":[\"4\",\"3\",\"2\",\"1\",\"0\"],\"precision\":1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.01590806343515539,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Female\",\"Male\"],\"encoding\":\"color\"}},\"raw\":[{\"Fruit\":\"apple\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"grape\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"banana\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"orange\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"orange\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"apple\",\"Degree\":1,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"grape\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"banana\",\"Degree\":2,\"Unknown Legend\":\"Female\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.16\",\"comment\":\"Refine the bound\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.other\",\"comment\":\"왼쪽 아래 0에 해당하는 박스 추가\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.other\",\"comment\":\"두 번째 행에 4번째 박스 추가\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.2,0.368,0.327,0.495],\"label\":\"object\"},{\"bound\":[0.431,0.368,0.54,0.495],\"label\":\"object\"},{\"bound\":[0.461,0.503,0.574,0.63],\"label\":\"object\"},{\"bound\":[0.294,0.638,0.324,0.765],\"label\":\"object\"},{\"bound\":[0.391,0.233,0.51,0.362],\"label\":\"object\"},{\"bound\":[0.51,0.233,0.626,0.362],\"label\":\"object\"},{\"bound\":[0.2,0.503,0.284,0.63],\"label\":\"object\"},{\"bound\":[0.327,0.368,0.431,0.495],\"label\":\"object\"},{\"bound\":[0.2,0.638,0.24,0.765],\"label\":\"object\"},{\"bound\":[0.324,0.638,0.427,0.765],\"label\":\"object\"},{\"bound\":[0.294,0.233,0.391,0.362],\"label\":\"object\"},{\"bound\":[0.284,0.503,0.38,0.63],\"label\":\"object\"},{\"bound\":[0.2,0.233,0.294,0.362],\"label\":\"object\"},{\"bound\":[0.626,0.233,0.734,0.362],\"label\":\"object\"},{\"bound\":[0.24,0.638,0.294,0.765],\"label\":\"object\"},{\"bound\":[0.38,0.503,0.461,0.63],\"label\":\"object\"},{\"bound\":[0.647,0.383,0.761,0.495],\"label\":\"object\"},{\"bound\":[0.574,0.503,0.674,0.63],\"label\":\"object\"},{\"bound\":[0.427,0.638,0.51,0.765],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.406,0.163,0.596,0.204],\"label\":\"title\",\"text\":\"Bar Degree by Fruit\"},{\"bound\":[0.882,0.204,0.954,0.236],\"label\":\"legend-label\",\"text\":\"baseball\"},{\"bound\":[0.882,0.239,0.968,0.271],\"label\":\"legend-label\",\"text\":\"basketball\"},{\"bound\":[0.882,0.274,0.946,0.306],\"label\":\"legend-label\",\"text\":\"football\"},{\"bound\":[0.882,0.312,0.94,0.341],\"label\":\"legend-label\",\"text\":\"soccer\"},{\"bound\":[0.882,0.347,0.936,0.379],\"label\":\"legend-label\",\"text\":\"tennis\"},{\"bound\":[0.104,0.472,0.124,0.536],\"label\":\"y-axis-title\",\"text\":\"Fruit\"},{\"bound\":[0.13,0.286,0.192,0.318],\"label\":\"y-axis-label\",\"text\":\"orange\"},{\"bound\":[0.14,0.423,0.19,0.455],\"label\":\"y-axis-label\",\"text\":\"grape\"},{\"bound\":[0.128,0.554,0.19,0.586],\"label\":\"y-axis-label\",\"text\":\"banana\"},{\"bound\":[0.142,0.691,0.192,0.723],\"label\":\"y-axis-label\",\"text\":\"apple\"},{\"bound\":[0.466,0.846,0.534,0.883],\"label\":\"x-axis-title\",\"text\":\"Degree\"},{\"bound\":[0.346,0.822,0.36,0.843],\"label\":\"x-axis-label\",\"text\":\"5\"},{\"bound\":[0.492,0.813,0.516,0.846],\"label\":\"x-axis-label\",\"text\":\"10\"},{\"bound\":[0.644,0.813,0.67,0.846],\"label\":\"x-axis-label\",\"text\":\"15\"}],\"spec\":{\"title\":\"Bar Degree by Fruit\",\"axis\":[{\"dir\":\"x\",\"title\":\"Degree\",\"type\":\"quantitative\",\"labels\":[\"0\",\"5\",\"10\",\"15\"],\"precision\":1,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.04704553413027688,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Fruit\",\"type\":\"nominal\",\"labels\":[\"orange\",\"grape\",\"banana\",\"apple\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"baseball\",\"basketball\",\"football\",\"soccer\",\"tennis\"],\"encoding\":\"color\"}},\"raw\":[{\"Degree\":4.2,\"Fruit\":\"grape\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.6,\"Fruit\":\"grape\",\"Unknown Legend\":\"football\"},{\"Degree\":3.7,\"Fruit\":\"banana\",\"Unknown Legend\":\"soccer\"},{\"Degree\":1,\"Fruit\":\"apple\",\"Unknown Legend\":\"football\"},{\"Degree\":3.9,\"Fruit\":\"orange\",\"Unknown Legend\":\"football\"},{\"Degree\":3.8,\"Fruit\":\"orange\",\"Unknown Legend\":\"soccer\"},{\"Degree\":2.8,\"Fruit\":\"banana\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.4,\"Fruit\":\"grape\",\"Unknown Legend\":\"basketball\"},{\"Degree\":1.3,\"Fruit\":\"apple\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.4,\"Fruit\":\"apple\",\"Unknown Legend\":\"soccer\"},{\"Degree\":3.2,\"Fruit\":\"orange\",\"Unknown Legend\":\"basketball\"},{\"Degree\":3.2,\"Fruit\":\"banana\",\"Unknown Legend\":\"basketball\"},{\"Degree\":3.1,\"Fruit\":\"orange\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.6,\"Fruit\":\"orange\",\"Unknown Legend\":\"tennis\"},{\"Degree\":1.8,\"Fruit\":\"apple\",\"Unknown Legend\":\"basketball\"},{\"Degree\":2.7,\"Fruit\":\"banana\",\"Unknown Legend\":\"football\"},{\"Degree\":3.8,\"Fruit\":\"grape\",\"Unknown Legend\":\"tennis\"},{\"Degree\":3.3,\"Fruit\":\"banana\",\"Unknown Legend\":\"tennis\"},{\"Degree\":2.7,\"Fruit\":\"apple\",\"Unknown Legend\":\"tennis\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.1\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.17\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.6\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.labels\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.363,0.397,0.456,0.939],\"label\":\"object\"},{\"bound\":[0.467,0.537,0.561,0.939],\"label\":\"object\"},{\"bound\":[0.571,0.579,0.666,0.939],\"label\":\"object\"},{\"bound\":[0.151,0.096,0.246,0.939],\"label\":\"object\"},{\"bound\":[0.257,0.237,0.35,0.939],\"label\":\"object\"},{\"bound\":[0.677,0.697,0.77,0.939],\"label\":\"object\"},{\"bound\":[0.886,0.84,0.98,0.939],\"label\":\"object\"},{\"bound\":[0.781,0.758,0.874,0.939],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.016,0.027,0.03,0.046],\"label\":\"y-axis-label\",\"text\":\"45\"},{\"bound\":[0.014,0.124,0.038,0.151],\"label\":\"y-axis-label\",\"text\":\"40K\"},{\"bound\":[0.014,0.228,0.032,0.255],\"label\":\"y-axis-label\",\"text\":\"35\"},{\"bound\":[0.014,0.324,0.031,0.355],\"label\":\"y-axis-label\",\"text\":\"30\"},{\"bound\":[0.014,0.429,0.032,0.456],\"label\":\"y-axis-label\",\"text\":\"25\"},{\"bound\":[0.014,0.527,0.031,0.552],\"label\":\"y-axis-label\",\"text\":\"20\"},{\"bound\":[0.014,0.625,0.032,0.652],\"label\":\"y-axis-label\",\"text\":\"15s\"},{\"bound\":[0.016,0.73,0.03,0.753],\"label\":\"y-axis-label\",\"text\":\"10\"},{\"bound\":[0.02,0.834,0.03,0.853],\"label\":\"y-axis-label\",\"text\":\"5\"},{\"bound\":[0.019,0.928,0.031,0.955],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.182,0.958,0.22,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic2\"},{\"bound\":[0.288,0.958,0.322,0.981],\"label\":\"x-axis-label\",\"text\":\"Topic6\"},{\"bound\":[0.394,0.961,0.426,0.981],\"label\":\"x-axis-label\",\"text\":\"Topic7\"},{\"bound\":[0.498,0.958,0.532,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic1\"},{\"bound\":[0.601,0.955,0.636,0.985],\"label\":\"x-axis-label\",\"text\":\"Topic4\"},{\"bound\":[0.708,0.958,0.742,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic3\"},{\"bound\":[0.812,0.958,0.848,0.985],\"label\":\"x-axis-label\",\"text\":\"Topic8\"},{\"bound\":[0.916,0.958,0.952,0.988],\"label\":\"x-axis-label\",\"text\":\"Topics\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Unknown X Axis\",\"type\":\"nominal\",\"labels\":[\"Topic2\",\"Topic6\",\"Topic7\",\"Topic1\",\"Topic4\",\"Topic3\",\"Topic8\",\"Topics\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"quantitative\",\"labels\":[\"45\",\"40K\",\"35\",\"30\",\"25\",\"20\",\"15s\",\"10\",\"5\",\"0\"],\"precision\":1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.1370618667401423,\"encoding\":\"height\"}],\"custom\":[]},\"raw\":[{\"Unknown X Axis\":\"Topic7\",\"Unknown Y Axis\":27},{\"Unknown X Axis\":\"Topic1\",\"Unknown Y Axis\":20},{\"Unknown X Axis\":\"Topic4\",\"Unknown Y Axis\":18},{\"Unknown X Axis\":\"Topic2\",\"Unknown Y Axis\":42},{\"Unknown X Axis\":\"Topic6\",\"Unknown Y Axis\":35},{\"Unknown X Axis\":\"Topic3\",\"Unknown Y Axis\":12},{\"Unknown X Axis\":\"Topics\",\"Unknown Y Axis\":5},{\"Unknown X Axis\":\"Topic8\",\"Unknown Y Axis\":9}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.12\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.labels\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.222,0.415,0.261,0.867],\"label\":\"object\"},{\"bound\":[0.53,0.498,0.566,0.868],\"label\":\"object\"},{\"bound\":[0.378,0.448,0.414,0.868],\"label\":\"object\"},{\"bound\":[0.683,0.544,0.722,0.866],\"label\":\"object\"},{\"bound\":[0.338,0.671,0.377,0.869],\"label\":\"object\"},{\"bound\":[0.49,0.741,0.53,0.868],\"label\":\"object\"},{\"bound\":[0.182,0.728,0.222,0.869],\"label\":\"object\"},{\"bound\":[0.302,0.222,0.339,0.868],\"label\":\"object\"},{\"bound\":[0.607,0.443,0.646,0.868],\"label\":\"object\"},{\"bound\":[0.648,0.771,0.684,0.87],\"label\":\"object\"},{\"bound\":[0.455,0.351,0.491,0.867],\"label\":\"object\"},{\"bound\":[0.147,0.253,0.183,0.867],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.028,0.032,0.976,0.115],\"label\":\"title\",\"text\":\"Cigarette Production, Exports, and Domestic Consumption U.S. 1990-2007\"},{\"bound\":[0.799,0.429,0.903,0.458],\"label\":\"legend-label\",\"text\":\"Production\"},{\"bound\":[0.796,0.455,0.865,0.49],\"label\":\"legend-label\",\"text\":\"Export\"},{\"bound\":[0.796,0.49,0.974,0.522],\"label\":\"legend-label\",\"text\":\"Total Consumption\"},{\"bound\":[0.014,0.426,0.035,0.619],\"label\":\"y-axis-title\",\"text\":\"Billion (Pieces)\"},{\"bound\":[0.038,0.16,0.097,0.192],\"label\":\"y-axis-label\",\"text\":\"800.0\"},{\"bound\":[0.038,0.247,0.097,0.279],\"label\":\"y-axis-label\",\"text\":\"700.0\"},{\"bound\":[0.038,0.333,0.097,0.365],\"label\":\"y-axis-label\",\"text\":\"600.0\"},{\"bound\":[0.038,0.42,0.097,0.452],\"label\":\"y-axis-label\",\"text\":\"500.0\"},{\"bound\":[0.038,0.506,0.097,0.538],\"label\":\"y-axis-label\",\"text\":\"400.0\"},{\"bound\":[0.038,0.593,0.097,0.625],\"label\":\"y-axis-label\",\"text\":\"300.0\"},{\"bound\":[0.038,0.679,0.097,0.712],\"label\":\"y-axis-label\",\"text\":\"200.0\"},{\"bound\":[0.035,0.766,0.097,0.798],\"label\":\"y-axis-label\",\"text\":\"-100.0\"},{\"bound\":[0.062,0.859,0.097,0.885],\"label\":\"y-axis-label\",\"text\":\"0.0\"},{\"bound\":[0.175,0.888,0.23,0.917],\"label\":\"x-axis-label\",\"text\":\"1990\"},{\"bound\":[0.332,0.891,0.384,0.917],\"label\":\"x-axis-label\",\"text\":\"1995\"},{\"bound\":[0.486,0.891,0.538,0.917],\"label\":\"x-axis-label\",\"text\":\"2000\"},{\"bound\":[0.64,0.891,0.692,0.917],\"label\":\"x-axis-label\",\"text\":\"2005\"}],\"spec\":{\"title\":\"Cigarette Production, Exports, and Domestic Consumption U.S. 1990-2007\",\"axis\":[{\"dir\":\"x\",\"title\":\"Years\",\"type\":\"nominal\",\"labels\":[\"1990\",\"1995\",\"2000\",\"2005\"],\"precision\":1,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.046233050367179916,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Billion (Pieces)\",\"type\":\"quantitative\",\"labels\":[\"800.0\",\"700.0\",\"600.0\",\"500.0\",\"400.0\",\"300.0\",\"200.0\",\"-100.0\",\"0.0\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":2.2138470580626075,\"encoding\":\"height\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Production\",\"Export\",\"Total Consumption\"],\"encoding\":\"color\"}},\"raw\":[{\"Years\":\"1990\",\"Billion (Pieces)\":520,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"2000\",\"Billion (Pieces)\":430,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"1995\",\"Billion (Pieces)\":480,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"2005\",\"Billion (Pieces)\":370,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"1995\",\"Billion (Pieces)\":230,\"Unknown Legend\":\"Export\"},{\"Years\":\"2000\",\"Billion (Pieces)\":150,\"Unknown Legend\":\"Export\"},{\"Years\":\"1990\",\"Billion (Pieces)\":160,\"Unknown Legend\":\"Export\"},{\"Years\":\"1995\",\"Billion (Pieces)\":740,\"Unknown Legend\":\"Production\"},{\"Years\":\"2005\",\"Billion (Pieces)\":490,\"Unknown Legend\":\"Production\"},{\"Years\":\"2005\",\"Billion (Pieces)\":110,\"Unknown Legend\":\"Export\"},{\"Years\":\"2000\",\"Billion (Pieces)\":590,\"Unknown Legend\":\"Production\"},{\"Years\":\"1990\",\"Billion (Pieces)\":700,\"Unknown Legend\":\"Production\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.4\",\"comment\":\"South -> West\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.101,0.08,0.303,0.186],\"label\":\"object\"},{\"bound\":[0.303,0.08,0.584,0.186],\"label\":\"object\"},{\"bound\":[0.584,0.08,0.731,0.186],\"label\":\"object\"},{\"bound\":[0.731,0.08,0.966,0.186],\"label\":\"object\"},{\"bound\":[0.807,0.292,0.966,0.398],\"label\":\"object\"},{\"bound\":[0.597,0.292,0.806,0.398],\"label\":\"object\"},{\"bound\":[0.377,0.292,0.597,0.398],\"label\":\"object\"},{\"bound\":[0.101,0.292,0.377,0.398],\"label\":\"object\"},{\"bound\":[0.101,0.504,0.304,0.61],\"label\":\"object\"},{\"bound\":[0.304,0.504,0.427,0.61],\"label\":\"object\"},{\"bound\":[0.427,0.504,0.61,0.61],\"label\":\"object\"},{\"bound\":[0.61,0.504,0.966,0.61],\"label\":\"object\"},{\"bound\":[0.711,0.716,0.966,0.822],\"label\":\"object\"},{\"bound\":[0.509,0.716,0.711,0.822],\"label\":\"object\"},{\"bound\":[0.407,0.716,0.509,0.822],\"label\":\"object\"},{\"bound\":[0.101,0.716,0.407,0.822],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.334,0.956,0.392,0.989],\"label\":\"legend-label\",\"text\":\"North\"},{\"bound\":[0.43,0.956,0.476,0.989],\"label\":\"legend-label\",\"text\":\"East\"},{\"bound\":[0.512,0.956,0.572,0.989],\"label\":\"legend-label\",\"text\":\"South\"},{\"bound\":[0.612,0.956,0.662,0.989],\"label\":\"legend-label\",\"text\":\"West\"},{\"bound\":[0.018,0.118,0.08,0.151],\"label\":\"y-axis-label\",\"text\":\"brown\"},{\"bound\":[0.024,0.33,0.08,0.36],\"label\":\"y-axis-label\",\"text\":\"black\"},{\"bound\":[0.034,0.547,0.08,0.577],\"label\":\"y-axis-label\",\"text\":\"gray\"},{\"bound\":[0.042,0.753,0.08,0.783],\"label\":\"y-axis-label\",\"text\":\"red\"},{\"bound\":[0.092,0.878,0.112,0.905],\"label\":\"x-axis-label\",\"text\":\"0\"},{\"bound\":[0.258,0.876,0.292,0.909],\"label\":\"x-axis-label\",\"text\":\"0.2\"},{\"bound\":[0.43,0.876,0.466,0.909],\"label\":\"x-axis-label\",\"text\":\"0.4\"},{\"bound\":[0.604,0.876,0.638,0.907],\"label\":\"x-axis-label\",\"text\":\"0.6\"},{\"bound\":[0.776,0.876,0.812,0.909],\"label\":\"x-axis-label\",\"text\":\"0.8\"},{\"bound\":[0.959,0.876,0.976,0.908],\"label\":\"x-axis-label\",\"text\":\"1\"},{\"bound\":[0.172,0.118,0.234,0.151],\"label\":\"mark-label\",\"text\":\"0.23%\"},{\"bound\":[0.412,0.118,0.476,0.151],\"label\":\"mark-label\",\"text\":\"0.33%\"},{\"bound\":[0.63,0.118,0.688,0.151],\"label\":\"mark-label\",\"text\":\"0.17%\"},{\"bound\":[0.818,0.118,0.882,0.151],\"label\":\"mark-label\",\"text\":\"0.27%\"},{\"bound\":[0.208,0.33,0.272,0.36],\"label\":\"mark-label\",\"text\":\"0.32%\"},{\"bound\":[0.456,0.33,0.52,0.36],\"label\":\"mark-label\",\"text\":\"0.25%\"},{\"bound\":[0.672,0.33,0.734,0.36],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.856,0.33,0.918,0.36],\"label\":\"mark-label\",\"text\":\"0.18%\"},{\"bound\":[0.758,0.541,0.82,0.571],\"label\":\"mark-label\",\"text\":\"0.41%\"},{\"bound\":[0.172,0.541,0.236,0.574],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.336,0.541,0.398,0.574],\"label\":\"mark-label\",\"text\":\"0.14%\"},{\"bound\":[0.49,0.541,0.55,0.574],\"label\":\"mark-label\",\"text\":\"0.21%\"},{\"bound\":[0.224,0.751,0.286,0.781],\"label\":\"mark-label\",\"text\":\"0.35%\"},{\"bound\":[0.428,0.753,0.488,0.783],\"label\":\"mark-label\",\"text\":\"0.12%\"},{\"bound\":[0.58,0.753,0.642,0.783],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.808,0.753,0.872,0.786],\"label\":\"mark-label\",\"text\":\"0.29%\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Unknown X Axis\",\"type\":\"quantitative\",\"labels\":[\"0\",\"0.2\",\"0.4\",\"0.6\",\"0.8\",\"1\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":true,\"markLabels\":[\"0.23%\",\"0.33%\",\"0.17%\",\"0.27%\",\"0.32%\",\"0.25%\",\"0.24%\",\"0.18%\",\"0.41%\",\"0.24%\",\"0.14%\",\"0.21%\",\"0.35%\",\"0.12%\",\"0.24%\",\"0.29%\"],\"valuePerPixel\":0.0016505757739453662,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"nominal\",\"labels\":[\"brown\",\"black\",\"gray\",\"red\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"North\",\"East\",\"South\",\"West\"],\"encoding\":\"color\"}},\"raw\":[{\"Unknown X Axis\":\"0.23%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.33%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.17%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.27%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.18%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.25%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.32%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.14%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.21%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.41%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.29%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.12%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.35%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"North\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.1\",\"comment\":\"Refine the bound\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.other\",\"comment\":\"Add a more box\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.unit\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.306,0.158,0.436,0.845],\"label\":\"object\"},{\"bound\":[0.777,0.624,0.908,0.843],\"label\":\"object\"},{\"bound\":[0.463,0.508,0.592,0.845],\"label\":\"object\"},{\"bound\":[0.148,0.117,0.278,0.845],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.176,0.042,0.881,0.081],\"label\":\"title\",\"text\":\"UK 2007 Top 5 Food and Agricultural Commodities\"},{\"bound\":[0.006,0.361,0.039,0.609],\"label\":\"y-axis-title\",\"text\":\"Production (1,000 MT)\"},{\"bound\":[0.063,0.081,0.092,0.155],\"label\":\"y-axis-label\",\"text\":\"14000\"},{\"bound\":[0.063,0.185,0.092,0.26],\"label\":\"y-axis-label\",\"text\":\"12000\"},{\"bound\":[0.063,0.29,0.092,0.364],\"label\":\"y-axis-label\",\"text\":\"10000\"},{\"bound\":[0.063,0.397,0.092,0.463],\"label\":\"y-axis-label\",\"text\":\"8000\"},{\"bound\":[0.063,0.501,0.092,0.567],\"label\":\"y-axis-label\",\"text\":\"6000\"},{\"bound\":[0.063,0.606,0.092,0.672],\"label\":\"y-axis-label\",\"text\":\"4000\"},{\"bound\":[0.063,0.71,0.092,0.776],\"label\":\"y-axis-label\",\"text\":\"2000\"},{\"bound\":[0.065,0.837,0.088,0.857],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.464,0.946,0.592,0.979],\"label\":\"x-axis-title\",\"text\":\"Commodity\"},{\"bound\":[0.164,0.89,0.268,0.919],\"label\":\"x-axis-label\",\"text\":\"Cow milk\"},{\"bound\":[0.33,0.89,0.411,0.919],\"label\":\"x-axis-label\",\"text\":\"Wheat\"},{\"bound\":[0.464,0.89,0.592,0.922],\"label\":\"x-axis-label\",\"text\":\"Sugar beet\"},{\"bound\":[0.634,0.887,0.738,0.919],\"label\":\"x-axis-label\",\"text\":\"Potatoes\"},{\"bound\":[0.806,0.887,0.881,0.922],\"label\":\"x-axis-label\",\"text\":\"Barley\"}],\"spec\":{\"title\":\"UK 2007 Top 5 Food and Agricultural Commodities\",\"axis\":[{\"dir\":\"x\",\"title\":\"Commodity\",\"type\":\"nominal\",\"labels\":[\"Cow milk\",\"Wheat\",\"Sugar beet\",\"Potatoes\",\"Barley\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Production (1,000 MT)\",\"type\":\"quantitative\",\"labels\":[\"14000\",\"12000\",\"10000\",\"8000\",\"6000\",\"4000\",\"2000\",\"0\"],\"precision\":-2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":32.00831295947728,\"encoding\":\"height\"}],\"custom\":[]},\"raw\":[{\"Commodity\":\"Wheat\",\"Production (1,000 MT)\":13187.4},{\"Commodity\":\"Barley\",\"Production (1,000 MT)\":4193.1},{\"Commodity\":\"Sugar beet\",\"Production (1,000 MT)\":6465.7},{\"Commodity\":\"Cow milk\",\"Production (1,000 MT)\":13987.6}]}}}]");
+    /***/
+  },
+
+  /***/
+  "./src/app/edit/demo/quiz-complete-dialog.component.ts":
+  /*!*************************************************************!*\
+    !*** ./src/app/edit/demo/quiz-complete-dialog.component.ts ***!
+    \*************************************************************/
+
+  /*! exports provided: QuizCompleteDialogComponent */
+
+  /***/
+  function srcAppEditDemoQuizCompleteDialogComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "QuizCompleteDialogComponent", function () {
+      return QuizCompleteDialogComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var QuizCompleteDialogComponent =
+    /*#__PURE__*/
+    function () {
+      function QuizCompleteDialogComponent() {
+        _classCallCheck(this, QuizCompleteDialogComponent);
+      }
+
+      _createClass(QuizCompleteDialogComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return QuizCompleteDialogComponent;
+    }();
+
+    QuizCompleteDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-quiz-complete-dialog',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./quiz-complete-dialog.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/demo/quiz-complete-dialog.component.html"))["default"]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], QuizCompleteDialogComponent);
     /***/
   },
 
@@ -11092,64 +11396,64 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getAnnotationElem() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee9() {
+          regeneratorRuntime.mark(function _callee12() {
             var paths, path, blob, meta;
-            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+            return regeneratorRuntime.wrap(function _callee12$(_context12) {
               while (1) {
-                switch (_context9.prev = _context9.next) {
+                switch (_context12.prev = _context12.next) {
                   case 0:
-                    _context9.next = 2;
+                    _context12.next = 2;
                     return this.network.getPaths();
 
                   case 2:
-                    paths = _context9.sent;
+                    paths = _context12.sent;
                     path = paths[0];
-                    _context9.next = 6;
+                    _context12.next = 6;
                     return this.network.getImage(path);
 
                   case 6:
-                    blob = _context9.sent;
+                    blob = _context12.sent;
                     meta = {
                       path: path,
                       feedbacks: [],
                       annotation: null
                     };
-                    return _context9.abrupt("return", [new src_app_common_edit_data__WEBPACK_IMPORTED_MODULE_2__["AnnotationMeta"](meta), blob]);
+                    return _context12.abrupt("return", [new src_app_common_edit_data__WEBPACK_IMPORTED_MODULE_2__["AnnotationMeta"](meta), blob]);
 
                   case 9:
                   case "end":
-                    return _context9.stop();
+                    return _context12.stop();
                 }
               }
-            }, _callee9, this);
+            }, _callee12, this);
           }));
         }
       }, {
         key: "grade",
         value: function grade(path, formGroup, config) {
-          var _this56 = this;
+          var _this57 = this;
 
           var result = {};
-          var _iteratorNormalCompletion3 = true;
-          var _didIteratorError3 = false;
-          var _iteratorError3 = undefined;
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = undefined;
 
           try {
-            for (var _iterator3 = config.tasks[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-              var task = _step3.value;
+            for (var _iterator4 = config.tasks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var task = _step4.value;
               result[task.key] = task.getFormValue(formGroup);
             }
           } catch (err) {
-            _didIteratorError3 = true;
-            _iteratorError3 = err;
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-                _iterator3["return"]();
+              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+                _iterator4["return"]();
               }
             } finally {
-              if (_didIteratorError3) {
-                throw _iteratorError3;
+              if (_didIteratorError4) {
+                throw _iteratorError4;
               }
             }
           }
@@ -11168,8 +11472,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           submitted.marks.forEach(function (mark, i) {
-            var maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](_this56.data.marks, function (d) {
-              return _this56.iou(mark.bound, d.bound);
+            var maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](_this57.data.marks, function (d) {
+              return _this57.iou(mark.bound, d.bound);
             });
 
             if (maxIou <= 0.85) {
@@ -11259,10 +11563,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             xLabelIndices.forEach(function (index) {
               var text = submitted.texts[index];
               var maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](targetTexts, function (d) {
-                return _this56.iou(text.bound, d.bound);
+                return _this57.iou(text.bound, d.bound);
               });
               var ious = targetTexts.map(function (d) {
-                return _this56.iou(text.bound, d.bound);
+                return _this57.iou(text.bound, d.bound);
               });
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
@@ -11298,7 +11602,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var text = submitted.texts[index];
 
               var ious = _targetTexts.map(function (d) {
-                return _this56.iou(text.bound, d.bound);
+                return _this57.iou(text.bound, d.bound);
               });
 
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
@@ -11322,7 +11626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var checkAxis = function checkAxis(index) {
             var axis = submitted.spec.axes[index];
-            var target = _this56.data.spec.axes[index];
+            var target = _this57.data.spec.axes[index];
 
             if (axis.title.value !== target.title.value) {
               feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
@@ -11496,7 +11800,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n::ng-deep rect.focused {\n  stroke: #216141;\n  stroke-width: 3px;\n  fill: rgba(51, 153, 102, 0.4);\n  fill-opacity: 0.3;\n}\n\n::ng-deep rect.focused .handle {\n  fill: #339966;\n}\n\n::ng-deep circle.focused {\n  fill: #339966;\n  stroke: #339966;\n}\n\n::ng-deep circle {\n  cursor: crosshair;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.w-15 {\n  width: 15% !important;\n}\n\n.w-10 {\n  width: 10% !important;\n}\n\n.focused {\n  background-color: rgba(51, 153, 102, 0.4);\n}\n\n.label-select {\n  padding-left: 5px;\n  width: 100%;\n  border-radius: 4px;\n  border: 1px solid #aaa;\n}\n\n.table {\n  max-height: 400px;\n  overflow-y: scroll;\n}\n\n.focus-box {\n  cursor: pointer;\n}\n\n.focus-box:not(.focused):hover {\n  background-color: #EEE;\n}\n\n.focus-box span {\n  pointer-events: none;\n}\n\n.close-button {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC1tb2R1bGUuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LW1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURHSTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtFQUNBLDZCQUFBO0VBQ0EsaUJBQUE7QUNBUjs7QURFUTtFQUNJLGFBQUE7QUNBWjs7QURJSTtFQUNJLGFBQUE7RUFDQSxlQUFBO0FDRlI7O0FES0k7RUFDSSxpQkFBQTtBQ0hSOztBRE9BO0VBQ0kscUJBQUE7QUNKSjs7QURPQTtFQUNJLHFCQUFBO0FDSko7O0FET0E7RUFDSSxxQkFBQTtBQ0pKOztBRE9BO0VBQ0kseUNBQUE7QUNKSjs7QURPQTtFQUNJLGlCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0Esc0JBQUE7QUNKSjs7QURPQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7QUNKSjs7QURPQTtFQU1JLGVBQUE7QUNUSjs7QURLSTtFQUNJLHNCQUFBO0FDSFI7O0FEUUk7RUFDSSxvQkFBQTtBQ05SOztBRFVBO0VBQ0ksa0JBQUE7RUFDQSxVQUFBO0VBQ0EsUUFBQTtBQ1BKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9lZGl0LW1vZHVsZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnZhbGlkYXRlLWZlZWRiYWNrIHtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG46Om5nLWRlZXAge1xyXG4gICAgcmVjdC5mb2N1c2VkIHtcclxuICAgICAgICBzdHJva2U6ICMyMTYxNDE7XHJcbiAgICAgICAgc3Ryb2tlLXdpZHRoOiAzcHg7XHJcbiAgICAgICAgZmlsbDogcmdiYSg1MSwgMTUzLCAxMDIsIDAuNCk7XHJcbiAgICAgICAgZmlsbC1vcGFjaXR5OiAwLjM7XHJcblxyXG4gICAgICAgIC5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiByZ2IoNTEsIDE1MywgMTAyKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgY2lyY2xlLmZvY3VzZWQge1xyXG4gICAgICAgIGZpbGw6IHJnYig1MSwgMTUzLCAxMDIpO1xyXG4gICAgICAgIHN0cm9rZTogIzMzOTk2NjtcclxuICAgIH1cclxuXHJcbiAgICBjaXJjbGUge1xyXG4gICAgICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgfVxyXG59XHJcblxyXG4udy0yMCB7XHJcbiAgICB3aWR0aDogMjAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi53LTE1IHtcclxuICAgIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnctMTAge1xyXG4gICAgd2lkdGg6IDEwJSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZm9jdXNlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC40KTtcclxufVxyXG5cclxuLmxhYmVsLXNlbGVjdCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDVweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2FhYTtcclxufVxyXG5cclxuLnRhYmxlIHtcclxuICAgIG1heC1oZWlnaHQ6IDQwMHB4O1xyXG4gICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG59XHJcblxyXG4uZm9jdXMtYm94IHtcclxuXHJcbiAgICAmOm5vdCguZm9jdXNlZCk6aG92ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XHJcbiAgICB9XHJcblxyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG5cclxuICAgIHNwYW4ge1xyXG4gICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgfVxyXG59XHJcblxyXG4uY2xvc2UtYnV0dG9uIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB0b3A6IDBweDtcclxufVxyXG5cclxuIiwiLnZhbGlkYXRlLWZlZWRiYWNrIHtcbiAgY29sb3I6ICNmNDQzMzY7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cblxuOjpuZy1kZWVwIHJlY3QuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MTtcbiAgc3Ryb2tlLXdpZHRoOiAzcHg7XG4gIGZpbGw6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjQpO1xuICBmaWxsLW9wYWNpdHk6IDAuMztcbn1cbjo6bmctZGVlcCByZWN0LmZvY3VzZWQgLmhhbmRsZSB7XG4gIGZpbGw6ICMzMzk5NjY7XG59XG46Om5nLWRlZXAgY2lyY2xlLmZvY3VzZWQge1xuICBmaWxsOiAjMzM5OTY2O1xuICBzdHJva2U6ICMzMzk5NjY7XG59XG46Om5nLWRlZXAgY2lyY2xlIHtcbiAgY3Vyc29yOiBjcm9zc2hhaXI7XG59XG5cbi53LTIwIHtcbiAgd2lkdGg6IDIwJSAhaW1wb3J0YW50O1xufVxuXG4udy0xNSB7XG4gIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcbn1cblxuLnctMTAge1xuICB3aWR0aDogMTAlICFpbXBvcnRhbnQ7XG59XG5cbi5mb2N1c2VkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSg1MSwgMTUzLCAxMDIsIDAuNCk7XG59XG5cbi5sYWJlbC1zZWxlY3Qge1xuICBwYWRkaW5nLWxlZnQ6IDVweDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2FhYTtcbn1cblxuLnRhYmxlIHtcbiAgbWF4LWhlaWdodDogNDAwcHg7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cblxuLmZvY3VzLWJveCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5mb2N1cy1ib3g6bm90KC5mb2N1c2VkKTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XG59XG4uZm9jdXMtYm94IHNwYW4ge1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuLmNsb3NlLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IDBweDtcbiAgdG9wOiAwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n::ng-deep .handle {\n  cursor: crosshair;\n}\n\n::ng-deep .mark {\n  stroke-width: 2px;\n  stroke: red;\n  fill-opacity: 0;\n}\n\n::ng-deep .mark.handle {\n  fill: darkorange;\n  stroke: darkorange;\n  fill-opacity: 1;\n}\n\n::ng-deep .text.focused {\n  stroke: #216141 !important;\n  stroke-width: 3px !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .text.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n::ng-deep .text {\n  stroke-width: 2px;\n  stroke: #3f51b5;\n  fill-opacity: 0;\n}\n\n::ng-deep .text.handle {\n  fill: #4040ff;\n  stroke: #4040ff;\n  fill-opacity: 1;\n}\n\n::ng-deep .mark.focused {\n  stroke: #216141 !important;\n  stroke-width: 3px !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .mark.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.w-15 {\n  width: 15% !important;\n}\n\n.w-10 {\n  width: 10% !important;\n}\n\n.focused {\n  background-color: rgba(51, 153, 102, 0.3);\n}\n\n.label-select {\n  padding-left: 5px;\n  width: 100%;\n  border-radius: 4px;\n  border: 1px solid #aaa;\n}\n\n.table {\n  max-height: 400px;\n  overflow-y: scroll;\n}\n\n.focus-box {\n  cursor: pointer;\n}\n\n.focus-box:not(.focused):hover {\n  background-color: #EEE;\n}\n\n.focus-box span {\n  pointer-events: none;\n}\n\n.close-button {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC1tb2R1bGUuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LW1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURJSTtFQUNJLGlCQUFBO0FDRFI7O0FESUk7RUFDSSxpQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FDRlI7O0FESVE7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ0ZaOztBRE1JO0VBQ0ksMEJBQUE7RUFDQSw0QkFBQTtFQUNBLHdDQUFBO0FDSlI7O0FETVE7RUFDSSx3QkFBQTtFQUNBLDBCQUFBO0VBQ0EsMEJBQUE7QUNKWjs7QURRSTtFQUNJLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7QUNOUjs7QURRUTtFQUNJLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQ05aOztBRFVJO0VBQ0ksMEJBQUE7RUFDQSw0QkFBQTtFQUNBLHdDQUFBO0FDUlI7O0FEVVE7RUFDSSx3QkFBQTtFQUNBLDBCQUFBO0VBQ0EsMEJBQUE7QUNSWjs7QURhQTtFQUNJLHFCQUFBO0FDVko7O0FEYUE7RUFDSSxxQkFBQTtBQ1ZKOztBRGFBO0VBQ0kscUJBQUE7QUNWSjs7QURhQTtFQUNJLHlDQUFBO0FDVko7O0FEYUE7RUFDSSxpQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0FDVko7O0FEYUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FDVko7O0FEYUE7RUFNSSxlQUFBO0FDZko7O0FEV0k7RUFDSSxzQkFBQTtBQ1RSOztBRGNJO0VBQ0ksb0JBQUE7QUNaUjs7QURnQkE7RUFDSSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0FDYkoiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2VkaXQtbW9kdWxlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCB7XHJcblxyXG4gICAgLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hcmsge1xyXG4gICAgICAgIHN0cm9rZS13aWR0aDogMnB4O1xyXG4gICAgICAgIHN0cm9rZTogcmVkO1xyXG4gICAgICAgIGZpbGwtb3BhY2l0eTogMDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiBkYXJrb3JhbmdlO1xyXG4gICAgICAgICAgICBzdHJva2U6IGRhcmtvcmFuZ2U7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnRleHQuZm9jdXNlZCB7XHJcbiAgICAgICAgc3Ryb2tlOiAjMjE2MTQxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgc3Ryb2tlLXdpZHRoOiAzcHggIWltcG9ydGFudDtcclxuICAgICAgICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xyXG5cclxuICAgICAgICAmLmhhbmRsZSB7XHJcbiAgICAgICAgICAgIGZpbGw6IHJnYig1MSwgMTUzLCAxMDIpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIHN0cm9rZTogcmdiKDUxLCAxNTMsIDEwMikgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC50ZXh0IHtcclxuICAgICAgICBzdHJva2Utd2lkdGg6IDJweDtcclxuICAgICAgICBzdHJva2U6ICMzZjUxYjU7XHJcbiAgICAgICAgZmlsbC1vcGFjaXR5OiAwO1xyXG5cclxuICAgICAgICAmLmhhbmRsZSB7XHJcbiAgICAgICAgICAgIGZpbGw6ICM0MDQwZmY7XHJcbiAgICAgICAgICAgIHN0cm9rZTogIzQwNDBmZjtcclxuICAgICAgICAgICAgZmlsbC1vcGFjaXR5OiAxO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWFyay5mb2N1c2VkIHtcclxuICAgICAgICBzdHJva2U6ICMyMTYxNDEgIWltcG9ydGFudDtcclxuICAgICAgICBzdHJva2Utd2lkdGg6IDNweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIGZpbGw6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjMpICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgICAgICYuaGFuZGxlIHtcclxuICAgICAgICAgICAgZmlsbDogcmdiKDUxLCAxNTMsIDEwMikgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgc3Ryb2tlOiByZ2IoNTEsIDE1MywgMTAyKSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBmaWxsLW9wYWNpdHk6IDEgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuXHJcbi53LTIwIHtcclxuICAgIHdpZHRoOiAyMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnctMTUge1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udy0xMCB7XHJcbiAgICB3aWR0aDogMTAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5mb2N1c2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjMpO1xyXG59XHJcblxyXG4ubGFiZWwtc2VsZWN0IHtcclxuICAgIHBhZGRpbmctbGVmdDogNXB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYWFhO1xyXG59XHJcblxyXG4udGFibGUge1xyXG4gICAgbWF4LWhlaWdodDogNDAwcHg7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbn1cclxuXHJcbi5mb2N1cy1ib3gge1xyXG5cclxuICAgICY6bm90KC5mb2N1c2VkKTpob3ZlciB7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0VFRTtcclxuICAgIH1cclxuXHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG4gICAgc3BhbiB7XHJcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5jbG9zZS1idXR0b24ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIHRvcDogMHB4O1xyXG59XHJcblxyXG4iLCIudmFsaWRhdGUtZmVlZGJhY2sge1xuICBjb2xvcjogI2Y0NDMzNjtcbiAgZm9udC1zaXplOiAxMnB4O1xufVxuXG46Om5nLWRlZXAgLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIC5tYXJrIHtcbiAgc3Ryb2tlLXdpZHRoOiAycHg7XG4gIHN0cm9rZTogcmVkO1xuICBmaWxsLW9wYWNpdHk6IDA7XG59XG46Om5nLWRlZXAgLm1hcmsuaGFuZGxlIHtcbiAgZmlsbDogZGFya29yYW5nZTtcbiAgc3Ryb2tlOiBkYXJrb3JhbmdlO1xuICBmaWxsLW9wYWNpdHk6IDE7XG59XG46Om5nLWRlZXAgLnRleHQuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MSAhaW1wb3J0YW50O1xuICBzdHJva2Utd2lkdGg6IDNweCAhaW1wb3J0YW50O1xuICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xufVxuOjpuZy1kZWVwIC50ZXh0LmZvY3VzZWQuaGFuZGxlIHtcbiAgZmlsbDogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBzdHJva2U6ICMzMzk5NjYgIWltcG9ydGFudDtcbiAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG46Om5nLWRlZXAgLnRleHQge1xuICBzdHJva2Utd2lkdGg6IDJweDtcbiAgc3Ryb2tlOiAjM2Y1MWI1O1xuICBmaWxsLW9wYWNpdHk6IDA7XG59XG46Om5nLWRlZXAgLnRleHQuaGFuZGxlIHtcbiAgZmlsbDogIzQwNDBmZjtcbiAgc3Ryb2tlOiAjNDA0MGZmO1xuICBmaWxsLW9wYWNpdHk6IDE7XG59XG46Om5nLWRlZXAgLm1hcmsuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MSAhaW1wb3J0YW50O1xuICBzdHJva2Utd2lkdGg6IDNweCAhaW1wb3J0YW50O1xuICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xufVxuOjpuZy1kZWVwIC5tYXJrLmZvY3VzZWQuaGFuZGxlIHtcbiAgZmlsbDogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBzdHJva2U6ICMzMzk5NjYgIWltcG9ydGFudDtcbiAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG5cbi53LTIwIHtcbiAgd2lkdGg6IDIwJSAhaW1wb3J0YW50O1xufVxuXG4udy0xNSB7XG4gIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcbn1cblxuLnctMTAge1xuICB3aWR0aDogMTAlICFpbXBvcnRhbnQ7XG59XG5cbi5mb2N1c2VkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSg1MSwgMTUzLCAxMDIsIDAuMyk7XG59XG5cbi5sYWJlbC1zZWxlY3Qge1xuICBwYWRkaW5nLWxlZnQ6IDVweDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2FhYTtcbn1cblxuLnRhYmxlIHtcbiAgbWF4LWhlaWdodDogNDAwcHg7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cblxuLmZvY3VzLWJveCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5mb2N1cy1ib3g6bm90KC5mb2N1c2VkKTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XG59XG4uZm9jdXMtYm94IHNwYW4ge1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuLmNsb3NlLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IDBweDtcbiAgdG9wOiAwcHg7XG59Il19 */";
     /***/
   },
 
@@ -11516,7 +11820,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\nimg {\n  max-width: 700px;\n  max-height: 600px;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7QUNDSjs7QURDQTtFQUNJLHlCQUFBO0VBQ0EsaUJBQUE7RUFDQSwwQkFBQTtBQ0VKOztBRENBO0VBQ0ksc0JBQUE7RUFDQSxnQkFBQTtBQ0VKOztBREFJO0VBQ0ksa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FDRVI7O0FERUE7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esc0JBQUE7S0FBQSxtQkFBQTtBQ0NKOztBREdJO0VBQ0ksaUJBQUE7QUNBUjs7QURHSTtFQUNJLG9CQUFBO0VBQUEsWUFBQTtBQ0RSOztBRElJO0VBQ0ksZUFBQTtBQ0ZSOztBRE1BO0VBQ0ksYUFBQTtBQ0hKOztBRE1BO0VBQ0ksNEJBQUE7RUFDQSxxQkFBQTtBQ0hKOztBRE1BO0VBQ0ksY0FBQTtBQ0hKOztBRE9BO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNKSjs7QURPQTtFQUNJLFdBQUE7QUNKSjs7QURPQTtFQUNJLHVCQUFBO0VBQ0EsWUFBQTtBQ0pKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDMuc2VsZWN0ZWQge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLnJpZ2h0LXBhbmVsIHtcclxuICAgIGJvcmRlci1sZWZ0OiAycHggc29saWQgI2FhYTtcclxufVxyXG4uZWRpdC1oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcclxuICAgIGZvbnQtc2l6ZTogMS4zcmVtO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XHJcbn1cclxuXHJcbiNpbWFnZS16b25lIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG5cclxuICAgIC5kZXNjIHtcclxuICAgICAgICBmb250LXN0eWxlOiBpdGFsaWM7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgICAgICBmb250LXNpemU6IDEuMnJlbTtcclxuICAgIH1cclxufVxyXG5cclxuaW1nIHtcclxuICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICBtYXgtaGVpZ2h0OiA2MDBweDtcclxuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XHJcbn1cclxuXHJcbjo6bmctZGVlcCB7XHJcbiAgICBjaXJjbGUuaGFuZGxlIHtcclxuICAgICAgICBjdXJzb3I6IGNyb3NzaGFpcjtcclxuICAgIH1cclxuXHJcbiAgICByZWN0LmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBncmFiO1xyXG4gICAgfVxyXG5cclxuICAgIC5tYXQtcmFkaW8tbGFiZWwtY29udGVudCB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4uaW1hZ2UtcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNzaWRlLW5hdiB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCAjQUFBO1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbjogMCAxMnB4O1xyXG59XHJcblxyXG5cclxuLnZhbGlkYXRlLWZlZWRiYWNrIHtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4uZm9ybS1sYWJlbCB7XHJcbiAgICB3aWR0aDogNTBweDtcclxufVxyXG5cclxuLnN1Ym1pdC1zZWN0aW9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG59XHJcbiIsImgzLnNlbGVjdGVkIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLnJpZ2h0LXBhbmVsIHtcbiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCAjYWFhO1xufVxuXG4uZWRpdC1oZWFkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmFmYWZhO1xuICBmb250LXNpemU6IDEuM3JlbTtcbiAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XG59XG5cbiNpbWFnZS16b25lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0NDQztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbiNpbWFnZS16b25lIC5kZXNjIHtcbiAgZm9udC1zdHlsZTogaXRhbGljO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXNpemU6IDEuMnJlbTtcbn1cblxuaW1nIHtcbiAgbWF4LXdpZHRoOiA3MDBweDtcbiAgbWF4LWhlaWdodDogNjAwcHg7XG4gIG9iamVjdC1maXQ6IGNvbnRhaW47XG59XG5cbjo6bmctZGVlcCBjaXJjbGUuaGFuZGxlIHtcbiAgY3Vyc29yOiBjcm9zc2hhaXI7XG59XG46Om5nLWRlZXAgcmVjdC5oYW5kbGUge1xuICBjdXJzb3I6IGdyYWI7XG59XG46Om5nLWRlZXAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4uaW1hZ2UtcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n.image-region {\n  max-width: 95%;\n}\n\nimg {\n  max-width: 100%;\n  max-height: 600px;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBREVBO0VBQ0ksY0FBQTtBQ0NKOztBREVBO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0VBQ0Esc0JBQUE7S0FBQSxtQkFBQTtBQ0NKOztBREdJO0VBQ0ksaUJBQUE7QUNBUjs7QURHSTtFQUNJLG9CQUFBO0VBQUEsWUFBQTtBQ0RSOztBRElJO0VBQ0ksZUFBQTtBQ0ZSOztBRE1BO0VBQ0ksYUFBQTtBQ0hKOztBRE1BO0VBQ0ksYUFBQTtBQ0hKOztBRE1BO0VBQ0ksNEJBQUE7RUFDQSxxQkFBQTtBQ0hKOztBRE1BO0VBQ0ksY0FBQTtBQ0hKOztBRE9BO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNKSjs7QURPQTtFQUNJLFdBQUE7QUNKSjs7QURPQTtFQUNJLHVCQUFBO0VBQ0EsWUFBQTtBQ0pKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDMuc2VsZWN0ZWQge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLnJpZ2h0LXBhbmVsIHtcclxuICAgIGJvcmRlci1sZWZ0OiAycHggc29saWQgI2FhYTtcclxuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gNjRweCkgIWltcG9ydGFudDtcclxufVxyXG4uZWRpdC1oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcclxuICAgIGZvbnQtc2l6ZTogMS4zcmVtO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XHJcbn1cclxuXHJcbiNpbWFnZS16b25lIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG5cclxuICAgIC5kZXNjIHtcclxuICAgICAgICBmb250LXN0eWxlOiBpdGFsaWM7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgICAgICBmb250LXNpemU6IDEuMnJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLmltYWdlLXJlZ2lvbiB7XHJcbiAgICBtYXgtd2lkdGg6IDk1JTtcclxufVxyXG5cclxuaW1nIHtcclxuICAgIG1heC13aWR0aDogMTAwJTtcclxuICAgIG1heC1oZWlnaHQ6IDYwMHB4O1xyXG4gICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxufVxyXG5cclxuOjpuZy1kZWVwIHtcclxuICAgIGNpcmNsZS5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgfVxyXG5cclxuICAgIHJlY3QuaGFuZGxlIHtcclxuICAgICAgICBjdXJzb3I6IGdyYWI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5pbWFnZS1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLnN2Zy1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuI3NpZGUtbmF2IHtcclxuICAgIGJvcmRlci1yaWdodDogMnB4IHNvbGlkICNBQUE7XHJcbiAgICB3aWR0aDogMTUlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbm1hdC1yYWRpby1idXR0b24ge1xyXG4gICAgbWFyZ2luOiAwIDEycHg7XHJcbn1cclxuXHJcblxyXG4udmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbi5mb3JtLWxhYmVsIHtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG59XHJcblxyXG4uc3VibWl0LXNlY3Rpb24ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbn1cclxuIiwiaDMuc2VsZWN0ZWQge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4ucmlnaHQtcGFuZWwge1xuICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbiAgaGVpZ2h0OiBjYWxjKDEwMCUgLSA2NHB4KSAhaW1wb3J0YW50O1xufVxuXG4uZWRpdC1oZWFkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmFmYWZhO1xuICBmb250LXNpemU6IDEuM3JlbTtcbiAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XG59XG5cbiNpbWFnZS16b25lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0NDQztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbiNpbWFnZS16b25lIC5kZXNjIHtcbiAgZm9udC1zdHlsZTogaXRhbGljO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXNpemU6IDEuMnJlbTtcbn1cblxuLmltYWdlLXJlZ2lvbiB7XG4gIG1heC13aWR0aDogOTUlO1xufVxuXG5pbWcge1xuICBtYXgtd2lkdGg6IDEwMCU7XG4gIG1heC1oZWlnaHQ6IDYwMHB4O1xuICBvYmplY3QtZml0OiBjb250YWluO1xufVxuXG46Om5nLWRlZXAgY2lyY2xlLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIHJlY3QuaGFuZGxlIHtcbiAgY3Vyc29yOiBncmFiO1xufVxuOjpuZy1kZWVwIC5tYXQtcmFkaW8tbGFiZWwtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */";
     /***/
   },
 
@@ -11623,11 +11927,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _demo_quiz_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ./demo/quiz.service */
     "./src/app/edit/demo/quiz.service.ts");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! ./demo/quiz-complete-dialog.component */
+    "./src/app/edit/demo/quiz-complete-dialog.component.ts");
+    /* harmony import */
+
+
+    var _locale_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ../locale.service */
+    "./src/app/locale.service.ts");
 
     var EditComponent =
     /*#__PURE__*/
     function () {
-      function EditComponent(edit, fb, network, configService, router, renderer, demo, quiz, timer) {
+      function EditComponent(edit, fb, network, configService, router, renderer, demo, quiz, timer, dialog, L) {
         _classCallCheck(this, EditComponent);
 
         this.edit = edit;
@@ -11639,6 +11961,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.demo = demo;
         this.quiz = quiz;
         this.timer = timer;
+        this.dialog = dialog;
+        this.L = L;
         this.mode = 'verification';
         this.verificationDatas = [];
         this.eventSubject = new rxjs__WEBPACK_IMPORTED_MODULE_8__["Subject"]();
@@ -11651,7 +11975,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(EditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this57 = this;
+          var _this58 = this;
 
           if (!this.configService.userName) {
             this.router.navigate(['/login']);
@@ -11660,108 +11984,110 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.svgS = d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgRef.nativeElement);
           this.configService.configObservable.subscribe(function (config) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this57, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this58, void 0, void 0,
             /*#__PURE__*/
-            regeneratorRuntime.mark(function _callee10() {
+            regeneratorRuntime.mark(function _callee13() {
               var elem, result;
-              return regeneratorRuntime.wrap(function _callee10$(_context10) {
+              return regeneratorRuntime.wrap(function _callee13$(_context13) {
                 while (1) {
-                  switch (_context10.prev = _context10.next) {
+                  switch (_context13.prev = _context13.next) {
                     case 0:
                       this.config = config;
                       this.formGroup = this.initFormGroup(this.config);
-                      this.eventSubject.next('progress');
 
                       if (config.service !== 'normal') {
                         this.mode = 'annotation';
                       }
 
-                      _context10.t0 = this.mode;
-                      _context10.next = _context10.t0 === 'annotation' ? 7 : _context10.t0 === 'verification' ? 10 : 20;
+                      _context13.t0 = this.mode;
+                      _context13.next = _context13.t0 === 'annotation' ? 6 : _context13.t0 === 'verification' ? 9 : 19;
                       break;
 
-                    case 7:
-                      _context10.next = 9;
+                    case 6:
+                      _context13.next = 8;
                       return this.loadNextData();
 
-                    case 9:
-                      return _context10.abrupt("break", 21);
+                    case 8:
+                      return _context13.abrupt("break", 20);
 
-                    case 10:
-                      _context10.next = 12;
+                    case 9:
+                      _context13.next = 11;
                       return this.network.getVerificationRandomElem();
 
-                    case 12:
-                      elem = _context10.sent;
-                      _context10.next = 15;
+                    case 11:
+                      elem = _context13.sent;
+                      _context13.next = 14;
                       return this.parseVerification(elem);
 
-                    case 15:
-                      result = _context10.sent;
+                    case 14:
+                      result = _context13.sent;
 
                       if (result) {
-                        _context10.next = 19;
+                        _context13.next = 18;
                         break;
                       }
 
-                      _context10.next = 19;
+                      _context13.next = 18;
                       return this.loadNextData();
 
+                    case 18:
+                      return _context13.abrupt("break", 20);
+
                     case 19:
-                      return _context10.abrupt("break", 21);
+                      return _context13.abrupt("break", 20);
 
                     case 20:
-                      return _context10.abrupt("break", 21);
+                      this.eventSubject.next('progress');
 
                     case 21:
                     case "end":
-                      return _context10.stop();
+                      return _context13.stop();
                   }
                 }
-              }, _callee10, this);
+              }, _callee13, this);
             }));
           });
           var imgElem = this.imgRef.nativeElement;
           this.edit.removeImage();
           imgElem.addEventListener('load', function () {
-            var boundingBox = _this57.imgRef.nativeElement.getBoundingClientRect();
+            var boundingBox = _this58.imgRef.nativeElement.getBoundingClientRect();
 
-            _this57.initSVG(boundingBox);
+            _this58.initSVG(boundingBox);
 
-            _this57.noImagesLeft = false;
-            _this57.onImageLoad = true;
+            _this58.noImagesLeft = false;
+            _this58.onImageLoad = true;
 
-            _this57.timer.start();
+            _this58.timer.start();
 
-            var path = _this57.selectedImage.path;
+            var path = _this58.selectedImage.path;
 
-            _this57.network.getPrediction(path).then(function (predictData) {
-              _this57.config.parsePrediction(predictData);
+            _this58.network.getPrediction(path).then(function (predictData) {
+              _this58.config.parsePrediction(predictData);
 
-              if (_this57.mode === 'annotation') {
-                _this57.eventSubject.next('predict');
+              if (_this58.mode === 'annotation') {
+                _this58.eventSubject.next('predict');
               }
             });
 
-            if (_this57.selectedImage.hasPrevAnnotation) {
-              var meta = _this57.selectedImage.meta;
+            if (_this58.selectedImage.hasPrevAnnotation) {
+              var meta = _this58.selectedImage.meta;
 
-              _this57.config.parsePrevAnnotation(_this57.formGroup, meta.annotation, _this57.fb);
+              _this58.config.parsePrevAnnotation(_this58.formGroup, meta.annotation, _this58.fb);
 
-              _this57.eventSubject.next('review');
+              _this58.eventSubject.next('review');
             }
           });
           this.edit.imageSubject.asObservable().subscribe(function (image) {
-            _this57.formGroup = _this57.initFormGroup(_this57.config);
-            _this57.selectedImage = image;
-            var svg = _this57.svgRef.nativeElement;
+            _this58.formGroup = _this58.initFormGroup(_this58.config);
+            _this58.selectedImage = image;
+            var svg = _this58.svgRef.nativeElement;
 
-            _this57.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this58.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
-            _this57.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this58.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
             if (!image) {
-              _this57.noImagesLeft = !!imgElem.src;
+              _this58.noImagesLeft = !!imgElem.src;
               imgElem.src = '';
               return;
             }
@@ -11769,8 +12095,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             imgElem.src = image.src;
           });
           this.edit.autoCompleteSubject.asObservable().subscribe(function (_) {
-            if (_this57.mode === 'annotation') {
-              _this57.eventSubject.next('predict');
+            if (_this58.mode === 'annotation') {
+              _this58.eventSubject.next('predict');
             }
           });
         }
@@ -11779,87 +12105,87 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function submit(event) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee11() {
+          regeneratorRuntime.mark(function _callee14() {
             var elem, result;
-            return regeneratorRuntime.wrap(function _callee11$(_context11) {
+            return regeneratorRuntime.wrap(function _callee14$(_context14) {
               while (1) {
-                switch (_context11.prev = _context11.next) {
+                switch (_context14.prev = _context14.next) {
                   case 0:
                     this.onImageLoad = false;
                     elem = null;
-                    _context11.t0 = this.config.service;
-                    _context11.next = _context11.t0 === 'quiz' ? 5 : _context11.t0 === 'demo' ? 7 : 12;
+                    _context14.t0 = this.config.service;
+                    _context14.next = _context14.t0 === 'quiz' ? 5 : _context14.t0 === 'demo' ? 7 : 12;
                     break;
 
                   case 5:
                     this.gradeQuiz();
-                    return _context11.abrupt("return");
+                    return _context14.abrupt("return");
 
                   case 7:
                     if (!(this.mode === 'annotation')) {
-                      _context11.next = 11;
+                      _context14.next = 11;
                       break;
                     }
 
-                    _context11.next = 10;
+                    _context14.next = 10;
                     return this.demo.getVerificationElem();
 
                   case 10:
-                    elem = _context11.sent;
+                    elem = _context14.sent;
 
                   case 11:
-                    return _context11.abrupt("break", 20);
+                    return _context14.abrupt("break", 20);
 
                   case 12:
-                    _context11.next = 14;
+                    _context14.next = 14;
                     return this.timer.sendResult(this.mode);
 
                   case 14:
-                    _context11.next = 16;
+                    _context14.next = 16;
                     return this.network.submit(this.selectedImage, this.formGroup, this.config);
 
                   case 16:
-                    _context11.next = 18;
+                    _context14.next = 18;
                     return this.network.getVerificationRandomElem();
 
                   case 18:
-                    elem = _context11.sent;
-                    return _context11.abrupt("break", 20);
+                    elem = _context14.sent;
+                    return _context14.abrupt("break", 20);
 
                   case 20:
                     if (this.config.verification) {
-                      _context11.next = 25;
+                      _context14.next = 25;
                       break;
                     }
 
-                    _context11.next = 23;
+                    _context14.next = 23;
                     return this.loadNextData();
 
                   case 23:
-                    _context11.next = 31;
+                    _context14.next = 31;
                     break;
 
                   case 25:
-                    _context11.next = 27;
+                    _context14.next = 27;
                     return this.parseVerification(elem);
 
                   case 27:
-                    result = _context11.sent;
+                    result = _context14.sent;
 
                     if (result) {
-                      _context11.next = 31;
+                      _context14.next = 31;
                       break;
                     }
 
-                    _context11.next = 31;
+                    _context14.next = 31;
                     return this.loadNextData();
 
                   case 31:
                   case "end":
-                    return _context11.stop();
+                    return _context14.stop();
                 }
               }
-            }, _callee11, this);
+            }, _callee14, this);
           }));
         }
       }, {
@@ -11867,52 +12193,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onRemoveImage() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee12() {
+          regeneratorRuntime.mark(function _callee15() {
             var elem, result;
-            return regeneratorRuntime.wrap(function _callee12$(_context12) {
+            return regeneratorRuntime.wrap(function _callee15$(_context15) {
               while (1) {
-                switch (_context12.prev = _context12.next) {
+                switch (_context15.prev = _context15.next) {
                   case 0:
                     this.timer.reset();
 
                     if (this.config.verification) {
-                      _context12.next = 6;
+                      _context15.next = 6;
                       break;
                     }
 
-                    _context12.next = 4;
+                    _context15.next = 4;
                     return this.loadNextData();
 
                   case 4:
-                    _context12.next = 15;
+                    _context15.next = 15;
                     break;
 
                   case 6:
-                    _context12.next = 8;
+                    _context15.next = 8;
                     return this.network.getVerificationRandomElem();
 
                   case 8:
-                    elem = _context12.sent;
-                    _context12.next = 11;
+                    elem = _context15.sent;
+                    _context15.next = 11;
                     return this.parseVerification(elem);
 
                   case 11:
-                    result = _context12.sent;
+                    result = _context15.sent;
 
                     if (result) {
-                      _context12.next = 15;
+                      _context15.next = 15;
                       break;
                     }
 
-                    _context12.next = 15;
+                    _context15.next = 15;
                     return this.loadNextData();
 
                   case 15:
                   case "end":
-                    return _context12.stop();
+                    return _context15.stop();
                 }
               }
-            }, _callee12, this);
+            }, _callee15, this);
           }));
         }
       }, {
@@ -11931,46 +12257,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function loadNextData() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee13() {
+          regeneratorRuntime.mark(function _callee16() {
             var elem, _elem, _elem2, data, blob;
 
-            return regeneratorRuntime.wrap(function _callee13$(_context13) {
+            return regeneratorRuntime.wrap(function _callee16$(_context16) {
               while (1) {
-                switch (_context13.prev = _context13.next) {
+                switch (_context16.prev = _context16.next) {
                   case 0:
-                    _context13.next = 2;
+                    _context16.next = 2;
                     return this.network.clearPending();
 
                   case 2:
                     elem = null;
-                    _context13.t0 = this.config.service;
-                    _context13.next = _context13.t0 === 'quiz' ? 6 : _context13.t0 === 'demo' ? 10 : 14;
+                    _context16.t0 = this.config.service;
+                    _context16.next = _context16.t0 === 'quiz' ? 6 : _context16.t0 === 'demo' ? 10 : 14;
                     break;
 
                   case 6:
-                    _context13.next = 8;
+                    _context16.next = 8;
                     return this.quiz.getAnnotationElem();
 
                   case 8:
-                    elem = _context13.sent;
-                    return _context13.abrupt("break", 19);
+                    elem = _context16.sent;
+                    return _context16.abrupt("break", 19);
 
                   case 10:
-                    _context13.next = 12;
+                    _context16.next = 12;
                     return this.demo.getAnnotationElem();
 
                   case 12:
-                    elem = _context13.sent;
-                    return _context13.abrupt("break", 19);
+                    elem = _context16.sent;
+                    return _context16.abrupt("break", 19);
 
                   case 14:
-                    _context13.next = 16;
+                    _context16.next = 16;
                     return this.network.getRandomElem();
 
                   case 16:
-                    elem = _context13.sent;
+                    elem = _context16.sent;
                     this.eventSubject.next('progress');
-                    return _context13.abrupt("break", 19);
+                    return _context16.abrupt("break", 19);
 
                   case 19:
                     if (elem) {
@@ -11984,10 +12310,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 20:
                   case "end":
-                    return _context13.stop();
+                    return _context16.stop();
                 }
               }
-            }, _callee13, this);
+            }, _callee16, this);
           }));
         }
       }, {
@@ -12001,7 +12327,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               annotation = _this$quiz$grade2[1];
 
           if (pass) {
-            console.log('pass!');
+            this.dialog.open(_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_15__["QuizCompleteDialogComponent"], {
+              disableClose: true
+            });
           } else {
             this.mode = 'revision';
             var meta = new _common_edit_data__WEBPACK_IMPORTED_MODULE_2__["AnnotationMeta"]({
@@ -12017,15 +12345,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function parseVerification(elem) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee14() {
+          regeneratorRuntime.mark(function _callee17() {
             var _elem3, data, blob;
 
-            return regeneratorRuntime.wrap(function _callee14$(_context14) {
+            return regeneratorRuntime.wrap(function _callee17$(_context17) {
               while (1) {
-                switch (_context14.prev = _context14.next) {
+                switch (_context17.prev = _context17.next) {
                   case 0:
                     if (!elem) {
-                      _context14.next = 6;
+                      _context17.next = 6;
                       break;
                     }
 
@@ -12033,17 +12361,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     this.edit.parseImage(blob, data.path);
                     this.verificationDatas = this.config.parseVerificationData(data);
                     this.mode = 'verification';
-                    return _context14.abrupt("return", true);
+                    return _context17.abrupt("return", true);
 
                   case 6:
-                    return _context14.abrupt("return", false);
+                    return _context17.abrupt("return", false);
 
                   case 7:
                   case "end":
-                    return _context14.stop();
+                    return _context17.stop();
                 }
               }
-            }, _callee14, this);
+            }, _callee17, this);
           }));
         }
       }, {
@@ -12144,11 +12472,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initFormGroup",
         value: function initFormGroup(config) {
-          var _this58 = this;
+          var _this59 = this;
 
           var formGroup = this.fb.group({});
           config.tasks.forEach(function (task) {
-            task.registerControl(formGroup, _this58.fb);
+            task.registerControl(formGroup, _this59.fb);
           });
           return formGroup;
         }
@@ -12183,6 +12511,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _demo_quiz_service__WEBPACK_IMPORTED_MODULE_13__["QuizService"]
       }, {
         type: _timer_service__WEBPACK_IMPORTED_MODULE_12__["TimerService"]
+      }, {
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatDialog"]
+      }, {
+        type: _locale_service__WEBPACK_IMPORTED_MODULE_16__["LocaleService"]
       }];
     };
 
@@ -12209,7 +12541,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./edit.component.scss */
       "./src/app/edit/edit.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_edit_service__WEBPACK_IMPORTED_MODULE_4__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"], _network_service__WEBPACK_IMPORTED_MODULE_7__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_10__["ConfigService"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _demo_demo_service__WEBPACK_IMPORTED_MODULE_11__["DemoService"], _demo_quiz_service__WEBPACK_IMPORTED_MODULE_13__["QuizService"], _timer_service__WEBPACK_IMPORTED_MODULE_12__["TimerService"]])], EditComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_edit_service__WEBPACK_IMPORTED_MODULE_4__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"], _network_service__WEBPACK_IMPORTED_MODULE_7__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_10__["ConfigService"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _demo_demo_service__WEBPACK_IMPORTED_MODULE_11__["DemoService"], _demo_quiz_service__WEBPACK_IMPORTED_MODULE_13__["QuizService"], _timer_service__WEBPACK_IMPORTED_MODULE_12__["TimerService"], _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatDialog"], _locale_service__WEBPACK_IMPORTED_MODULE_16__["LocaleService"]])], EditComponent);
     /***/
   },
 
@@ -12306,7 +12638,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "button.selected {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n\n.side-panel {\n  padding: 0px 16px;\n}\n\n.progress-info {\n  font-size: 14px;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.progress-info span.annotated {\n  color: rgba(123, 187, 45, 0.8);\n}\n\n.progress-info span.ignored {\n  color: rgba(0, 0, 0, 0.54);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9zaWRlLW5hdi9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcc2lkZS1uYXZcXHNpZGUtbmF2LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3NpZGUtbmF2L3NpZGUtbmF2LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUNBQUE7QUNDSjs7QURFQTtFQUNJLGlCQUFBO0FDQ0o7O0FERUE7RUFFSSxlQUFBO0VBQ0EseUJBQUE7QUNBSjs7QURDSTtFQUNJLDhCQUFBO0FDQ1I7O0FEQ0k7RUFDSSwwQkFBQTtBQ0NSIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9zaWRlLW5hdi9zaWRlLW5hdi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImJ1dHRvbi5zZWxlY3RlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDQpO1xyXG59XHJcblxyXG4uc2lkZS1wYW5lbCB7XHJcbiAgICBwYWRkaW5nOiAwcHggMTZweDtcclxufVxyXG5cclxuLnByb2dyZXNzLWluZm8ge1xyXG5cclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICBzcGFuLmFubm90YXRlZCB7XHJcbiAgICAgICAgY29sb3I6IHJnYmEoMTIzLCAxODcsIDQ1LCAwLjgpXHJcbiAgICB9XHJcbiAgICBzcGFuLmlnbm9yZWQge1xyXG4gICAgICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG4gICAgfVxyXG59XHJcbiIsImJ1dHRvbi5zZWxlY3RlZCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4wNCk7XG59XG5cbi5zaWRlLXBhbmVsIHtcbiAgcGFkZGluZzogMHB4IDE2cHg7XG59XG5cbi5wcm9ncmVzcy1pbmZvIHtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xufVxuLnByb2dyZXNzLWluZm8gc3Bhbi5hbm5vdGF0ZWQge1xuICBjb2xvcjogcmdiYSgxMjMsIDE4NywgNDUsIDAuOCk7XG59XG4ucHJvZ3Jlc3MtaW5mbyBzcGFuLmlnbm9yZWQge1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbn0iXX0= */";
+    __webpack_exports__["default"] = "button.selected {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n\n.side-panel {\n  padding: 0px 16px;\n}\n\n.progress-info {\n  font-size: 0.9rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.progress-info span.annotated {\n  color: rgba(123, 187, 45, 0.8);\n}\n\n.progress-info span.ignored {\n  color: rgba(0, 0, 0, 0.54);\n}\n\ndiv {\n  font-size: 0.9rem !important;\n}\n\nspan {\n  font-size: 0.9rem !important;\n}\n\n.mat-list-base .mat-subheader {\n  font-size: 0.9rem !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9zaWRlLW5hdi9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcc2lkZS1uYXZcXHNpZGUtbmF2LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3NpZGUtbmF2L3NpZGUtbmF2LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUNBQUE7QUNDSjs7QURFQTtFQUNJLGlCQUFBO0FDQ0o7O0FERUE7RUFFSSxpQkFBQTtFQUNBLHlCQUFBO0FDQUo7O0FEQ0k7RUFDSSw4QkFBQTtBQ0NSOztBRENJO0VBQ0ksMEJBQUE7QUNDUjs7QURHQTtFQUNJLDRCQUFBO0FDQUo7O0FER0E7RUFDSSw0QkFBQTtBQ0FKOztBREdBO0VBQ0ksNEJBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b24uc2VsZWN0ZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjA0KTtcclxufVxyXG5cclxuLnNpZGUtcGFuZWwge1xyXG4gICAgcGFkZGluZzogMHB4IDE2cHg7XHJcbn1cclxuXHJcbi5wcm9ncmVzcy1pbmZvIHtcclxuXHJcbiAgICBmb250LXNpemU6IDAuOXJlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICBzcGFuLmFubm90YXRlZCB7XHJcbiAgICAgICAgY29sb3I6IHJnYmEoMTIzLCAxODcsIDQ1LCAwLjgpXHJcbiAgICB9XHJcbiAgICBzcGFuLmlnbm9yZWQge1xyXG4gICAgICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG4gICAgfVxyXG59XHJcblxyXG5kaXYge1xyXG4gICAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcclxufVxyXG5cclxuc3BhbiB7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubWF0LWxpc3QtYmFzZSAubWF0LXN1YmhlYWRlciB7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xyXG59XHJcbiIsImJ1dHRvbi5zZWxlY3RlZCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4wNCk7XG59XG5cbi5zaWRlLXBhbmVsIHtcbiAgcGFkZGluZzogMHB4IDE2cHg7XG59XG5cbi5wcm9ncmVzcy1pbmZvIHtcbiAgZm9udC1zaXplOiAwLjlyZW07XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XG59XG4ucHJvZ3Jlc3MtaW5mbyBzcGFuLmFubm90YXRlZCB7XG4gIGNvbG9yOiByZ2JhKDEyMywgMTg3LCA0NSwgMC44KTtcbn1cbi5wcm9ncmVzcy1pbmZvIHNwYW4uaWdub3JlZCB7XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xufVxuXG5kaXYge1xuICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xufVxuXG5zcGFuIHtcbiAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcbn1cblxuLm1hdC1saXN0LWJhc2UgLm1hdC1zdWJoZWFkZXIge1xuICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xufSJdfQ== */";
     /***/
   },
 
@@ -12365,41 +12697,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_config_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/config.service */
     "./src/app/config.service.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var SideNavComponent =
     /*#__PURE__*/
     function () {
-      function SideNavComponent(edit, network, cs) {
+      function SideNavComponent(edit, network, cs, L) {
         _classCallCheck(this, SideNavComponent);
 
         this.edit = edit;
         this.network = network;
         this.cs = cs;
+        this.L = L;
         this.autoListShow = true;
         this.imageListShow = true;
-        this.modelInfos = [];
         this.userName = '';
+        this.userProgress = 0;
         this.remove = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
       }
 
       _createClass(SideNavComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this59 = this;
+          var _this60 = this;
 
-          this.updateModelInfo(true);
           this.event.subscribe(function (key) {
             if (key === 'progress') {
-              _this59.updateProgress();
+              _this60.updateProgress();
 
-              _this59.updateModelInfo();
+              _this60.updateModelInfo();
             }
           });
           this.cs.configObservable.subscribe(function (config) {
-            _this59.config = config;
+            _this60.config = config;
           });
           this.cs.userNameObservable.subscribe(function (name) {
-            _this59.userName = name;
+            _this60.userName = name;
           });
         }
       }, {
@@ -12416,10 +12754,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "removeImage",
         value: function removeImage() {
-          var _this60 = this;
+          var _this61 = this;
 
           this.edit.ignoreImage().then(function (_) {
-            _this60.remove.emit();
+            _this61.remove.emit();
           });
         } // for debug
 
@@ -12428,18 +12766,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getRandImage() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee15() {
+          regeneratorRuntime.mark(function _callee18() {
             var result, _result, meta, blob;
 
-            return regeneratorRuntime.wrap(function _callee15$(_context15) {
+            return regeneratorRuntime.wrap(function _callee18$(_context18) {
               while (1) {
-                switch (_context15.prev = _context15.next) {
+                switch (_context18.prev = _context18.next) {
                   case 0:
-                    _context15.next = 2;
+                    _context18.next = 2;
                     return this.network.getRandomElem();
 
                   case 2:
-                    result = _context15.sent;
+                    result = _context18.sent;
 
                     if (result) {
                       _result = _slicedToArray(result, 2), meta = _result[0], blob = _result[1];
@@ -12450,10 +12788,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 4:
                   case "end":
-                    return _context15.stop();
+                    return _context18.stop();
                 }
               }
-            }, _callee15, this);
+            }, _callee18, this);
           }));
         }
       }, {
@@ -12464,27 +12802,64 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateProgress",
         value: function updateProgress() {
-          var _this61 = this;
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee19() {
+            return regeneratorRuntime.wrap(function _callee19$(_context19) {
+              while (1) {
+                switch (_context19.prev = _context19.next) {
+                  case 0:
+                    _context19.next = 2;
+                    return this.network.getProgress();
 
-          this.network.getProgress().then(function (progress) {
-            _this61.progress = progress;
-          });
+                  case 2:
+                    this.progress = _context19.sent;
+                    console.log(this.progress, this.config.sharedDataset);
+
+                    if (!this.config.sharedDataset) {
+                      _context19.next = 9;
+                      break;
+                    }
+
+                    console.log('here');
+                    _context19.next = 8;
+                    return this.network.getUserProgress();
+
+                  case 8:
+                    this.userProgress = _context19.sent;
+
+                  case 9:
+                  case "end":
+                    return _context19.stop();
+                }
+              }
+            }, _callee19, this);
+          }));
         }
       }, {
         key: "updateModelInfo",
         value: function updateModelInfo() {
           var _this62 = this;
 
-          var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           this.network.getModelInfo().then(function (modelInfos) {
-            if (init) {
+            if (!_this62.modelInfos) {
               _this62.modelInfos = modelInfos;
             } else {
               modelInfos.forEach(function (newModelInfo, i) {
-                _this62.modelInfos[i].score = newModelInfo.score;
+                if (i < _this62.modelInfos.length) {
+                  _this62.modelInfos[i].score = newModelInfo.score;
+                } else {
+                  _this62.modelInfos.push(newModelInfo);
+                }
               });
             }
           });
+        }
+      }, {
+        key: "imageName",
+        get: function get() {
+          var splited = this.edit.image.path.split('/');
+          return splited[splited.length - 1];
         }
       }]);
 
@@ -12498,6 +12873,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: src_app_network_service__WEBPACK_IMPORTED_MODULE_3__["NetworkService"]
       }, {
         type: src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
@@ -12511,7 +12888,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./side-nav.component.scss */
       "./src/app/edit/side-nav/side-nav.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_2__["EditService"], src_app_network_service__WEBPACK_IMPORTED_MODULE_3__["NetworkService"], src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"]])], SideNavComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_2__["EditService"], src_app_network_service__WEBPACK_IMPORTED_MODULE_3__["NetworkService"], src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], SideNavComponent);
     /***/
   },
 
@@ -12593,21 +12970,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function sendResult(mode) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee16() {
-            return regeneratorRuntime.wrap(function _callee16$(_context16) {
+          regeneratorRuntime.mark(function _callee20() {
+            return regeneratorRuntime.wrap(function _callee20$(_context20) {
               while (1) {
-                switch (_context16.prev = _context16.next) {
+                switch (_context20.prev = _context20.next) {
                   case 0:
-                    console.log('call this');
-                    _context16.next = 3;
+                    _context20.next = 2;
                     return this.network.sendElapsedTime(mode, this.sec);
 
-                  case 3:
+                  case 2:
                   case "end":
-                    return _context16.stop();
+                    return _context20.stop();
                 }
               }
-            }, _callee16, this);
+            }, _callee20, this);
           }));
         }
       }]);
@@ -12692,13 +13068,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var FeedbackCardComponent =
     /*#__PURE__*/
     function () {
-      function FeedbackCardComponent() {
+      function FeedbackCardComponent(L) {
         _classCallCheck(this, FeedbackCardComponent);
 
+        this.L = L;
         this.remove = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.directInput = false;
@@ -12730,6 +13113,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return FeedbackCardComponent;
     }();
 
+    FeedbackCardComponent.ctorParameters = function () {
+      return [{
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_4__["LocaleService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"])], FeedbackCardComponent.prototype, "form", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], FeedbackCardComponent.prototype, "focusedKey", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)], FeedbackCardComponent.prototype, "comments", void 0);
@@ -12743,7 +13132,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./feedback-card.component.scss */
       "./src/app/edit/verification-module/feedback-card/feedback-card.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], FeedbackCardComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_locale_service__WEBPACK_IMPORTED_MODULE_4__["LocaleService"]])], FeedbackCardComponent);
     /***/
   },
 
@@ -13005,14 +13394,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var AxisSpecCardComponent =
     /*#__PURE__*/
     function () {
-      function AxisSpecCardComponent() {
+      function AxisSpecCardComponent(_L) {
         _classCallCheck(this, AxisSpecCardComponent);
 
+        this._L = _L;
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.L = _L.axisSpecCard;
       }
 
       _createClass(AxisSpecCardComponent, [{
@@ -13046,6 +13443,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return AxisSpecCardComponent;
     }();
 
+    AxisSpecCardComponent.ctorParameters = function () {
+      return [{
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["AxisAnnotation"])], AxisSpecCardComponent.prototype, "data", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)], AxisSpecCardComponent.prototype, "index", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], AxisSpecCardComponent.prototype, "focusedKey", void 0);
@@ -13060,7 +13463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/verification-module/v-overall/axis-spec-card/axis-spec-card.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../v-overall.component.scss */
       "./src/app/edit/verification-module/v-overall/v-overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], AxisSpecCardComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], AxisSpecCardComponent);
     /***/
   },
 
@@ -13121,14 +13524,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var CustomSpecCardComponent =
     /*#__PURE__*/
     function () {
-      function CustomSpecCardComponent() {
+      function CustomSpecCardComponent(_L) {
         _classCallCheck(this, CustomSpecCardComponent);
 
+        this._L = _L;
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.L = this._L.customSpecCard;
       }
 
       _createClass(CustomSpecCardComponent, [{
@@ -13153,6 +13564,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return CustomSpecCardComponent;
     }();
 
+    CustomSpecCardComponent.ctorParameters = function () {
+      return [{
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["CustomAnnotation"])], CustomSpecCardComponent.prototype, "data", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)], CustomSpecCardComponent.prototype, "index", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], CustomSpecCardComponent.prototype, "focusedKey", void 0);
@@ -13167,7 +13584,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/verification-module/v-overall/custom-spec-card/custom-spec-card.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../v-overall.component.scss */
       "./src/app/edit/verification-module/v-overall/v-overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], CustomSpecCardComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], CustomSpecCardComponent);
     /***/
   },
 
@@ -13228,14 +13645,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var LegendSpecCardComponent =
     /*#__PURE__*/
     function () {
-      function LegendSpecCardComponent() {
+      function LegendSpecCardComponent(_L) {
         _classCallCheck(this, LegendSpecCardComponent);
 
+        this._L = _L;
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.L = _L.legendSpecCard;
       }
 
       _createClass(LegendSpecCardComponent, [{
@@ -13260,6 +13685,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return LegendSpecCardComponent;
     }();
 
+    LegendSpecCardComponent.ctorParameters = function () {
+      return [{
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["LegendAnnotation"])], LegendSpecCardComponent.prototype, "data", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], LegendSpecCardComponent.prototype, "focusedKey", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], LegendSpecCardComponent.prototype, "focus", void 0);
@@ -13273,7 +13704,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/verification-module/v-overall/legend-spec-card/legend-spec-card.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../v-overall.component.scss */
       "./src/app/edit/verification-module/v-overall/v-overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], LegendSpecCardComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], LegendSpecCardComponent);
     /***/
   },
 
@@ -13352,25 +13783,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var d3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! d3 */
     "./node_modules/d3/index.js");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var VOverallComponent =
     /*#__PURE__*/
     function () {
-      function VOverallComponent(fb) {
+      function VOverallComponent(fb, _L) {
         _classCallCheck(this, VOverallComponent);
 
         this.fb = fb;
         this.add = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.remove = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.focus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.markComments = ['Refine the bound', 'Remove this', 'Add one more box'];
-        this.textComments = ['Refine the bound', 'Remove this', 'Change the label', 'Change the text', 'Add one more box'];
-        this.specComments = ['Check this value'];
-        this.rawComments = ['Check this row', 'Remove this', 'Add one more row'];
+        this.markComments = [];
+        this.textComments = [];
+        this.specComments = [];
+        this.rawComments = [];
         this.markFeedbacks = [];
         this.textFeedbacks = [];
         this.specFeedbacks = [];
         this.rawFeedbacks = [];
+        this.L = _L.vOverall;
+        this.markComments = [this.L.refine, this.L.remove, this.L.addOne];
+        this.textComments = [this.L.refine, this.L.remove, this.L.changeLabel, this.L.changeText, this.L.addOne];
+        this.specComments = [this.L.check];
+        this.rawComments = [this.L.checkRow, this.L.remove, this.L.addRow];
       }
 
       _createClass(VOverallComponent, [{
@@ -13636,6 +14078,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     VOverallComponent.ctorParameters = function () {
       return [{
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
@@ -13658,7 +14102,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/verification-module/v-overall/v-overall.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../../edit-module.scss */
       "./src/app/edit/edit-module.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])], VOverallComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], VOverallComponent);
     /***/
   },
 
@@ -13678,7 +14122,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  background-color: #fff;\n}\n\ndiv {\n  color: #777;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC92ZXJpZmljYXRpb24tbW9kdWxlL0M6XFxVc2Vyc1xcanVuaG9lXFxIQ0lMXFxkZXZcXEF1dG90YXRvclxcY2xpZW50L3NyY1xcYXBwXFxlZGl0XFx2ZXJpZmljYXRpb24tbW9kdWxlXFx2ZXJpZmljYXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3ZlcmlmaWNhdGlvbi1tb2R1bGUvdmVyaWZpY2F0aW9uLW1vZHVsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHNCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9lZGl0L3ZlcmlmaWNhdGlvbi1tb2R1bGUvdmVyaWZpY2F0aW9uLW1vZHVsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbn1cclxuXHJcbmRpdiB7XHJcbiAgICBjb2xvcjogIzc3NztcclxufVxyXG4iLCI6aG9zdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG59XG5cbmRpdiB7XG4gIGNvbG9yOiAjNzc3O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ":host {\n  background-color: #fff;\n  display: block;\n}\n\ndiv {\n  color: #777;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC92ZXJpZmljYXRpb24tbW9kdWxlL0M6XFxVc2Vyc1xcanVuaG9lXFxIQ0lMXFxkZXZcXEF1dG90YXRvclxcY2xpZW50L3NyY1xcYXBwXFxlZGl0XFx2ZXJpZmljYXRpb24tbW9kdWxlXFx2ZXJpZmljYXRpb24tbW9kdWxlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3ZlcmlmaWNhdGlvbi1tb2R1bGUvdmVyaWZpY2F0aW9uLW1vZHVsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHNCQUFBO0VBQ0EsY0FBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC92ZXJpZmljYXRpb24tbW9kdWxlL3ZlcmlmaWNhdGlvbi1tb2R1bGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbmRpdiB7XHJcbiAgICBjb2xvcjogIzc3NztcclxufVxyXG4iLCI6aG9zdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG5kaXYge1xuICBjb2xvcjogIzc3Nztcbn0iXX0= */";
     /***/
   },
 
@@ -13743,16 +14187,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
 
     var VerificationModuleComponent =
     /*#__PURE__*/
     function () {
-      function VerificationModuleComponent(network, edit, fb) {
+      function VerificationModuleComponent(network, edit, fb, L) {
         _classCallCheck(this, VerificationModuleComponent);
 
         this.network = network;
         this.edit = edit;
         this.fb = fb;
+        this.L = L;
         this.reviewEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.feedbackForms = [];
         this.focusedKey = null;
@@ -13766,11 +14217,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function sendReview(approved) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee17() {
+          regeneratorRuntime.mark(function _callee21() {
             var feedbacks, path;
-            return regeneratorRuntime.wrap(function _callee17$(_context17) {
+            return regeneratorRuntime.wrap(function _callee21$(_context21) {
               while (1) {
-                switch (_context17.prev = _context17.next) {
+                switch (_context21.prev = _context21.next) {
                   case 0:
                     feedbacks = this.feedbackForms.map(function (d) {
                       return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d);
@@ -13778,11 +14229,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     path = this.edit.image.path;
 
                     if (!(this.config.service === 'normal')) {
-                      _context17.next = 5;
+                      _context21.next = 5;
                       break;
                     }
 
-                    _context17.next = 5;
+                    _context21.next = 5;
                     return this.network.registerReview({
                       path: path,
                       approved: approved,
@@ -13794,10 +14245,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 6:
                   case "end":
-                    return _context17.stop();
+                    return _context21.stop();
                 }
               }
-            }, _callee17, this);
+            }, _callee21, this);
           }));
         }
       }, {
@@ -13838,6 +14289,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"]
       }, {
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]
       }];
     };
 
@@ -13855,7 +14308,506 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./verification-module.component.scss */
       "./src/app/edit/verification-module/verification-module.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]])], VerificationModuleComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]])], VerificationModuleComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/locale.service.ts":
+  /*!***********************************!*\
+    !*** ./src/app/locale.service.ts ***!
+    \***********************************/
+
+  /*! exports provided: LocaleService */
+
+  /***/
+  function srcAppLocaleServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LocaleService", function () {
+      return LocaleService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var _common_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./common/task */
+    "./src/app/common/task/index.ts");
+
+    var LocaleService =
+    /*#__PURE__*/
+    function () {
+      function LocaleService() {
+        var _this69 = this,
+            _this$labelMap;
+
+        _classCallCheck(this, LocaleService);
+
+        this.modeMap = {
+          'annotation': '어노테이션',
+          'verification': '검수',
+          'revision': '수정'
+        };
+        this.serviceMap = {
+          'normal': '일반',
+          'quiz': '퀴즈',
+          'demo': '데모'
+        };
+        this._sideNav = {
+          en: {
+            progress: 'Progress',
+            userName: 'User',
+            userProgress: 'Contribution',
+            useSuggestions: 'Use Suggestions',
+            removeButton: 'Remove this Image'
+          },
+          ko: {
+            progress: '진행 상황',
+            userName: '사용자명',
+            userProgress: '기여도',
+            useSuggestions: '자동완성 기능 사용',
+            removeButton: '이 이미지를 제외하기'
+          }
+        };
+        this._verModule = {
+          en: {
+            accept: 'Accept',
+            reject: 'Reject'
+          },
+          ko: {
+            accept: '통과',
+            reject: '수정 요청'
+          }
+        };
+        this._feedbackCard = {
+          en: {
+            comment: 'Comment',
+            writeDirect: 'Write directly'
+          },
+          ko: {
+            comment: '코멘트',
+            writeDirect: '직접 입력'
+          }
+        };
+        this._resolveBtn = {
+          en: 'Resolve',
+          ko: '해결'
+        };
+        this._vOverall = {
+          en: {
+            title: 'Title',
+            addMarksFeedback: 'Add Marks Feedback',
+            addTextsFeedback: 'Add Texts Feedback',
+            addSpecFeedback: 'Add Spec Feedback',
+            addRawFeedback: 'Add Raw Feedback',
+            refine: 'Refine the bound',
+            remove: 'Remove this',
+            addOne: 'Add one more box',
+            changeLabel: 'Change the label',
+            changeText: 'Change the text',
+            check: 'Check this value',
+            checkRow: 'Check this row',
+            addRow: 'Add one more row',
+            marks: 'Marks',
+            texts: 'Texts',
+            spec: 'Specification',
+            rawData: 'Raw Data',
+            label: function label(input) {
+              return input;
+            }
+          },
+          ko: {
+            title: '제목',
+            addMarksFeedback: '마크에 대한 피드백 추가',
+            addTextsFeedback: '텍스트에 대한 피드백 추가',
+            addSpecFeedback: '명세에 대한 피드백 추가',
+            addRawFeedback: '원본 데이터에 대한 피드백 추가',
+            refine: '박스의 경계를 확인하세요',
+            remove: '해당 박스를 지워주세요',
+            addOne: '알맞는 박스가 더 필요합니다',
+            changeLabel: '라벨을 변경하세요',
+            changeText: '텍스트를 변경하세요',
+            check: '해당 값을 확인하세요',
+            checkRow: '해당 행을 확인하세요',
+            addRow: '더 많은 행이 필요합니다',
+            marks: '마크 목록',
+            texts: '텍스트 목록',
+            spec: '명세 정보',
+            rawData: '원본 데이터',
+            label: function label(input) {
+              return _this69.labelMap[input];
+            }
+          }
+        };
+        this._axisSpecCard = {
+          en: {
+            axis: 'Axis',
+            dir: 'Direction',
+            type: 'Type',
+            unit: 'Unit',
+            encoding: 'Encoding',
+            labels: 'Labels',
+            markLabels: 'Mark Labels',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          },
+          ko: {
+            axis: '축',
+            dir: '방향',
+            type: '타입',
+            unit: '단위',
+            encoding: '인코딩',
+            labels: '라벨',
+            markLabels: '마크 라벨',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          }
+        };
+        this._legendSpecCard = {
+          en: {
+            legend: 'Legend',
+            encoding: 'Encoding',
+            labels: 'Labels',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          },
+          ko: {
+            legend: '범례',
+            encoding: '인코딩',
+            labels: '라벨',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          }
+        };
+        this._customSpecCard = {
+          en: {
+            custom: 'Custom',
+            type: 'Type',
+            unit: 'Unit',
+            encoding: 'Encoding',
+            markLabels: 'Mark Labels',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          },
+          ko: {
+            custom: '사용자 정의 열',
+            type: '타입',
+            unit: '단위',
+            encoding: '인코딩',
+            markLabels: '마크 라벨',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            }
+          }
+        };
+        this._reviewPanel = {
+          en: {
+            title: 'Feedback List',
+            msg: 'There are no feedbacks.'
+          },
+          ko: {
+            title: '피드백 목록',
+            msg: '더 이상의 피드백이 없습니다.'
+          }
+        };
+        this.labelMap = (_this$labelMap = {}, _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_TITLE"], '제목'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_LEGEND_LABEL"], '범례 라벨'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_LEGEND_TITLE"], '범례 제목'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_TITLE"], 'X축 제목'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_LABEL"], 'X축 라벨'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_TITLE"], 'Y축 제목'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_LABEL"], 'Y축 라벨'), _defineProperty(_this$labelMap, _common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"], '마크 라벨'), _this$labelMap);
+        this.encodingMap = {
+          'x-position': {
+            en: 'Position (X)',
+            ko: 'X 위치'
+          },
+          'y-position': {
+            en: 'Position (Y)',
+            ko: 'Y 위치'
+          },
+          height: {
+            en: 'Height',
+            ko: '높이'
+          },
+          width: {
+            en: 'Width',
+            ko: '너비'
+          },
+          area: {
+            en: 'Area',
+            ko: '넓이'
+          },
+          color: {
+            en: 'Color (Required)',
+            ko: '색상 (초기값 필요)'
+          },
+          none: {
+            en: 'None (Only for custom column)',
+            ko: '없음 (사용자 정의 열에만 적용)'
+          }
+        };
+        this._overall = {
+          en: {
+            textMode: 'Text Mode',
+            markMode: 'Mark Mode',
+            marks: 'Mark List',
+            texts: 'Text List',
+            regression: 'Apply Box Regression by Center Color',
+            radius: 'Point Mark Radius',
+            sort: 'Automatically Sort Texts',
+            addCustomColumn: 'Add Custom Column',
+            rawData: 'Raw Data',
+            prev: 'Prev Stage',
+            next: 'Next Stage',
+            spec: 'Specification',
+            legend: 'Legend',
+            axis: 'Axes',
+            title: 'Title',
+            numMarks: 'Number of Marks',
+            label: function label(input) {
+              return input;
+            }
+          },
+          ko: {
+            textMode: '텍스트 모드',
+            markMode: '마크 모드',
+            marks: '마크 목록',
+            texts: '텍스트 목록',
+            spec: '명세 정보',
+            rawData: '원본 데이터',
+            regression: '중심색을 이용한 박스의 경계 보정',
+            radius: '점의 반지름',
+            sort: '자동 텍스트 정렬',
+            addCustomColumn: '사용자 정의 열 추가',
+            prev: '이전',
+            next: '다음',
+            legend: '범례 정보',
+            axis: '축 정보',
+            title: '제목',
+            numMarks: '마크의 개수',
+            label: function label(input) {
+              return _this69.labelMap[input];
+            }
+          }
+        };
+        this._axisSpec = {
+          en: {
+            title: 'Title',
+            dir: 'Direction',
+            type: 'Type',
+            unit: 'Unit',
+            integer: 'integer',
+            decimal: 'decimal',
+            target: 'Target of Mark Labels'
+          },
+          ko: {
+            title: '제목',
+            dir: '방향',
+            type: '타입',
+            unit: '단위',
+            integer: '정수 단위',
+            decimal: '소수 단위',
+            target: '마크 라벨의 대상이 되는 열'
+          }
+        };
+        this._customSpec = {
+          en: {
+            title: 'Title',
+            type: 'Type',
+            unit: 'Unit',
+            integer: 'integer',
+            decimal: 'decimal',
+            target: 'Target of Mark Labels',
+            getTitle: function getTitle(index) {
+              return "Custom column ".concat(index + 1);
+            }
+          },
+          ko: {
+            title: '제목',
+            type: '타입',
+            unit: '단위',
+            integer: '정수 단위',
+            decimal: '소수 단위',
+            target: '마크 라벨의 대상이 되는 열',
+            getTitle: function getTitle(index) {
+              return "\uC0AC\uC6A9\uC790 \uC815\uC758 \uC5F4 ".concat(index + 1);
+            }
+          }
+        };
+        this._legendSpec = {
+          en: {
+            title: 'Title'
+          },
+          ko: {
+            title: '제목'
+          }
+        };
+        this._rawTable = {
+          en: {
+            encoding: 'Encoding',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            },
+            clear: 'Clear',
+            predict: 'Predict'
+          },
+          ko: {
+            encoding: '인코딩',
+            encodingLabel: function encodingLabel(label) {
+              return _this69.encodingMap[label][_this69.l];
+            },
+            clear: '모두 삭제',
+            predict: '값 계산'
+          }
+        };
+        this.l = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].locale;
+      }
+
+      _createClass(LocaleService, [{
+        key: "service",
+        value: function service(_service) {
+          return this.l === 'en' ? _service.toUpperCase() : this.serviceMap[_service];
+        }
+      }, {
+        key: "label",
+        value: function label(input) {
+          return this.labelMap[input];
+        }
+      }, {
+        key: "currMode",
+        value: function currMode(mode) {
+          return this.l === 'en' ? mode.toUpperCase() : this.modeMap[mode];
+        }
+      }, {
+        key: "mode",
+        get: function get() {
+          return this.l === 'en' ? 'MODE' : '모드';
+        }
+      }, {
+        key: "registerLabel",
+        get: function get() {
+          return this.l === 'en' ? 'Register Labels' : '라벨 등록하기';
+        }
+      }, {
+        key: "completeMsg1",
+        get: function get() {
+          return this.l === 'en' ? 'Contratulations! You have annotated all the images.' : '축하합니다! 당신은 모든 이미지를 어노테이션하셨습니다.';
+        }
+      }, {
+        key: "completeMsg2",
+        get: function get() {
+          return this.l === 'en' ? 'There are no more images left.' : '더 이상의 이미지가 남지 않았습니다.';
+        }
+      }, {
+        key: "submit",
+        get: function get() {
+          return this.l === 'en' ? 'Submit' : '제출';
+        }
+      }, {
+        key: "keyMessages",
+        get: function get() {
+          return [this.l === 'en' ? "* Press 'd' or 'delete' to remove the selected box" : "* 'd' \uD0A4\uB098 'delete'\uD0A4\uB97C \uD1B5\uD574 \uC120\uD0DD\uD55C \uC0C1\uC790\uB97C \uC9C0\uC6B8 \uC218 \uC788\uC2B5\uB2C8\uB2E4", this.l === 'en' ? "* Press 'f' to upper the layer of selected box" : "* 'f' \uD0A4\uB85C \uC120\uD0DD\uD55C \uC0C1\uC790\uB97C \uCD5C\uC0C1\uB2E8\uC5D0 \uC704\uCE58\uC2DC\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4", this.l === 'en' ? "* Press 'b' to lower the layer of selected box" : "* 'b' \uD0A4\uB85C \uC120\uD0DD\uD55C \uC0C1\uC790\uB97C \uCD5C\uD558\uB2E8\uC5D0 \uC704\uCE58\uC2DC\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4"];
+        }
+      }, {
+        key: "sideNav",
+        get: function get() {
+          return this._sideNav[this.l];
+        }
+      }, {
+        key: "verModule",
+        get: function get() {
+          return this._verModule[this.l];
+        }
+      }, {
+        key: "feedbackCard",
+        get: function get() {
+          return this._feedbackCard[this.l];
+        }
+      }, {
+        key: "resolveBtn",
+        get: function get() {
+          return this._resolveBtn[this.l];
+        }
+      }, {
+        key: "vOverall",
+        get: function get() {
+          return this._vOverall[this.l];
+        }
+      }, {
+        key: "axisSpecCard",
+        get: function get() {
+          return this._axisSpecCard[this.l];
+        }
+      }, {
+        key: "legendSpecCard",
+        get: function get() {
+          return this._legendSpecCard[this.l];
+        }
+      }, {
+        key: "customSpecCard",
+        get: function get() {
+          return this._customSpecCard[this.l];
+        }
+      }, {
+        key: "reviewPanel",
+        get: function get() {
+          return this._reviewPanel[this.l];
+        }
+      }, {
+        key: "overall",
+        get: function get() {
+          return this._overall[this.l];
+        }
+      }, {
+        key: "axisSpec",
+        get: function get() {
+          return this._axisSpec[this.l];
+        }
+      }, {
+        key: "legendSpec",
+        get: function get() {
+          return this._legendSpec[this.l];
+        }
+      }, {
+        key: "customSpec",
+        get: function get() {
+          return this._customSpec[this.l];
+        }
+      }, {
+        key: "rawTable",
+        get: function get() {
+          return this._rawTable[this.l];
+        }
+      }]);
+
+      return LocaleService;
+    }();
+
+    LocaleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], LocaleService);
     /***/
   },
 
@@ -13946,44 +14898,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this69 = this;
+          var _this70 = this;
 
           this.configService.configObservable.subscribe(function (config) {
-            _this69.config = config;
+            _this70.config = config;
 
-            if (_this69.config.service !== 'normal') {
-              _this69.configService.userNameObservable.subscribe(function (_) {
-                _this69.router.navigate(['/edit']);
-              });
+            if (_this70.config.service !== 'normal') {
+              _this70.name = _this70.config.service;
+              _this70.password = _this70.config.service;
 
-              _this69.configService.setUserName('test');
+              _this70.configService.setUserName(_this70.name);
+
+              _this70.login(false);
             }
           });
         }
       }, {
         key: "login",
         value: function login() {
-          var _this70 = this;
+          var _this71 = this;
 
+          var validation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var re = /[A-Za-z0-9_]\w+/g;
 
           if (!re.test(this.name)) {
             return;
           }
 
-          if (this.password.length < 8) {
+          if (validation && this.password.length < 8) {
             return;
           }
 
           this.network.login(this.config.key, this.name, this.password).then(function (res) {
             if (res.code !== 0) {
-              _this70.warnMessage = res.message;
+              _this71.warnMessage = res.message;
             } else {
-              _this70.configService.userNameObservable.subscribe(function (_) {
-                _this70.router.navigate(['/edit']);
+              _this71.configService.userNameObservable.subscribe(function (_) {
+                _this71.router.navigate(['/edit']);
               });
 
-              _this70.configService.setUserName(_this70.name);
+              _this71.configService.setUserName(_this71.name);
             }
           })["catch"](function (err) {
             console.error(err);
@@ -14096,20 +15050,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.configService = configService; // private BASE_URL = 'http://localhost:1219/api/';
 
         this.BASE_URL = 'http://147.46.240.21:1219/api/';
+        this.token = '';
       }
 
       _createClass(NetworkService, [{
         key: "login",
         value: function login(key, userName, password) {
-          var _this71 = this;
+          var _this72 = this;
 
           var body = {
             key: key,
             userName: userName,
             password: password
           };
-          return this.http.post("".concat(this.BASE_URL, "login"), body).toPromise().then(function (raw) {
-            return _this71.parseResponse(raw);
+          return this.http.post("".concat(this.BASE_URL, "login"), body, this.userOptions).toPromise().then(function (raw) {
+            return _this72.parseResponse(raw);
+          }).then(function (data) {
+            if (data.data.token) {
+              _this72.token = data.data.token;
+            }
+
+            return data;
           });
         }
       }, {
@@ -14133,6 +15094,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getProgress() {
           return this.httpGetWithUser('progress').then(function (raw) {
             return raw;
+          });
+        }
+      }, {
+        key: "getUserProgress",
+        value: function getUserProgress() {
+          return this.httpGetWithUser('user_progress').then(function (raw) {
+            return raw['progress'];
           });
         }
       }, {
@@ -14182,15 +15150,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getRandomElem",
         value: function getRandomElem() {
-          var _this72 = this;
+          var _this73 = this;
 
           return this.httpGetWithUser('random_image').then(function (raw) {
-            return _this72.parseResponse(raw);
+            return _this73.parseResponse(raw);
           }).then(function (response) {
             var data = response.data;
 
             if (data) {
-              return Promise.all([data, _this72.getImage(data.path)]);
+              return Promise.all([data, _this73.getImage(data.path)]);
             } else {
               return null;
             }
@@ -14199,7 +15167,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVerificationRandomElem",
         value: function getVerificationRandomElem() {
-          var _this73 = this;
+          var _this74 = this;
 
           return this.httpGetWithUser('verification_image').then(function (response) {
             if (response.data) {
@@ -14209,7 +15177,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }).then(function (meta) {
             if (meta) {
-              return Promise.all([meta, _this73.getImage(meta.path)]);
+              return Promise.all([meta, _this74.getImage(meta.path)]);
             } else {
               return null;
             }
@@ -14223,27 +15191,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             path: imageElem.path,
             semi: imageElem.semi
           };
-          var _iteratorNormalCompletion4 = true;
-          var _didIteratorError4 = false;
-          var _iteratorError4 = undefined;
+          var _iteratorNormalCompletion5 = true;
+          var _didIteratorError5 = false;
+          var _iteratorError5 = undefined;
 
           try {
-            for (var _iterator4 = config.tasks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-              var task = _step4.value;
+            for (var _iterator5 = config.tasks[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+              var task = _step5.value;
               var key = task.key;
               body.raw[key] = task.getFormValue(formGroup);
             }
           } catch (err) {
-            _didIteratorError4 = true;
-            _iteratorError4 = err;
+            _didIteratorError5 = true;
+            _iteratorError5 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
-                _iterator4["return"]();
+              if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+                _iterator5["return"]();
               }
             } finally {
-              if (_didIteratorError4) {
-                throw _iteratorError4;
+              if (_didIteratorError5) {
+                throw _iteratorError5;
               }
             }
           }
@@ -14255,16 +15223,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerReview",
         value: function registerReview(review) {
-          var _this74 = this;
+          var _this75 = this;
 
           return this.http.post(this.BASE_URL + 'register_review', review, this.userOptions).toPromise().then(function (d) {
-            return _this74.parseResponse(d);
+            return _this75.parseResponse(d);
           });
         }
       }, {
         key: "getReview",
         value: function getReview(path) {
-          return this.http.get("".concat(this.BASE_URL, "review?path=").concat(path)).toPromise().then(function (d) {
+          return this.http.get("".concat(this.BASE_URL, "review?path=").concat(path), this.userOptions).toPromise().then(function (d) {
             return new _common_verification_data__WEBPACK_IMPORTED_MODULE_5__["Review"](d);
           });
         }
@@ -14281,21 +15249,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function loadLocalImage(path) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee18() {
-            return regeneratorRuntime.wrap(function _callee18$(_context18) {
+          regeneratorRuntime.mark(function _callee22() {
+            return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
-                switch (_context18.prev = _context18.next) {
+                switch (_context22.prev = _context22.next) {
                   case 0:
-                    return _context18.abrupt("return", this.http.get(path, {
+                    return _context22.abrupt("return", this.http.get(path, {
                       responseType: 'blob'
                     }).toPromise());
 
                   case 1:
                   case "end":
-                    return _context18.stop();
+                    return _context22.stop();
                 }
               }
-            }, _callee18, this);
+            }, _callee22, this);
           }));
         }
       }, {
@@ -14341,6 +15309,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (userName) {
             headers = headers.append('Username', userName);
+          }
+
+          if (this.token !== '') {
+            headers = headers.append('Authorization', "Bearer ".concat(this.token));
           }
 
           return {
@@ -14506,25 +15478,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function clusterMarks(body) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee19() {
+          regeneratorRuntime.mark(function _callee23() {
             var response;
-            return regeneratorRuntime.wrap(function _callee19$(_context19) {
+            return regeneratorRuntime.wrap(function _callee23$(_context23) {
               while (1) {
-                switch (_context19.prev = _context19.next) {
+                switch (_context23.prev = _context23.next) {
                   case 0:
-                    _context19.next = 2;
+                    _context23.next = 2;
                     return this.http.post("".concat(this.BASE_URL, "cluster_marks"), body).toPromise();
 
                   case 2:
-                    response = _context19.sent;
-                    return _context19.abrupt("return", new ClusterResult(response));
+                    response = _context23.sent;
+                    return _context23.abrupt("return", new ClusterResult(response));
 
                   case 4:
                   case "end":
-                    return _context19.stop();
+                    return _context23.stop();
                 }
               }
-            }, _callee19, this);
+            }, _callee23, this);
           }));
         }
       }, {
@@ -14532,21 +15504,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function predictAreas(body) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee20() {
-            return regeneratorRuntime.wrap(function _callee20$(_context20) {
+          regeneratorRuntime.mark(function _callee24() {
+            return regeneratorRuntime.wrap(function _callee24$(_context24) {
               while (1) {
-                switch (_context20.prev = _context20.next) {
+                switch (_context24.prev = _context24.next) {
                   case 0:
-                    return _context20.abrupt("return", this.http.post("".concat(this.BASE_URL, "predict_area"), body).toPromise().then(function (d) {
+                    return _context24.abrupt("return", this.http.post("".concat(this.BASE_URL, "predict_area"), body).toPromise().then(function (d) {
                       return d;
                     }));
 
                   case 1:
                   case "end":
-                    return _context20.stop();
+                    return _context24.stop();
                 }
               }
-            }, _callee20, this);
+            }, _callee24, this);
           }));
         }
       }]);
@@ -14593,8 +15565,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/tslib/tslib.es6.js");
 
     var environment = {
-      production: false,
-      mode: 'demo'
+      production: true,
+      mode: 'demo',
+      locale: 'en'
     };
     /***/
   },
