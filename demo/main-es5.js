@@ -1388,15 +1388,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./edit/demo/demo.service */
+    "./src/app/edit/demo/demo.service.ts");
 
     var AppComponent =
     /*#__PURE__*/
     function () {
-      function AppComponent(network, configService, router) {
+      function AppComponent(network, configService, demo, router) {
         _classCallCheck(this, AppComponent);
 
         this.network = network;
         this.configService = configService;
+        this.demo = demo;
         this.router = router;
       }
 
@@ -1410,7 +1417,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](function () {
             _this.router.navigate(['/login']);
-          }, 500);
+
+            _this.demo.init();
+          }, 1000);
         }
       }, {
         key: "checkInstance",
@@ -1436,6 +1445,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"]
       }, {
+        type: _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"]
+      }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }];
     };
@@ -1448,7 +1459,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./app.component.scss */
       "./src/app/app.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
     /***/
   },
 
@@ -11125,6 +11136,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.index = 0;
         this.currMode = 'init';
         this.data = [];
+        this.init();
 
         if (src_environments_environment_js__WEBPACK_IMPORTED_MODULE_6__["environment"].chartType === 'bar') {
           this.data = _demo_bar_data_json__WEBPACK_IMPORTED_MODULE_4__;
@@ -11132,6 +11144,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(DemoService, [{
+        key: "init",
+        value: function init() {
+          this.index = 0;
+          this.currMode = 'init';
+        }
+      }, {
         key: "getAnnotationElem",
         value: function getAnnotationElem() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,

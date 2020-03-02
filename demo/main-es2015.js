@@ -717,6 +717,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit/demo/demo.service */ "./src/app/edit/demo/demo.service.ts");
+
 
 
 
@@ -726,9 +728,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(network, configService, router) {
+    constructor(network, configService, demo, router) {
         this.network = network;
         this.configService = configService;
+        this.demo = demo;
         this.router = router;
     }
     ngOnInit() {
@@ -737,7 +740,8 @@ let AppComponent = class AppComponent {
         });
         window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](() => {
             this.router.navigate(['/login']);
-        }, 500);
+            this.demo.init();
+        }, 1000);
     }
     checkInstance() {
         this.network.checkInstance(src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].mode)
@@ -753,6 +757,7 @@ let AppComponent = class AppComponent {
 AppComponent.ctorParameters = () => [
     { type: _network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"] },
     { type: _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"] },
+    { type: _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -763,6 +768,7 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"],
         _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"],
+        _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"],
         _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
 ], AppComponent);
 
@@ -6929,11 +6935,16 @@ let DemoService = class DemoService {
         this.index = 0;
         this.currMode = 'init';
         this.data = [];
+        this.init();
         if (src_environments_environment_js__WEBPACK_IMPORTED_MODULE_6__["environment"].chartType === 'bar') {
             this.data = _demo_bar_data_json__WEBPACK_IMPORTED_MODULE_4__;
         }
         else {
         }
+    }
+    init() {
+        this.index = 0;
+        this.currMode = 'init';
     }
     getAnnotationElem() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
