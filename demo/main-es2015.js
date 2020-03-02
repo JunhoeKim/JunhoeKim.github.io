@@ -716,6 +716,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
@@ -724,16 +726,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(network, configService) {
+    constructor(network, configService, router) {
         this.network = network;
         this.configService = configService;
+        this.router = router;
     }
     ngOnInit() {
         this.configService.checkInstanceObservable.subscribe(_ => {
             this.checkInstance();
         });
-        window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](function () {
-            location.reload();
+        window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](() => {
+            this.router.navigate(['/login']);
         }, 500);
     }
     checkInstance() {
@@ -749,7 +752,8 @@ let AppComponent = class AppComponent {
 };
 AppComponent.ctorParameters = () => [
     { type: _network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"] },
-    { type: _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"] }
+    { type: _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -758,7 +762,8 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")).default]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"],
-        _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"]])
+        _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
 ], AppComponent);
 
 

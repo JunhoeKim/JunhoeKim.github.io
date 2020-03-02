@@ -1382,15 +1382,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var lodash__WEBPACK_IMPORTED_MODULE_6___default =
     /*#__PURE__*/
     __webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var AppComponent =
     /*#__PURE__*/
     function () {
-      function AppComponent(network, configService) {
+      function AppComponent(network, configService, router) {
         _classCallCheck(this, AppComponent);
 
         this.network = network;
         this.configService = configService;
+        this.router = router;
       }
 
       _createClass(AppComponent, [{
@@ -1402,7 +1409,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this.checkInstance();
           });
           window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](function () {
-            location.reload();
+            _this.router.navigate(['/login']);
           }, 500);
         }
       }, {
@@ -1428,6 +1435,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"]
       }, {
         type: _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }];
     };
 
@@ -1439,7 +1448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./app.component.scss */
       "./src/app/app.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"]])], AppComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
     /***/
   },
 
