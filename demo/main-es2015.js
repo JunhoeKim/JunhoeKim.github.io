@@ -714,6 +714,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./config.service */ "./src/app/config.service.ts");
 /* harmony import */ var _common_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/config */ "./src/app/common/config.ts");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -729,6 +732,9 @@ let AppComponent = class AppComponent {
         this.configService.checkInstanceObservable.subscribe(_ => {
             this.checkInstance();
         });
+        window.onresize = lodash__WEBPACK_IMPORTED_MODULE_6__["throttle"](function () {
+            location.reload();
+        }, 500);
     }
     checkInstance() {
         this.network.checkInstance(src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].mode)
