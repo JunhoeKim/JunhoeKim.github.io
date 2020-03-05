@@ -286,6 +286,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>{{ L.title }}</h1>\r\n<div mat-dialog-content>\r\n  <p>{{ L.content }}</p>\r\n</div>\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onClose()\">{{ L.no }}</button>\r\n  <button mat-button  [mat-dialog-close]=\"data\" cdkFocusInitial>{{ L.ok }}</button>\r\n</div>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/feedback-card/feedback-card.component.html":
 /*!***************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/feedback-card/feedback-card.component.html ***!
@@ -818,6 +831,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./edit/common/stop-propagtion.directive */ "./src/app/edit/common/stop-propagtion.directive.ts");
 /* harmony import */ var _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./edit/common/resolve-button/resolve-button.component */ "./src/app/edit/common/resolve-button/resolve-button.component.ts");
 /* harmony import */ var _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./edit/demo/quiz-complete-dialog.component */ "./src/app/edit/demo/quiz-complete-dialog.component.ts");
+/* harmony import */ var _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./edit/verification-module/dialog/review-send-dialog.component */ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
+
 
 
 
@@ -882,10 +897,12 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"],
             _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"],
             _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"],
+            _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]
         ],
         entryComponents: [
             _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"],
-            _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]
+            _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"],
+            _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -8293,6 +8310,53 @@ TimerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/edit/verification-module/dialog/review-send-dialog.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: ReviewSendDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewSendDialogComponent", function() { return ReviewSendDialogComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+
+
+
+
+let ReviewSendDialogComponent = class ReviewSendDialogComponent {
+    constructor(dialogRef, data, _L) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.L = _L.reviewSendDialog;
+    }
+    onClose() {
+        this.data.response = '';
+        this.dialogRef.close(this.data);
+    }
+};
+ReviewSendDialogComponent.ctorParameters = () => [
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] },
+    { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"] }
+];
+ReviewSendDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-review-send-dialog',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./review-send-dialog.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html")).default
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])
+], ReviewSendDialogComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/edit/verification-module/feedback-card/feedback-card.component.scss":
 /*!*************************************************************************************!*\
   !*** ./src/app/edit/verification-module/feedback-card/feedback-card.component.scss ***!
@@ -9147,6 +9211,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/edit.service */ "./src/app/edit.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dialog/review-send-dialog.component */ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
+
+
 
 
 
@@ -9156,10 +9224,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VerificationModuleComponent = class VerificationModuleComponent {
-    constructor(network, edit, fb, L) {
+    constructor(network, edit, fb, dialog, L) {
         this.network = network;
         this.edit = edit;
         this.fb = fb;
+        this.dialog = dialog;
         this.L = L;
         this.reviewEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.feedbackForms = [];
@@ -9169,12 +9238,22 @@ let VerificationModuleComponent = class VerificationModuleComponent {
     }
     sendReview(approved) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const feedbacks = this.feedbackForms.map(d => src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d));
-            const path = this.edit.image.path;
-            if (this.config.service === 'normal') {
-                yield this.network.registerReview({ path, approved, feedbacks });
-            }
-            this.reviewEmitter.emit();
+            this.dialog.open(_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__["ReviewSendDialogComponent"], {
+                width: '400px', data: { response: 'ok' }
+            })
+                .afterClosed()
+                .subscribe((result) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                console.log({ result });
+                if (result.response !== 'ok') {
+                    return;
+                }
+                const feedbacks = this.feedbackForms.map(d => src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d));
+                const path = this.edit.image.path;
+                if (this.config.service === 'normal') {
+                    yield this.network.registerReview({ path, approved, feedbacks });
+                }
+                this.reviewEmitter.emit();
+            }));
         });
     }
     onAddFeedback(form) {
@@ -9197,6 +9276,7 @@ VerificationModuleComponent.ctorParameters = () => [
     { type: src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"] },
     { type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"] },
     { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -9232,6 +9312,7 @@ VerificationModuleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"],
         src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"],
+        _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"],
         src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]])
 ], VerificationModuleComponent);
 
@@ -9595,6 +9676,20 @@ let LocaleService = class LocaleService {
                 predict: '값 계산'
             }
         };
+        this._reviewSendDialog = {
+            en: {
+                title: 'Confirm your review',
+                content: 'Are you sure you want to submit your review?',
+                ok: 'OK',
+                no: 'No Thanks'
+            },
+            ko: {
+                title: '당신의 리뷰를 확인하세요.',
+                content: '정말로 리뷰를 제출하시겠습니까?',
+                ok: '네',
+                no: '아니요, 다시 확인해볼게요'
+            }
+        };
         this.l = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].locale;
     }
     service(service) {
@@ -9686,6 +9781,9 @@ let LocaleService = class LocaleService {
         return this.l === 'en'
             ? 'Please login again when you resize the browse window.'
             : '브라우저 윈도우 사이즈를 조정할 시 다시 로그인이 필요합니다.';
+    }
+    get reviewSendDialog() {
+        return this._reviewSendDialog[this.l];
     }
 };
 LocaleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

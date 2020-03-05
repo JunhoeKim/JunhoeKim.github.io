@@ -466,6 +466,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html":
+  /*!*************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html ***!
+    \*************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppEditVerificationModuleDialogReviewSendDialogComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<h1 mat-dialog-title>{{ L.title }}</h1>\r\n<div mat-dialog-content>\r\n  <p>{{ L.content }}</p>\r\n</div>\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onClose()\">{{ L.no }}</button>\r\n  <button mat-button  [mat-dialog-close]=\"data\" cdkFocusInitial>{{ L.ok }}</button>\r\n</div>\r\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/feedback-card/feedback-card.component.html":
   /*!***************************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/feedback-card/feedback-card.component.html ***!
@@ -1649,14 +1669,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
     /*! ./edit/demo/quiz-complete-dialog.component */
     "./src/app/edit/demo/quiz-complete-dialog.component.ts");
+    /* harmony import */
+
+
+    var _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    /*! ./edit/verification-module/dialog/review-send-dialog.component */
+    "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _edit_file_drop_directive__WEBPACK_IMPORTED_MODULE_7__["FileDropDirective"], _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__["StopPropagationDirective"], _edit_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_14__["SideNavComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ClassificationComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RegressionComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["BoundingBoxComponent"], _non_active_page_non_active_page_component__WEBPACK_IMPORTED_MODULE_15__["NonActivePageComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["TextComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["OverallComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AxisSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RawTableComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["LegendSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["CanvasPatchComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VerificationModuleComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VClassificationComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["VSubTitleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackMarkComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AnnotationModuleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["ReviewPanelComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackModalComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VOverallComponent"], _edit_annotation_module_overall_custom_spec_custom_spec_component__WEBPACK_IMPORTED_MODULE_17__["CustomSpecComponent"], _edit_annotation_module_overall_label_chip_list_label_chip_list_component__WEBPACK_IMPORTED_MODULE_18__["LabelChipListComponent"], _edit_verification_module_feedback_card_feedback_card_component__WEBPACK_IMPORTED_MODULE_19__["FeedbackCardComponent"], _edit_verification_module_v_overall_axis_spec_card_axis_spec_card_component__WEBPACK_IMPORTED_MODULE_20__["AxisSpecCardComponent"], _edit_verification_module_v_overall_legend_spec_card_legend_spec_card_component__WEBPACK_IMPORTED_MODULE_21__["LegendSpecCardComponent"], _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"], _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]],
-      entryComponents: [_edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _edit_file_drop_directive__WEBPACK_IMPORTED_MODULE_7__["FileDropDirective"], _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__["StopPropagationDirective"], _edit_side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_14__["SideNavComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ClassificationComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RegressionComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["BoundingBoxComponent"], _non_active_page_non_active_page_component__WEBPACK_IMPORTED_MODULE_15__["NonActivePageComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["TextComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["OverallComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AxisSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["RawTableComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["LegendSpecComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["CanvasPatchComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VerificationModuleComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VClassificationComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["VSubTitleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackMarkComponent"], _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["AnnotationModuleComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["ReviewPanelComponent"], _edit_common__WEBPACK_IMPORTED_MODULE_13__["FeedbackModalComponent"], _edit_verification_module__WEBPACK_IMPORTED_MODULE_12__["VOverallComponent"], _edit_annotation_module_overall_custom_spec_custom_spec_component__WEBPACK_IMPORTED_MODULE_17__["CustomSpecComponent"], _edit_annotation_module_overall_label_chip_list_label_chip_list_component__WEBPACK_IMPORTED_MODULE_18__["LabelChipListComponent"], _edit_verification_module_feedback_card_feedback_card_component__WEBPACK_IMPORTED_MODULE_19__["FeedbackCardComponent"], _edit_verification_module_v_overall_axis_spec_card_axis_spec_card_component__WEBPACK_IMPORTED_MODULE_20__["AxisSpecCardComponent"], _edit_verification_module_v_overall_legend_spec_card_legend_spec_card_component__WEBPACK_IMPORTED_MODULE_21__["LegendSpecCardComponent"], _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"], _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"], _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]],
+      entryComponents: [_edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"], _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"], _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSidenavModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatStepperModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatChipsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSliderModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSlideToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTooltipModule"]],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -13314,6 +13340,95 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts":
+  /*!*********************************************************************************!*\
+    !*** ./src/app/edit/verification-module/dialog/review-send-dialog.component.ts ***!
+    \*********************************************************************************/
+
+  /*! exports provided: ReviewSendDialogComponent */
+
+  /***/
+  function srcAppEditVerificationModuleDialogReviewSendDialogComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ReviewSendDialogComponent", function () {
+      return ReviewSendDialogComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/locale.service */
+    "./src/app/locale.service.ts");
+
+    var ReviewSendDialogComponent =
+    /*#__PURE__*/
+    function () {
+      function ReviewSendDialogComponent(dialogRef, data, _L) {
+        _classCallCheck(this, ReviewSendDialogComponent);
+
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.L = _L.reviewSendDialog;
+      }
+
+      _createClass(ReviewSendDialogComponent, [{
+        key: "onClose",
+        value: function onClose() {
+          this.data.response = '';
+          this.dialogRef.close(this.data);
+        }
+      }]);
+
+      return ReviewSendDialogComponent;
+    }();
+
+    ReviewSendDialogComponent.ctorParameters = function () {
+      return [{
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]
+      }, {
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+          args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]]
+        }]
+      }, {
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]
+      }];
+    };
+
+    ReviewSendDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-review-send-dialog',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./review-send-dialog.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html"))["default"]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])], ReviewSendDialogComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/edit/verification-module/feedback-card/feedback-card.component.scss":
   /*!*************************************************************************************!*\
     !*** ./src/app/edit/verification-module/feedback-card/feedback-card.component.scss ***!
@@ -14512,16 +14627,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/app/locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./dialog/review-send-dialog.component */
+    "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
 
     var VerificationModuleComponent =
     /*#__PURE__*/
     function () {
-      function VerificationModuleComponent(network, edit, fb, L) {
+      function VerificationModuleComponent(network, edit, fb, dialog, L) {
         _classCallCheck(this, VerificationModuleComponent);
 
         this.network = network;
         this.edit = edit;
         this.fb = fb;
+        this.dialog = dialog;
         this.L = L;
         this.reviewEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.feedbackForms = [];
@@ -14536,38 +14664,74 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function sendReview(approved) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee21() {
-            var feedbacks, path;
-            return regeneratorRuntime.wrap(function _callee21$(_context21) {
+          regeneratorRuntime.mark(function _callee22() {
+            var _this69 = this;
+
+            return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
-                switch (_context21.prev = _context21.next) {
+                switch (_context22.prev = _context22.next) {
                   case 0:
-                    feedbacks = this.feedbackForms.map(function (d) {
-                      return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d);
+                    this.dialog.open(_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__["ReviewSendDialogComponent"], {
+                      width: '400px',
+                      data: {
+                        response: 'ok'
+                      }
+                    }).afterClosed().subscribe(function (result) {
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this69, void 0, void 0,
+                      /*#__PURE__*/
+                      regeneratorRuntime.mark(function _callee21() {
+                        var feedbacks, path;
+                        return regeneratorRuntime.wrap(function _callee21$(_context21) {
+                          while (1) {
+                            switch (_context21.prev = _context21.next) {
+                              case 0:
+                                console.log({
+                                  result: result
+                                });
+
+                                if (!(result.response !== 'ok')) {
+                                  _context21.next = 3;
+                                  break;
+                                }
+
+                                return _context21.abrupt("return");
+
+                              case 3:
+                                feedbacks = this.feedbackForms.map(function (d) {
+                                  return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d);
+                                });
+                                path = this.edit.image.path;
+
+                                if (!(this.config.service === 'normal')) {
+                                  _context21.next = 8;
+                                  break;
+                                }
+
+                                _context21.next = 8;
+                                return this.network.registerReview({
+                                  path: path,
+                                  approved: approved,
+                                  feedbacks: feedbacks
+                                });
+
+                              case 8:
+                                this.reviewEmitter.emit();
+
+                              case 9:
+                              case "end":
+                                return _context21.stop();
+                            }
+                          }
+                        }, _callee21, this);
+                      }));
                     });
-                    path = this.edit.image.path;
 
-                    if (!(this.config.service === 'normal')) {
-                      _context21.next = 5;
-                      break;
-                    }
-
-                    _context21.next = 5;
-                    return this.network.registerReview({
-                      path: path,
-                      approved: approved,
-                      feedbacks: feedbacks
-                    });
-
-                  case 5:
-                    this.reviewEmitter.emit();
-
-                  case 6:
+                  case 1:
                   case "end":
-                    return _context21.stop();
+                    return _context22.stop();
                 }
               }
-            }, _callee21, this);
+            }, _callee22, this);
           }));
         }
       }, {
@@ -14609,6 +14773,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]
       }, {
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"]
+      }, {
         type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]
       }];
     };
@@ -14627,7 +14793,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./verification-module.component.scss */
       "./src/app/edit/verification-module/verification-module.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]])], VerificationModuleComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"], _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]])], VerificationModuleComponent);
     /***/
   },
 
@@ -14679,7 +14845,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function LocaleService() {
-        var _this69 = this,
+        var _this70 = this,
             _this$labelMap;
 
         _classCallCheck(this, LocaleService);
@@ -14778,7 +14944,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             spec: '명세 정보',
             rawData: '원본 데이터',
             label: function label(input) {
-              return _this69.labelMap[input];
+              return _this70.labelMap[input];
             }
           }
         };
@@ -14792,7 +14958,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: 'Labels',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           },
           ko: {
@@ -14804,7 +14970,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: '라벨',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           }
         };
@@ -14814,7 +14980,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             labels: 'Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           },
           ko: {
@@ -14822,7 +14988,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             labels: '라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           }
         };
@@ -14834,7 +15000,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           },
           ko: {
@@ -14844,7 +15010,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             }
           }
         };
@@ -14933,7 +15099,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: '제목',
             numMarks: '마크의 개수',
             label: function label(input) {
-              return _this69.labelMap[input];
+              return _this70.labelMap[input];
             },
             refreshWarning: '전 단계에서 변경 사항을 반영하려면 새로 고침 버튼을 누르세요',
             controlDelete: "\uC9C0\uC6B0\uAE30",
@@ -14997,7 +15163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           en: {
             encoding: 'Encoding',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             },
             clear: 'Clear',
             predict: 'Predict'
@@ -15005,10 +15171,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           ko: {
             encoding: '인코딩',
             encodingLabel: function encodingLabel(label) {
-              return _this69.encodingMap[label][_this69.l];
+              return _this70.encodingMap[label][_this70.l];
             },
             clear: '모두 삭제',
             predict: '값 계산'
+          }
+        };
+        this._reviewSendDialog = {
+          en: {
+            title: 'Confirm your review',
+            content: 'Are you sure you want to submit your review?',
+            ok: 'OK',
+            no: 'No Thanks'
+          },
+          ko: {
+            title: '당신의 리뷰를 확인하세요.',
+            content: '정말로 리뷰를 제출하시겠습니까?',
+            ok: '네',
+            no: '아니요, 다시 확인해볼게요'
           }
         };
         this.l = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].locale;
@@ -15134,6 +15314,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         get: function get() {
           return this.l === 'en' ? 'Please login again when you resize the browse window.' : '브라우저 윈도우 사이즈를 조정할 시 다시 로그인이 필요합니다.';
         }
+      }, {
+        key: "reviewSendDialog",
+        get: function get() {
+          return this._reviewSendDialog[this.l];
+        }
       }]);
 
       return LocaleService;
@@ -15232,25 +15417,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this70 = this;
+          var _this71 = this;
 
           this.configService.configObservable.subscribe(function (config) {
-            _this70.config = config;
+            _this71.config = config;
 
-            if (_this70.config.service !== 'normal') {
-              _this70.name = _this70.config.service;
-              _this70.password = _this70.config.service;
+            if (_this71.config.service !== 'normal') {
+              _this71.name = _this71.config.service;
+              _this71.password = _this71.config.service;
 
-              _this70.configService.setUserName(_this70.name);
+              _this71.configService.setUserName(_this71.name);
 
-              _this70.login(false);
+              _this71.login(false);
             }
           });
         }
       }, {
         key: "login",
         value: function login() {
-          var _this71 = this;
+          var _this72 = this;
 
           var validation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var re = /[A-Za-z0-9_]\w+/g;
@@ -15265,13 +15450,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.network.login(this.config.key, this.name, this.password).then(function (res) {
             if (res.code !== 0) {
-              _this71.warnMessage = res.message;
+              _this72.warnMessage = res.message;
             } else {
-              _this71.configService.userNameObservable.subscribe(function (_) {
-                _this71.router.navigate(['/edit']);
+              _this72.configService.userNameObservable.subscribe(function (_) {
+                _this72.router.navigate(['/edit']);
               });
 
-              _this71.configService.setUserName(_this71.name);
+              _this72.configService.setUserName(_this72.name);
             }
           })["catch"](function (err) {
             console.error(err);
@@ -15390,7 +15575,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(NetworkService, [{
         key: "login",
         value: function login(key, userName, password) {
-          var _this72 = this;
+          var _this73 = this;
 
           var body = {
             key: key,
@@ -15398,10 +15583,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             password: password
           };
           return this.http.post("".concat(this.BASE_URL, "login"), body, this.userOptions).toPromise().then(function (raw) {
-            return _this72.parseResponse(raw);
+            return _this73.parseResponse(raw);
           }).then(function (data) {
             if (data.data.token) {
-              _this72.token = data.data.token;
+              _this73.token = data.data.token;
             }
 
             return data;
@@ -15484,15 +15669,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getRandomElem",
         value: function getRandomElem() {
-          var _this73 = this;
+          var _this74 = this;
 
           return this.httpGetWithUser('random_image').then(function (raw) {
-            return _this73.parseResponse(raw);
+            return _this74.parseResponse(raw);
           }).then(function (response) {
             var data = response.data;
 
             if (data) {
-              return Promise.all([data, _this73.getImage(data.path)]);
+              return Promise.all([data, _this74.getImage(data.path)]);
             } else {
               return null;
             }
@@ -15501,7 +15686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVerificationRandomElem",
         value: function getVerificationRandomElem() {
-          var _this74 = this;
+          var _this75 = this;
 
           return this.httpGetWithUser('verification_image').then(function (response) {
             if (response.data) {
@@ -15511,7 +15696,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }).then(function (meta) {
             if (meta) {
-              return Promise.all([meta, _this74.getImage(meta.path)]);
+              return Promise.all([meta, _this75.getImage(meta.path)]);
             } else {
               return null;
             }
@@ -15557,10 +15742,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerReview",
         value: function registerReview(review) {
-          var _this75 = this;
+          var _this76 = this;
 
           return this.http.post(this.BASE_URL + 'register_review', review, this.userOptions).toPromise().then(function (d) {
-            return _this75.parseResponse(d);
+            return _this76.parseResponse(d);
           });
         }
       }, {
@@ -15584,21 +15769,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function loadLocalImage(path) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee22() {
-            return regeneratorRuntime.wrap(function _callee22$(_context22) {
+          regeneratorRuntime.mark(function _callee23() {
+            return regeneratorRuntime.wrap(function _callee23$(_context23) {
               while (1) {
-                switch (_context22.prev = _context22.next) {
+                switch (_context23.prev = _context23.next) {
                   case 0:
-                    return _context22.abrupt("return", this.http.get(path, {
+                    return _context23.abrupt("return", this.http.get(path, {
                       responseType: 'blob'
                     }).toPromise());
 
                   case 1:
                   case "end":
-                    return _context22.stop();
+                    return _context23.stop();
                 }
               }
-            }, _callee22, this);
+            }, _callee23, this);
           }));
         }
       }, {
@@ -15813,25 +15998,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function clusterMarks(body) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee23() {
+          regeneratorRuntime.mark(function _callee24() {
             var response;
-            return regeneratorRuntime.wrap(function _callee23$(_context23) {
+            return regeneratorRuntime.wrap(function _callee24$(_context24) {
               while (1) {
-                switch (_context23.prev = _context23.next) {
+                switch (_context24.prev = _context24.next) {
                   case 0:
-                    _context23.next = 2;
+                    _context24.next = 2;
                     return this.http.post("".concat(this.BASE_URL, "cluster_marks"), body).toPromise();
 
                   case 2:
-                    response = _context23.sent;
-                    return _context23.abrupt("return", new ClusterResult(response));
+                    response = _context24.sent;
+                    return _context24.abrupt("return", new ClusterResult(response));
 
                   case 4:
                   case "end":
-                    return _context23.stop();
+                    return _context24.stop();
                 }
               }
-            }, _callee23, this);
+            }, _callee24, this);
           }));
         }
       }, {
@@ -15839,21 +16024,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function predictAreas(body) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee24() {
-            return regeneratorRuntime.wrap(function _callee24$(_context24) {
+          regeneratorRuntime.mark(function _callee25() {
+            return regeneratorRuntime.wrap(function _callee25$(_context25) {
               while (1) {
-                switch (_context24.prev = _context24.next) {
+                switch (_context25.prev = _context25.next) {
                   case 0:
-                    return _context24.abrupt("return", this.http.post("".concat(this.BASE_URL, "predict_area"), body).toPromise().then(function (d) {
+                    return _context25.abrupt("return", this.http.post("".concat(this.BASE_URL, "predict_area"), body).toPromise().then(function (d) {
                       return d;
                     }));
 
                   case 1:
                   case "end":
-                    return _context24.stop();
+                    return _context25.stop();
                 }
               }
-            }, _callee24, this);
+            }, _callee25, this);
           }));
         }
       }]);
