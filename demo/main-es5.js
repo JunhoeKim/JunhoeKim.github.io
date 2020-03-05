@@ -221,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (blur)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -261,7 +261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"styled-scroll raw-table w-100\" [formGroup]=\"formGroup\" #table>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"d-flex\" style=\"padding-left: 80px;\">\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2 column-title\">\r\n            {{ column.title }}\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex\">\r\n        <div class=\"index-cell align-self-center\">\r\n            Index\r\n        </div>\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.encoding }}</mat-label>\r\n                <select matNativeControl\r\n                    [value]=\"column.encoding ? column.encoding.value: ''\"\r\n                    (change)=\"onSelectEncoding($event, column)\">\r\n                    <option value='' disabled></option>\r\n                    <option *ngFor=\"let encoding of encodings\"\r\n                        [value]=\"encoding\">\r\n                        {{ L.encodingLabel(encoding) }}\r\n                    </option>\r\n                </select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedFeedbackKey === column.path\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <ng-container *ngIf=\"allChannelsEncoded\">\r\n        <div *ngFor=\"let row of rows let i = index\">\r\n            <div [formGroup]=\"row.group\" class=\"table-row focus-box\"\r\n                (click)=\"updateFocus(row.markKey)\"\r\n                [class.focused]=\"focusedBoxIndex === row.markKey\">\r\n                <div class=\"index-cell\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div *ngFor=\"let column of columns; let j = index\" class=\"column content-cell\">\r\n                    <ng-container\r\n                        *ngIf=\"!column.labels || column.labels.length == 0\">\r\n                        <input [formControlName]=\"column.title\">\r\n                    </ng-container>\r\n                    <ng-container\r\n                        *ngIf=\"column.labels && column.labels.length > 0\">\r\n                        <svg *ngIf=\"column.encoding\r\n                            && column.encoding.value === 'color'\"\r\n                            class=\"patch\"\r\n                        >\r\n                            <rect\r\n                            [attr.fill]=\"row.attrs[column.title] || '#000'\">\r\n                            </rect>\r\n                        </svg>\r\n                        <app-canvas-patch\r\n                            class=\"patch\"\r\n                            *ngIf=\"column.encoding\r\n                                && column.encoding.value === 'shape'\"\r\n                            [data]=\"row.attrs[column.title]\">\r\n                        </app-canvas-patch>\r\n                        <select [formControlName]=\"column.title\"\r\n                            (change)=\"onChangeLabel(column, row, i)\"\r\n                            class=\"w-100\">\r\n                            <option *ngFor=\"let label of column.labels\" [value]=\"label\">\r\n                                {{ label }}\r\n                            </option>\r\n                        </select>\r\n                    </ng-container>\r\n                </div>\r\n            </div>\r\n            <div\r\n                *ngIf=\"row.markKey === focusedFeedbackKey\"\r\n                class=\"feedback-region justify-content-start my-1\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n<div class=\"w-100 mt-2 d-flex align-items-center\">\r\n    <!-- <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"addRow()\">\r\n        Add Row\r\n    </button> -->\r\n    <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"clear()\">\r\n        {{ L.clear }}\r\n    </button>\r\n    <button\r\n        mat-flat-button\r\n            color=\"primary\"\r\n            (click)=\"runPrediction()\"\r\n            [disabled]=\"!allChannelsEncoded\">\r\n        {{ L.predict }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"styled-scroll raw-table w-100\" [formGroup]=\"formGroup\" #table>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"d-flex\" style=\"padding-left: 80px;\">\r\n        <div *ngFor=\"let column of columns; let i = index\"\r\n            class=\"column p-2 column-title d-flex align-items-center\">\r\n            <div>\r\n                {{ column.title }}\r\n            </div>\r\n            <div>\r\n                <button mat-icon-button\r\n                    (click)=\"sortByColumn(column)\">\r\n                    <mat-icon style=\"font-size: 18px;\">sort</mat-icon>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex\">\r\n        <div class=\"index-cell align-self-center\">\r\n            Index\r\n        </div>\r\n        <div *ngFor=\"let column of columns; let i = index\" class=\"column p-2\">\r\n            <mat-form-field>\r\n                <mat-label>{{ L.encoding }}</mat-label>\r\n                <select matNativeControl\r\n                    [formControl]=\"column.encoding ? column.encoding\r\n                    : dummyForm\"\r\n                    (change)=\"onSelectEncoding($event, column)\">\r\n                    <option value=\"\" disabled></option>\r\n                    <option *ngFor=\"let encoding of encodings\"\r\n                        [value]=\"encoding\">\r\n                        {{ L.encodingLabel(encoding) }}\r\n                    </option>\r\n                </select>\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf= \"focusedFeedbackKey === column.path\"\r\n                class=\"feedback-region select\">\r\n                <div>\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <ng-container *ngIf=\"allChannelsEncoded\">\r\n        <div *ngFor=\"let row of rows let i = index\">\r\n            <div [formGroup]=\"row.group\" class=\"table-row focus-box\"\r\n                (click)=\"updateFocus(row.markKey)\"\r\n                [class.focused]=\"focusedBoxIndex === row.markKey\">\r\n                <div class=\"index-cell\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div *ngFor=\"let column of columns; let j = index\" class=\"column content-cell\">\r\n                    <ng-container\r\n                        *ngIf=\"!column.labels || column.labels.length == 0\">\r\n                        <input [formControlName]=\"column.title\">\r\n                    </ng-container>\r\n                    <ng-container\r\n                        *ngIf=\"column.labels && column.labels.length > 0\">\r\n                        <svg *ngIf=\"column.encoding\r\n                            && column.encoding.value === 'color'\"\r\n                            class=\"patch\"\r\n                        >\r\n                            <rect\r\n                            [attr.fill]=\"row.attrs[column.title] || '#000'\">\r\n                            </rect>\r\n                        </svg>\r\n                        <app-canvas-patch\r\n                            class=\"patch\"\r\n                            *ngIf=\"column.encoding\r\n                                && column.encoding.value === 'shape'\"\r\n                            [data]=\"row.attrs[column.title]\">\r\n                        </app-canvas-patch>\r\n                        <select [formControlName]=\"column.title\"\r\n                            (change)=\"onChangeLabel(column, row, i)\"\r\n                            class=\"w-100\">\r\n                            <option *ngFor=\"let label of column.labels\" [value]=\"label\">\r\n                                {{ label }}\r\n                            </option>\r\n                        </select>\r\n                    </ng-container>\r\n                </div>\r\n            </div>\r\n            <div\r\n                *ngIf=\"row.markKey === focusedFeedbackKey\"\r\n                class=\"feedback-region justify-content-start my-1\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n<div class=\"w-100 mt-2 d-flex align-items-center\">\r\n    <!-- <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"addRow()\">\r\n        Add Row\r\n    </button> -->\r\n    <button mat-stroked-button color=\"primary\"\r\n        class=\"mr-2\"\r\n        (click)=\"clear()\">\r\n        {{ L.clear }}\r\n    </button>\r\n    <button\r\n        mat-flat-button\r\n            color=\"primary\"\r\n            (click)=\"runPrediction()\"\r\n            [disabled]=\"!allChannelsEncoded\">\r\n        {{ L.predict }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -441,7 +441,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-sidenav-container class=\"w-100 h-100\">\r\n    <mat-sidenav mode=\"side\" opened id=\"side-nav\">\r\n        <app-side-nav\r\n            (remove)=\"onRemoveImage()\"\r\n            [event]=\"eventSubject.asObservable()\">\r\n        </app-side-nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <div\r\n            class=\"w-100 h-100 d-flex\">\r\n            <div class=\"w-50 h-100\">\r\n                <div class=\"w-100 p-2 d-flex align-items-center edit-header\">\r\n                    {{ L.mode }}:\r\n                    {{ L.currMode(mode) }}\r\n                    <b *ngIf=\"config\">\r\n                        {{ config.service === 'normal'\r\n                            ? ''\r\n                            : '[' + L.service(config.service) + ']'\r\n                        }}\r\n                    </b>\r\n                </div>\r\n                <div id=\"image-zone\" class=\"w-100 h-75\r\n            d-flex justify-content-center align-items-center\r\n            position-relative\"\r\n                    [class.selected]=\"selectedImage\"\r\n                    #imgZone>\r\n                    <div class=\"position-absolute image-region\" [class.selected]=\"selectedImage\">\r\n                        <img #img>\r\n                    </div>\r\n\r\n                    <div class=\"position-absolute svg-region\" [class.selected]=\"selectedImage\">\r\n                        <svg #svg></svg>\r\n                    </div>\r\n                    <div *ngIf=\"noImagesLeft\"\r\n                        class=\"position-absolute w-100 h-100\r\n                            d-flex flex-column justify-content-center align-items-center\">\r\n                        <h3 class=\"w-100 mb-3 text-center\">\r\n                            COMPLETE\r\n                        </h3>\r\n                        <div class=\"px-4 desc\">\r\n                            {{ L.completeMsg1 }}\r\n                            <br/>\r\n                            {{ L.completeMsg2 }}\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"w-50 right-panel styled-scroll\"\r\n                *ngIf=\"mode !== 'verification'\">\r\n                <app-annotation-module\r\n                    *ngIf=\"formGroup\"\r\n                    [formGroup]=\"formGroup\"\r\n                    [config]=\"config\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [spacePressed]=\"spacePressed\"\r\n                    [svgS]=\"svgS\"\r\n                    [event]=\"eventSubject.asObservable()\"\r\n                    [mode]=\"mode\"\r\n                    (submitEmitter)=\"submit()\">\r\n                </app-annotation-module>\r\n            </div>\r\n            <div *ngIf=\"mode === 'verification' && config\"\r\n                class=\"w-50 right-panel styled-scroll\" >\r\n                <app-verification-module\r\n                    [config]=\"config\"\r\n                    [verificationDatas]=\"verificationDatas\"\r\n                    [onImageLoad]=\"onImageLoad\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [svgS]=\"svgS\"\r\n                    (reviewEmitter)=\"onReviewSubmitted()\"\r\n                >\r\n                </app-verification-module>\r\n            </div>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n<app-feedback-modal></app-feedback-modal>\r\n";
+    __webpack_exports__["default"] = "<mat-sidenav-container class=\"w-100 h-100\">\r\n    <mat-sidenav mode=\"side\" opened id=\"side-nav\">\r\n        <app-side-nav\r\n            (remove)=\"onRemoveImage()\"\r\n            [event]=\"eventSubject.asObservable()\"\r\n            [mode]=\"mode\">\r\n        </app-side-nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <div\r\n            class=\"w-100 h-100 d-flex\">\r\n            <div class=\"w-50 h-100\">\r\n                <div class=\"w-100 p-2 d-flex align-items-center edit-header\">\r\n                    {{ L.mode }}:\r\n                    {{ L.currMode(mode) }}\r\n                    <b *ngIf=\"config\">\r\n                        {{ config.service === 'normal'\r\n                            ? ''\r\n                            : '[' + L.service(config.service) + ']'\r\n                        }}\r\n                    </b>\r\n                </div>\r\n                <div id=\"image-zone\" class=\"w-100 h-75\r\n            d-flex justify-content-center align-items-center\r\n            position-relative\"\r\n                    [class.selected]=\"selectedImage\"\r\n                    #imgZone>\r\n                    <div class=\"position-absolute image-region\" [class.selected]=\"selectedImage\">\r\n                        <img #img>\r\n                    </div>\r\n\r\n                    <div class=\"position-absolute svg-region\" [class.selected]=\"selectedImage\">\r\n                        <svg #svg></svg>\r\n                    </div>\r\n                    <div *ngIf=\"noImagesLeft\"\r\n                        class=\"position-absolute w-100 h-100\r\n                            d-flex flex-column justify-content-center align-items-center\">\r\n                        <h3 class=\"w-100 mb-3 text-center\">\r\n                            COMPLETE\r\n                        </h3>\r\n                        <div class=\"px-4 desc\">\r\n                            {{ L.completeMsg1 }}\r\n                            <br/>\r\n                            {{ L.completeMsg2 }}\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"w-50 right-panel styled-scroll\"\r\n                *ngIf=\"mode !== 'verification'\">\r\n                <app-annotation-module\r\n                    *ngIf=\"formGroup\"\r\n                    [formGroup]=\"formGroup\"\r\n                    [config]=\"config\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [spacePressed]=\"spacePressed\"\r\n                    [svgS]=\"svgS\"\r\n                    [event]=\"eventSubject.asObservable()\"\r\n                    [mode]=\"mode\"\r\n                    (submitEmitter)=\"submit()\">\r\n                </app-annotation-module>\r\n            </div>\r\n            <div *ngIf=\"mode === 'verification' && config\"\r\n                class=\"w-50 right-panel styled-scroll\" >\r\n                <app-verification-module\r\n                    [config]=\"config\"\r\n                    [verificationDatas]=\"verificationDatas\"\r\n                    [onImageLoad]=\"onImageLoad\"\r\n                    [imgRef]=\"imgRef\"\r\n                    [svgS]=\"svgS\"\r\n                    (reviewEmitter)=\"onReviewSubmitted()\"\r\n                >\r\n                </app-verification-module>\r\n            </div>\r\n        </div>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n<app-feedback-modal></app-feedback-modal>\r\n";
     /***/
   },
 
@@ -461,7 +461,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div>\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
+    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div\r\n        class=\"w-100 elapsed-time\">\r\n        {{ L.sideNav.elapsedTime }} : {{ timer.sec }}\r\n    </div>\r\n    <div *ngIf=\"edit.image && mode === 'annotation'\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div>\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
     /***/
   },
 
@@ -1394,16 +1394,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./edit/demo/demo.service */
     "./src/app/edit/demo/demo.service.ts");
+    /* harmony import */
+
+
+    var _locale_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./locale.service */
+    "./src/app/locale.service.ts");
 
     var AppComponent =
     /*#__PURE__*/
     function () {
-      function AppComponent(network, configService, demo, router) {
+      function AppComponent(network, configService, demo, L, router) {
         _classCallCheck(this, AppComponent);
 
         this.network = network;
         this.configService = configService;
         this.demo = demo;
+        this.L = L;
         this.router = router;
       }
 
@@ -1419,6 +1426,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this.router.navigate(['/login']);
 
             _this.demo.init();
+
+            alert(_this.L.resizeMessage);
           }, 1000);
         }
       }, {
@@ -1447,6 +1456,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"]
       }, {
+        type: _locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"]
+      }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }];
     };
@@ -1459,7 +1470,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./app.component.scss */
       "./src/app/app.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"], _locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
     /***/
   },
 
@@ -5035,7 +5046,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/edit/annotation-module/annotation-util.ts ***!
     \***********************************************************/
 
-  /*! exports provided: NUM_REG, AnnotationBox, isNumberTexts, isNumberText, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
+  /*! exports provided: NUM_REG, WITHOUT_NUM_REG, getCurrRadius, getCurrStrokeWidth, updateBoxStyleByFocus, updateBoxStyleByScroll, AnnotationBox, isNumberTexts, isNumberText, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
 
   /***/
   function srcAppEditAnnotationModuleAnnotationUtilTs(module, __webpack_exports__, __webpack_require__) {
@@ -5047,6 +5058,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "NUM_REG", function () {
       return NUM_REG;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "WITHOUT_NUM_REG", function () {
+      return WITHOUT_NUM_REG;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "getCurrRadius", function () {
+      return getCurrRadius;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "getCurrStrokeWidth", function () {
+      return getCurrStrokeWidth;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "updateBoxStyleByFocus", function () {
+      return updateBoxStyleByFocus;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "updateBoxStyleByScroll", function () {
+      return updateBoxStyleByScroll;
     });
     /* harmony export (binding) */
 
@@ -5181,7 +5222,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! src/app/common/task */
     "./src/app/common/task/index.ts");
 
-    var NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,|B|b]/g;
+    var NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,|B|b| ]/g;
+    var WITHOUT_NUM_REG = /[^.0-9]/g;
+
+    function getCurrRadius(svgS) {
+      var focused = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var svgEl = svgS.node();
+      var scale = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_2__["invertTransform"])(svgEl.style.transform).sx;
+      var base = focused ? 7 : 4;
+      return "".concat(base / (1 + scale / 2), "px");
+    }
+
+    function getCurrStrokeWidth(svgS) {
+      var focused = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var svgEl = svgS.node();
+      var scale = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_2__["invertTransform"])(svgEl.style.transform).sx;
+      var base = focused ? 6 : 3;
+      return "".concat(base / (1 + scale / 2), "px");
+    }
+
+    function updateBoxStyleByFocus(boxIndex, svgS) {
+      var strokeWidth = getCurrStrokeWidth(svgS);
+      var focusedStrokeWidth = getCurrStrokeWidth(svgS, true);
+      var r = getCurrRadius(svgS);
+      var focusedR = getCurrRadius(svgS, true);
+      svgS.selectAll(".mark:not(.handle)").classed('focused', false).style('stroke-width', strokeWidth);
+      svgS.selectAll('.mark.handle').classed('focused', false).attr('r', r);
+      svgS.selectAll(".text:not(.handle)").classed('focused', false).style('stroke-width', strokeWidth);
+      svgS.selectAll('.text.handle').classed('focused', false).attr('r', r);
+      svgS.select(".rect-".concat(boxIndex, ":not(.handle)")).classed('focused', true).style('stroke-width', focusedStrokeWidth);
+      svgS.selectAll(".circle-".concat(boxIndex, ":not(.handle)")).classed('focused', true).style('stroke-width', focusedStrokeWidth);
+      svgS.selectAll(".rect-".concat(boxIndex, ".handle")).classed('focused', true).attr('r', focusedR);
+      svgS.selectAll(".circle-".concat(boxIndex, ".handle")).classed('focused', true).attr('r', focusedR);
+    }
+
+    function updateBoxStyleByScroll(svgS) {
+      var strokeWidth = getCurrStrokeWidth(svgS);
+      var focusedStrokeWidth = getCurrStrokeWidth(svgS, true);
+      var r = getCurrRadius(svgS);
+      var focusedR = getCurrRadius(svgS, true);
+      svgS.selectAll(".mark:not(.handle)").style('stroke-width', strokeWidth);
+      svgS.selectAll('.mark.handle').attr('r', r);
+      svgS.selectAll(".text:not(.handle)").style('stroke-width', strokeWidth);
+      svgS.selectAll('.text.handle').attr('r', r);
+      svgS.select(".focused:not(.handle)").style('stroke-width', focusedStrokeWidth);
+      svgS.selectAll(".focused.handle").attr('r', focusedR);
+    }
 
     var AnnotationBox =
     /*#__PURE__*/
@@ -5324,7 +5410,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         newBoxIndex = (comp.autoIncBoxIndex + 1).toString();
         var x = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetX;
         var y = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetY;
-        comp.g.append('rect').attr('class', "rect-".concat(newBoxIndex)).attr('x', x).attr('y', y).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark');
+        comp.g.append('rect').attr('class', "rect-".concat(newBoxIndex)).attr('x', x).attr('y', y).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark').style('stroke-width', getCurrStrokeWidth(svg));
         pivotX = x;
         pivotY = y;
         comp.isDrawing = true;
@@ -5347,7 +5433,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var x = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetX;
         var y = d3__WEBPACK_IMPORTED_MODULE_1__["event"].offsetY;
         var r = comp.pointRadius;
-        var circleS = comp.g.append('circle').attr('class', "rect-".concat(newBoxIndex)).attr('cx', x).attr('cy', y).attr('r', r).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark');
+        var circleS = comp.g.append('circle').attr('class', "rect-".concat(newBoxIndex)).attr('cx', x).attr('cy', y).attr('r', r).classed('text', comp.boxMode === 'text').classed('mark', comp.boxMode === 'mark').style('stroke-width', getCurrStrokeWidth(svg));
         comp.writeForm(newBoxIndex, x - r, y - r, 2 * r, 2 * r);
         comp.updateFocus(newBoxIndex);
         addCircleDragEvent(comp, newBoxIndex, circleS);
@@ -5365,7 +5451,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return d.cx;
         }).attr('cy', function (d) {
           return d.cy;
-        }).attr('r', 3);
+        }).attr('r', getCurrRadius(svg));
         comp.updateFocus(newBoxIndex);
         addCircleEvent(comp, newBoxIndex, rectS, circleS);
         comp.addRectEvent(newBoxIndex, rectS, circleS);
@@ -5453,13 +5539,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var y = y0 * imgElem.height + 10;
       var width = (x1 - x0) * imgElem.width;
       var height = (y1 - y0) * imgElem.height;
-      var rectS = comp.g.append('rect').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('x', x).attr('y', y).attr('width', width).attr('height', height).classed('text', box.isText).classed('mark', !box.isText);
+      var rectS = comp.g.append('rect').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('x', x).attr('y', y).attr('width', width).attr('height', height).classed('text', box.isText).classed('mark', !box.isText).style('stroke-width', getCurrStrokeWidth(comp.svgS));
       var handles = getRectHandles(x, y, width, height);
       var circleS = comp.g.selectAll(".circle-".concat(boxIndex)).data(handles).enter().append('circle').attr('class', "circle-".concat(boxIndex, " handle")).classed('focused', comp.focusedBoxIndex === boxIndex).classed('text', box.isText).classed('mark', !box.isText).attr('cx', function (d) {
         return d.cx;
       }).attr('cy', function (d) {
         return d.cy;
-      }).attr('r', 3);
+      }).attr('r', getCurrRadius(comp.svgS));
       comp.addRectEvent(boxIndex, rectS, circleS);
       addCircleEvent(comp, boxIndex, rectS, circleS);
     }
@@ -5477,7 +5563,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var boxIndex = box.key;
       var x = (x0 + x1) * imgElem.width / 2 + 10;
       var y = (y0 + y1) * imgElem.height / 2 + 10;
-      var circleS = comp.g.append('circle').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('cx', x).attr('cy', y).attr('r', r).classed('text', box.isText).classed('mark', !box.isText);
+      var circleS = comp.g.append('circle').attr('class', "rect-".concat(boxIndex)).classed('focused', comp.focusedBoxIndex === boxIndex).attr('cx', x).attr('cy', y).attr('r', r).classed('text', box.isText).classed('mark', !box.isText).style('stroke-width', getCurrStrokeWidth(comp.svgS));
       addCircleDragEvent(comp, boxIndex, circleS);
     }
 
@@ -6592,21 +6678,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _annotation_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../annotation-util */
+    "./src/app/edit/annotation-module/annotation-util.ts");
+    /* harmony import */
+
+
+    var src_app_common_task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/common/task */
     "./src/app/common/task/index.ts");
     /* harmony import */
 
 
-    var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
     /* harmony import */
 
 
-    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var d3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! d3 */
+    "./node_modules/d3/index.js");
 
     var AxisSpecComponent =
     /*#__PURE__*/
@@ -6648,7 +6746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, 0);
           });
           this.hasMarkLabels = this.texts.filter(function (d) {
-            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_MARK_LABEL"];
           }).length > 0;
         }
       }, {
@@ -6668,6 +6766,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onValueTypeChange(change) {
           if (change.value === 'quantitative') {
             this.group.get('unit').setValue('integer');
+            this.obtainValuePerPixel();
           } else {
             this.group.get('unit').setValue('');
           }
@@ -6697,6 +6796,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function focusedElemWithKey(key) {
           return !!this.focusedFeedback && this.focusedFeedbackKey === key;
         }
+      }, {
+        key: "obtainValuePerPixel",
+        value: function obtainValuePerPixel() {
+          var dir = this.group.get('dir').value;
+          var _this$imgRef$nativeEl = this.imgRef.nativeElement,
+              width = _this$imgRef$nativeEl.width,
+              height = _this$imgRef$nativeEl.height;
+          var axis = dir === 'x' ? this.texts.filter(function (text) {
+            return text.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_X_AXIS_LABEL"];
+          }) : this.texts.filter(function (text) {
+            return text.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"];
+          });
+          var axisValues = axis.map(function (d) {
+            return {
+              value: +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], ''),
+              center: d.center
+            };
+          }).sort(function (a, b) {
+            return a.value - b.value;
+          });
+          var valuesPerPixel = [];
+
+          for (var i = 0; i < axisValues.length - 1; i++) {
+            var curr = axisValues[i];
+            var next = axisValues[i + 1];
+            var interval = Math.abs(dir === 'x' ? (curr.center[0] - next.center[0]) * width : (curr.center[1] - next.center[1]) * height);
+            valuesPerPixel.push((+next.value - +curr.value) / interval);
+          }
+
+          var valuePerPixel = +d3__WEBPACK_IMPORTED_MODULE_7__["mean"](valuesPerPixel);
+          this.group.get('valuePerPixel').setValue(valuePerPixel);
+        }
       }]);
 
       return AxisSpecComponent;
@@ -6704,16 +6835,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AxisSpecComponent.ctorParameters = function () {
       return [{
-        type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"]
+        type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]
       }, {
-        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)], AxisSpecComponent.prototype, "auto", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)], AxisSpecComponent.prototype, "index", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"])], AxisSpecComponent.prototype, "group", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["Overall"])], AxisSpecComponent.prototype, "task", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])], AxisSpecComponent.prototype, "imgRef", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["Overall"])], AxisSpecComponent.prototype, "task", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)], AxisSpecComponent.prototype, "texts", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('title', {
       "static": false
@@ -6747,7 +6879,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/axis-spec/axis-spec.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_4__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_5__["LocaleService"]])], AxisSpecComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], AxisSpecComponent);
     /***/
   },
 
@@ -7014,11 +7146,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var labelForms = this.group.get('markLabels');
 
-          if (!this.labeledByMarks) {
-            while (labelForms.length) {
-              labelForms.removeAt(0);
-            }
+          while (labelForms.length) {
+            labelForms.removeAt(0);
+          }
 
+          if (!this.labeledByMarks) {
             return;
           }
 
@@ -7049,6 +7181,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.group.get('unit').setValue('');
           }
+
+          this.resetMarkLabels();
         }
       }, {
         key: "scrollEvent",
@@ -7954,6 +8088,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var rect = d3__WEBPACK_IMPORTED_MODULE_7__["select"]('#image-zone').node().getBoundingClientRect();
             d3__WEBPACK_IMPORTED_MODULE_7__["select"](this.controlPanelRef.nativeElement).style('top', "".concat(Math.floor(rect.bottom), "px")).style('left', "".concat(Math.floor(rect.left), "px")).style('width', "".concat(Math.floor(rect.width), "px"));
           }
+
+          if (this.task.inputType === 'point') {
+            this.applyPointSizeToMarkForm();
+          }
         }
       }, {
         key: "onLabelChange",
@@ -8001,10 +8139,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function updateFocus(boxIndex) {
           var _this33 = this;
 
-          this.g.selectAll('rect').classed('focused', false);
-          this.g.selectAll('circle').classed('focused', false);
-          this.g.select(".rect-".concat(boxIndex)).classed('focused', true);
-          this.g.selectAll(".circle-".concat(boxIndex)).classed('focused', true);
+          Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["updateBoxStyleByFocus"])(boxIndex, this.svgS);
           this.sortDrawOrder(boxIndex, true);
           this.focusedBoxIndex = boxIndex;
           var box = this.boxes.find(function (d) {
@@ -8223,9 +8358,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             axesGroup.removeAt(0);
           }
 
-          var _this$imgRef$nativeEl = this.imgRef.nativeElement,
-              width = _this$imgRef$nativeEl.width,
-              height = _this$imgRef$nativeEl.height;
+          var _this$imgRef$nativeEl2 = this.imgRef.nativeElement,
+              width = _this$imgRef$nativeEl2.width,
+              height = _this$imgRef$nativeEl2.height;
 
           var getPrecision = function getPrecision(v) {
             var splited = v.split('.');
@@ -8332,14 +8467,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onPointSizeChange",
         value: function onPointSizeChange(change) {
-          var _this37 = this;
-
           var pointSymbol = this.pointMark.nativeElement;
           var r = change.value;
           d3__WEBPACK_IMPORTED_MODULE_7__["select"](pointSymbol).attr('r', r);
-          this.boxes.filter(function (box) {
-            return box.text === null;
-          }).forEach(function (mark) {
+          this.applyPointSizeToMarkForm();
+        }
+      }, {
+        key: "applyPointSizeToMarkForm",
+        value: function applyPointSizeToMarkForm() {
+          var _this37 = this;
+
+          var r = this.pointRadius;
+          this.marks.forEach(function (mark) {
             var boxIndex = mark.key;
 
             var sel = _this37.g.select(".rect-".concat(boxIndex));
@@ -8801,8 +8940,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.rows = [];
         this.allChannelsEncoded = false;
         this.focusedFeedbackKey = '';
+        this.dummyForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
         this.encodings = ['x-position', 'y-position', 'height', 'width', 'area', 'color', 'none'];
-        this.re = /[m|mm|km|s|g|kg|K|M|%|$|,]/g;
+        this.re = /[^.0-9]/g;
         this.L = _L.rawTable;
       }
 
@@ -9127,12 +9267,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context4.prev = _context4.next) {
                   case 0:
+                    ;
                     path = this.edit.image.path;
                     k = column.labels.length;
                     boxes = this.marks.map(function (d) {
                       return d.pointValues;
                     });
-                    _context4.next = 5;
+                    _context4.next = 6;
                     return this.predictService.clusterMarks({
                       encoding: 'shape',
                       path: path,
@@ -9140,7 +9281,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       boxes: boxes
                     });
 
-                  case 5:
+                  case 6:
                     _ref4 = _context4.sent;
                     centerPatches = _ref4.centerPatches;
                     labels = _ref4.labels;
@@ -9154,7 +9295,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       row.clusterLabels[column.title] = label;
                     });
 
-                  case 9:
+                  case 10:
                   case "end":
                     return _context4.stop();
                 }
@@ -9186,7 +9327,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           regeneratorRuntime.mark(function _callee6() {
             var _this44 = this;
 
-            var colorEncodingIndex, title;
+            var colorEncodingIndex;
             return regeneratorRuntime.wrap(function _callee6$(_context6) {
               while (1) {
                 switch (_context6.prev = _context6.next) {
@@ -9236,12 +9377,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     });
 
                     if (colorEncodingIndex !== -1) {
-                      title = this.columns[colorEncodingIndex].title;
-                      this.rows = this.rows.sort(function (a, b) {
-                        var aValue = a.group.get([title]).value;
-                        var bValue = b.group.get([title]).value;
-                        return aValue.toLowerCase().localeCompare(bValue.toLowerCase());
-                      });
+                      this.sortByColumn(this.columns[colorEncodingIndex]);
                     }
 
                   case 4:
@@ -9251,6 +9387,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }, _callee6, this);
           }));
+        }
+      }, {
+        key: "sortByColumn",
+        value: function sortByColumn(column) {
+          var title = column.title;
+          this.rows = this.rows.sort(function (a, b) {
+            var aValue = a.group.get([title]).value;
+            var bValue = b.group.get([title]).value;
+            var aNum = !isNaN(+aValue);
+            var bNum = !isNaN(+bValue);
+
+            if (aNum && bNum) {
+              return +aValue - +bValue;
+            } else {
+              return aValue.toLowerCase().localeCompare(bValue.toLowerCase());
+            }
+          });
         }
       }, {
         key: "clear",
@@ -9403,6 +9556,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var digits = value !== 0 ? Math.log10(Math.abs(value)) : -pre;
 
           if (unit === 'integer' && pre > 0) {
+            value = Math.round(value);
             pre = 0;
           } else if (unit === 'decimal' && pre <= 0) {
             pre = 1;
@@ -9508,9 +9662,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function predictPosition(targetGroup, column, dir) {
           var _this48 = this;
 
-          var _this$imgRef$nativeEl2 = this.imgRef.nativeElement,
-              width = _this$imgRef$nativeEl2.width,
-              height = _this$imgRef$nativeEl2.height;
+          var _this$imgRef$nativeEl3 = this.imgRef.nativeElement,
+              width = _this$imgRef$nativeEl3.width,
+              height = _this$imgRef$nativeEl3.height;
           var mul = dir === 'x' ? width : height;
           var offset = dir === 'x' ? 0 : 1;
           var centers = this.marks.map(function (d) {
@@ -11116,13 +11270,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _demo_line_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./demo_line_data.json */
+    "./src/app/edit/demo/demo_line_data.json");
+
+    var _demo_line_data_json__WEBPACK_IMPORTED_MODULE_5___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! ./demo_line_data.json */
+    "./src/app/edit/demo/demo_line_data.json", 1);
+    /* harmony import */
+
+
+    var src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/common/verification-data */
     "./src/app/common/verification-data.ts");
     /* harmony import */
 
 
-    var src_environments_environment_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var src_environments_environment_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/environments/environment.js */
     "./src/environments/environment.js");
 
@@ -11138,9 +11304,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.data = [];
         this.init();
 
-        if (src_environments_environment_js__WEBPACK_IMPORTED_MODULE_6__["environment"].chartType === 'bar') {
+        if (src_environments_environment_js__WEBPACK_IMPORTED_MODULE_7__["environment"].chartType === 'bar') {
           this.data = _demo_bar_data_json__WEBPACK_IMPORTED_MODULE_4__;
-        } else {}
+        } else {
+          this.data = _demo_line_data_json__WEBPACK_IMPORTED_MODULE_5__;
+        }
       }
 
       _createClass(DemoService, [{
@@ -11190,7 +11358,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                     if (this.currMode === 'revision') {
                       meta.feedbacks = elem.feedbacks.map(function (d) {
-                        return new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_5__["Feedback"](d);
+                        return new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_6__["Feedback"](d);
                       });
                       meta.annotation = elem.annotation;
                     }
@@ -11267,7 +11435,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       approved: false,
                       feedbacks: this.data[this.index].feedbacks
                     };
-                    return _context11.abrupt("return", new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_5__["Review"](reviewRaw));
+                    return _context11.abrupt("return", new src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_6__["Review"](reviewRaw));
 
                   case 2:
                   case "end":
@@ -11323,6 +11491,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function srcAppEditDemoDemo_bar_dataJson(module) {
     module.exports = JSON.parse("[{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.4\",\"comment\":\"경계를 수정해주세요.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.encoding\",\"comment\":\"높이가 되어야합니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.unit\",\"comment\":\"소수 단위가 되어야합니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.other\",\"comment\":\"바뀐 인코딩에 맞춰서 Degree값이 모두 바뀌어야 합니다.\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.234,0.293,0.297,0.798],\"label\":\"object\"},{\"bound\":[0.504,0.306,0.567,0.798],\"label\":\"object\"},{\"bound\":[0.433,0.281,0.496,0.798],\"label\":\"object\"},{\"bound\":[0.703,0.293,0.766,0.798],\"label\":\"object\"},{\"bound\":[0.64,0.306,0.703,0.798],\"label\":\"object\"},{\"bound\":[0.297,0.437,0.36,0.798],\"label\":\"object\"},{\"bound\":[0.567,0.241,0.63,0.798],\"label\":\"object\"},{\"bound\":[0.369,0.229,0.433,0.798],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.396,0.163,0.606,0.204],\"label\":\"title\",\"text\":\"Bar Degree by Fruit\"},{\"bound\":[0.884,0.204,0.952,0.236],\"label\":\"legend-label\",\"text\":\"Female\"},{\"bound\":[0.884,0.242,0.93,0.274],\"label\":\"legend-label\",\"text\":\"Male\"},{\"bound\":[0.15,0.449,0.174,0.563],\"label\":\"y-axis-title\",\"text\":\"Degree\"},{\"bound\":[0.173,0.258,0.194,0.293],\"label\":\"y-axis-label\",\"text\":\"4\"},{\"bound\":[0.176,0.397,0.19,0.423],\"label\":\"y-axis-label\",\"text\":\"3\"},{\"bound\":[0.176,0.528,0.19,0.557],\"label\":\"y-axis-label\",\"text\":\"2\"},{\"bound\":[0.176,0.659,0.188,0.682],\"label\":\"y-axis-label\",\"text\":\"1\"},{\"bound\":[0.17,0.78,0.196,0.817],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.476,0.921,0.526,0.953],\"label\":\"x-axis-title\",\"text\":\"Fruit\"},{\"bound\":[0.286,0.819,0.308,0.898],\"label\":\"x-axis-label\",\"text\":\"apple\"},{\"bound\":[0.42,0.819,0.442,0.921],\"label\":\"x-axis-label\",\"text\":\"banana\"},{\"bound\":[0.558,0.819,0.58,0.901],\"label\":\"x-axis-label\",\"text\":\"grape\"},{\"bound\":[0.694,0.819,0.716,0.915],\"label\":\"x-axis-label\",\"text\":\"orange\"}],\"spec\":{\"title\":\"Bar Degree by Fruit\",\"axis\":[{\"dir\":\"x\",\"title\":\"Fruit\",\"type\":\"nominal\",\"labels\":[\"apple\",\"banana\",\"grape\",\"orange\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Degree\",\"type\":\"quantitative\",\"labels\":[\"4\",\"3\",\"2\",\"1\",\"0\"],\"precision\":1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.01590806343515539,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Female\",\"Male\"],\"encoding\":\"color\"}},\"raw\":[{\"Fruit\":\"apple\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"grape\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"banana\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"orange\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"orange\",\"Degree\":2,\"Unknown Legend\":\"Female\"},{\"Fruit\":\"apple\",\"Degree\":1,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"grape\",\"Degree\":2,\"Unknown Legend\":\"Male\"},{\"Fruit\":\"banana\",\"Degree\":2,\"Unknown Legend\":\"Female\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.16\",\"comment\":\"경계를 확인해주세요.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.other\",\"comment\":\"왼쪽 아래 0에 해당하는 박스 추가\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.other\",\"comment\":\"두 번째 행에 4번째 박스 추가\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.2,0.368,0.327,0.495],\"label\":\"object\"},{\"bound\":[0.431,0.368,0.54,0.495],\"label\":\"object\"},{\"bound\":[0.461,0.503,0.574,0.63],\"label\":\"object\"},{\"bound\":[0.294,0.638,0.324,0.765],\"label\":\"object\"},{\"bound\":[0.391,0.233,0.51,0.362],\"label\":\"object\"},{\"bound\":[0.51,0.233,0.626,0.362],\"label\":\"object\"},{\"bound\":[0.2,0.503,0.284,0.63],\"label\":\"object\"},{\"bound\":[0.327,0.368,0.431,0.495],\"label\":\"object\"},{\"bound\":[0.2,0.638,0.24,0.765],\"label\":\"object\"},{\"bound\":[0.324,0.638,0.427,0.765],\"label\":\"object\"},{\"bound\":[0.294,0.233,0.391,0.362],\"label\":\"object\"},{\"bound\":[0.284,0.503,0.38,0.63],\"label\":\"object\"},{\"bound\":[0.2,0.233,0.294,0.362],\"label\":\"object\"},{\"bound\":[0.626,0.233,0.734,0.362],\"label\":\"object\"},{\"bound\":[0.24,0.638,0.294,0.765],\"label\":\"object\"},{\"bound\":[0.38,0.503,0.461,0.63],\"label\":\"object\"},{\"bound\":[0.647,0.383,0.761,0.495],\"label\":\"object\"},{\"bound\":[0.574,0.503,0.674,0.63],\"label\":\"object\"},{\"bound\":[0.427,0.638,0.51,0.765],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.406,0.163,0.596,0.204],\"label\":\"title\",\"text\":\"Bar Degree by Fruit\"},{\"bound\":[0.882,0.204,0.954,0.236],\"label\":\"legend-label\",\"text\":\"baseball\"},{\"bound\":[0.882,0.239,0.968,0.271],\"label\":\"legend-label\",\"text\":\"basketball\"},{\"bound\":[0.882,0.274,0.946,0.306],\"label\":\"legend-label\",\"text\":\"football\"},{\"bound\":[0.882,0.312,0.94,0.341],\"label\":\"legend-label\",\"text\":\"soccer\"},{\"bound\":[0.882,0.347,0.936,0.379],\"label\":\"legend-label\",\"text\":\"tennis\"},{\"bound\":[0.104,0.472,0.124,0.536],\"label\":\"y-axis-title\",\"text\":\"Fruit\"},{\"bound\":[0.13,0.286,0.192,0.318],\"label\":\"y-axis-label\",\"text\":\"orange\"},{\"bound\":[0.14,0.423,0.19,0.455],\"label\":\"y-axis-label\",\"text\":\"grape\"},{\"bound\":[0.128,0.554,0.19,0.586],\"label\":\"y-axis-label\",\"text\":\"banana\"},{\"bound\":[0.142,0.691,0.192,0.723],\"label\":\"y-axis-label\",\"text\":\"apple\"},{\"bound\":[0.466,0.846,0.534,0.883],\"label\":\"x-axis-title\",\"text\":\"Degree\"},{\"bound\":[0.346,0.822,0.36,0.843],\"label\":\"x-axis-label\",\"text\":\"5\"},{\"bound\":[0.492,0.813,0.516,0.846],\"label\":\"x-axis-label\",\"text\":\"10\"},{\"bound\":[0.644,0.813,0.67,0.846],\"label\":\"x-axis-label\",\"text\":\"15\"}],\"spec\":{\"title\":\"Bar Degree by Fruit\",\"axis\":[{\"dir\":\"x\",\"title\":\"Degree\",\"type\":\"quantitative\",\"labels\":[\"0\",\"5\",\"10\",\"15\"],\"precision\":1,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.04704553413027688,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Fruit\",\"type\":\"nominal\",\"labels\":[\"orange\",\"grape\",\"banana\",\"apple\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"baseball\",\"basketball\",\"football\",\"soccer\",\"tennis\"],\"encoding\":\"color\"}},\"raw\":[{\"Degree\":4.2,\"Fruit\":\"grape\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.6,\"Fruit\":\"grape\",\"Unknown Legend\":\"football\"},{\"Degree\":3.7,\"Fruit\":\"banana\",\"Unknown Legend\":\"soccer\"},{\"Degree\":1,\"Fruit\":\"apple\",\"Unknown Legend\":\"football\"},{\"Degree\":3.9,\"Fruit\":\"orange\",\"Unknown Legend\":\"football\"},{\"Degree\":3.8,\"Fruit\":\"orange\",\"Unknown Legend\":\"soccer\"},{\"Degree\":2.8,\"Fruit\":\"banana\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.4,\"Fruit\":\"grape\",\"Unknown Legend\":\"basketball\"},{\"Degree\":1.3,\"Fruit\":\"apple\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.4,\"Fruit\":\"apple\",\"Unknown Legend\":\"soccer\"},{\"Degree\":3.2,\"Fruit\":\"orange\",\"Unknown Legend\":\"basketball\"},{\"Degree\":3.2,\"Fruit\":\"banana\",\"Unknown Legend\":\"basketball\"},{\"Degree\":3.1,\"Fruit\":\"orange\",\"Unknown Legend\":\"baseball\"},{\"Degree\":3.6,\"Fruit\":\"orange\",\"Unknown Legend\":\"tennis\"},{\"Degree\":1.8,\"Fruit\":\"apple\",\"Unknown Legend\":\"basketball\"},{\"Degree\":2.7,\"Fruit\":\"banana\",\"Unknown Legend\":\"football\"},{\"Degree\":3.8,\"Fruit\":\"grape\",\"Unknown Legend\":\"tennis\"},{\"Degree\":3.3,\"Fruit\":\"banana\",\"Unknown Legend\":\"tennis\"},{\"Degree\":2.7,\"Fruit\":\"apple\",\"Unknown Legend\":\"tennis\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.1\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.17\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.6\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.labels\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.363,0.397,0.456,0.939],\"label\":\"object\"},{\"bound\":[0.467,0.537,0.561,0.939],\"label\":\"object\"},{\"bound\":[0.571,0.579,0.666,0.939],\"label\":\"object\"},{\"bound\":[0.151,0.096,0.246,0.939],\"label\":\"object\"},{\"bound\":[0.257,0.237,0.35,0.939],\"label\":\"object\"},{\"bound\":[0.677,0.697,0.77,0.939],\"label\":\"object\"},{\"bound\":[0.886,0.84,0.98,0.939],\"label\":\"object\"},{\"bound\":[0.781,0.758,0.874,0.939],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.016,0.027,0.03,0.046],\"label\":\"y-axis-label\",\"text\":\"45\"},{\"bound\":[0.014,0.124,0.038,0.151],\"label\":\"y-axis-label\",\"text\":\"40K\"},{\"bound\":[0.014,0.228,0.032,0.255],\"label\":\"y-axis-label\",\"text\":\"35\"},{\"bound\":[0.014,0.324,0.031,0.355],\"label\":\"y-axis-label\",\"text\":\"30\"},{\"bound\":[0.014,0.429,0.032,0.456],\"label\":\"y-axis-label\",\"text\":\"25\"},{\"bound\":[0.014,0.527,0.031,0.552],\"label\":\"y-axis-label\",\"text\":\"20\"},{\"bound\":[0.014,0.625,0.032,0.652],\"label\":\"y-axis-label\",\"text\":\"15s\"},{\"bound\":[0.016,0.73,0.03,0.753],\"label\":\"y-axis-label\",\"text\":\"10\"},{\"bound\":[0.02,0.834,0.03,0.853],\"label\":\"y-axis-label\",\"text\":\"5\"},{\"bound\":[0.019,0.928,0.031,0.955],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.182,0.958,0.22,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic2\"},{\"bound\":[0.288,0.958,0.322,0.981],\"label\":\"x-axis-label\",\"text\":\"Topic6\"},{\"bound\":[0.394,0.961,0.426,0.981],\"label\":\"x-axis-label\",\"text\":\"Topic7\"},{\"bound\":[0.498,0.958,0.532,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic1\"},{\"bound\":[0.601,0.955,0.636,0.985],\"label\":\"x-axis-label\",\"text\":\"Topic4\"},{\"bound\":[0.708,0.958,0.742,0.988],\"label\":\"x-axis-label\",\"text\":\"Topic3\"},{\"bound\":[0.812,0.958,0.848,0.985],\"label\":\"x-axis-label\",\"text\":\"Topic8\"},{\"bound\":[0.916,0.958,0.952,0.988],\"label\":\"x-axis-label\",\"text\":\"Topics\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Unknown X Axis\",\"type\":\"nominal\",\"labels\":[\"Topic2\",\"Topic6\",\"Topic7\",\"Topic1\",\"Topic4\",\"Topic3\",\"Topic8\",\"Topics\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"quantitative\",\"labels\":[\"45\",\"40K\",\"35\",\"30\",\"25\",\"20\",\"15s\",\"10\",\"5\",\"0\"],\"precision\":1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.1370618667401423,\"encoding\":\"height\"}],\"custom\":[]},\"raw\":[{\"Unknown X Axis\":\"Topic7\",\"Unknown Y Axis\":27},{\"Unknown X Axis\":\"Topic1\",\"Unknown Y Axis\":20},{\"Unknown X Axis\":\"Topic4\",\"Unknown Y Axis\":18},{\"Unknown X Axis\":\"Topic2\",\"Unknown Y Axis\":42},{\"Unknown X Axis\":\"Topic6\",\"Unknown Y Axis\":35},{\"Unknown X Axis\":\"Topic3\",\"Unknown Y Axis\":12},{\"Unknown X Axis\":\"Topics\",\"Unknown Y Axis\":5},{\"Unknown X Axis\":\"Topic8\",\"Unknown Y Axis\":9}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.12\",\"comment\":\"Change the text\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.labels\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.222,0.415,0.261,0.867],\"label\":\"object\"},{\"bound\":[0.53,0.498,0.566,0.868],\"label\":\"object\"},{\"bound\":[0.378,0.448,0.414,0.868],\"label\":\"object\"},{\"bound\":[0.683,0.544,0.722,0.866],\"label\":\"object\"},{\"bound\":[0.338,0.671,0.377,0.869],\"label\":\"object\"},{\"bound\":[0.49,0.741,0.53,0.868],\"label\":\"object\"},{\"bound\":[0.182,0.728,0.222,0.869],\"label\":\"object\"},{\"bound\":[0.302,0.222,0.339,0.868],\"label\":\"object\"},{\"bound\":[0.607,0.443,0.646,0.868],\"label\":\"object\"},{\"bound\":[0.648,0.771,0.684,0.87],\"label\":\"object\"},{\"bound\":[0.455,0.351,0.491,0.867],\"label\":\"object\"},{\"bound\":[0.147,0.253,0.183,0.867],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.028,0.032,0.976,0.115],\"label\":\"title\",\"text\":\"Cigarette Production, Exports, and Domestic Consumption U.S. 1990-2007\"},{\"bound\":[0.799,0.429,0.903,0.458],\"label\":\"legend-label\",\"text\":\"Production\"},{\"bound\":[0.796,0.455,0.865,0.49],\"label\":\"legend-label\",\"text\":\"Export\"},{\"bound\":[0.796,0.49,0.974,0.522],\"label\":\"legend-label\",\"text\":\"Total Consumption\"},{\"bound\":[0.014,0.426,0.035,0.619],\"label\":\"y-axis-title\",\"text\":\"Billion (Pieces)\"},{\"bound\":[0.038,0.16,0.097,0.192],\"label\":\"y-axis-label\",\"text\":\"800.0\"},{\"bound\":[0.038,0.247,0.097,0.279],\"label\":\"y-axis-label\",\"text\":\"700.0\"},{\"bound\":[0.038,0.333,0.097,0.365],\"label\":\"y-axis-label\",\"text\":\"600.0\"},{\"bound\":[0.038,0.42,0.097,0.452],\"label\":\"y-axis-label\",\"text\":\"500.0\"},{\"bound\":[0.038,0.506,0.097,0.538],\"label\":\"y-axis-label\",\"text\":\"400.0\"},{\"bound\":[0.038,0.593,0.097,0.625],\"label\":\"y-axis-label\",\"text\":\"300.0\"},{\"bound\":[0.038,0.679,0.097,0.712],\"label\":\"y-axis-label\",\"text\":\"200.0\"},{\"bound\":[0.035,0.766,0.097,0.798],\"label\":\"y-axis-label\",\"text\":\"-100.0\"},{\"bound\":[0.062,0.859,0.097,0.885],\"label\":\"y-axis-label\",\"text\":\"0.0\"},{\"bound\":[0.175,0.888,0.23,0.917],\"label\":\"x-axis-label\",\"text\":\"1990\"},{\"bound\":[0.332,0.891,0.384,0.917],\"label\":\"x-axis-label\",\"text\":\"1995\"},{\"bound\":[0.486,0.891,0.538,0.917],\"label\":\"x-axis-label\",\"text\":\"2000\"},{\"bound\":[0.64,0.891,0.692,0.917],\"label\":\"x-axis-label\",\"text\":\"2005\"}],\"spec\":{\"title\":\"Cigarette Production, Exports, and Domestic Consumption U.S. 1990-2007\",\"axis\":[{\"dir\":\"x\",\"title\":\"Years\",\"type\":\"nominal\",\"labels\":[\"1990\",\"1995\",\"2000\",\"2005\"],\"precision\":1,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.046233050367179916,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Billion (Pieces)\",\"type\":\"quantitative\",\"labels\":[\"800.0\",\"700.0\",\"600.0\",\"500.0\",\"400.0\",\"300.0\",\"200.0\",\"-100.0\",\"0.0\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":2.2138470580626075,\"encoding\":\"height\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Production\",\"Export\",\"Total Consumption\"],\"encoding\":\"color\"}},\"raw\":[{\"Years\":\"1990\",\"Billion (Pieces)\":520,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"2000\",\"Billion (Pieces)\":430,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"1995\",\"Billion (Pieces)\":480,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"2005\",\"Billion (Pieces)\":370,\"Unknown Legend\":\"Total Consumption\"},{\"Years\":\"1995\",\"Billion (Pieces)\":230,\"Unknown Legend\":\"Export\"},{\"Years\":\"2000\",\"Billion (Pieces)\":150,\"Unknown Legend\":\"Export\"},{\"Years\":\"1990\",\"Billion (Pieces)\":160,\"Unknown Legend\":\"Export\"},{\"Years\":\"1995\",\"Billion (Pieces)\":740,\"Unknown Legend\":\"Production\"},{\"Years\":\"2005\",\"Billion (Pieces)\":490,\"Unknown Legend\":\"Production\"},{\"Years\":\"2005\",\"Billion (Pieces)\":110,\"Unknown Legend\":\"Export\"},{\"Years\":\"2000\",\"Billion (Pieces)\":590,\"Unknown Legend\":\"Production\"},{\"Years\":\"1990\",\"Billion (Pieces)\":700,\"Unknown Legend\":\"Production\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.4\",\"comment\":\"South -> West\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.101,0.08,0.303,0.186],\"label\":\"object\"},{\"bound\":[0.303,0.08,0.584,0.186],\"label\":\"object\"},{\"bound\":[0.584,0.08,0.731,0.186],\"label\":\"object\"},{\"bound\":[0.731,0.08,0.966,0.186],\"label\":\"object\"},{\"bound\":[0.807,0.292,0.966,0.398],\"label\":\"object\"},{\"bound\":[0.597,0.292,0.806,0.398],\"label\":\"object\"},{\"bound\":[0.377,0.292,0.597,0.398],\"label\":\"object\"},{\"bound\":[0.101,0.292,0.377,0.398],\"label\":\"object\"},{\"bound\":[0.101,0.504,0.304,0.61],\"label\":\"object\"},{\"bound\":[0.304,0.504,0.427,0.61],\"label\":\"object\"},{\"bound\":[0.427,0.504,0.61,0.61],\"label\":\"object\"},{\"bound\":[0.61,0.504,0.966,0.61],\"label\":\"object\"},{\"bound\":[0.711,0.716,0.966,0.822],\"label\":\"object\"},{\"bound\":[0.509,0.716,0.711,0.822],\"label\":\"object\"},{\"bound\":[0.407,0.716,0.509,0.822],\"label\":\"object\"},{\"bound\":[0.101,0.716,0.407,0.822],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.334,0.956,0.392,0.989],\"label\":\"legend-label\",\"text\":\"North\"},{\"bound\":[0.43,0.956,0.476,0.989],\"label\":\"legend-label\",\"text\":\"East\"},{\"bound\":[0.512,0.956,0.572,0.989],\"label\":\"legend-label\",\"text\":\"South\"},{\"bound\":[0.612,0.956,0.662,0.989],\"label\":\"legend-label\",\"text\":\"West\"},{\"bound\":[0.018,0.118,0.08,0.151],\"label\":\"y-axis-label\",\"text\":\"brown\"},{\"bound\":[0.024,0.33,0.08,0.36],\"label\":\"y-axis-label\",\"text\":\"black\"},{\"bound\":[0.034,0.547,0.08,0.577],\"label\":\"y-axis-label\",\"text\":\"gray\"},{\"bound\":[0.042,0.753,0.08,0.783],\"label\":\"y-axis-label\",\"text\":\"red\"},{\"bound\":[0.092,0.878,0.112,0.905],\"label\":\"x-axis-label\",\"text\":\"0\"},{\"bound\":[0.258,0.876,0.292,0.909],\"label\":\"x-axis-label\",\"text\":\"0.2\"},{\"bound\":[0.43,0.876,0.466,0.909],\"label\":\"x-axis-label\",\"text\":\"0.4\"},{\"bound\":[0.604,0.876,0.638,0.907],\"label\":\"x-axis-label\",\"text\":\"0.6\"},{\"bound\":[0.776,0.876,0.812,0.909],\"label\":\"x-axis-label\",\"text\":\"0.8\"},{\"bound\":[0.959,0.876,0.976,0.908],\"label\":\"x-axis-label\",\"text\":\"1\"},{\"bound\":[0.172,0.118,0.234,0.151],\"label\":\"mark-label\",\"text\":\"0.23%\"},{\"bound\":[0.412,0.118,0.476,0.151],\"label\":\"mark-label\",\"text\":\"0.33%\"},{\"bound\":[0.63,0.118,0.688,0.151],\"label\":\"mark-label\",\"text\":\"0.17%\"},{\"bound\":[0.818,0.118,0.882,0.151],\"label\":\"mark-label\",\"text\":\"0.27%\"},{\"bound\":[0.208,0.33,0.272,0.36],\"label\":\"mark-label\",\"text\":\"0.32%\"},{\"bound\":[0.456,0.33,0.52,0.36],\"label\":\"mark-label\",\"text\":\"0.25%\"},{\"bound\":[0.672,0.33,0.734,0.36],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.856,0.33,0.918,0.36],\"label\":\"mark-label\",\"text\":\"0.18%\"},{\"bound\":[0.758,0.541,0.82,0.571],\"label\":\"mark-label\",\"text\":\"0.41%\"},{\"bound\":[0.172,0.541,0.236,0.574],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.336,0.541,0.398,0.574],\"label\":\"mark-label\",\"text\":\"0.14%\"},{\"bound\":[0.49,0.541,0.55,0.574],\"label\":\"mark-label\",\"text\":\"0.21%\"},{\"bound\":[0.224,0.751,0.286,0.781],\"label\":\"mark-label\",\"text\":\"0.35%\"},{\"bound\":[0.428,0.753,0.488,0.783],\"label\":\"mark-label\",\"text\":\"0.12%\"},{\"bound\":[0.58,0.753,0.642,0.783],\"label\":\"mark-label\",\"text\":\"0.24%\"},{\"bound\":[0.808,0.753,0.872,0.786],\"label\":\"mark-label\",\"text\":\"0.29%\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Unknown X Axis\",\"type\":\"quantitative\",\"labels\":[\"0\",\"0.2\",\"0.4\",\"0.6\",\"0.8\",\"1\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":true,\"markLabels\":[\"0.23%\",\"0.33%\",\"0.17%\",\"0.27%\",\"0.32%\",\"0.25%\",\"0.24%\",\"0.18%\",\"0.41%\",\"0.24%\",\"0.14%\",\"0.21%\",\"0.35%\",\"0.12%\",\"0.24%\",\"0.29%\"],\"valuePerPixel\":0.0016505757739453662,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"nominal\",\"labels\":[\"brown\",\"black\",\"gray\",\"red\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"North\",\"East\",\"South\",\"West\"],\"encoding\":\"color\"}},\"raw\":[{\"Unknown X Axis\":\"0.23%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.33%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.17%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.27%\",\"Unknown Y Axis\":\"brown\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.18%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.25%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.32%\",\"Unknown Y Axis\":\"black\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"North\"},{\"Unknown X Axis\":\"0.14%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.21%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.41%\",\"Unknown Y Axis\":\"gray\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.29%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"West\"},{\"Unknown X Axis\":\"0.24%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"South\"},{\"Unknown X Axis\":\"0.12%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"East\"},{\"Unknown X Axis\":\"0.35%\",\"Unknown Y Axis\":\"red\",\"Unknown Legend\":\"North\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.1\",\"comment\":\"Refine the bound\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.other\",\"comment\":\"Add a more box\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.unit\",\"comment\":\"Check this value\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.306,0.158,0.436,0.845],\"label\":\"object\"},{\"bound\":[0.777,0.624,0.908,0.843],\"label\":\"object\"},{\"bound\":[0.463,0.508,0.592,0.845],\"label\":\"object\"},{\"bound\":[0.148,0.117,0.278,0.845],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.176,0.042,0.881,0.081],\"label\":\"title\",\"text\":\"UK 2007 Top 5 Food and Agricultural Commodities\"},{\"bound\":[0.006,0.361,0.039,0.609],\"label\":\"y-axis-title\",\"text\":\"Production (1,000 MT)\"},{\"bound\":[0.063,0.081,0.092,0.155],\"label\":\"y-axis-label\",\"text\":\"14000\"},{\"bound\":[0.063,0.185,0.092,0.26],\"label\":\"y-axis-label\",\"text\":\"12000\"},{\"bound\":[0.063,0.29,0.092,0.364],\"label\":\"y-axis-label\",\"text\":\"10000\"},{\"bound\":[0.063,0.397,0.092,0.463],\"label\":\"y-axis-label\",\"text\":\"8000\"},{\"bound\":[0.063,0.501,0.092,0.567],\"label\":\"y-axis-label\",\"text\":\"6000\"},{\"bound\":[0.063,0.606,0.092,0.672],\"label\":\"y-axis-label\",\"text\":\"4000\"},{\"bound\":[0.063,0.71,0.092,0.776],\"label\":\"y-axis-label\",\"text\":\"2000\"},{\"bound\":[0.065,0.837,0.088,0.857],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.464,0.946,0.592,0.979],\"label\":\"x-axis-title\",\"text\":\"Commodity\"},{\"bound\":[0.164,0.89,0.268,0.919],\"label\":\"x-axis-label\",\"text\":\"Cow milk\"},{\"bound\":[0.33,0.89,0.411,0.919],\"label\":\"x-axis-label\",\"text\":\"Wheat\"},{\"bound\":[0.464,0.89,0.592,0.922],\"label\":\"x-axis-label\",\"text\":\"Sugar beet\"},{\"bound\":[0.634,0.887,0.738,0.919],\"label\":\"x-axis-label\",\"text\":\"Potatoes\"},{\"bound\":[0.806,0.887,0.881,0.922],\"label\":\"x-axis-label\",\"text\":\"Barley\"}],\"spec\":{\"title\":\"UK 2007 Top 5 Food and Agricultural Commodities\",\"axis\":[{\"dir\":\"x\",\"title\":\"Commodity\",\"type\":\"nominal\",\"labels\":[\"Cow milk\",\"Wheat\",\"Sugar beet\",\"Potatoes\",\"Barley\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Production (1,000 MT)\",\"type\":\"quantitative\",\"labels\":[\"14000\",\"12000\",\"10000\",\"8000\",\"6000\",\"4000\",\"2000\",\"0\"],\"precision\":-2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":32.00831295947728,\"encoding\":\"height\"}],\"custom\":[]},\"raw\":[{\"Commodity\":\"Wheat\",\"Production (1,000 MT)\":13187.4},{\"Commodity\":\"Barley\",\"Production (1,000 MT)\":4193.1},{\"Commodity\":\"Sugar beet\",\"Production (1,000 MT)\":6465.7},{\"Commodity\":\"Cow milk\",\"Production (1,000 MT)\":13987.6}]}}}]");
+    /***/
+  },
+
+  /***/
+  "./src/app/edit/demo/demo_line_data.json":
+  /*!***********************************************!*\
+    !*** ./src/app/edit/demo/demo_line_data.json ***!
+    \***********************************************/
+
+  /*! exports provided: 0, 1, 2, 3, 4, default */
+
+  /***/
+  function srcAppEditDemoDemo_line_dataJson(module) {
+    module.exports = JSON.parse("[{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.8\",\"comment\":\"Log_(2)(B)\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.0.unit\",\"comment\":\"해당 값을 확인하세요\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.0\",\"comment\":\"텍스트를 변경하세요\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.7\",\"comment\":\"해당 박스를 지워주세요\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.681,0.649,0.697,0.686],\"label\":\"object\"},{\"bound\":[0.237,0.768,0.253,0.805],\"label\":\"object\"},{\"bound\":[0.533,0.716,0.549,0.753],\"label\":\"object\"},{\"bound\":[0.385,0.749,0.401,0.786],\"label\":\"object\"},{\"bound\":[0.827,0.542,0.843,0.578],\"label\":\"object\"},{\"bound\":[0.829,0.506,0.844,0.543],\"label\":\"object\"},{\"bound\":[0.977,0.172,0.992,0.208],\"label\":\"object\"},{\"bound\":[0.118,0.183,0.134,0.219],\"label\":\"object\"},{\"bound\":[0.09,0.774,0.105,0.81],\"label\":\"object\"},{\"bound\":[0.977,0.289,0.992,0.325],\"label\":\"object\"},{\"bound\":[0.68,0.666,0.696,0.703],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.14,0.065,0.352,0.167],\"label\":\"legend-label\",\"text\":\"Our Histogran\"},{\"bound\":[0.137,0.159,0.439,0.261],\"label\":\"legend-label\",\"text\":\"Local Histogram [15]\"},{\"bound\":[0.006,0.268,0.041,0.594],\"label\":\"y-axis-title\",\"text\":\"time (ms)\"},{\"bound\":[0.037,0.007,0.1,0.094],\"label\":\"y-axis-label\",\"text\":\"800\"},{\"bound\":[0.037,0.196,0.1,0.283],\"label\":\"y-axis-label\",\"text\":\"600\"},{\"bound\":[0.041,0.384,0.1,0.471],\"label\":\"y-axis-label\",\"text\":\"400\"},{\"bound\":[0.037,0.573,0.1,0.659],\"label\":\"y-axis-label\",\"text\":\"200\"},{\"bound\":[0.073,0.769,0.095,0.834],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.483,0.884,0.601,1],\"label\":\"x-axis-title\",\"text\":\"Log_2(B)\"},{\"bound\":[0.086,0.819,0.107,0.884],\"label\":\"x-axis-label\",\"text\":\"2\"},{\"bound\":[0.232,0.816,0.257,0.884],\"label\":\"x-axis-label\",\"text\":\"3\"},{\"bound\":[0.381,0.819,0.404,0.881],\"label\":\"x-axis-label\",\"text\":\"4 \"},{\"bound\":[0.53,0.818,0.548,0.877],\"label\":\"x-axis-label\",\"text\":\"5\"},{\"bound\":[0.678,0.816,0.7,0.884],\"label\":\"x-axis-label\",\"text\":\"6 \"},{\"bound\":[0.826,0.816,0.846,0.881],\"label\":\"x-axis-label\",\"text\":\"7 \"},{\"bound\":[0.971,0.814,0.994,0.884],\"label\":\"x-axis-label\",\"text\":\"8\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Log_2(B)\",\"type\":\"quantitative\",\"labels\":[\"2\",\"3\",\"4 \",\"5\",\"6 \",\"7 \",\"8\"],\"precision\":1,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.010532601970378787,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"time (ms)\",\"type\":\"quantitative\",\"labels\":[\"800\",\"600\",\"400\",\"200\",\"0\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":3.8458537174167398,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Our Histogran\",\"Local Histogram [15]\"],\"encoding\":\"color\"}},\"raw\":[{\"Log_2(B)\":6,\"time (ms)\":140,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":3,\"time (ms)\":20,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":5,\"time (ms)\":70,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":4,\"time (ms)\":40,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":7,\"time (ms)\":260,\"Unknown Legend\":\"Our Histogran\"},{\"Log_2(B)\":7,\"time (ms)\":300,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":8,\"time (ms)\":650,\"Unknown Legend\":\"Our Histogran\"},{\"Log_2(B)\":2.2,\"time (ms)\":640,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":2,\"time (ms)\":10,\"Unknown Legend\":\"Local Histogram [15]\"},{\"Log_2(B)\":8,\"time (ms)\":530,\"Unknown Legend\":\"Our Histogran\"},{\"Log_2(B)\":6,\"time (ms)\":120,\"Unknown Legend\":\"Our Histogran\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.other.0\",\"comment\":\"Y축 0이 없습니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.unit\",\"comment\":\"단위를 확인해주세요\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.other.0\",\"comment\":\"Y축 수정한 단위 적용해주세요\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.23,0.416,0.24,0.43],\"label\":\"object\"},{\"bound\":[0.14,0.618,0.15,0.632],\"label\":\"object\"},{\"bound\":[0.14,0.632,0.15,0.646],\"label\":\"object\"},{\"bound\":[0.229,0.632,0.239,0.646],\"label\":\"object\"},{\"bound\":[0.319,0.563,0.329,0.577],\"label\":\"object\"},{\"bound\":[0.317,0.377,0.327,0.391],\"label\":\"object\"},{\"bound\":[0.411,0.598,0.421,0.611],\"label\":\"object\"},{\"bound\":[0.407,0.331,0.417,0.345],\"label\":\"object\"},{\"bound\":[0.494,0.28,0.504,0.294],\"label\":\"object\"},{\"bound\":[0.494,0.545,0.504,0.559],\"label\":\"object\"},{\"bound\":[0.584,0.168,0.594,0.182],\"label\":\"object\"},{\"bound\":[0.581,0.457,0.591,0.471],\"label\":\"object\"},{\"bound\":[0.679,0.455,0.689,0.469],\"label\":\"object\"},{\"bound\":[0.679,0.17,0.689,0.184],\"label\":\"object\"},{\"bound\":[0.763,0.207,0.773,0.221],\"label\":\"object\"},{\"bound\":[0.763,0.441,0.773,0.455],\"label\":\"object\"},{\"bound\":[0.851,0.391,0.861,0.405],\"label\":\"object\"},{\"bound\":[0.85,0.586,0.86,0.6],\"label\":\"object\"},{\"bound\":[0.94,0.31,0.95,0.324],\"label\":\"object\"},{\"bound\":[0.927,0.609,0.937,0.623],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.174,0.005,0.843,0.069],\"label\":\"title\",\"text\":\"Error Reduction Vs Window Size\"},{\"bound\":[0.191,0.774,0.512,0.834],\"label\":\"legend-label\",\"text\":\"Singer-Specific Training\"},{\"bound\":[0.575,0.774,0.96,0.834],\"label\":\"legend-label\",\"text\":\"Non-Singer-Specific Training\"},{\"bound\":[0.003,0.166,0.043,0.774],\"label\":\"y-axis-title\",\"text\":\"Relative Error Reduction\"},{\"bound\":[0.043,0.069,0.09,0.106],\"label\":\"y-axis-label\",\"text\":\"0.25\"},{\"bound\":[0.057,0.23,0.09,0.263],\"label\":\"y-axis-label\",\"text\":\"0.2\"},{\"bound\":[0.043,0.383,0.09,0.419],\"label\":\"y-axis-label\",\"text\":\"0.15\"},{\"bound\":[0.053,0.539,0.09,0.576],\"label\":\"y-axis-label\",\"text\":\"0.1\"},{\"bound\":[0.043,0.691,0.09,0.728],\"label\":\"y-axis-label\",\"text\":\"0.05\"},{\"bound\":[0.338,0.931,0.762,1],\"label\":\"x-axis-title\",\"text\":\"Window Size (seconds)\"},{\"bound\":[0.124,0.889,0.171,0.926],\"label\":\"x-axis-label\",\"text\":\"0.05\"},{\"bound\":[0.217,0.889,0.254,0.926],\"label\":\"x-axis-label\",\"text\":\"0.1\"},{\"bound\":[0.301,0.889,0.348,0.926],\"label\":\"x-axis-label\",\"text\":\"0.15\"},{\"bound\":[0.395,0.889,0.435,0.926],\"label\":\"x-axis-label\",\"text\":\"0.2\"},{\"bound\":[0.478,0.889,0.528,0.926],\"label\":\"x-axis-label\",\"text\":\"0.25\"},{\"bound\":[0.572,0.889,0.612,0.926],\"label\":\"x-axis-label\",\"text\":\"0.3\"},{\"bound\":[0.659,0.889,0.706,0.926],\"label\":\"x-axis-label\",\"text\":\"0.35\"},{\"bound\":[0.752,0.889,0.789,0.926],\"label\":\"x-axis-label\",\"text\":\"0.4\"},{\"bound\":[0.836,0.889,0.886,0.926],\"label\":\"x-axis-label\",\"text\":\"0.45\"},{\"bound\":[0.93,0.889,0.967,0.926],\"label\":\"x-axis-label\",\"text\":\"0.5\"}],\"spec\":{\"title\":\"Error Reduction Vs Window Size\",\"axis\":[{\"dir\":\"x\",\"title\":\"Window Size (seconds)\",\"type\":\"quantitative\",\"labels\":[\"0.05\",\"0.1\",\"0.15\",\"0.2\",\"0.25\",\"0.3\",\"0.35\",\"0.4\",\"0.45\",\"0.5\"],\"precision\":3,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.000938050101118144,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Relative Error Reduction\",\"type\":\"quantitative\",\"labels\":[\"0.25\",\"0.2\",\"0.15\",\"0.1\",\"0.05\"],\"precision\":3,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.0007393828681532837,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Singer-Specific Training\",\"Non-Singer-Specific Training\"],\"encoding\":\"color\"}},\"raw\":[{\"Window Size (seconds)\":0.099,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.049,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.049,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.099,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.149,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.148,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.201,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.199,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.247,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.247,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.298,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.296,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.351,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.351,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.399,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.399,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.448,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.447,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"},{\"Window Size (seconds)\":0.498,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Singer-Specific Training\"},{\"Window Size (seconds)\":0.491,\"Relative Error Reduction\":0,\"Unknown Legend\":\"Non-Singer-Specific Training\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.other.0\",\"comment\":\"0을 확인해주세요.\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.108,0.868,0.12,0.883],\"label\":\"object\"},{\"bound\":[0.108,0.913,0.12,0.928],\"label\":\"object\"},{\"bound\":[0.323,0.906,0.335,0.921],\"label\":\"object\"},{\"bound\":[0.321,0.787,0.333,0.801],\"label\":\"object\"},{\"bound\":[0.527,0.682,0.539,0.697],\"label\":\"object\"},{\"bound\":[0.529,0.893,0.541,0.908],\"label\":\"object\"},{\"bound\":[0.723,0.871,0.735,0.886],\"label\":\"object\"},{\"bound\":[0.721,0.7,0.733,0.715],\"label\":\"object\"},{\"bound\":[0.898,0.216,0.91,0.231],\"label\":\"object\"},{\"bound\":[0.898,0.839,0.91,0.854],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.92,0.07,0.956,0.11],\"label\":\"legend-label\",\"text\":\"H^(0)\"},{\"bound\":[0.919,0.11,0.952,0.144],\"label\":\"legend-label\",\"text\":\"H^(1)\"},{\"bound\":[0.012,0.438,0.032,0.547],\"label\":\"y-axis-title\",\"text\":\"Iterations\"},{\"bound\":[0.032,0.04,0.072,0.075],\"label\":\"y-axis-label\",\"text\":\"25000\"},{\"bound\":[0.044,0.208,0.07,0.246],\"label\":\"y-axis-label\",\"text\":\"20000\"},{\"bound\":[0.036,0.398,0.068,0.418],\"label\":\"y-axis-label\",\"text\":\"15000\"},{\"bound\":[0.05,0.566,0.068,0.593],\"label\":\"y-axis-label\",\"text\":\"10000\"},{\"bound\":[0.036,0.746,0.068,0.771],\"label\":\"y-axis-label\",\"text\":\"5000\"},{\"bound\":[0.498,0.97,0.546,1],\"label\":\"x-axis-title\",\"text\":\"SSD\"},{\"bound\":[0.048,0.925,0.1,0.975],\"label\":\"x-axis-label\",\"text\":\"2000\"},{\"bound\":[0.145,0.94,0.201,0.975],\"label\":\"x-axis-label\",\"text\":\"2500\"},{\"bound\":[0.245,0.94,0.301,0.975],\"label\":\"x-axis-label\",\"text\":\"3000\"},{\"bound\":[0.345,0.94,0.402,0.975],\"label\":\"x-axis-label\",\"text\":\"3500\"},{\"bound\":[0.442,0.94,0.502,0.975],\"label\":\"x-axis-label\",\"text\":\"4000\"},{\"bound\":[0.546,0.94,0.602,0.975],\"label\":\"x-axis-label\",\"text\":\"4500\"},{\"bound\":[0.647,0.94,0.699,0.975],\"label\":\"x-axis-label\",\"text\":\"5000\"},{\"bound\":[0.743,0.94,0.799,0.975],\"label\":\"x-axis-label\",\"text\":\"5500\"},{\"bound\":[0.843,0.94,0.9,0.975],\"label\":\"x-axis-label\",\"text\":\"6000\"},{\"bound\":[0.944,0.94,1,0.975],\"label\":\"x-axis-label\",\"text\":\"6500\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"SSD\",\"type\":\"quantitative\",\"labels\":[\"2000\",\"2500\",\"3000\",\"3500\",\"4000\",\"4500\",\"5000\",\"5500\",\"6000\",\"6500\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":10.043760179906126,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Iterations\",\"type\":\"quantitative\",\"labels\":[\"25000\",\"20000\",\"15000\",\"10000\",\"5000\"],\"precision\":-2,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":70.850070912099,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"H^(0)\",\"H^(1)\"],\"encoding\":\"color\"}},\"raw\":[{\"SSD\":2200,\"Iterations\":1700,\"Unknown Legend\":\"H^(0)\"},{\"SSD\":2200,\"Iterations\":400,\"Unknown Legend\":\"H^(1)\"},{\"SSD\":3280,\"Iterations\":600,\"Unknown Legend\":\"H^(1)\"},{\"SSD\":3270,\"Iterations\":4000,\"Unknown Legend\":\"H^(0)\"},{\"SSD\":4300,\"Iterations\":7000,\"Unknown Legend\":\"H^(0)\"},{\"SSD\":4310,\"Iterations\":900,\"Unknown Legend\":\"H^(1)\"},{\"SSD\":5280,\"Iterations\":1600,\"Unknown Legend\":\"H^(1)\"},{\"SSD\":5270,\"Iterations\":6500,\"Unknown Legend\":\"H^(0)\"},{\"SSD\":6160,\"Iterations\":20300,\"Unknown Legend\":\"H^(0)\"},{\"SSD\":6160,\"Iterations\":2500,\"Unknown Legend\":\"H^(1)\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"mark.other.0\",\"comment\":\"X = 1에 해당하는 부분 마킹\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"spec.axis.1.encoding\",\"comment\":\"Y 위치 입니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.other.0\",\"comment\":\"인코딩 맞춰서 수정해주세요.\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.228,0.04,0.244,0.05],\"label\":\"object\"},{\"bound\":[0.228,0.68,0.244,0.706],\"label\":\"object\"},{\"bound\":[0.31,0.615,0.325,0.641],\"label\":\"object\"},{\"bound\":[0.312,0.649,0.327,0.675],\"label\":\"object\"},{\"bound\":[0.393,0.606,0.409,0.632],\"label\":\"object\"},{\"bound\":[0.393,0.727,0.409,0.753],\"label\":\"object\"},{\"bound\":[0.475,0.714,0.49,0.74],\"label\":\"object\"},{\"bound\":[0.558,0.723,0.574,0.749],\"label\":\"object\"},{\"bound\":[0.723,0.727,0.739,0.753],\"label\":\"object\"},{\"bound\":[0.807,0.723,0.822,0.749],\"label\":\"object\"},{\"bound\":[0.807,0.753,0.822,0.779],\"label\":\"object\"},{\"bound\":[0.888,0.749,0.904,0.775],\"label\":\"object\"},{\"bound\":[0.31,0.753,0.325,0.779],\"label\":\"object\"},{\"bound\":[0.475,0.753,0.49,0.779],\"label\":\"object\"},{\"bound\":[0.64,0.758,0.655,0.784],\"label\":\"object\"},{\"bound\":[0.165,0.755,0.18,0.781],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.67,0.209,0.848,0.304],\"label\":\"legend-label\",\"text\":\"Detector\"},{\"bound\":[0.67,0.296,0.848,0.383],\"label\":\"legend-label\",\"text\":\"Random\"},{\"bound\":[0.005,0.261,0.056,0.583],\"label\":\"y-axis-title\",\"text\":\"precision\"},{\"bound\":[0.117,0.009,0.147,0.087],\"label\":\"y-axis-label\",\"text\":\"1\"},{\"bound\":[0.081,0.391,0.152,0.461],\"label\":\"y-axis-label\",\"text\":\"0.5\"},{\"bound\":[0.114,0.749,0.147,0.823],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.502,0.93,0.619,1],\"label\":\"x-axis-title\",\"text\":\"recall\"},{\"bound\":[0.14,0.818,0.17,0.883],\"label\":\"x-axis-label\",\"text\":\"0\"},{\"bound\":[0.284,0.814,0.355,0.887],\"label\":\"x-axis-label\",\"text\":\"0.2\"},{\"bound\":[0.449,0.81,0.518,0.887],\"label\":\"x-axis-label\",\"text\":\"0.4\"},{\"bound\":[0.613,0.813,0.68,0.887],\"label\":\"x-axis-label\",\"text\":\"0.6\"},{\"bound\":[0.777,0.812,0.853,0.896],\"label\":\"x-axis-label\",\"text\":\"0.8\"},{\"bound\":[0.959,0.814,0.995,0.883],\"label\":\"x-axis-label\",\"text\":\"1\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"recall\",\"type\":\"quantitative\",\"labels\":[\"0\",\"0.2\",\"0.4\",\"0.6\",\"0.8\",\"1\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.00308823505212683,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"precision\",\"type\":\"quantitative\",\"labels\":[\"1\",\"0.5\",\"0\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.005869351107446345,\"encoding\":\"height\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Detector\",\"Random\"],\"encoding\":\"color\"}},\"raw\":[{\"recall\":0.1,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.1,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.2,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.2,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.3,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.3,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.4,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.5,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.7,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.8,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.8,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.9,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.2,\"precision\":0.04,\"Unknown Legend\":\"Random\"},{\"recall\":0.4,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.6,\"precision\":0.04,\"Unknown Legend\":\"Detector\"},{\"recall\":0.02,\"precision\":0.04,\"Unknown Legend\":\"Detector\"}]}}},{\"feedbacks\":[{\"taskKey\":\"key_0\",\"annotationKey\":\"text.other.0\",\"comment\":\"Y축 700이 비었습니다.\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"text.28\",\"comment\":\"박스의 경계를 확인하세요\"},{\"taskKey\":\"key_0\",\"annotationKey\":\"raw.0\",\"comment\":\"해당 행을 확인하세요\"}],\"annotation\":{\"key_0\":{\"marks\":[{\"bound\":[0.092,0.893,0.117,0.926],\"label\":\"object\"},{\"bound\":[0.114,0.9,0.127,0.917],\"label\":\"object\"},{\"bound\":[0.132,0.898,0.145,0.915],\"label\":\"object\"},{\"bound\":[0.145,0.9,0.158,0.917],\"label\":\"object\"},{\"bound\":[0.205,0.888,0.217,0.904],\"label\":\"object\"},{\"bound\":[0.261,0.854,0.274,0.871],\"label\":\"object\"},{\"bound\":[0.32,0.8,0.333,0.817],\"label\":\"object\"},{\"bound\":[0.378,0.73,0.391,0.746],\"label\":\"object\"},{\"bound\":[0.436,0.609,0.449,0.626],\"label\":\"object\"},{\"bound\":[0.494,0.505,0.507,0.522],\"label\":\"object\"},{\"bound\":[0.554,0.331,0.567,0.347],\"label\":\"object\"},{\"bound\":[0.262,0.897,0.275,0.913],\"label\":\"object\"},{\"bound\":[0.32,0.888,0.333,0.904],\"label\":\"object\"},{\"bound\":[0.378,0.873,0.391,0.89],\"label\":\"object\"},{\"bound\":[0.435,0.852,0.448,0.869],\"label\":\"object\"},{\"bound\":[0.494,0.817,0.507,0.834],\"label\":\"object\"},{\"bound\":[0.554,0.784,0.567,0.8],\"label\":\"object\"},{\"bound\":[0.612,0.73,0.625,0.746],\"label\":\"object\"},{\"bound\":[0.67,0.686,0.683,0.703],\"label\":\"object\"},{\"bound\":[0.728,0.62,0.741,0.636],\"label\":\"object\"},{\"bound\":[0.786,0.516,0.799,0.532],\"label\":\"object\"},{\"bound\":[0.844,0.441,0.857,0.457],\"label\":\"object\"},{\"bound\":[0.902,0.295,0.915,0.312],\"label\":\"object\"},{\"bound\":[0.961,0.173,0.974,0.189],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.181,0.037,0.235,0.079],\"label\":\"legend-label\",\"text\":\"LIDE\"},{\"bound\":[0.184,0.083,0.219,0.121],\"label\":\"legend-label\",\"text\":\"BP\"},{\"bound\":[0.003,0.329,0.032,0.617],\"label\":\"y-axis-title\",\"text\":\"Running time (seconds)\"},{\"bound\":[0.039,0.004,0.09,0.037],\"label\":\"y-axis-label\",\"text\":\"1000\"},{\"bound\":[0.048,0.092,0.09,0.125],\"label\":\"y-axis-label\",\"text\":\"900\"},{\"bound\":[0.048,0.179,0.09,0.212],\"label\":\"y-axis-label\",\"text\":\"800\"},{\"bound\":[0.045,0.35,0.09,0.392],\"label\":\"y-axis-label\",\"text\":\"600\"},{\"bound\":[0.045,0.442,0.09,0.483],\"label\":\"y-axis-label\",\"text\":\"500\"},{\"bound\":[0.042,0.533,0.09,0.575],\"label\":\"y-axis-label\",\"text\":\"400\"},{\"bound\":[0.048,0.625,0.09,0.662],\"label\":\"y-axis-label\",\"text\":\"300\"},{\"bound\":[0.045,0.708,0.09,0.75],\"label\":\"y-axis-label\",\"text\":\"200\"},{\"bound\":[0.045,0.8,0.09,0.838],\"label\":\"y-axis-label\",\"text\":\"100\"},{\"bound\":[0.069,0.894,0.089,0.923],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.132,0.912,0.174,0.95],\"label\":\"x-axis-title\",\"text\":\"100\"},{\"bound\":[0.435,0.958,0.616,0.996],\"label\":\"x-axis-title\",\"text\":\"Number of persons\"},{\"bound\":[0.094,0.916,0.113,0.942],\"label\":\"x-axis-label\",\"text\":\"0\"},{\"bound\":[0.186,0.907,0.234,0.949],\"label\":\"x-axis-label\",\"text\":\"200\"},{\"bound\":[0.245,0.917,0.293,0.95],\"label\":\"x-axis-label\",\"text\":\"300\"},{\"bound\":[0.303,0.912,0.347,0.95],\"label\":\"x-axis-label\",\"text\":\"400\"},{\"bound\":[0.362,0.913,0.404,0.948],\"label\":\"x-axis-label\",\"text\":\"500\"},{\"bound\":[0.419,0.911,0.467,0.95],\"label\":\"x-axis-label\",\"text\":\"600\"},{\"bound\":[0.481,0.911,0.52,0.944],\"label\":\"x-axis-label\",\"text\":\"700\"},{\"bound\":[0.535,0.908,0.584,0.95],\"label\":\"x-axis-label\",\"text\":\"800\"},{\"bound\":[0.596,0.913,0.638,0.948],\"label\":\"x-axis-label\",\"text\":\"900\"},{\"bound\":[0.648,0.911,0.705,0.955],\"label\":\"x-axis-label\",\"text\":\"1000\"},{\"bound\":[0.712,0.911,0.763,0.951],\"label\":\"x-axis-label\",\"text\":\"1100\"},{\"bound\":[0.771,0.913,0.821,0.948],\"label\":\"x-axis-label\",\"text\":\"1200\"},{\"bound\":[0.823,0.908,0.884,0.95],\"label\":\"x-axis-label\",\"text\":\"1300\"},{\"bound\":[0.872,0.91,0.942,0.95],\"label\":\"x-axis-label\",\"text\":\"1400\"},{\"bound\":[0.943,0.91,1,0.95],\"label\":\"x-axis-label\",\"text\":\"1500\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Number of persons\",\"type\":\"quantitative\",\"labels\":[\"0\",\"100\",\"200\",\"300\",\"400\",\"500\",\"600\",\"700\",\"800\",\"900\",\"1000\",\"1100\",\"1200\",\"1300\",\"1400\",\"1500\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":2.7888944197163332,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Running time (seconds)\",\"type\":\"quantitative\",\"labels\":[\"1000\",\"900\",\"800\",\"700\",\"600\",\"500\",\"400\",\"300\",\"200\",\"100\",\"0\"],\"precision\":-1,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":2.3425408843507367,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"LIDE\",\"BP\"],\"encoding\":\"color\"}},\"raw\":[{\"Number of persons\":2,\"Running time (seconds)\":-1,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":30,\"Running time (seconds)\":0,\"Unknown Legend\":\"BP\"},{\"Number of persons\":60,\"Running time (seconds)\":2,\"Unknown Legend\":\"BP\"},{\"Number of persons\":80,\"Running time (seconds)\":0,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":190,\"Running time (seconds)\":10,\"Unknown Legend\":\"BP\"},{\"Number of persons\":280,\"Running time (seconds)\":50,\"Unknown Legend\":\"BP\"},{\"Number of persons\":390,\"Running time (seconds)\":110,\"Unknown Legend\":\"BP\"},{\"Number of persons\":490,\"Running time (seconds)\":190,\"Unknown Legend\":\"BP\"},{\"Number of persons\":590,\"Running time (seconds)\":330,\"Unknown Legend\":\"BP\"},{\"Number of persons\":690,\"Running time (seconds)\":440,\"Unknown Legend\":\"BP\"},{\"Number of persons\":790,\"Running time (seconds)\":640,\"Unknown Legend\":\"BP\"},{\"Number of persons\":290,\"Running time (seconds)\":4,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":390,\"Running time (seconds)\":10,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":490,\"Running time (seconds)\":30,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":580,\"Running time (seconds)\":50,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":690,\"Running time (seconds)\":90,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":790,\"Running time (seconds)\":130,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":890,\"Running time (seconds)\":190,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":990,\"Running time (seconds)\":240,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":1090,\"Running time (seconds)\":320,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":1190,\"Running time (seconds)\":430,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":1290,\"Running time (seconds)\":520,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":1390,\"Running time (seconds)\":680,\"Unknown Legend\":\"LIDE\"},{\"Number of persons\":1490,\"Running time (seconds)\":820,\"Unknown Legend\":\"BP\"}]}}}]");
     /***/
   },
 
@@ -11875,7 +12057,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n::ng-deep .handle {\n  cursor: crosshair;\n}\n\n::ng-deep .mark {\n  stroke-width: 2px;\n  stroke: red;\n  fill-opacity: 0;\n}\n\n::ng-deep .mark.handle {\n  fill: darkorange;\n  stroke: darkorange;\n  fill-opacity: 1;\n}\n\n::ng-deep .text.focused {\n  stroke: #216141 !important;\n  stroke-width: 4px !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .text.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n::ng-deep .text {\n  stroke-width: 2px;\n  stroke: #3f51b5;\n  fill-opacity: 0;\n}\n\n::ng-deep .text.handle {\n  fill: #4040ff;\n  stroke: #4040ff;\n  fill-opacity: 1;\n}\n\n::ng-deep .mark.focused {\n  stroke: #216141 !important;\n  stroke-width: 4px !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .mark.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.w-15 {\n  width: 15% !important;\n}\n\n.w-10 {\n  width: 10% !important;\n}\n\n.focused {\n  background-color: rgba(51, 153, 102, 0.3);\n}\n\n.label-select {\n  padding-left: 5px;\n  width: 100%;\n  border-radius: 4px;\n  border: 1px solid #aaa;\n}\n\n.table {\n  max-height: 400px;\n  overflow-y: scroll;\n}\n\n.focus-box {\n  cursor: pointer;\n}\n\n.focus-box:not(.focused):hover {\n  background-color: #EEE;\n}\n\n.focus-box span {\n  pointer-events: none;\n}\n\n.close-button {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC1tb2R1bGUuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LW1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURJSTtFQUNJLGlCQUFBO0FDRFI7O0FESUk7RUFDSSxpQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FDRlI7O0FESVE7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ0ZaOztBRE1JO0VBQ0ksMEJBQUE7RUFDQSw0QkFBQTtFQUNBLHdDQUFBO0FDSlI7O0FETVE7RUFDSSx3QkFBQTtFQUNBLDBCQUFBO0VBQ0EsMEJBQUE7QUNKWjs7QURRSTtFQUNJLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7QUNOUjs7QURRUTtFQUNJLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQ05aOztBRFVJO0VBQ0ksMEJBQUE7RUFDQSw0QkFBQTtFQUNBLHdDQUFBO0FDUlI7O0FEVVE7RUFDSSx3QkFBQTtFQUNBLDBCQUFBO0VBQ0EsMEJBQUE7QUNSWjs7QURhQTtFQUNJLHFCQUFBO0FDVko7O0FEYUE7RUFDSSxxQkFBQTtBQ1ZKOztBRGFBO0VBQ0kscUJBQUE7QUNWSjs7QURhQTtFQUNJLHlDQUFBO0FDVko7O0FEYUE7RUFDSSxpQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0FDVko7O0FEYUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FDVko7O0FEYUE7RUFNSSxlQUFBO0FDZko7O0FEV0k7RUFDSSxzQkFBQTtBQ1RSOztBRGNJO0VBQ0ksb0JBQUE7QUNaUjs7QURnQkE7RUFDSSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0FDYkoiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2VkaXQtbW9kdWxlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCB7XHJcblxyXG4gICAgLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hcmsge1xyXG4gICAgICAgIHN0cm9rZS13aWR0aDogMnB4O1xyXG4gICAgICAgIHN0cm9rZTogcmVkO1xyXG4gICAgICAgIGZpbGwtb3BhY2l0eTogMDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiBkYXJrb3JhbmdlO1xyXG4gICAgICAgICAgICBzdHJva2U6IGRhcmtvcmFuZ2U7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnRleHQuZm9jdXNlZCB7XHJcbiAgICAgICAgc3Ryb2tlOiAjMjE2MTQxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgc3Ryb2tlLXdpZHRoOiA0cHggIWltcG9ydGFudDtcclxuICAgICAgICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xyXG5cclxuICAgICAgICAmLmhhbmRsZSB7XHJcbiAgICAgICAgICAgIGZpbGw6IHJnYig1MSwgMTUzLCAxMDIpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIHN0cm9rZTogcmdiKDUxLCAxNTMsIDEwMikgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC50ZXh0IHtcclxuICAgICAgICBzdHJva2Utd2lkdGg6IDJweDtcclxuICAgICAgICBzdHJva2U6ICMzZjUxYjU7XHJcbiAgICAgICAgZmlsbC1vcGFjaXR5OiAwO1xyXG5cclxuICAgICAgICAmLmhhbmRsZSB7XHJcbiAgICAgICAgICAgIGZpbGw6ICM0MDQwZmY7XHJcbiAgICAgICAgICAgIHN0cm9rZTogIzQwNDBmZjtcclxuICAgICAgICAgICAgZmlsbC1vcGFjaXR5OiAxO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWFyay5mb2N1c2VkIHtcclxuICAgICAgICBzdHJva2U6ICMyMTYxNDEgIWltcG9ydGFudDtcclxuICAgICAgICBzdHJva2Utd2lkdGg6IDRweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIGZpbGw6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjMpICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgICAgICYuaGFuZGxlIHtcclxuICAgICAgICAgICAgZmlsbDogcmdiKDUxLCAxNTMsIDEwMikgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgc3Ryb2tlOiByZ2IoNTEsIDE1MywgMTAyKSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBmaWxsLW9wYWNpdHk6IDEgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuXHJcbi53LTIwIHtcclxuICAgIHdpZHRoOiAyMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnctMTUge1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4udy0xMCB7XHJcbiAgICB3aWR0aDogMTAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5mb2N1c2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjMpO1xyXG59XHJcblxyXG4ubGFiZWwtc2VsZWN0IHtcclxuICAgIHBhZGRpbmctbGVmdDogNXB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYWFhO1xyXG59XHJcblxyXG4udGFibGUge1xyXG4gICAgbWF4LWhlaWdodDogNDAwcHg7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbn1cclxuXHJcbi5mb2N1cy1ib3gge1xyXG5cclxuICAgICY6bm90KC5mb2N1c2VkKTpob3ZlciB7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0VFRTtcclxuICAgIH1cclxuXHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcblxyXG4gICAgc3BhbiB7XHJcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5jbG9zZS1idXR0b24ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIHRvcDogMHB4O1xyXG59XHJcblxyXG4iLCIudmFsaWRhdGUtZmVlZGJhY2sge1xuICBjb2xvcjogI2Y0NDMzNjtcbiAgZm9udC1zaXplOiAxMnB4O1xufVxuXG46Om5nLWRlZXAgLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIC5tYXJrIHtcbiAgc3Ryb2tlLXdpZHRoOiAycHg7XG4gIHN0cm9rZTogcmVkO1xuICBmaWxsLW9wYWNpdHk6IDA7XG59XG46Om5nLWRlZXAgLm1hcmsuaGFuZGxlIHtcbiAgZmlsbDogZGFya29yYW5nZTtcbiAgc3Ryb2tlOiBkYXJrb3JhbmdlO1xuICBmaWxsLW9wYWNpdHk6IDE7XG59XG46Om5nLWRlZXAgLnRleHQuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MSAhaW1wb3J0YW50O1xuICBzdHJva2Utd2lkdGg6IDRweCAhaW1wb3J0YW50O1xuICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xufVxuOjpuZy1kZWVwIC50ZXh0LmZvY3VzZWQuaGFuZGxlIHtcbiAgZmlsbDogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBzdHJva2U6ICMzMzk5NjYgIWltcG9ydGFudDtcbiAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG46Om5nLWRlZXAgLnRleHQge1xuICBzdHJva2Utd2lkdGg6IDJweDtcbiAgc3Ryb2tlOiAjM2Y1MWI1O1xuICBmaWxsLW9wYWNpdHk6IDA7XG59XG46Om5nLWRlZXAgLnRleHQuaGFuZGxlIHtcbiAgZmlsbDogIzQwNDBmZjtcbiAgc3Ryb2tlOiAjNDA0MGZmO1xuICBmaWxsLW9wYWNpdHk6IDE7XG59XG46Om5nLWRlZXAgLm1hcmsuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MSAhaW1wb3J0YW50O1xuICBzdHJva2Utd2lkdGg6IDRweCAhaW1wb3J0YW50O1xuICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xufVxuOjpuZy1kZWVwIC5tYXJrLmZvY3VzZWQuaGFuZGxlIHtcbiAgZmlsbDogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBzdHJva2U6ICMzMzk5NjYgIWltcG9ydGFudDtcbiAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG5cbi53LTIwIHtcbiAgd2lkdGg6IDIwJSAhaW1wb3J0YW50O1xufVxuXG4udy0xNSB7XG4gIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcbn1cblxuLnctMTAge1xuICB3aWR0aDogMTAlICFpbXBvcnRhbnQ7XG59XG5cbi5mb2N1c2VkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSg1MSwgMTUzLCAxMDIsIDAuMyk7XG59XG5cbi5sYWJlbC1zZWxlY3Qge1xuICBwYWRkaW5nLWxlZnQ6IDVweDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2FhYTtcbn1cblxuLnRhYmxlIHtcbiAgbWF4LWhlaWdodDogNDAwcHg7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cblxuLmZvY3VzLWJveCB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5mb2N1cy1ib3g6bm90KC5mb2N1c2VkKTpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XG59XG4uZm9jdXMtYm94IHNwYW4ge1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuLmNsb3NlLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgcmlnaHQ6IDBweDtcbiAgdG9wOiAwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = ".validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n::ng-deep .handle {\n  cursor: crosshair;\n}\n\n::ng-deep .mark {\n  stroke: red;\n  fill-opacity: 0;\n}\n\n::ng-deep .mark.handle {\n  fill: darkorange;\n  stroke: darkorange;\n  fill-opacity: 1;\n}\n\n::ng-deep .text.focused {\n  stroke: #216141 !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .text.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n::ng-deep .text {\n  stroke: #3f51b5;\n  fill-opacity: 0;\n}\n\n::ng-deep .text.handle {\n  fill: #4040ff;\n  stroke: #4040ff;\n  fill-opacity: 1;\n}\n\n::ng-deep .mark.focused {\n  stroke: #216141 !important;\n  fill: rgba(51, 153, 102, 0.3) !important;\n}\n\n::ng-deep .mark.focused.handle {\n  fill: #339966 !important;\n  stroke: #339966 !important;\n  fill-opacity: 1 !important;\n}\n\n::ng-deep circle.mark.focused:not(.handle) {\n  stroke-opacity: 0.7 !important;\n}\n\n.w-20 {\n  width: 20% !important;\n}\n\n.w-15 {\n  width: 15% !important;\n}\n\n.w-10 {\n  width: 10% !important;\n}\n\n.focused {\n  background-color: rgba(51, 153, 102, 0.3);\n}\n\n.label-select {\n  padding-left: 5px;\n  width: 100%;\n  border-radius: 4px;\n  border: 1px solid #aaa;\n}\n\n.table {\n  max-height: 400px;\n  overflow-y: scroll;\n}\n\n.focus-box {\n  cursor: pointer;\n}\n\n.focus-box:not(.focused):hover {\n  background-color: #EEE;\n}\n\n.focus-box span {\n  pointer-events: none;\n}\n\n.close-button {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC1tb2R1bGUuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LW1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNDSjs7QURJSTtFQUNJLGlCQUFBO0FDRFI7O0FESUk7RUFDSSxXQUFBO0VBQ0EsZUFBQTtBQ0ZSOztBRElRO0VBQ0ksZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNGWjs7QURNSTtFQUNJLDBCQUFBO0VBQ0Esd0NBQUE7QUNKUjs7QURNUTtFQUNJLHdCQUFBO0VBQ0EsMEJBQUE7RUFDQSwwQkFBQTtBQ0paOztBRFFJO0VBQ0ksZUFBQTtFQUNBLGVBQUE7QUNOUjs7QURRUTtFQUNJLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQ05aOztBRFVJO0VBQ0ksMEJBQUE7RUFDQSx3Q0FBQTtBQ1JSOztBRFVRO0VBQ0ksd0JBQUE7RUFDQSwwQkFBQTtFQUNBLDBCQUFBO0FDUlo7O0FEWUk7RUFDSSw4QkFBQTtBQ1ZSOztBRGNBO0VBQ0kscUJBQUE7QUNYSjs7QURjQTtFQUNJLHFCQUFBO0FDWEo7O0FEY0E7RUFDSSxxQkFBQTtBQ1hKOztBRGNBO0VBQ0kseUNBQUE7QUNYSjs7QURjQTtFQUNJLGlCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0Esc0JBQUE7QUNYSjs7QURjQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7QUNYSjs7QURjQTtFQU1JLGVBQUE7QUNoQko7O0FEWUk7RUFDSSxzQkFBQTtBQ1ZSOztBRGVJO0VBQ0ksb0JBQUE7QUNiUjs7QURpQkE7RUFDSSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxRQUFBO0FDZEoiLCJmaWxlIjoic3JjL2FwcC9lZGl0L2VkaXQtbW9kdWxlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCB7XHJcblxyXG4gICAgLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hcmsge1xyXG4gICAgICAgIHN0cm9rZTogcmVkO1xyXG4gICAgICAgIGZpbGwtb3BhY2l0eTogMDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiBkYXJrb3JhbmdlO1xyXG4gICAgICAgICAgICBzdHJva2U6IGRhcmtvcmFuZ2U7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnRleHQuZm9jdXNlZCB7XHJcbiAgICAgICAgc3Ryb2tlOiAjMjE2MTQxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgZmlsbDogcmdiYSg1MSwgMTUzLCAxMDIsIDAuMykgIWltcG9ydGFudDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiByZ2IoNTEsIDE1MywgMTAyKSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBzdHJva2U6IHJnYig1MSwgMTUzLCAxMDIpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMSAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAudGV4dCB7XHJcbiAgICAgICAgc3Ryb2tlOiAjM2Y1MWI1O1xyXG4gICAgICAgIGZpbGwtb3BhY2l0eTogMDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiAjNDA0MGZmO1xyXG4gICAgICAgICAgICBzdHJva2U6ICM0MDQwZmY7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLm1hcmsuZm9jdXNlZCB7XHJcbiAgICAgICAgc3Ryb2tlOiAjMjE2MTQxICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgZmlsbDogcmdiYSg1MSwgMTUzLCAxMDIsIDAuMykgIWltcG9ydGFudDtcclxuXHJcbiAgICAgICAgJi5oYW5kbGUge1xyXG4gICAgICAgICAgICBmaWxsOiByZ2IoNTEsIDE1MywgMTAyKSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBzdHJva2U6IHJnYig1MSwgMTUzLCAxMDIpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIGZpbGwtb3BhY2l0eTogMSAhaW1wb3J0YW50O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICBjaXJjbGUubWFyay5mb2N1c2VkOm5vdCguaGFuZGxlKSB7XHJcbiAgICAgICAgc3Ryb2tlLW9wYWNpdHk6IDAuNyAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4udy0yMCB7XHJcbiAgICB3aWR0aDogMjAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi53LTE1IHtcclxuICAgIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLnctMTAge1xyXG4gICAgd2lkdGg6IDEwJSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZm9jdXNlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKTtcclxufVxyXG5cclxuLmxhYmVsLXNlbGVjdCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDVweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2FhYTtcclxufVxyXG5cclxuLnRhYmxlIHtcclxuICAgIG1heC1oZWlnaHQ6IDQwMHB4O1xyXG4gICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG59XHJcblxyXG4uZm9jdXMtYm94IHtcclxuXHJcbiAgICAmOm5vdCguZm9jdXNlZCk6aG92ZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XHJcbiAgICB9XHJcblxyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG5cclxuICAgIHNwYW4ge1xyXG4gICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgfVxyXG59XHJcblxyXG4uY2xvc2UtYnV0dG9uIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICB0b3A6IDBweDtcclxufVxyXG5cclxuIiwiLnZhbGlkYXRlLWZlZWRiYWNrIHtcbiAgY29sb3I6ICNmNDQzMzY7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cblxuOjpuZy1kZWVwIC5oYW5kbGUge1xuICBjdXJzb3I6IGNyb3NzaGFpcjtcbn1cbjo6bmctZGVlcCAubWFyayB7XG4gIHN0cm9rZTogcmVkO1xuICBmaWxsLW9wYWNpdHk6IDA7XG59XG46Om5nLWRlZXAgLm1hcmsuaGFuZGxlIHtcbiAgZmlsbDogZGFya29yYW5nZTtcbiAgc3Ryb2tlOiBkYXJrb3JhbmdlO1xuICBmaWxsLW9wYWNpdHk6IDE7XG59XG46Om5nLWRlZXAgLnRleHQuZm9jdXNlZCB7XG4gIHN0cm9rZTogIzIxNjE0MSAhaW1wb3J0YW50O1xuICBmaWxsOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKSAhaW1wb3J0YW50O1xufVxuOjpuZy1kZWVwIC50ZXh0LmZvY3VzZWQuaGFuZGxlIHtcbiAgZmlsbDogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBzdHJva2U6ICMzMzk5NjYgIWltcG9ydGFudDtcbiAgZmlsbC1vcGFjaXR5OiAxICFpbXBvcnRhbnQ7XG59XG46Om5nLWRlZXAgLnRleHQge1xuICBzdHJva2U6ICMzZjUxYjU7XG4gIGZpbGwtb3BhY2l0eTogMDtcbn1cbjo6bmctZGVlcCAudGV4dC5oYW5kbGUge1xuICBmaWxsOiAjNDA0MGZmO1xuICBzdHJva2U6ICM0MDQwZmY7XG4gIGZpbGwtb3BhY2l0eTogMTtcbn1cbjo6bmctZGVlcCAubWFyay5mb2N1c2VkIHtcbiAgc3Ryb2tlOiAjMjE2MTQxICFpbXBvcnRhbnQ7XG4gIGZpbGw6IHJnYmEoNTEsIDE1MywgMTAyLCAwLjMpICFpbXBvcnRhbnQ7XG59XG46Om5nLWRlZXAgLm1hcmsuZm9jdXNlZC5oYW5kbGUge1xuICBmaWxsOiAjMzM5OTY2ICFpbXBvcnRhbnQ7XG4gIHN0cm9rZTogIzMzOTk2NiAhaW1wb3J0YW50O1xuICBmaWxsLW9wYWNpdHk6IDEgIWltcG9ydGFudDtcbn1cbjo6bmctZGVlcCBjaXJjbGUubWFyay5mb2N1c2VkOm5vdCguaGFuZGxlKSB7XG4gIHN0cm9rZS1vcGFjaXR5OiAwLjcgIWltcG9ydGFudDtcbn1cblxuLnctMjAge1xuICB3aWR0aDogMjAlICFpbXBvcnRhbnQ7XG59XG5cbi53LTE1IHtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG4udy0xMCB7XG4gIHdpZHRoOiAxMCUgIWltcG9ydGFudDtcbn1cblxuLmZvY3VzZWQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDUxLCAxNTMsIDEwMiwgMC4zKTtcbn1cblxuLmxhYmVsLXNlbGVjdCB7XG4gIHBhZGRpbmctbGVmdDogNXB4O1xuICB3aWR0aDogMTAwJTtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjYWFhO1xufVxuXG4udGFibGUge1xuICBtYXgtaGVpZ2h0OiA0MDBweDtcbiAgb3ZlcmZsb3cteTogc2Nyb2xsO1xufVxuXG4uZm9jdXMtYm94IHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmZvY3VzLWJveDpub3QoLmZvY3VzZWQpOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0VFRTtcbn1cbi5mb2N1cy1ib3ggc3BhbiB7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufVxuXG4uY2xvc2UtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMHB4O1xuICB0b3A6IDBweDtcbn0iXX0= */";
     /***/
   },
 
@@ -11895,7 +12077,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n.image-region {\n  max-width: 95%;\n}\n\nimg {\n  max-width: 100%;\n  max-height: 600px;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBREVBO0VBQ0ksY0FBQTtBQ0NKOztBREVBO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0VBQ0Esc0JBQUE7S0FBQSxtQkFBQTtBQ0NKOztBREdJO0VBQ0ksaUJBQUE7QUNBUjs7QURHSTtFQUNJLG9CQUFBO0VBQUEsWUFBQTtBQ0RSOztBRElJO0VBQ0ksZUFBQTtBQ0ZSOztBRE1BO0VBQ0ksYUFBQTtBQ0hKOztBRE1BO0VBQ0ksYUFBQTtBQ0hKOztBRE1BO0VBQ0ksNEJBQUE7RUFDQSxxQkFBQTtBQ0hKOztBRE1BO0VBQ0ksY0FBQTtBQ0hKOztBRE9BO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNKSjs7QURPQTtFQUNJLFdBQUE7QUNKSjs7QURPQTtFQUNJLHVCQUFBO0VBQ0EsWUFBQTtBQ0pKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDMuc2VsZWN0ZWQge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLnJpZ2h0LXBhbmVsIHtcclxuICAgIGJvcmRlci1sZWZ0OiAycHggc29saWQgI2FhYTtcclxuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gNjRweCkgIWltcG9ydGFudDtcclxufVxyXG4uZWRpdC1oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcclxuICAgIGZvbnQtc2l6ZTogMS4zcmVtO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XHJcbn1cclxuXHJcbiNpbWFnZS16b25lIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG5cclxuICAgIC5kZXNjIHtcclxuICAgICAgICBmb250LXN0eWxlOiBpdGFsaWM7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICAgICAgICBmb250LXNpemU6IDEuMnJlbTtcclxuICAgIH1cclxufVxyXG5cclxuLmltYWdlLXJlZ2lvbiB7XHJcbiAgICBtYXgtd2lkdGg6IDk1JTtcclxufVxyXG5cclxuaW1nIHtcclxuICAgIG1heC13aWR0aDogMTAwJTtcclxuICAgIG1heC1oZWlnaHQ6IDYwMHB4O1xyXG4gICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxufVxyXG5cclxuOjpuZy1kZWVwIHtcclxuICAgIGNpcmNsZS5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgfVxyXG5cclxuICAgIHJlY3QuaGFuZGxlIHtcclxuICAgICAgICBjdXJzb3I6IGdyYWI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5pbWFnZS1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLnN2Zy1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuI3NpZGUtbmF2IHtcclxuICAgIGJvcmRlci1yaWdodDogMnB4IHNvbGlkICNBQUE7XHJcbiAgICB3aWR0aDogMTUlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbm1hdC1yYWRpby1idXR0b24ge1xyXG4gICAgbWFyZ2luOiAwIDEycHg7XHJcbn1cclxuXHJcblxyXG4udmFsaWRhdGUtZmVlZGJhY2sge1xyXG4gICAgY29sb3I6ICNmNDQzMzY7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuXHJcbi5mb3JtLWxhYmVsIHtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG59XHJcblxyXG4uc3VibWl0LXNlY3Rpb24ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbn1cclxuIiwiaDMuc2VsZWN0ZWQge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4ucmlnaHQtcGFuZWwge1xuICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbiAgaGVpZ2h0OiBjYWxjKDEwMCUgLSA2NHB4KSAhaW1wb3J0YW50O1xufVxuXG4uZWRpdC1oZWFkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmFmYWZhO1xuICBmb250LXNpemU6IDEuM3JlbTtcbiAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XG59XG5cbiNpbWFnZS16b25lIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0NDQztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbiNpbWFnZS16b25lIC5kZXNjIHtcbiAgZm9udC1zdHlsZTogaXRhbGljO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXNpemU6IDEuMnJlbTtcbn1cblxuLmltYWdlLXJlZ2lvbiB7XG4gIG1heC13aWR0aDogOTUlO1xufVxuXG5pbWcge1xuICBtYXgtd2lkdGg6IDEwMCU7XG4gIG1heC1oZWlnaHQ6IDYwMHB4O1xuICBvYmplY3QtZml0OiBjb250YWluO1xufVxuXG46Om5nLWRlZXAgY2lyY2xlLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIHJlY3QuaGFuZGxlIHtcbiAgY3Vyc29yOiBncmFiO1xufVxuOjpuZy1kZWVwIC5tYXQtcmFkaW8tbGFiZWwtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n@media (min-width: 1360px) and (max-width: 1919px) {\n  img {\n    max-width: 500px;\n    max-height: 400px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n@media (min-width: 1920px) {\n  img {\n    max-width: 700px;\n    max-height: 600px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\nsvg.move {\n  cursor: move;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBRE1BO0VBQ0k7SUFDSSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0Esc0JBQUE7T0FBQSxtQkFBQTtFQ0hOO0FBQ0Y7O0FETUE7RUFDSTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxzQkFBQTtPQUFBLG1CQUFBO0VDSk47QUFDRjs7QURVSTtFQUNJLGlCQUFBO0FDUlI7O0FEV0k7RUFDSSxvQkFBQTtFQUFBLFlBQUE7QUNUUjs7QURZSTtFQUNJLGVBQUE7QUNWUjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLFlBQUE7QUNYSjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLDRCQUFBO0VBQ0EscUJBQUE7QUNYSjs7QURjQTtFQUNJLGNBQUE7QUNYSjs7QURlQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FDWko7O0FEZUE7RUFDSSxXQUFBO0FDWko7O0FEZUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7QUNaSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgzLnNlbGVjdGVkIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5yaWdodC1wYW5lbCB7XHJcbiAgICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuLmVkaXQtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbiAgICBmb250LXNpemU6IDEuM3JlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG59XHJcblxyXG4jaW1hZ2Utem9uZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAuZGVzYyB7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi8vIC5pbWFnZS1yZWdpb24ge1xyXG4vLyAgICAgbWF4LXdpZHRoOiA5NSU7XHJcbi8vIH1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcclxuICAgIGltZyB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA0MDBweDtcclxuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XHJcbiAgICBpbWcge1xyXG4gICAgICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNjAwcHg7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxuICAgIH1cclxufVxyXG5pbWcge1xyXG59XHJcblxyXG46Om5nLWRlZXAge1xyXG4gICAgY2lyY2xlLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgcmVjdC5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogZ3JhYjtcclxuICAgIH1cclxuXHJcbiAgICAubWF0LXJhZGlvLWxhYmVsLWNvbnRlbnQge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIH1cclxufVxyXG5cclxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG5zdmcubW92ZSB7XHJcbiAgICBjdXJzb3I6IG1vdmU7XHJcbn1cclxuXHJcbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNzaWRlLW5hdiB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCAjQUFBO1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbjogMCAxMnB4O1xyXG59XHJcblxyXG5cclxuLnZhbGlkYXRlLWZlZWRiYWNrIHtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4uZm9ybS1sYWJlbCB7XHJcbiAgICB3aWR0aDogNTBweDtcclxufVxyXG5cclxuLnN1Ym1pdC1zZWN0aW9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG59XHJcbiIsImgzLnNlbGVjdGVkIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLnJpZ2h0LXBhbmVsIHtcbiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCAjYWFhO1xuICBvdmVyZmxvdy15OiBzY3JvbGw7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gNjRweCkgIWltcG9ydGFudDtcbn1cblxuLmVkaXQtaGVhZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcbiAgZm9udC1zaXplOiAxLjNyZW07XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xufVxuXG4jaW1hZ2Utem9uZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG4jaW1hZ2Utem9uZSAuZGVzYyB7XG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgZm9udC1zaXplOiAxLjJyZW07XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDQwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAxOTIwcHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDcwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDYwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbjo6bmctZGVlcCBjaXJjbGUuaGFuZGxlIHtcbiAgY3Vyc29yOiBjcm9zc2hhaXI7XG59XG46Om5nLWRlZXAgcmVjdC5oYW5kbGUge1xuICBjdXJzb3I6IGdyYWI7XG59XG46Om5nLWRlZXAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4uaW1hZ2UtcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuc3ZnLm1vdmUge1xuICBjdXJzb3I6IG1vdmU7XG59XG5cbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */";
     /***/
   },
 
@@ -12020,6 +12202,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _locale_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
     /*! ../locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var _annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    /*! ./annotation-module/annotation-util */
+    "./src/app/edit/annotation-module/annotation-util.ts");
 
     var EditComponent =
     /*#__PURE__*/
@@ -12454,6 +12642,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onKey(event) {
           if (event.key === ' ') {
             this.spacePressed = false;
+            d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgS.node()).classed('move', this.spacePressed);
             event.stopImmediatePropagation();
             return false;
           }
@@ -12463,6 +12652,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onKeyDown(event) {
           if (event.key === ' ') {
             this.spacePressed = true;
+            d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgS.node()).classed('move', this.spacePressed);
           }
         }
       }, {
@@ -12524,6 +12714,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var nTranslateY = event.deltaY < 0 ? (ty * sy - (nScaleY / sy - 1) * (oy - ty * sy)) / nScaleY : ty * (nScaleY - 1) / (sy - 1 + 0.001) * (sy / nScaleY);
             this.renderer.setStyle(img, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(nScaleX, nScaleY, nTranslateX, nTranslateY));
             this.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(nScaleX, nScaleY, nTranslateX, nTranslateY));
+            Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_17__["updateBoxStyleByScroll"])(d3__WEBPACK_IMPORTED_MODULE_3__["select"](svg));
           }
         }
       }, {
@@ -12713,7 +12904,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "button.selected {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n\n.side-panel {\n  padding: 0px 16px;\n}\n\n.progress-info {\n  font-size: 0.9rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.progress-info span.annotated {\n  color: rgba(123, 187, 45, 0.8);\n}\n\n.progress-info span.ignored {\n  color: rgba(0, 0, 0, 0.54);\n}\n\ndiv {\n  font-size: 0.9rem !important;\n}\n\nspan {\n  font-size: 0.9rem !important;\n}\n\n.mat-list-base .mat-subheader {\n  font-size: 0.9rem !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9zaWRlLW5hdi9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcc2lkZS1uYXZcXHNpZGUtbmF2LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3NpZGUtbmF2L3NpZGUtbmF2LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUNBQUE7QUNDSjs7QURFQTtFQUNJLGlCQUFBO0FDQ0o7O0FERUE7RUFFSSxpQkFBQTtFQUNBLHlCQUFBO0FDQUo7O0FEQ0k7RUFDSSw4QkFBQTtBQ0NSOztBRENJO0VBQ0ksMEJBQUE7QUNDUjs7QURHQTtFQUNJLDRCQUFBO0FDQUo7O0FER0E7RUFDSSw0QkFBQTtBQ0FKOztBREdBO0VBQ0ksNEJBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b24uc2VsZWN0ZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjA0KTtcclxufVxyXG5cclxuLnNpZGUtcGFuZWwge1xyXG4gICAgcGFkZGluZzogMHB4IDE2cHg7XHJcbn1cclxuXHJcbi5wcm9ncmVzcy1pbmZvIHtcclxuXHJcbiAgICBmb250LXNpemU6IDAuOXJlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICBzcGFuLmFubm90YXRlZCB7XHJcbiAgICAgICAgY29sb3I6IHJnYmEoMTIzLCAxODcsIDQ1LCAwLjgpXHJcbiAgICB9XHJcbiAgICBzcGFuLmlnbm9yZWQge1xyXG4gICAgICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG4gICAgfVxyXG59XHJcblxyXG5kaXYge1xyXG4gICAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcclxufVxyXG5cclxuc3BhbiB7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubWF0LWxpc3QtYmFzZSAubWF0LXN1YmhlYWRlciB7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xyXG59XHJcbiIsImJ1dHRvbi5zZWxlY3RlZCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4wNCk7XG59XG5cbi5zaWRlLXBhbmVsIHtcbiAgcGFkZGluZzogMHB4IDE2cHg7XG59XG5cbi5wcm9ncmVzcy1pbmZvIHtcbiAgZm9udC1zaXplOiAwLjlyZW07XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XG59XG4ucHJvZ3Jlc3MtaW5mbyBzcGFuLmFubm90YXRlZCB7XG4gIGNvbG9yOiByZ2JhKDEyMywgMTg3LCA0NSwgMC44KTtcbn1cbi5wcm9ncmVzcy1pbmZvIHNwYW4uaWdub3JlZCB7XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xufVxuXG5kaXYge1xuICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xufVxuXG5zcGFuIHtcbiAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcbn1cblxuLm1hdC1saXN0LWJhc2UgLm1hdC1zdWJoZWFkZXIge1xuICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xufSJdfQ== */";
+    __webpack_exports__["default"] = "button.selected {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n\n.side-panel {\n  padding: 0px 16px;\n}\n\n.progress-info {\n  font-size: 0.9rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.progress-info span.annotated {\n  color: rgba(123, 187, 45, 0.8);\n}\n\n.progress-info span.ignored {\n  color: rgba(0, 0, 0, 0.54);\n}\n\ndiv {\n  font-size: 0.9rem !important;\n}\n\nspan {\n  font-size: 0.9rem !important;\n}\n\n.mat-list-base .mat-subheader {\n  font-size: 0.9rem !important;\n}\n\n.elapsed-time {\n  display: -webkit-box !important;\n  display: flex !important;\n  -webkit-box-align: center !important;\n          align-items: center !important;\n  font-size: 1rem !important;\n  padding: 12px 16px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9zaWRlLW5hdi9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcc2lkZS1uYXZcXHNpZGUtbmF2LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9lZGl0L3NpZGUtbmF2L3NpZGUtbmF2LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUNBQUE7QUNDSjs7QURFQTtFQUNJLGlCQUFBO0FDQ0o7O0FERUE7RUFFSSxpQkFBQTtFQUNBLHlCQUFBO0FDQUo7O0FEQ0k7RUFDSSw4QkFBQTtBQ0NSOztBRENJO0VBQ0ksMEJBQUE7QUNDUjs7QURHQTtFQUNJLDRCQUFBO0FDQUo7O0FER0E7RUFDSSw0QkFBQTtBQ0FKOztBREdBO0VBQ0ksNEJBQUE7QUNBSjs7QURHQTtFQUNJLCtCQUFBO0VBQUEsd0JBQUE7RUFDQSxvQ0FBQTtVQUFBLDhCQUFBO0VBQ0EsMEJBQUE7RUFDQSxrQkFBQTtBQ0FKIiwiZmlsZSI6InNyYy9hcHAvZWRpdC9zaWRlLW5hdi9zaWRlLW5hdi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImJ1dHRvbi5zZWxlY3RlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDQpO1xyXG59XHJcblxyXG4uc2lkZS1wYW5lbCB7XHJcbiAgICBwYWRkaW5nOiAwcHggMTZweDtcclxufVxyXG5cclxuLnByb2dyZXNzLWluZm8ge1xyXG5cclxuICAgIGZvbnQtc2l6ZTogMC45cmVtO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICAgIHNwYW4uYW5ub3RhdGVkIHtcclxuICAgICAgICBjb2xvcjogcmdiYSgxMjMsIDE4NywgNDUsIDAuOClcclxuICAgIH1cclxuICAgIHNwYW4uaWdub3JlZCB7XHJcbiAgICAgICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41NCk7XHJcbiAgICB9XHJcbn1cclxuXHJcbmRpdiB7XHJcbiAgICBmb250LXNpemU6IDAuOXJlbSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5zcGFuIHtcclxuICAgIGZvbnQtc2l6ZTogMC45cmVtICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5tYXQtbGlzdC1iYXNlIC5tYXQtc3ViaGVhZGVyIHtcclxuICAgIGZvbnQtc2l6ZTogMC45cmVtICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5lbGFwc2VkLXRpbWUge1xyXG4gICAgZGlzcGxheTogZmxleCAhaW1wb3J0YW50O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlciAhaW1wb3J0YW50O1xyXG4gICAgZm9udC1zaXplOiAxLjByZW0gIWltcG9ydGFudDtcclxuICAgIHBhZGRpbmc6IDEycHggMTZweDtcclxufVxyXG4iLCJidXR0b24uc2VsZWN0ZWQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMDQpO1xufVxuXG4uc2lkZS1wYW5lbCB7XG4gIHBhZGRpbmc6IDBweCAxNnB4O1xufVxuXG4ucHJvZ3Jlc3MtaW5mbyB7XG4gIGZvbnQtc2l6ZTogMC45cmVtO1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xufVxuLnByb2dyZXNzLWluZm8gc3Bhbi5hbm5vdGF0ZWQge1xuICBjb2xvcjogcmdiYSgxMjMsIDE4NywgNDUsIDAuOCk7XG59XG4ucHJvZ3Jlc3MtaW5mbyBzcGFuLmlnbm9yZWQge1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbn1cblxuZGl2IHtcbiAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcbn1cblxuc3BhbiB7XG4gIGZvbnQtc2l6ZTogMC45cmVtICFpbXBvcnRhbnQ7XG59XG5cbi5tYXQtbGlzdC1iYXNlIC5tYXQtc3ViaGVhZGVyIHtcbiAgZm9udC1zaXplOiAwLjlyZW0gIWltcG9ydGFudDtcbn1cblxuLmVsYXBzZWQtdGltZSB7XG4gIGRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlciAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDFyZW0gIWltcG9ydGFudDtcbiAgcGFkZGluZzogMTJweCAxNnB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -12778,16 +12969,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var _timer_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../timer.service */
+    "./src/app/edit/timer.service.ts");
 
     var SideNavComponent =
     /*#__PURE__*/
     function () {
-      function SideNavComponent(edit, network, cs, L) {
+      function SideNavComponent(edit, network, cs, timer, L) {
         _classCallCheck(this, SideNavComponent);
 
         this.edit = edit;
         this.network = network;
         this.cs = cs;
+        this.timer = timer;
         this.L = L;
         this.autoListShow = true;
         this.imageListShow = true;
@@ -12951,10 +13149,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"]
       }, {
+        type: _timer_service__WEBPACK_IMPORTED_MODULE_7__["TimerService"]
+      }, {
         type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
     };
 
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], SideNavComponent.prototype, "mode", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"])], SideNavComponent.prototype, "event", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], SideNavComponent.prototype, "remove", void 0);
     SideNavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -12965,7 +13166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./side-nav.component.scss */
       "./src/app/edit/side-nav/side-nav.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_2__["EditService"], src_app_network_service__WEBPACK_IMPORTED_MODULE_3__["NetworkService"], src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], SideNavComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_service__WEBPACK_IMPORTED_MODULE_2__["EditService"], src_app_network_service__WEBPACK_IMPORTED_MODULE_3__["NetworkService"], src_app_config_service__WEBPACK_IMPORTED_MODULE_5__["ConfigService"], _timer_service__WEBPACK_IMPORTED_MODULE_7__["TimerService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], SideNavComponent);
     /***/
   },
 
@@ -13012,15 +13213,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _edit_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../edit.service */
     "./src/app/edit.service.ts");
+    /* harmony import */
+
+
+    var _demo_demo_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./demo/demo.service */
+    "./src/app/edit/demo/demo.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var TimerService =
     /*#__PURE__*/
     function () {
-      function TimerService(network, edit, zone) {
+      function TimerService(network, edit, demo, router, zone) {
         _classCallCheck(this, TimerService);
 
         this.network = network;
         this.edit = edit;
+        this.demo = demo;
+        this.router = router;
         this.zone = zone;
         this.sec = 0;
       }
@@ -13031,22 +13246,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this63 = this;
 
           this.reset();
-          this.zone.runOutsideAngular(function () {
-            _this63.timer = setInterval(function () {
-              _this63.sec += 1;
-            }, 1000);
-          });
+          this.timer = setInterval(function () {
+            _this63.sec += 1;
+
+            if (_this63.sec >= 1200) {
+              _this63.router.navigate(['/login']);
+
+              _this63.demo.init();
+
+              _this63.sec = 0;
+            }
+          }, 1000);
         }
       }, {
         key: "reset",
         value: function reset() {
-          var _this64 = this;
+          if (this.timer) {
+            clearInterval(this.timer);
+          }
 
-          this.zone.runOutsideAngular(function () {
-            if (_this64.timer) {
-              clearInterval(_this64.timer);
-            }
-          });
           this.sec = 0;
         }
       }, {
@@ -13081,13 +13299,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _edit_service__WEBPACK_IMPORTED_MODULE_3__["EditService"]
       }, {
+        type: _demo_demo_service__WEBPACK_IMPORTED_MODULE_4__["DemoService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+      }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]
       }];
     };
 
     TimerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _edit_service__WEBPACK_IMPORTED_MODULE_3__["EditService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])], TimerService);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _edit_service__WEBPACK_IMPORTED_MODULE_3__["EditService"], _demo_demo_service__WEBPACK_IMPORTED_MODULE_4__["DemoService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])], TimerService);
     /***/
   },
 
@@ -13875,6 +14097,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var _annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../annotation-module/annotation-util */
+    "./src/app/edit/annotation-module/annotation-util.ts");
 
     var VOverallComponent =
     /*#__PURE__*/
@@ -13949,10 +14177,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addMarkFeedback",
         value: function addMarkFeedback() {
-          var _this65 = this;
+          var _this64 = this;
 
           var markIndex = this.data.marks.findIndex(function (mark) {
-            return mark.key === _this65.focusedKey;
+            return mark.key === _this64.focusedKey;
           });
           var numOtherFeedback = this.markFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('mark.other');
@@ -13977,10 +14205,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTextFeedback",
         value: function addTextFeedback() {
-          var _this66 = this;
+          var _this65 = this;
 
           var textIndex = this.data.texts.findIndex(function (text) {
-            return text.key === _this66.focusedKey;
+            return text.key === _this65.focusedKey;
           });
           var numOtherFeedback = this.textFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('text.other');
@@ -14070,11 +14298,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initMarks",
         value: function initMarks() {
-          var _this67 = this;
+          var _this66 = this;
 
-          var _this$imgRef$nativeEl3 = this.imgRef.nativeElement,
-              width = _this$imgRef$nativeEl3.width,
-              height = _this$imgRef$nativeEl3.height;
+          var _this$imgRef$nativeEl4 = this.imgRef.nativeElement,
+              width = _this$imgRef$nativeEl4.width,
+              height = _this$imgRef$nativeEl4.height;
           var g = this.svgS.append('g').attr('class', 'mark-group');
           g.selectAll('rect').data(this.data.marks).join('rect').attr('x', function (d) {
             return d.bound[0] * width + 10;
@@ -14085,20 +14313,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('mark', true).classed('focused', function (mark) {
-            return _this67.focusedKey === mark.key;
+            return _this66.focusedKey === mark.key;
           }).on('click', function (mark) {
-            _this67.clickMark(mark);
+            _this66.clickMark(mark);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "initTexts",
         value: function initTexts() {
-          var _this68 = this;
+          var _this67 = this;
 
-          var _this$imgRef$nativeEl4 = this.imgRef.nativeElement,
-              width = _this$imgRef$nativeEl4.width,
-              height = _this$imgRef$nativeEl4.height;
+          var _this$imgRef$nativeEl5 = this.imgRef.nativeElement,
+              width = _this$imgRef$nativeEl5.width,
+              height = _this$imgRef$nativeEl5.height;
           var g = this.svgS.append('g').attr('class', 'text-group');
           g.selectAll('rect').data(this.data.texts).join('rect').attr('x', function (d) {
             return d.bound[0] * width + 10;
@@ -14109,18 +14337,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('text', true).classed('focused', function (text) {
-            return _this68.focusedKey === text.key;
+            return _this67.focusedKey === text.key;
           }).on('click', function (text) {
-            _this68.clickText(text);
+            _this67.clickText(text);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "updateFocus",
         value: function updateFocus(key) {
+          var _this68 = this;
+
           var g = this.svgS.selectAll('g');
           g.selectAll('rect').classed('focused', function (d) {
             return d.key === key;
+          }).style('stroke-width', function (d) {
+            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this68.svgS, d.key === key);
           });
           g.select('.focused').raise();
 
@@ -14468,14 +14700,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             userName: 'User',
             userProgress: 'Contribution',
             useSuggestions: 'Use Suggestions',
-            removeButton: 'Remove this Image'
+            removeButton: 'Remove this Image',
+            elapsedTime: 'Elapsed Time'
           },
           ko: {
             progress: '진행 상황',
             userName: '사용자명',
             userProgress: '기여도',
             useSuggestions: '자동완성 기능 사용',
-            removeButton: '이 이미지를 제외하기'
+            removeButton: '이 이미지를 제외하기',
+            elapsedTime: '소요 시간'
           }
         };
         this._verModule = {
@@ -14894,6 +15128,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "rawTable",
         get: function get() {
           return this._rawTable[this.l];
+        }
+      }, {
+        key: "resizeMessage",
+        get: function get() {
+          return this.l === 'en' ? 'Please login again when you resize the browse window.' : '브라우저 윈도우 사이즈를 조정할 시 다시 로그인이 필요합니다.';
         }
       }]);
 
