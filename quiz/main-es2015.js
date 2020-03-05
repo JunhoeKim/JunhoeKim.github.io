@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <div class=\"validate-feedback\">\r\n        <ng-container *ngFor=\"let msg of L.keyMessages\">\r\n            {{ msg }} <br/>\r\n        </ng-container>\r\n    </div>\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\"\r\n            (outdatedFeedback)=\"outdatedFeedback.emit()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -283,6 +283,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div\r\n        class=\"w-100 elapsed-time\">\r\n        {{ L.sideNav.elapsedTime }} : {{ timer.sec }}\r\n    </div>\r\n    <div *ngIf=\"edit.image && mode === 'annotation'\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div>\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1 mat-dialog-title>{{ L.title }}</h1>\r\n<div mat-dialog-content>\r\n  <p>{{ L.content }}</p>\r\n</div>\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onClose()\">{{ L.no }}</button>\r\n  <button mat-button  [mat-dialog-close]=\"data\" cdkFocusInitial>{{ L.ok }}</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -818,6 +831,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_common_stop_propagtion_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./edit/common/stop-propagtion.directive */ "./src/app/edit/common/stop-propagtion.directive.ts");
 /* harmony import */ var _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./edit/common/resolve-button/resolve-button.component */ "./src/app/edit/common/resolve-button/resolve-button.component.ts");
 /* harmony import */ var _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./edit/demo/quiz-complete-dialog.component */ "./src/app/edit/demo/quiz-complete-dialog.component.ts");
+/* harmony import */ var _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./edit/verification-module/dialog/review-send-dialog.component */ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
+
 
 
 
@@ -882,10 +897,12 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _edit_verification_module_v_overall_custom_spec_card_custom_spec_card_component__WEBPACK_IMPORTED_MODULE_22__["CustomSpecCardComponent"],
             _edit_common_resolve_button_resolve_button_component__WEBPACK_IMPORTED_MODULE_24__["ResolveButtonComponent"],
             _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"],
+            _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]
         ],
         entryComponents: [
             _edit_annotation_module__WEBPACK_IMPORTED_MODULE_11__["ColumnAdditionDialogComponent"],
-            _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"]
+            _edit_demo_quiz_complete_dialog_component__WEBPACK_IMPORTED_MODULE_25__["QuizCompleteDialogComponent"],
+            _edit_verification_module_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_26__["ReviewSendDialogComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -2672,6 +2689,13 @@ let AnnotationModuleComponent = class AnnotationModuleComponent {
         this.fs.feedbackSubject
             .next(this.review.feedbacks.find(d => d.key === key));
         this.focusedFeedbackKey = key;
+    }
+    resolveOutdatedFeedback() {
+        this.review.feedbacks.forEach(feedback => {
+            if (feedback.annotationKey.startsWith('raw')) {
+                this.fs.resolveTarget(feedback);
+            }
+        });
     }
     onSubmitReady() {
         setTimeout(() => {
@@ -4734,6 +4758,7 @@ let OverallComponent = class OverallComponent {
         this.fs = fs;
         this.changeDetector = changeDetector;
         this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.outdatedFeedback = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         // common
         this.auto = false;
         this.visited = [true, false, false];
@@ -5425,6 +5450,10 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
 ], OverallComponent.prototype, "submitEmitter", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], OverallComponent.prototype, "outdatedFeedback", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('pointMark', { static: false }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
 ], OverallComponent.prototype, "pointMark", void 0);
@@ -5569,6 +5598,7 @@ let RawTableComponent = class RawTableComponent {
         this.fs = fs;
         this.focusEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.outdatedFeedback = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.columns = [];
         this.marks = [];
         this.rows = [];
@@ -5664,6 +5694,9 @@ let RawTableComponent = class RawTableComponent {
         this.initTable();
         if (this.allChannelsEncoded && this.mode === 'revision') {
             this.submitEmitter.emit();
+        }
+        else if (this.mode === 'revision') {
+            this.outdatedFeedback.emit();
         }
     }
     ngOnChanges(changes) {
@@ -6260,6 +6293,10 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
 ], RawTableComponent.prototype, "submitEmitter", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], RawTableComponent.prototype, "outdatedFeedback", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('table', { static: true }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
 ], RawTableComponent.prototype, "tableRef", void 0);
@@ -6766,6 +6803,10 @@ let FeedbackService = class FeedbackService {
         this.resolveSubject.next(this.feedbackSubject.getValue());
         this.feedbackSubject.next(src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].dummy());
     }
+    resolveTarget(feedback) {
+        this.resolveSubject.next(feedback);
+        this.feedbackSubject.next(src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].dummy());
+    }
 };
 FeedbackService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -6910,6 +6951,7 @@ let ReviewPanelComponent = class ReviewPanelComponent {
     }
     onFeedbackFocused(feedback) {
         this.focus.emit(feedback.key);
+        console.log(feedback);
     }
     equals(form) {
         return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(form).key === this.focusedKey;
@@ -7221,9 +7263,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_network_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/network.service */ "./src/app/network.service.ts");
 /* harmony import */ var _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quiz_bar_data.json */ "./src/app/edit/demo/quiz_bar_data.json");
 var _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./quiz_bar_data.json */ "./src/app/edit/demo/quiz_bar_data.json", 1);
-/* harmony import */ var src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/common/verification-data.js */ "./src/app/common/verification-data.js");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/common/task/index.js */ "./src/app/common/task/index.js");
+/* harmony import */ var _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./quiz_line_data.json */ "./src/app/edit/demo/quiz_line_data.json");
+var _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./quiz_line_data.json */ "./src/app/edit/demo/quiz_line_data.json", 1);
+/* harmony import */ var src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/common/verification-data.js */ "./src/app/common/verification-data.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/common/task/index.js */ "./src/app/common/task/index.js");
+/* harmony import */ var src_environments_environment_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/environments/environment.js */ "./src/environments/environment.js");
+
+
 
 
 
@@ -7235,7 +7282,23 @@ var _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__
 let QuizService = class QuizService {
     constructor(network) {
         this.network = network;
-        this.data = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["VOverallData"]('quiz', _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4__);
+        this.textIOU = 0.5;
+        this._params = {
+            bar: {
+                iou: 0.8,
+                numXLabels: 4,
+                numYLabels: 7
+            },
+            line: {
+                iou: 0.3,
+                numXLabels: 9,
+                numYLabels: 7
+            }
+        };
+        this.chartType = src_environments_environment_js__WEBPACK_IMPORTED_MODULE_9__["environment"].chartType;
+        this.data = this.chartType === 'bar'
+            ? new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('quiz', _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4__)
+            : new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('quiz', _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5__);
     }
     getAnnotationElem() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -7251,21 +7314,21 @@ let QuizService = class QuizService {
         for (const task of config.tasks) {
             result[task.key] = task.getFormValue(formGroup);
         }
-        const submitted = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["VOverallData"]('key_0', result['key_0']);
+        const submitted = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('key_0', result['key_0']);
         const feedbacks = [];
         let otherIndex = 0;
         if (submitted.marks.length !== this.data.marks.length) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: `mark.other.${otherIndex}`,
-                comment: '막대의 수가 맞지 않습니다.'
+                comment: '마크의 수가 맞지 않습니다.'
             }));
             otherIndex += 1;
         }
         submitted.marks.forEach((mark, i) => {
-            const maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](this.data.marks, d => this.iou(mark.bound, d.bound));
-            if (maxIou <= 0.85) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            const maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](this.data.marks, d => this.iou(mark.bound, d.bound));
+            if (maxIou <= this.params.iou) {
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `mark.${i}`,
                     comment: '박스의 경계를 다시 확인해주세요.'
@@ -7275,19 +7338,19 @@ let QuizService = class QuizService {
         otherIndex = 0;
         const targetSpec = this.data.spec;
         const xLabelIndices = submitted.texts
-            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_LABEL"]]))
+            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_LABEL"]]))
             .filter(([_, check]) => check)
             .map(d => d[0]);
         const xTitleIndices = submitted.texts
-            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_TITLE"]]))
+            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_TITLE"]]))
             .filter(([_, check]) => check)
             .map(d => d[0]);
         const yLabelIndices = submitted.texts
-            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_Y_AXIS_LABEL"]]))
+            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_Y_AXIS_LABEL"]]))
             .filter(([i, check]) => check)
             .map(d => d[0]);
         if (xTitleIndices.length === 0) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: `text.other.${otherIndex}`,
                 comment: 'X축 제목을 추가해주세요.'
@@ -7296,26 +7359,26 @@ let QuizService = class QuizService {
         }
         else {
             const target = this.data.texts
-                .find(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_TITLE"]);
+                .find(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_TITLE"]);
             const index = xTitleIndices[0];
             const title = submitted.texts[index];
             if (title.text !== target.text) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `text.${index}`,
                     comment: 'X축 제목 텍스트를 확인해주세요.'
                 }));
             }
-            else if (this.iou(title.bound, target.bound) < 0.9) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            else if (this.iou(title.bound, target.bound) < this.textIOU) {
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `text.${index}`,
                     comment: 'X축 제목의 경계를 확인해주세요.'
                 }));
             }
         }
-        if (xLabelIndices.length !== 4) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+        if (xLabelIndices.length !== this.params.numXLabels) {
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: `text.other.${otherIndex}`,
                 comment: 'X축 라벨의 수를 확인해주세요.'
@@ -7324,22 +7387,22 @@ let QuizService = class QuizService {
         }
         else {
             const targetTexts = this.data.texts
-                .filter(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_LABEL"]);
+                .filter(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_LABEL"]);
             xLabelIndices.forEach(index => {
                 const text = submitted.texts[index];
-                const maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](targetTexts, d => this.iou(text.bound, d.bound));
+                const maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](targetTexts, d => this.iou(text.bound, d.bound));
                 const ious = targetTexts
                     .map(d => this.iou(text.bound, d.bound));
                 const maxIndex = ious.indexOf(Math.max.apply(null, ious));
-                if (maxIou <= 0.80) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                if (maxIou <= this.textIOU) {
+                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                         taskKey: 'key_0',
                         annotationKey: `text.${index}`,
                         comment: '박스의 경계를 확인해주세요.'
                     }));
                 }
                 else if (targetTexts[maxIndex].text !== text.text) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                         taskKey: 'key_0',
                         annotationKey: `text.${index}`,
                         comment: '박스의 텍스트를 확인해주세요.'
@@ -7347,8 +7410,8 @@ let QuizService = class QuizService {
                 }
             });
         }
-        if (yLabelIndices.length !== 7) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+        if (yLabelIndices.length !== this.params.numYLabels) {
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: `text.other.${otherIndex}`,
                 comment: 'Y축 라벨의 수를 확인해주세요.'
@@ -7357,22 +7420,22 @@ let QuizService = class QuizService {
         }
         else {
             const targetTexts = this.data.texts
-                .filter(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_Y_AXIS_LABEL"]);
+                .filter(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_Y_AXIS_LABEL"]);
             yLabelIndices.forEach(index => {
                 const text = submitted.texts[index];
                 const ious = targetTexts
                     .map(d => this.iou(text.bound, d.bound));
                 const maxIndex = ious.indexOf(Math.max.apply(null, ious));
                 const maxIou = ious[maxIndex];
-                if (maxIou <= 0.80) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                if (maxIou <= this.textIOU) {
+                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                         taskKey: 'key_0',
                         annotationKey: `text.${index}`,
                         comment: '박스의 경계를 확인해주세요.'
                     }));
                 }
                 else if (targetTexts[maxIndex].text !== text.text) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                         taskKey: 'key_0',
                         annotationKey: `text.${index}`,
                         comment: '박스의 텍스트를 확인해주세요.'
@@ -7380,18 +7443,57 @@ let QuizService = class QuizService {
                 }
             });
         }
+        const legendIndices = submitted.texts
+            .map((d, i) => ([i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_LEGEND_LABEL"]]))
+            .filter(([_, check]) => check)
+            .map(d => d[0]);
+        if (this.chartType === 'line') {
+            if (legendIndices.length !== 2) {
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: `text.other.${otherIndex}`,
+                    comment: '범례 라벨의 수를 확인해주세요.'
+                }));
+                otherIndex += 1;
+            }
+            else {
+                const targetTexts = this.data.texts
+                    .filter(d => d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_LEGEND_LABEL"]);
+                legendIndices.forEach(index => {
+                    const text = submitted.texts[index];
+                    const maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](targetTexts, d => this.iou(text.bound, d.bound));
+                    const ious = targetTexts
+                        .map(d => this.iou(text.bound, d.bound));
+                    const maxIndex = ious.indexOf(Math.max.apply(null, ious));
+                    if (maxIou <= this.textIOU) {
+                        feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                            taskKey: 'key_0',
+                            annotationKey: `text.${index}`,
+                            comment: '박스의 경계를 확인해주세요.'
+                        }));
+                    }
+                    else if (targetTexts[maxIndex].text !== text.text) {
+                        feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                            taskKey: 'key_0',
+                            annotationKey: `text.${index}`,
+                            comment: '박스의 텍스트를 확인해주세요.'
+                        }));
+                    }
+                });
+            }
+        }
         const checkAxis = (index) => {
             const axis = submitted.spec.axes[index];
             const target = this.data.spec.axes[index];
             if (axis.title.value !== target.title.value) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `spec.axis.${index}.title`,
                     comment: '축 제목을 확인해주세요.'
                 }));
             }
             if (axis.type.value !== target.type.value) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `spec.axis.${index}.type`,
                     comment: '축의 데이터 타입을 확인해주세요.'
@@ -7404,21 +7506,21 @@ let QuizService = class QuizService {
                     return i >= targetLabels.length || targetLabels[i].trim() !== d.trim();
                 });
             if (notSame) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `spec.axis.${index}.labels`,
                     comment: '축의 라벨들을 확인해주세요.'
                 }));
             }
             if (axis.unit.value !== target.unit.value) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `spec.axis.${index}.unit`,
                     comment: '축의 데이터 단위를 다시 확인해주세요.'
                 }));
             }
             if (axis.encoding.value !== target.encoding.value) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: `spec.axis.${index}.encoding`,
                     comment: '축의 인코딩을 다시 확인해주세요.'
@@ -7427,7 +7529,7 @@ let QuizService = class QuizService {
         };
         otherIndex = 0;
         if (submitted.spec.axes.length !== 2) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: `spec.axis.other.${otherIndex}`,
                 comment: '축은 X축, Y축 각각 1개씩 있어야 합니다.'
@@ -7441,43 +7543,72 @@ let QuizService = class QuizService {
         otherIndex = 0;
         const rows = submitted.raw.rows;
         const targetRows = this.data.raw.rows;
-        if (rows.length !== targetRows.length) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-                taskKey: 'key_0',
-                annotationKey: `raw.other.${otherIndex}`,
-                comment: '행의 수를 확인해주세요.'
-            }));
-            otherIndex += 1;
-        }
         if (submitted.spec.axes.length === 2) {
             const xKey = submitted.spec.axes[0].title.value;
             const yKey = submitted.spec.axes[1].title.value;
             const targetXKey = targetSpec.axes[0].title.value;
             const targetYKey = targetSpec.axes[1].title.value;
-            rows.forEach((row, i) => {
-                const x = row.value[xKey];
-                const y = row.value[yKey];
-                const targetRow = targetRows.find(d => {
-                    return d.value[targetYKey] === y;
+            if (this.chartType === 'bar') {
+                rows.forEach((row, i) => {
+                    const x = row.value[xKey];
+                    const y = row.value[yKey];
+                    const targetRow = targetRows.find(d => {
+                        return d.value[targetYKey] === y;
+                    });
+                    if (!targetRow) {
+                        feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                            taskKey: 'key_0',
+                            annotationKey: `raw.${i}`,
+                            comment: '다음 행의 값을 확인해주세요.'
+                        }));
+                    }
+                    else if (isNaN(+x) ||
+                        Math.abs(+targetRow.value[targetXKey] - +x) > 0.2) {
+                        feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                            taskKey: 'key_0',
+                            annotationKey: `raw.${i}`,
+                            comment: '다음 행의 값을 확인해주세요.'
+                        }));
+                    }
                 });
-                if (!targetRow) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-                        taskKey: 'key_0',
-                        annotationKey: `raw.${i}`,
-                        comment: '다음 행의 값을 확인해주세요.'
-                    }));
-                }
-                else if (isNaN(+x) ||
-                    Math.abs(+targetRow.value[targetXKey] - +x) > 0.2) {
-                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-                        taskKey: 'key_0',
-                        annotationKey: `raw.${i}`,
-                        comment: '다음 행의 값을 확인해주세요.'
-                    }));
-                }
-            });
+            }
+            else {
+                const legendKey = submitted.spec.legend.title.value;
+                const targetLegendKey = targetSpec.legend.title.value;
+                rows.forEach((row, i) => {
+                    const x = row.value[xKey];
+                    const y = isNaN(+row.value[yKey]) ? 0 : +row.value[yKey];
+                    const legend = row.value[legendKey];
+                    const filteredRows = targetRows
+                        .filter(d => d.value[targetXKey] === x)
+                        .sort((a, b) => {
+                        const aDist = Math.abs(+a.value[targetYKey] - y);
+                        const bDist = Math.abs(+b.value[targetYKey] - y);
+                        return aDist - bDist;
+                    });
+                    if (filteredRows.length === 0) {
+                        feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                            taskKey: 'key_0',
+                            annotationKey: `raw.${i}`,
+                            comment: '다음 행의 값을 확인해주세요.'
+                        }));
+                    }
+                    else {
+                        const targetRow = filteredRows[0];
+                        const dist = Math.abs(+targetRow.value[targetYKey] - y);
+                        const targetLegend = targetRow.value[targetLegendKey];
+                        if (dist > 5 || targetLegend !== legend) {
+                            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                                taskKey: 'key_0',
+                                annotationKey: `raw.${i}`,
+                                comment: '다음 행의 값을 확인해주세요.'
+                            }));
+                        }
+                    }
+                });
+            }
         }
-        this.currReview = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Review"]({
+        this.currReview = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Review"]({
             path,
             approved: feedbacks.length === 0,
             feedbacks
@@ -7498,6 +7629,9 @@ let QuizService = class QuizService {
         const areaA = (a[2] - a[0]) * (a[3] - a[1]);
         const areaB = (b[2] - b[0]) * (b[3] - b[1]);
         return inter / (areaA + areaB - inter);
+    }
+    get params() {
+        return this._params[this.chartType];
     }
 };
 QuizService.ctorParameters = () => [
@@ -7522,6 +7656,17 @@ QuizService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"marks\":[{\"bound\":[0.298,0.076,0.761,0.145],\"label\":\"object\"},{\"bound\":[0.3,0.178,0.803,0.245],\"label\":\"object\"},{\"bound\":[0.3,0.288,0.459,0.353],\"label\":\"object\"},{\"bound\":[0.297,0.393,0.512,0.457],\"label\":\"object\"},{\"bound\":[0.3,0.493,0.444,0.554],\"label\":\"object\"},{\"bound\":[0.3,0.592,0.452,0.658],\"label\":\"object\"},{\"bound\":[0.3,0.694,0.471,0.757],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.144,0.082,0.273,0.136],\"label\":\"y-axis-label\",\"text\":\"Media\"},{\"bound\":[0.133,0.183,0.274,0.236],\"label\":\"y-axis-label\",\"text\":\"DMSO\"},{\"bound\":[0.074,0.286,0.277,0.346],\"label\":\"y-axis-label\",\"text\":\"Asbestos\"},{\"bound\":[0.02,0.389,0.28,0.457],\"label\":\"y-axis-label\",\"text\":\"Vulcan (BC)\"},{\"bound\":[0.067,0.49,0.279,0.556],\"label\":\"y-axis-label\",\"text\":\"SWCNT-1\"},{\"bound\":[0.056,0.594,0.279,0.652],\"label\":\"y-axis-label\",\"text\":\"MWCNT-R\"},{\"bound\":[0.058,0.699,0.276,0.75],\"label\":\"y-axis-label\",\"text\":\"MWCNT-N\"},{\"bound\":[0.405,0.913,0.853,0.973],\"label\":\"x-axis-title\",\"text\":\"Relative Cell Viability\"},{\"bound\":[0.262,0.826,0.332,0.879],\"label\":\"x-axis-label\",\"text\":\"0.0\"},{\"bound\":[0.473,0.822,0.547,0.88],\"label\":\"x-axis-label\",\"text\":\"0.5\"},{\"bound\":[0.697,0.827,0.764,0.879],\"label\":\"x-axis-label\",\"text\":\"1.0\"},{\"bound\":[0.912,0.824,0.979,0.879],\"label\":\"x-axis-label\",\"text\":\"1.5\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Relative Cell Viability\",\"type\":\"quantitative\",\"labels\":[\"0.0\",\"0.5\",\"1.0\",\"1.5\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.003521960657857802,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"nominal\",\"labels\":[\"Media\",\"DMSO\",\"Asbestos\",\"Vulcan (BC)\",\"SWCNT-1\",\"MWCNT-R\",\"MWCNT-N\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[]},\"raw\":[{\"Relative Cell Viability\":1.08,\"Unknown Y Axis\":\"Media\"},{\"Relative Cell Viability\":1.17,\"Unknown Y Axis\":\"DMSO\"},{\"Relative Cell Viability\":0.37,\"Unknown Y Axis\":\"Asbestos\"},{\"Relative Cell Viability\":0.5,\"Unknown Y Axis\":\"Vulcan (BC)\"},{\"Relative Cell Viability\":0.33,\"Unknown Y Axis\":\"SWCNT-1\"},{\"Relative Cell Viability\":0.35,\"Unknown Y Axis\":\"MWCNT-R\"},{\"Relative Cell Viability\":0.4,\"Unknown Y Axis\":\"MWCNT-N\"}]}");
+
+/***/ }),
+
+/***/ "./src/app/edit/demo/quiz_line_data.json":
+/*!***********************************************!*\
+  !*** ./src/app/edit/demo/quiz_line_data.json ***!
+  \***********************************************/
+/*! exports provided: marks, texts, spec, raw, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"marks\":[{\"bound\":[0.19,0.767,0.2,0.779],\"label\":\"object\"},{\"bound\":[0.188,0.665,0.198,0.677],\"label\":\"object\"},{\"bound\":[0.277,0.755,0.287,0.767],\"label\":\"object\"},{\"bound\":[0.277,0.554,0.287,0.566],\"label\":\"object\"},{\"bound\":[0.367,0.75,0.377,0.761],\"label\":\"object\"},{\"bound\":[0.367,0.536,0.377,0.548],\"label\":\"object\"},{\"bound\":[0.453,0.724,0.463,0.736],\"label\":\"object\"},{\"bound\":[0.453,0.578,0.463,0.59],\"label\":\"object\"},{\"bound\":[0.542,0.606,0.552,0.617],\"label\":\"object\"},{\"bound\":[0.542,0.746,0.552,0.757],\"label\":\"object\"},{\"bound\":[0.63,0.695,0.64,0.707],\"label\":\"object\"},{\"bound\":[0.629,0.689,0.639,0.701],\"label\":\"object\"},{\"bound\":[0.718,0.685,0.728,0.697],\"label\":\"object\"},{\"bound\":[0.718,0.656,0.728,0.668],\"label\":\"object\"},{\"bound\":[0.807,0.645,0.817,0.657],\"label\":\"object\"},{\"bound\":[0.807,0.527,0.817,0.539],\"label\":\"object\"},{\"bound\":[0.895,0.661,0.905,0.673],\"label\":\"object\"},{\"bound\":[0.895,0.11,0.905,0.122],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.198,0.087,0.257,0.118],\"label\":\"legend-label\",\"text\":\"Male\"},{\"bound\":[0.2,0.124,0.277,0.154],\"label\":\"legend-label\",\"text\":\"Female\"},{\"bound\":[0.055,0.043,0.092,0.073],\"label\":\"y-axis-label\",\"text\":\"300\"},{\"bound\":[0.055,0.176,0.093,0.203],\"label\":\"y-axis-label\",\"text\":\"250\"},{\"bound\":[0.053,0.31,0.093,0.335],\"label\":\"y-axis-label\",\"text\":\"200\"},{\"bound\":[0.055,0.442,0.093,0.465],\"label\":\"y-axis-label\",\"text\":\"150\"},{\"bound\":[0.055,0.574,0.093,0.6],\"label\":\"y-axis-label\",\"text\":\"100\"},{\"bound\":[0.065,0.706,0.092,0.73],\"label\":\"y-axis-label\",\"text\":\"50\"},{\"bound\":[0.077,0.84,0.092,0.862],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.49,0.951,0.602,0.982],\"label\":\"x-axis-title\",\"text\":\"Age groups\"},{\"bound\":[0.177,0.913,0.212,0.937],\"label\":\"x-axis-label\",\"text\":\"1-9\"},{\"bound\":[0.255,0.913,0.312,0.941],\"label\":\"x-axis-label\",\"text\":\"10-19\"},{\"bound\":[0.342,0.909,0.4,0.939],\"label\":\"x-axis-label\",\"text\":\"20-29\"},{\"bound\":[0.43,0.911,0.488,0.941],\"label\":\"x-axis-label\",\"text\":\"30-39\"},{\"bound\":[0.517,0.911,0.577,0.941],\"label\":\"x-axis-label\",\"text\":\"40-49\"},{\"bound\":[0.607,0.911,0.665,0.941],\"label\":\"x-axis-label\",\"text\":\"50-59\"},{\"bound\":[0.693,0.911,0.753,0.939],\"label\":\"x-axis-label\",\"text\":\"60-69\"},{\"bound\":[0.782,0.909,0.843,0.941],\"label\":\"x-axis-label\",\"text\":\"70-79\"},{\"bound\":[0.878,0.911,0.92,0.941],\"label\":\"x-axis-label\",\"text\":\"80+\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Age groups\",\"type\":\"nominal\",\"labels\":[\"1-9\",\"10-19\",\"20-29\",\"30-39\",\"40-49\",\"50-59\",\"60-69\",\"70-79\",\"80+\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Incidence (Per 1000 Population)\",\"type\":\"quantitative\",\"labels\":[\"300\",\"250\",\"200\",\"150\",\"100\",\"50\",\"0\"],\"precision\":0,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.7462190828278095,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Male\",\"Female\"],\"encoding\":\"color\"}},\"raw\":[{\"Age groups\":\"1-9\",\"Incidence (Per 1000 Population)\":30,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"1-9\",\"Incidence (Per 1000 Population)\":68,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"10-19\",\"Incidence (Per 1000 Population)\":34,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"10-19\",\"Incidence (Per 1000 Population)\":110,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"20-29\",\"Incidence (Per 1000 Population)\":36,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"20-29\",\"Incidence (Per 1000 Population)\":117,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"30-39\",\"Incidence (Per 1000 Population)\":46,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"30-39\",\"Incidence (Per 1000 Population)\":101,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"40-49\",\"Incidence (Per 1000 Population)\":91,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"40-49\",\"Incidence (Per 1000 Population)\":38,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"50-59\",\"Incidence (Per 1000 Population)\":57,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"50-59\",\"Incidence (Per 1000 Population)\":59,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"60-69\",\"Incidence (Per 1000 Population)\":61,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"60-69\",\"Incidence (Per 1000 Population)\":72,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"70-79\",\"Incidence (Per 1000 Population)\":76,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"70-79\",\"Incidence (Per 1000 Population)\":120,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"80+\",\"Incidence (Per 1000 Population)\":70,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"80+\",\"Incidence (Per 1000 Population)\":278,\"Unknown Legend\":\"Female\"}]}");
 
 /***/ }),
 
@@ -8288,6 +8433,53 @@ TimerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
 ], TimerService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/edit/verification-module/dialog/review-send-dialog.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: ReviewSendDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewSendDialogComponent", function() { return ReviewSendDialogComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+
+
+
+
+let ReviewSendDialogComponent = class ReviewSendDialogComponent {
+    constructor(dialogRef, data, _L) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.L = _L.reviewSendDialog;
+    }
+    onClose() {
+        this.data.response = '';
+        this.dialogRef.close(this.data);
+    }
+};
+ReviewSendDialogComponent.ctorParameters = () => [
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] },
+    { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"] }
+];
+ReviewSendDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-review-send-dialog',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./review-send-dialog.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/verification-module/dialog/review-send-dialog.component.html")).default
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object, src_app_locale_service__WEBPACK_IMPORTED_MODULE_3__["LocaleService"]])
+], ReviewSendDialogComponent);
 
 
 
@@ -9147,6 +9339,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/edit.service */ "./src/app/edit.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dialog/review-send-dialog.component */ "./src/app/edit/verification-module/dialog/review-send-dialog.component.ts");
+
+
 
 
 
@@ -9156,10 +9352,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VerificationModuleComponent = class VerificationModuleComponent {
-    constructor(network, edit, fb, L) {
+    constructor(network, edit, fb, dialog, L) {
         this.network = network;
         this.edit = edit;
         this.fb = fb;
+        this.dialog = dialog;
         this.L = L;
         this.reviewEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.feedbackForms = [];
@@ -9169,12 +9366,21 @@ let VerificationModuleComponent = class VerificationModuleComponent {
     }
     sendReview(approved) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const feedbacks = this.feedbackForms.map(d => src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d));
-            const path = this.edit.image.path;
-            if (this.config.service === 'normal') {
-                yield this.network.registerReview({ path, approved, feedbacks });
-            }
-            this.reviewEmitter.emit();
+            this.dialog.open(_dialog_review_send_dialog_component__WEBPACK_IMPORTED_MODULE_9__["ReviewSendDialogComponent"], {
+                width: '400px', data: { response: 'ok' }
+            })
+                .afterClosed()
+                .subscribe((result) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                if (result.response !== 'ok') {
+                    return;
+                }
+                const feedbacks = this.feedbackForms.map(d => src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d));
+                const path = this.edit.image.path;
+                if (this.config.service === 'normal') {
+                    yield this.network.registerReview({ path, approved, feedbacks });
+                }
+                this.reviewEmitter.emit();
+            }));
         });
     }
     onAddFeedback(form) {
@@ -9197,6 +9403,7 @@ VerificationModuleComponent.ctorParameters = () => [
     { type: src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"] },
     { type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"] },
     { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -9232,6 +9439,7 @@ VerificationModuleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_network_service__WEBPACK_IMPORTED_MODULE_4__["NetworkService"],
         src_app_edit_service__WEBPACK_IMPORTED_MODULE_5__["EditService"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"],
+        _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialog"],
         src_app_locale_service__WEBPACK_IMPORTED_MODULE_7__["LocaleService"]])
 ], VerificationModuleComponent);
 
@@ -9595,6 +9803,20 @@ let LocaleService = class LocaleService {
                 predict: '값 계산'
             }
         };
+        this._reviewSendDialog = {
+            en: {
+                title: 'Confirm your review',
+                content: 'Are you sure you want to submit your review?',
+                ok: 'OK',
+                no: 'No Thanks'
+            },
+            ko: {
+                title: '당신의 리뷰를 확인하세요.',
+                content: '정말로 리뷰를 제출하시겠습니까?',
+                ok: '네',
+                no: '아니요, 다시 확인해볼게요'
+            }
+        };
         this.l = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].locale;
     }
     service(service) {
@@ -9686,6 +9908,9 @@ let LocaleService = class LocaleService {
         return this.l === 'en'
             ? 'Please login again when you resize the browse window.'
             : '브라우저 윈도우 사이즈를 조정할 시 다시 로그인이 필요합니다.';
+    }
+    get reviewSendDialog() {
+        return this._reviewSendDialog[this.l];
     }
 };
 LocaleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
