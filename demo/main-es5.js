@@ -61,7 +61,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <div class=\"validate-feedback\">\r\n        <ng-container *ngFor=\"let msg of L.keyMessages\">\r\n            {{ msg }} <br/>\r\n        </ng-container>\r\n    </div>\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -221,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\"\r\n            (outdatedFeedback)=\"outdatedFeedback.emit()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -4977,12 +4977,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.focusedFeedbackKey = key;
         }
       }, {
-        key: "onSubmitReady",
-        value: function onSubmitReady() {
+        key: "resolveOutdatedFeedback",
+        value: function resolveOutdatedFeedback() {
           var _this23 = this;
 
+          this.review.feedbacks.forEach(function (feedback) {
+            if (feedback.annotationKey.startsWith('raw')) {
+              _this23.fs.resolveTarget(feedback);
+            }
+          });
+        }
+      }, {
+        key: "onSubmitReady",
+        value: function onSubmitReady() {
+          var _this24 = this;
+
           setTimeout(function () {
-            _this23.submitReady = true;
+            _this24.submitReady = true;
           }, 0);
         }
       }, {
@@ -6168,20 +6179,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(BoundingBoxComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this24 = this;
+          var _this25 = this;
 
           this.event.subscribe(function (key) {
-            _this24.isDrawing = false;
+            _this25.isDrawing = false;
 
-            if (key === 'predict' && _this24.edit.autoCompleteSubject.getValue()[_this24.task.key]) {
-              _this24.task.registerControl(_this24.formGroup, _this24.fb);
+            if (key === 'predict' && _this25.edit.autoCompleteSubject.getValue()[_this25.task.key]) {
+              _this25.task.registerControl(_this25.formGroup, _this25.fb);
 
-              _this24.task.applyPrediction(_this24.formGroup);
+              _this25.task.applyPrediction(_this25.formGroup);
 
-              _this24.updateBoxes();
+              _this25.updateBoxes();
 
-              if (_this24.currIndex === _this24.index) {
-                _this24.createEventArea();
+              if (_this25.currIndex === _this25.index) {
+                _this25.createEventArea();
               }
             }
           });
@@ -6231,12 +6242,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createEventArea",
         value: function createEventArea() {
-          var _this25 = this;
+          var _this26 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_7__["removeEventArea"])(this);
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_7__["createEventArea"])(this, false);
           this.svgS.on('contextmenu', function () {
-            Object(_annotation_util__WEBPACK_IMPORTED_MODULE_7__["drawBoxBySelectedPixel"])(_this25);
+            Object(_annotation_util__WEBPACK_IMPORTED_MODULE_7__["drawBoxBySelectedPixel"])(_this26);
           });
         }
       }, {
@@ -6439,22 +6450,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ClassificationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this26 = this;
+          var _this27 = this;
 
           this.event.subscribe(function (key) {
-            if (key === 'predict' && _this26.edit.autoCompleteSubject.getValue()[_this26.task.key]) {
-              _this26.task.applyPrediction(_this26.formGroup);
+            if (key === 'predict' && _this27.edit.autoCompleteSubject.getValue()[_this27.task.key]) {
+              _this27.task.applyPrediction(_this27.formGroup);
             }
           });
           this.fs.feedbackObservable.subscribe(function (feedback) {
-            if (feedback.taskKey === _this26.task.key) {
-              var el = _this26.radioGroupRef.nativeElement;
+            if (feedback.taskKey === _this27.task.key) {
+              var el = _this27.radioGroupRef.nativeElement;
 
               var _el$getBoundingClient = el.getBoundingClientRect(),
                   left = _el$getBoundingClient.left,
                   top = _el$getBoundingClient.top;
 
-              _this26.fs.showFeedback(left, top, feedback);
+              _this27.fs.showFeedback(left, top, feedback);
             }
           });
         }
@@ -6749,26 +6760,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AxisSpecComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this27 = this;
+          var _this28 = this;
 
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this27.focusedFeedbackKey = '';
-            _this27.focusedFeedback = null;
+            _this28.focusedFeedbackKey = '';
+            _this28.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this27.task.key) {
+            if (feedback.taskKey !== _this28.task.key) {
               return;
             }
 
             var splited = feedback.annotationKey.split('.');
 
-            if (splited[0] !== 'spec' || splited[1] !== 'axis' || +splited[2] !== _this27.index) {
+            if (splited[0] !== 'spec' || splited[1] !== 'axis' || +splited[2] !== _this28.index) {
               return;
             }
 
-            _this27.focusedFeedbackKey = splited[3];
-            _this27.focusedFeedback = feedback;
+            _this28.focusedFeedbackKey = splited[3];
+            _this28.focusedFeedback = feedback;
             setTimeout(function () {
-              _this27.scrollEvent();
+              _this28.scrollEvent();
             }, 0);
           });
           this.hasMarkLabels = this.texts.filter(function (d) {
@@ -7114,26 +7125,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CustomSpecComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this28 = this;
+          var _this29 = this;
 
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this28.focusedFeedbackKey = '';
-            _this28.focusedFeedback = null;
+            _this29.focusedFeedbackKey = '';
+            _this29.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this28.task.key) {
+            if (feedback.taskKey !== _this29.task.key) {
               return;
             }
 
             var splited = feedback.annotationKey.split('.');
 
-            if (splited[0] !== 'spec' || splited[1] !== 'custom' || +splited[2] !== _this28.index) {
+            if (splited[0] !== 'spec' || splited[1] !== 'custom' || +splited[2] !== _this29.index) {
               return;
             }
 
-            _this28.focusedFeedbackKey = splited[3];
-            _this28.focusedFeedback = feedback;
+            _this29.focusedFeedbackKey = splited[3];
+            _this29.focusedFeedback = feedback;
             setTimeout(function () {
-              _this28.scrollEvent();
+              _this29.scrollEvent();
             }, 0);
           });
           this.markLabels = this.texts.filter(function (d) {
@@ -7168,7 +7179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "resetMarkLabels",
         value: function resetMarkLabels() {
-          var _this29 = this;
+          var _this30 = this;
 
           var labelForms = this.group.get('markLabels');
 
@@ -7194,7 +7205,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           filteredMarkLabels.forEach(function (label) {
             var isNumber = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(label.text.value);
 
-            if (_this29.valueType === 'nominal' && !isNumber || _this29.valueType === 'quantitative' && isNumber) {
+            if (_this30.valueType === 'nominal' && !isNumber || _this30.valueType === 'quantitative' && isNumber) {
               labelForms.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](label.text.value));
             }
           });
@@ -7636,13 +7647,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LegendSpecComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this30 = this;
+          var _this31 = this;
 
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this30.focusedFeedbackKey = '';
-            _this30.focusedFeedback = null;
+            _this31.focusedFeedbackKey = '';
+            _this31.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this30.task.key) {
+            if (feedback.taskKey !== _this31.task.key) {
               return;
             }
 
@@ -7652,10 +7663,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return;
             }
 
-            _this30.focusedFeedbackKey = splited[2];
-            _this30.focusedFeedback = feedback;
+            _this31.focusedFeedbackKey = splited[2];
+            _this31.focusedFeedback = feedback;
             setTimeout(function () {
-              _this30.scrollEvent();
+              _this31.scrollEvent();
             }, 0);
           });
         }
@@ -7839,7 +7850,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.fb = fb;
         this.fs = fs;
         this.changeDetector = changeDetector;
-        this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // common
+        this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.outdatedFeedback = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // common
 
         this.auto = false;
         this.visited = [true, false, false];
@@ -7864,66 +7876,66 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OverallComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this31 = this;
+          var _this32 = this;
 
           var sub1 = this.event.subscribe(function (key) {
-            _this31.isDrawing = false;
-            _this31.isMerging = false;
+            _this32.isDrawing = false;
+            _this32.isMerging = false;
 
-            if (key === 'predict' && _this31.edit.autoCompleteSubject.getValue()[_this31.task.key]) {
-              _this31.task.registerControl(_this31.formGroup, _this31.fb);
+            if (key === 'predict' && _this32.edit.autoCompleteSubject.getValue()[_this32.task.key]) {
+              _this32.task.registerControl(_this32.formGroup, _this32.fb);
 
-              _this31.task.applyPrediction(_this31.formGroup);
+              _this32.task.applyPrediction(_this32.formGroup);
 
-              _this31.updateBoxes();
+              _this32.updateBoxes();
 
-              if (_this31.currIndex === _this31.index) {
-                _this31.createEventArea();
+              if (_this32.currIndex === _this32.index) {
+                _this32.createEventArea();
               }
             }
 
             if (key === 'review') {
-              _this31.updateBoxes();
+              _this32.updateBoxes();
 
-              _this31.createEventArea();
+              _this32.createEventArea();
             }
 
             if (key === 'finish') {
-              _this31.reset();
+              _this32.reset();
 
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(_this31);
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(_this32);
             }
           });
           this.subscriptions.push(sub1);
           var sub2 = this.edit.autoCompleteSubject.asObservable().subscribe(function (map) {
-            _this31.auto = map[_this31.task.key];
+            _this32.auto = map[_this32.task.key];
           });
           this.subscriptions.push(sub2);
           var sub3 = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this31.focusedFeedback = null;
-            _this31.focusedFeedbackKey = null;
+            _this32.focusedFeedback = null;
+            _this32.focusedFeedbackKey = null;
 
-            if (feedback.taskKey === _this31.task.key) {
+            if (feedback.taskKey === _this32.task.key) {
               var splited = feedback.annotationKey.split('.');
 
               switch (splited[0]) {
                 case 'mark':
                   {
-                    _this31.stage = 0;
+                    _this32.stage = 0;
 
                     if (splited[1] === 'other') {
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = feedback.annotationKey;
-                      _this31.boxMode = 'mark';
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = feedback.annotationKey;
+                      _this32.boxMode = 'mark';
 
-                      _this31.updateFocus(null);
+                      _this32.updateFocus(null);
                     } else {
                       var markIndex = +splited[1];
-                      var key = _this31.marks[markIndex].key;
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = key;
+                      var key = _this32.marks[markIndex].key;
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = key;
 
-                      _this31.updateFocus(key);
+                      _this32.updateFocus(key);
                     }
 
                     break;
@@ -7931,21 +7943,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 case 'text':
                   {
-                    _this31.stage = 0;
+                    _this32.stage = 0;
 
                     if (splited[1] === 'other') {
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = feedback.annotationKey;
-                      _this31.boxMode = 'text';
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = feedback.annotationKey;
+                      _this32.boxMode = 'text';
 
-                      _this31.updateFocus(null);
+                      _this32.updateFocus(null);
                     } else {
                       var textIndex = +splited[1];
-                      var _key = _this31.texts[textIndex].key;
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = _key;
+                      var _key = _this32.texts[textIndex].key;
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = _key;
 
-                      _this31.updateFocus(_key);
+                      _this32.updateFocus(_key);
                     }
 
                     break;
@@ -7954,37 +7966,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'spec':
                   {
                     if (splited[splited.length - 1] === 'encoding') {
-                      _this31.stage = 2;
+                      _this32.stage = 2;
                     } else {
-                      _this31.stage = 1;
+                      _this32.stage = 1;
                     }
 
                     if (splited[1] === 'other') {
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = feedback.annotationKey;
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = feedback.annotationKey;
 
-                      _this31.updateFocus(null);
+                      _this32.updateFocus(null);
                     }
 
                     if (splited[1] === 'title') {
-                      _this31.focusedFeedback = feedback;
-                      _this31.focusedFeedbackKey = 'title';
+                      _this32.focusedFeedback = feedback;
+                      _this32.focusedFeedbackKey = 'title';
                     }
 
-                    _this31.changeDetector.detectChanges();
+                    _this32.changeDetector.detectChanges();
 
-                    _this31.updateFocus(null);
+                    _this32.updateFocus(null);
 
                     break;
                   }
 
                 case 'raw':
                   {
-                    _this31.stage = 2;
+                    _this32.stage = 2;
 
-                    _this31.changeDetector.detectChanges();
+                    _this32.changeDetector.detectChanges();
 
-                    _this31.updateFocus(null);
+                    _this32.updateFocus(null);
 
                     break;
                   }
@@ -8091,18 +8103,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createEventArea",
         value: function createEventArea() {
-          var _this32 = this;
+          var _this33 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(this);
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["createEventArea"])(this, true, this.task.inputType);
           this.svgS.on('contextmenu', function () {
-            if (_this32.isMerging) {
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeMergeLine"])(_this32);
+            if (_this33.isMerging) {
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeMergeLine"])(_this33);
               d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
-            } else if (_this32.task.inputType === 'rect' && _this32.boxMode === 'mark' && !_this32.isDrawing) {
-              _this32.isDrawing = true;
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["drawBoxBySelectedPixel"])(_this32);
-              _this32.isDrawing = false;
+            } else if (_this33.task.inputType === 'rect' && _this33.boxMode === 'mark' && !_this33.isDrawing) {
+              _this33.isDrawing = true;
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["drawBoxBySelectedPixel"])(_this33);
+              _this33.isDrawing = false;
             }
 
             d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
@@ -8163,13 +8175,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateFocus",
         value: function updateFocus(boxIndex) {
-          var _this33 = this;
+          var _this34 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["updateBoxStyleByFocus"])(boxIndex, this.svgS);
           this.sortDrawOrder(boxIndex, true);
           this.focusedBoxIndex = boxIndex;
           var box = this.boxes.find(function (d) {
-            return d.key === _this33.focusedBoxIndex;
+            return d.key === _this34.focusedBoxIndex;
           });
 
           if (!box) {
@@ -8210,7 +8222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var findIndex = this.boxes.filter(function (d) {
               return d.isText;
             }).findIndex(function (d) {
-              return d.key === _this33.focusedBoxIndex;
+              return d.key === _this34.focusedBoxIndex;
             });
             var focusedBottom = rowHeight * (findIndex + 1);
             var focusedTop = rowHeight * findIndex;
@@ -8249,19 +8261,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "clearBoxes",
         value: function clearBoxes() {
-          var _this34 = this;
+          var _this35 = this;
 
           var deletedBoxIndices = this.boxes.filter(function (d) {
-            return _this34.boxMode === 'mark' ? d.text === null : d.text !== null;
+            return _this35.boxMode === 'mark' ? d.text === null : d.text !== null;
           }).map(function (d) {
             return d.key;
           });
           deletedBoxIndices.forEach(function (boxIndex) {
-            _this34.g.select(".rect-".concat(boxIndex)).remove();
+            _this35.g.select(".rect-".concat(boxIndex)).remove();
 
-            _this34.g.selectAll(".circle-".concat(boxIndex)).remove();
+            _this35.g.selectAll(".circle-".concat(boxIndex)).remove();
 
-            _this34.task.deleteBox(_this34.formGroup, boxIndex);
+            _this35.task.deleteBox(_this35.formGroup, boxIndex);
           });
           this.updateBoxes();
         }
@@ -8376,7 +8388,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "detectAxes",
         value: function detectAxes() {
-          var _this35 = this;
+          var _this36 = this;
 
           var axesGroup = this.formGroup.get(this.task.key).get('spec').get('axis');
 
@@ -8432,32 +8444,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               var valuePerPixel = +d3__WEBPACK_IMPORTED_MODULE_7__["mean"](valuesPerPixel);
 
-              var labels = _this35.boxes.filter(function (d) {
+              var labels = _this36.boxes.filter(function (d) {
                 return d.label.value === "".concat(dir, "-axis-label");
               }).map(function (d) {
                 return d.text.value;
               });
 
-              _this35.addAxis(dir, title, 'quantitative', labels, pre, valuePerPixel);
+              _this36.addAxis(dir, title, 'quantitative', labels, pre, valuePerPixel);
             } else {
-              var _labels = _this35.boxes.filter(function (d) {
+              var _labels = _this36.boxes.filter(function (d) {
                 return d.label.value === "".concat(dir, "-axis-label");
               }).map(function (d) {
                 return d.text.value;
               });
 
-              _this35.addAxis(dir, title, 'nominal', _labels);
+              _this36.addAxis(dir, title, 'nominal', _labels);
             }
           };
 
           var detectAxis = function detectAxis(dir) {
-            var axis = _this35.boxes.filter(function (d) {
+            var axis = _this36.boxes.filter(function (d) {
               return d.label.value === "".concat(dir, "-axis-label");
             });
 
             var title = "Unknown ".concat(dir.toUpperCase(), " Axis");
 
-            var axisTitleBox = _this35.boxes.find(function (d) {
+            var axisTitleBox = _this36.boxes.find(function (d) {
               return d.label.value === "".concat(dir, "-axis-title");
             });
 
@@ -8483,11 +8495,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onCheckBoxRegression",
         value: function onCheckBoxRegression() {
-          var _this36 = this;
+          var _this37 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["regressBoxesByColor"])(this);
           this.marks.forEach(function (mark) {
-            _this36.sortDrawOrder(mark.key, false);
+            _this37.sortDrawOrder(mark.key, false);
           });
         }
       }, {
@@ -8501,19 +8513,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "applyPointSizeToMarkForm",
         value: function applyPointSizeToMarkForm() {
-          var _this37 = this;
+          var _this38 = this;
 
           var r = this.pointRadius;
           this.marks.forEach(function (mark) {
             var boxIndex = mark.key;
 
-            var sel = _this37.g.select(".rect-".concat(boxIndex));
+            var sel = _this38.g.select(".rect-".concat(boxIndex));
 
             sel.attr('r', r);
             var x = +sel.attr('cx');
             var y = +sel.attr('cy');
 
-            _this37.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
+            _this38.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
           });
           this.updateBoxes();
         }
@@ -8534,7 +8546,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapBoxesToLegend",
         value: function mapBoxesToLegend() {
-          var _this38 = this;
+          var _this39 = this;
 
           var titleBox = this.boxes.find(function (d) {
             return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_LEGEND_TITLE"];
@@ -8552,7 +8564,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           legendBoxes.map(function (d) {
             return d.text.value;
           }).forEach(function (legend) {
-            group.get('labels').push(_this38.fb.control(legend));
+            group.get('labels').push(_this39.fb.control(legend));
           });
           this.specGroup.setControl('legend', group);
           return true;
@@ -8560,7 +8572,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapMarkLabelToAxis",
         value: function mapMarkLabelToAxis() {
-          var _this39 = this;
+          var _this40 = this;
 
           var markLabelBoxes = this.boxes.filter(function (d) {
             return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
@@ -8585,7 +8597,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 group.get('labeled').setValue(labeled);
                 var markLabelsForm = group.get('markLabels');
                 markLabelBoxes.forEach(function (box) {
-                  markLabelsForm.push(_this39.fb.control(box.text.value));
+                  markLabelsForm.push(_this40.fb.control(box.text.value));
                 });
               } else {
                 var axisLabels = group.get('labels').value;
@@ -8597,11 +8609,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 var _markLabelsForm = group.get('markLabels');
 
                 markLabelBoxes.forEach(function (box) {
-                  _markLabelsForm.push(_this39.fb.control(box.text.value));
+                  _markLabelsForm.push(_this40.fb.control(box.text.value));
                 });
               }
             } else {
-              group.addControl('labeled', _this39.fb.control(false));
+              group.addControl('labeled', _this40.fb.control(false));
             }
           });
         }
@@ -8738,6 +8750,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)], OverallComponent.prototype, "spacePressed", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], OverallComponent.prototype, "mode", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], OverallComponent.prototype, "submitEmitter", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], OverallComponent.prototype, "outdatedFeedback", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('pointMark', {
       "static": false
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])], OverallComponent.prototype, "pointMark", void 0);
@@ -8961,6 +8974,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.fs = fs;
         this.focusEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.submitEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.outdatedFeedback = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.columns = [];
         this.marks = [];
         this.rows = [];
@@ -8975,7 +8989,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RawTableComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this40 = this;
+          var _this41 = this;
 
           var specGroup = this.formGroup.get('spec');
           specGroup.get('axis').controls.forEach(function (group, i) {
@@ -8984,7 +8998,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "axis.".concat(i)
             };
 
-            var targetGroup = _this40.fromPath(specGroup, column.path);
+            var targetGroup = _this41.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -8992,7 +9006,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('labels').value;
             }
 
-            _this40.columns.push(column);
+            _this41.columns.push(column);
           });
           specGroup.get('custom').controls.forEach(function (group, i) {
             var column = {
@@ -9000,7 +9014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "custom.".concat(i)
             };
 
-            var targetGroup = _this40.fromPath(specGroup, column.path);
+            var targetGroup = _this41.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -9008,7 +9022,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('markLabels').value;
             }
 
-            _this40.columns.push(column);
+            _this41.columns.push(column);
           });
 
           if (this.hasLegend) {
@@ -9032,10 +9046,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.rawGroup = this.formGroup.get('raw');
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this40.focusedFeedbackKey = '';
-            _this40.focusedFeedback = null;
+            _this41.focusedFeedbackKey = '';
+            _this41.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this40.task.key) {
+            if (feedback.taskKey !== _this41.task.key) {
               return;
             }
 
@@ -9043,19 +9057,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var lastKey = splited[splited.length - 1];
 
             if (lastKey === 'encoding') {
-              _this40.focusedFeedback = feedback;
-              _this40.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
+              _this41.focusedFeedback = feedback;
+              _this41.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
             } else if (splited[0] === 'raw') {
-              _this40.focusedFeedback = feedback;
+              _this41.focusedFeedback = feedback;
 
               if (splited[1] === 'other') {
-                _this40.focusedFeedbackKey = 'other';
+                _this41.focusedFeedbackKey = 'other';
               } else {
-                _this40.focusedFeedbackKey = _this40.marks[+splited[1]].key;
+                _this41.focusedFeedbackKey = _this41.marks[+splited[1]].key;
               }
 
               setTimeout(function () {
-                _this40.focusEmitter.emit(_this40.focusedFeedbackKey);
+                _this41.focusEmitter.emit(_this41.focusedFeedbackKey);
               }, 0);
             } else {
               return;
@@ -9066,6 +9080,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.allChannelsEncoded && this.mode === 'revision') {
             this.submitEmitter.emit();
+          } else if (this.mode === 'revision') {
+            this.outdatedFeedback.emit();
           }
         }
       }, {
@@ -9126,7 +9142,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee2() {
-            var _this41 = this;
+            var _this42 = this;
 
             var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, column, encoding;
 
@@ -9135,7 +9151,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context2.prev = _context2.next) {
                   case 0:
                     this.allChannelsEncoded = this.columns.every(function (column) {
-                      var targetGroup = _this41.fromPath(_this41.formGroup.get('spec'), column.path);
+                      var targetGroup = _this42.fromPath(_this42.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding');
                     });
@@ -9227,7 +9243,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee3() {
-            var _this42 = this;
+            var _this43 = this;
 
             var path, k, boxes, _ref3, centers, labels;
 
@@ -9262,7 +9278,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centers = _ref3.centers;
                     labels = _ref3.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this42.rows.find(function (d) {
+                      var row = _this43.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -9285,7 +9301,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee4() {
-            var _this43 = this;
+            var _this44 = this;
 
             var path, k, boxes, _ref4, centerPatches, labels;
 
@@ -9312,7 +9328,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centerPatches = _ref4.centerPatches;
                     labels = _ref4.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this43.rows.find(function (d) {
+                      var row = _this44.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -9351,7 +9367,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee6() {
-            var _this44 = this;
+            var _this45 = this;
 
             var colorEncodingIndex;
             return regeneratorRuntime.wrap(function _callee6$(_context6) {
@@ -9360,7 +9376,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     _context6.next = 2;
                     return Promise.all(this.columns.map(function (column) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this44, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this45, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee5() {
                         var targetGroup;
@@ -9397,7 +9413,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 2:
                     colorEncodingIndex = this.columns.findIndex(function (column) {
-                      var targetGroup = _this44.fromPath(_this44.formGroup.get('spec'), column.path);
+                      var targetGroup = _this45.fromPath(_this45.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding') && targetGroup.get('encoding').value === 'color';
                     });
@@ -9522,7 +9538,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initTable",
         value: function initTable() {
-          var _this45 = this;
+          var _this46 = this;
 
           var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           this.rows = [];
@@ -9532,13 +9548,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var initCells = function initCells() {
             var _loop3 = function _loop3(i) {
-              var group = _this45.fb.group({});
+              var group = _this46.fb.group({});
 
-              _this45.columns.forEach(function (column) {
-                group.addControl(column.title, _this45.fb.control(''));
+              _this46.columns.forEach(function (column) {
+                group.addControl(column.title, _this46.fb.control(''));
               });
 
-              _this45.rawGroup.push(group);
+              _this46.rawGroup.push(group);
             };
 
             for (var i = 0; i < markIndices.length; i++) {
@@ -9594,7 +9610,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictWidth",
         value: function predictWidth(targetGroup, column) {
-          var _this46 = this;
+          var _this47 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9634,13 +9650,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.width * imgWidth) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this46.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this47.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictHeight",
         value: function predictHeight(targetGroup, column) {
-          var _this47 = this;
+          var _this48 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9680,13 +9696,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.height * imgHeight) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this47.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this48.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictPosition",
         value: function predictPosition(targetGroup, column, dir) {
-          var _this48 = this;
+          var _this49 = this;
 
           var _this$imgRef$nativeEl3 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl3.width,
@@ -9732,7 +9748,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var maxValue = +maxLabel.text.value.replace(this.re, '');
             centers.forEach(function (center) {
               var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
-              result.push(_this48.format(currValue, pre, unit));
+              result.push(_this49.format(currValue, pre, unit));
             });
           }
 
@@ -9796,7 +9812,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "assignMarkLabels",
         value: function assignMarkLabels(targetGroup, column) {
-          var _this49 = this;
+          var _this50 = this;
 
           var targetMarkLabels = targetGroup.get('markLabels').value;
           var markLabelBoxes = this.boxes.filter(function (d) {
@@ -9809,20 +9825,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           markLabelBoxes.forEach(function (box) {
             var value = box.text.value;
 
-            var targetIndex = _this49.findNearestBoxIndex(box, targetGroup);
+            var targetIndex = _this50.findNearestBoxIndex(box, targetGroup);
 
-            _this49.rows[targetIndex].group.get([column.title]).setValue(value);
+            _this50.rows[targetIndex].group.get([column.title]).setValue(value);
           });
         }
       }, {
         key: "findNearestBoxIndex",
         value: function findNearestBoxIndex(queryBox, targetGroup) {
-          var _this50 = this;
+          var _this51 = this;
 
           var axisDir = targetGroup.contains('dir') ? targetGroup.get('dir').value : 'none'; // First, find the marks which contains the target mark label
 
           var innerRows = this.rows.filter(function (row) {
-            var mark = _this50.marks.find(function (m) {
+            var mark = _this51.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9836,7 +9852,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           var rowsForSearch = innerRows.length > 0 ? innerRows : this.rows;
           var minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinElem"])(rowsForSearch, function (row) {
-            var mark = _this50.marks.find(function (m) {
+            var mark = _this51.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9905,15 +9921,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictByClusterLabels",
         value: function predictByClusterLabels(column) {
-          var _this51 = this;
+          var _this52 = this;
 
           var key = column.title;
           var definedPairs = this.marks.map(function (mark, i) {
-            var group = _this51.rawGroup.at(i);
+            var group = _this52.rawGroup.at(i);
 
             return {
               value: group.get([key]).value,
-              label: _this51.rows.find(function (d) {
+              label: _this52.rows.find(function (d) {
                 return d.markKey === mark.key;
               }).clusterLabels[key]
             };
@@ -9926,8 +9942,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.rawGroup.controls.forEach(function (control, i) {
-            var row = _this51.rows.find(function (d) {
-              return d.markKey === _this51.marks[i].key;
+            var row = _this52.rows.find(function (d) {
+              return d.markKey === _this52.marks[i].key;
             });
 
             var defined = definedPairs.find(function (d) {
@@ -9940,7 +9956,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addColumn",
         value: function addColumn() {
-          var _this52 = this;
+          var _this53 = this;
 
           var dialogRef = this.dialog.open(ColumnAdditionDialogComponent, {
             width: '500px',
@@ -9953,32 +9969,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           dialogRef.afterClosed().subscribe(function (newColumn) {
             var path = "custom-".concat(newColumn.title);
 
-            var specGroup = _this52.formGroup.get('spec');
+            var specGroup = _this53.formGroup.get('spec');
 
             newColumn.path = path;
-            specGroup.addControl(path, _this52.fb.group({
-              title: _this52.fb.control(newColumn.title)
+            specGroup.addControl(path, _this53.fb.group({
+              title: _this53.fb.control(newColumn.title)
             }));
 
             if (newColumn.labels && newColumn.labels.length > 0) {
-              specGroup.get(path).addControl('labels', _this52.fb.array(newColumn.labels));
+              specGroup.get(path).addControl('labels', _this53.fb.array(newColumn.labels));
             }
 
-            _this52.columns.push(newColumn);
+            _this53.columns.push(newColumn);
 
-            _this52.rawGroup.controls.forEach(function (control) {
-              control.addControl(newColumn.title, _this52.fb.control(''));
+            _this53.rawGroup.controls.forEach(function (control) {
+              control.addControl(newColumn.title, _this53.fb.control(''));
             });
           });
         }
       }, {
         key: "addRow",
         value: function addRow() {
-          var _this53 = this;
+          var _this54 = this;
 
           var group = this.fb.group({});
           this.columns.forEach(function (column) {
-            group.addControl(column.title, _this53.fb.control(''));
+            group.addControl(column.title, _this54.fb.control(''));
           });
           this.rawGroup.push(group);
           this.rows.push({
@@ -10049,6 +10065,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)], RawTableComponent.prototype, "mode", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], RawTableComponent.prototype, "focusEmitter", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], RawTableComponent.prototype, "submitEmitter", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)], RawTableComponent.prototype, "outdatedFeedback", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('table', {
       "static": true
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])], RawTableComponent.prototype, "tableRef", void 0);
@@ -10157,11 +10174,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RegressionComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this54 = this;
+          var _this55 = this;
 
           this.event.subscribe(function (key) {
-            if (key === 'predict' && _this54.edit.autoCompleteSubject.getValue()[_this54.task.key]) {
-              _this54.task.applyPrediction(_this54.formGroup);
+            if (key === 'predict' && _this55.edit.autoCompleteSubject.getValue()[_this55.task.key]) {
+              _this55.task.applyPrediction(_this55.formGroup);
             }
           });
         }
@@ -10307,21 +10324,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TextComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this55 = this;
+          var _this56 = this;
 
           this.event.subscribe(function (key) {
-            _this55.isDrawing = false;
-            _this55.isMerging = false;
+            _this56.isDrawing = false;
+            _this56.isMerging = false;
 
-            if (key === 'predict' && _this55.edit.autoCompleteSubject.getValue()[_this55.task.key]) {
-              _this55.task.registerControl(_this55.formGroup, _this55.fb);
+            if (key === 'predict' && _this56.edit.autoCompleteSubject.getValue()[_this56.task.key]) {
+              _this56.task.registerControl(_this56.formGroup, _this56.fb);
 
-              _this55.task.applyPrediction(_this55.formGroup);
+              _this56.task.applyPrediction(_this56.formGroup);
 
-              _this55.updateBoxes();
+              _this56.updateBoxes();
 
-              if (_this55.currIndex === _this55.index) {
-                _this55.createEventArea();
+              if (_this56.currIndex === _this56.index) {
+                _this56.createEventArea();
               }
             }
           });
@@ -10643,23 +10660,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this56 = this;
+          var _this57 = this;
 
           this.sub = this.fs.showObservable.subscribe(function (data) {
-            _this56.displayModal = true;
+            _this57.displayModal = true;
             var left = data.left,
                 top = data.top,
                 feedback = data.feedback;
-            _this56.feedback = feedback;
+            _this57.feedback = feedback;
 
-            _this56.changeDetector.detectChanges();
+            _this57.changeDetector.detectChanges();
 
-            var el = _this56.ref.nativeElement;
+            var el = _this57.ref.nativeElement;
             var rect = el.getBoundingClientRect();
 
-            _this56.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
+            _this57.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
 
-            _this56.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
+            _this57.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
           });
         }
       }, {
@@ -10778,6 +10795,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "resolve",
         value: function resolve() {
           this.resolveSubject.next(this.feedbackSubject.getValue());
+          this.feedbackSubject.next(src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].dummy());
+        }
+      }, {
+        key: "resolveTarget",
+        value: function resolveTarget(feedback) {
+          this.resolveSubject.next(feedback);
           this.feedbackSubject.next(src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].dummy());
         }
       }, {
@@ -11069,6 +11092,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onFeedbackFocused",
         value: function onFeedbackFocused(feedback) {
           this.focus.emit(feedback.key);
+          console.log(feedback);
         }
       }, {
         key: "equals",
@@ -11648,21 +11672,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./quiz_line_data.json */
+    "./src/app/edit/demo/quiz_line_data.json");
+
+    var _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! ./quiz_line_data.json */
+    "./src/app/edit/demo/quiz_line_data.json", 1);
+    /* harmony import */
+
+
+    var src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/common/verification-data.js */
     "./src/app/common/verification-data.js");
     /* harmony import */
 
 
-    var d3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var d3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! d3 */
     "./node_modules/d3/index.js");
     /* harmony import */
 
 
-    var src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! src/app/common/task/index.js */
     "./src/app/common/task/index.js");
+    /* harmony import */
+
+
+    var src_environments_environment_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! src/environments/environment.js */
+    "./src/environments/environment.js");
 
     var QuizService =
     /*#__PURE__*/
@@ -11671,7 +11713,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, QuizService);
 
         this.network = network;
-        this.data = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["VOverallData"]('quiz', _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4__);
+        this.textIOU = 0.5;
+        this._params = {
+          bar: {
+            iou: 0.8,
+            numXLabels: 4,
+            numYLabels: 7
+          },
+          line: {
+            iou: 0.3,
+            numXLabels: 9,
+            numYLabels: 7
+          }
+        };
+        this.chartType = src_environments_environment_js__WEBPACK_IMPORTED_MODULE_9__["environment"].chartType;
+        this.data = this.chartType === 'bar' ? new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('quiz', _quiz_bar_data_json__WEBPACK_IMPORTED_MODULE_4__) : new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('quiz', _quiz_line_data_json__WEBPACK_IMPORTED_MODULE_5__);
       }
 
       _createClass(QuizService, [{
@@ -11714,7 +11770,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "grade",
         value: function grade(path, formGroup, config) {
-          var _this57 = this;
+          var _this58 = this;
 
           var result = {};
           var _iteratorNormalCompletion4 = true;
@@ -11741,26 +11797,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
 
-          var submitted = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["VOverallData"]('key_0', result['key_0']);
+          var submitted = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["VOverallData"]('key_0', result['key_0']);
           var feedbacks = [];
           var otherIndex = 0;
 
           if (submitted.marks.length !== this.data.marks.length) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
               taskKey: 'key_0',
               annotationKey: "mark.other.".concat(otherIndex),
-              comment: '막대의 수가 맞지 않습니다.'
+              comment: '마크의 수가 맞지 않습니다.'
             }));
             otherIndex += 1;
           }
 
           submitted.marks.forEach(function (mark, i) {
-            var maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](_this57.data.marks, function (d) {
-              return _this57.iou(mark.bound, d.bound);
+            var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_this58.data.marks, function (d) {
+              return _this58.iou(mark.bound, d.bound);
             });
 
-            if (maxIou <= 0.85) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            if (maxIou <= _this58.params.iou) {
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "mark.".concat(i),
                 comment: '박스의 경계를 다시 확인해주세요.'
@@ -11770,7 +11826,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           otherIndex = 0;
           var targetSpec = this.data.spec;
           var xLabelIndices = submitted.texts.map(function (d, i) {
-            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_LABEL"]];
+            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_LABEL"]];
           }).filter(function (_ref5) {
             var _ref6 = _slicedToArray(_ref5, 2),
                 _ = _ref6[0],
@@ -11781,7 +11837,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return d[0];
           });
           var xTitleIndices = submitted.texts.map(function (d, i) {
-            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_TITLE"]];
+            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_TITLE"]];
           }).filter(function (_ref7) {
             var _ref8 = _slicedToArray(_ref7, 2),
                 _ = _ref8[0],
@@ -11792,7 +11848,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return d[0];
           });
           var yLabelIndices = submitted.texts.map(function (d, i) {
-            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_Y_AXIS_LABEL"]];
+            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_Y_AXIS_LABEL"]];
           }).filter(function (_ref9) {
             var _ref10 = _slicedToArray(_ref9, 2),
                 i = _ref10[0],
@@ -11804,7 +11860,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
 
           if (xTitleIndices.length === 0) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
               taskKey: 'key_0',
               annotationKey: "text.other.".concat(otherIndex),
               comment: 'X축 제목을 추가해주세요.'
@@ -11812,19 +11868,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             otherIndex += 1;
           } else {
             var target = this.data.texts.find(function (d) {
-              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_TITLE"];
+              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_TITLE"];
             });
             var index = xTitleIndices[0];
             var title = submitted.texts[index];
 
             if (title.text !== target.text) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "text.".concat(index),
                 comment: 'X축 제목 텍스트를 확인해주세요.'
               }));
-            } else if (this.iou(title.bound, target.bound) < 0.9) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            } else if (this.iou(title.bound, target.bound) < this.textIOU) {
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "text.".concat(index),
                 comment: 'X축 제목의 경계를 확인해주세요.'
@@ -11832,8 +11888,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
 
-          if (xLabelIndices.length !== 4) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+          if (xLabelIndices.length !== this.params.numXLabels) {
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
               taskKey: 'key_0',
               annotationKey: "text.other.".concat(otherIndex),
               comment: 'X축 라벨의 수를 확인해주세요.'
@@ -11841,26 +11897,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             otherIndex += 1;
           } else {
             var targetTexts = this.data.texts.filter(function (d) {
-              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_X_AXIS_LABEL"];
+              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_X_AXIS_LABEL"];
             });
             xLabelIndices.forEach(function (index) {
               var text = submitted.texts[index];
-              var maxIou = d3__WEBPACK_IMPORTED_MODULE_6__["max"](targetTexts, function (d) {
-                return _this57.iou(text.bound, d.bound);
+              var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](targetTexts, function (d) {
+                return _this58.iou(text.bound, d.bound);
               });
               var ious = targetTexts.map(function (d) {
-                return _this57.iou(text.bound, d.bound);
+                return _this58.iou(text.bound, d.bound);
               });
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
-              if (maxIou <= 0.80) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              if (maxIou <= _this58.textIOU) {
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
                   comment: '박스의 경계를 확인해주세요.'
                 }));
               } else if (targetTexts[maxIndex].text !== text.text) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
                   comment: '박스의 텍스트를 확인해주세요.'
@@ -11869,8 +11925,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
           }
 
-          if (yLabelIndices.length !== 7) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+          if (yLabelIndices.length !== this.params.numYLabels) {
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
               taskKey: 'key_0',
               annotationKey: "text.other.".concat(otherIndex),
               comment: 'Y축 라벨의 수를 확인해주세요.'
@@ -11878,27 +11934,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             otherIndex += 1;
           } else {
             var _targetTexts = this.data.texts.filter(function (d) {
-              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_7__["KEY_Y_AXIS_LABEL"];
+              return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_Y_AXIS_LABEL"];
             });
 
             yLabelIndices.forEach(function (index) {
               var text = submitted.texts[index];
 
               var ious = _targetTexts.map(function (d) {
-                return _this57.iou(text.bound, d.bound);
+                return _this58.iou(text.bound, d.bound);
               });
 
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
               var maxIou = ious[maxIndex];
 
-              if (maxIou <= 0.80) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              if (maxIou <= _this58.textIOU) {
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
                   comment: '박스의 경계를 확인해주세요.'
                 }));
               } else if (_targetTexts[maxIndex].text !== text.text) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
                   comment: '박스의 텍스트를 확인해주세요.'
@@ -11907,12 +11963,66 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
           }
 
+          var legendIndices = submitted.texts.map(function (d, i) {
+            return [i, d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_LEGEND_LABEL"]];
+          }).filter(function (_ref11) {
+            var _ref12 = _slicedToArray(_ref11, 2),
+                _ = _ref12[0],
+                check = _ref12[1];
+
+            return check;
+          }).map(function (d) {
+            return d[0];
+          });
+
+          if (this.chartType === 'line') {
+            if (legendIndices.length !== 2) {
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                taskKey: 'key_0',
+                annotationKey: "text.other.".concat(otherIndex),
+                comment: '범례 라벨의 수를 확인해주세요.'
+              }));
+              otherIndex += 1;
+            } else {
+              var _targetTexts2 = this.data.texts.filter(function (d) {
+                return d.label === src_app_common_task_index_js__WEBPACK_IMPORTED_MODULE_8__["KEY_LEGEND_LABEL"];
+              });
+
+              legendIndices.forEach(function (index) {
+                var text = submitted.texts[index];
+                var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_targetTexts2, function (d) {
+                  return _this58.iou(text.bound, d.bound);
+                });
+
+                var ious = _targetTexts2.map(function (d) {
+                  return _this58.iou(text.bound, d.bound);
+                });
+
+                var maxIndex = ious.indexOf(Math.max.apply(null, ious));
+
+                if (maxIou <= _this58.textIOU) {
+                  feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: "text.".concat(index),
+                    comment: '박스의 경계를 확인해주세요.'
+                  }));
+                } else if (_targetTexts2[maxIndex].text !== text.text) {
+                  feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: "text.".concat(index),
+                    comment: '박스의 텍스트를 확인해주세요.'
+                  }));
+                }
+              });
+            }
+          }
+
           var checkAxis = function checkAxis(index) {
             var axis = submitted.spec.axes[index];
-            var target = _this57.data.spec.axes[index];
+            var target = _this58.data.spec.axes[index];
 
             if (axis.title.value !== target.title.value) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "spec.axis.".concat(index, ".title"),
                 comment: '축 제목을 확인해주세요.'
@@ -11920,7 +12030,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (axis.type.value !== target.type.value) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "spec.axis.".concat(index, ".type"),
                 comment: '축의 데이터 타입을 확인해주세요.'
@@ -11934,7 +12044,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
 
             if (notSame) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "spec.axis.".concat(index, ".labels"),
                 comment: '축의 라벨들을 확인해주세요.'
@@ -11942,7 +12052,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (axis.unit.value !== target.unit.value) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "spec.axis.".concat(index, ".unit"),
                 comment: '축의 데이터 단위를 다시 확인해주세요.'
@@ -11950,7 +12060,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (axis.encoding.value !== target.encoding.value) {
-              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+              feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "spec.axis.".concat(index, ".encoding"),
                 comment: '축의 인코딩을 다시 확인해주세요.'
@@ -11961,7 +12071,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           otherIndex = 0;
 
           if (submitted.spec.axes.length !== 2) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
+            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
               taskKey: 'key_0',
               annotationKey: "spec.axis.other.".concat(otherIndex),
               comment: '축은 X축, Y축 각각 1개씩 있어야 합니다.'
@@ -11976,44 +12086,73 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var rows = submitted.raw.rows;
           var targetRows = this.data.raw.rows;
 
-          if (rows.length !== targetRows.length) {
-            feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-              taskKey: 'key_0',
-              annotationKey: "raw.other.".concat(otherIndex),
-              comment: '행의 수를 확인해주세요.'
-            }));
-            otherIndex += 1;
-          }
-
           if (submitted.spec.axes.length === 2) {
             var xKey = submitted.spec.axes[0].title.value;
             var yKey = submitted.spec.axes[1].title.value;
             var targetXKey = targetSpec.axes[0].title.value;
             var targetYKey = targetSpec.axes[1].title.value;
-            rows.forEach(function (row, i) {
-              var x = row.value[xKey];
-              var y = row.value[yKey];
-              var targetRow = targetRows.find(function (d) {
-                return d.value[targetYKey] === y;
-              });
 
-              if (!targetRow) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-                  taskKey: 'key_0',
-                  annotationKey: "raw.".concat(i),
-                  comment: '다음 행의 값을 확인해주세요.'
-                }));
-              } else if (isNaN(+x) || Math.abs(+targetRow.value[targetXKey] - +x) > 0.2) {
-                feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Feedback"]({
-                  taskKey: 'key_0',
-                  annotationKey: "raw.".concat(i),
-                  comment: '다음 행의 값을 확인해주세요.'
-                }));
-              }
-            });
+            if (this.chartType === 'bar') {
+              rows.forEach(function (row, i) {
+                var x = row.value[xKey];
+                var y = row.value[yKey];
+                var targetRow = targetRows.find(function (d) {
+                  return d.value[targetYKey] === y;
+                });
+
+                if (!targetRow) {
+                  feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: "raw.".concat(i),
+                    comment: '다음 행의 값을 확인해주세요.'
+                  }));
+                } else if (isNaN(+x) || Math.abs(+targetRow.value[targetXKey] - +x) > 0.2) {
+                  feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: "raw.".concat(i),
+                    comment: '다음 행의 값을 확인해주세요.'
+                  }));
+                }
+              });
+            } else {
+              var legendKey = submitted.spec.legend.title.value;
+              var targetLegendKey = targetSpec.legend.title.value;
+              rows.forEach(function (row, i) {
+                var x = row.value[xKey];
+                var y = isNaN(+row.value[yKey]) ? 0 : +row.value[yKey];
+                var legend = row.value[legendKey];
+                var filteredRows = targetRows.filter(function (d) {
+                  return d.value[targetXKey] === x;
+                }).sort(function (a, b) {
+                  var aDist = Math.abs(+a.value[targetYKey] - y);
+                  var bDist = Math.abs(+b.value[targetYKey] - y);
+                  return aDist - bDist;
+                });
+
+                if (filteredRows.length === 0) {
+                  feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                    taskKey: 'key_0',
+                    annotationKey: "raw.".concat(i),
+                    comment: '다음 행의 값을 확인해주세요.'
+                  }));
+                } else {
+                  var targetRow = filteredRows[0];
+                  var dist = Math.abs(+targetRow.value[targetYKey] - y);
+                  var targetLegend = targetRow.value[targetLegendKey];
+
+                  if (dist > 5 || targetLegend !== legend) {
+                    feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
+                      taskKey: 'key_0',
+                      annotationKey: "raw.".concat(i),
+                      comment: '다음 행의 값을 확인해주세요.'
+                    }));
+                  }
+                }
+              });
+            }
           }
 
-          this.currReview = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_5__["Review"]({
+          this.currReview = new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Review"]({
             path: path,
             approved: feedbacks.length === 0,
             feedbacks: feedbacks
@@ -12035,6 +12174,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var areaA = (a[2] - a[0]) * (a[3] - a[1]);
           var areaB = (b[2] - b[0]) * (b[3] - b[1]);
           return inter / (areaA + areaB - inter);
+        }
+      }, {
+        key: "params",
+        get: function get() {
+          return this._params[this.chartType];
         }
       }]);
 
@@ -12064,6 +12208,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function srcAppEditDemoQuiz_bar_dataJson(module) {
     module.exports = JSON.parse("{\"marks\":[{\"bound\":[0.298,0.076,0.761,0.145],\"label\":\"object\"},{\"bound\":[0.3,0.178,0.803,0.245],\"label\":\"object\"},{\"bound\":[0.3,0.288,0.459,0.353],\"label\":\"object\"},{\"bound\":[0.297,0.393,0.512,0.457],\"label\":\"object\"},{\"bound\":[0.3,0.493,0.444,0.554],\"label\":\"object\"},{\"bound\":[0.3,0.592,0.452,0.658],\"label\":\"object\"},{\"bound\":[0.3,0.694,0.471,0.757],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.144,0.082,0.273,0.136],\"label\":\"y-axis-label\",\"text\":\"Media\"},{\"bound\":[0.133,0.183,0.274,0.236],\"label\":\"y-axis-label\",\"text\":\"DMSO\"},{\"bound\":[0.074,0.286,0.277,0.346],\"label\":\"y-axis-label\",\"text\":\"Asbestos\"},{\"bound\":[0.02,0.389,0.28,0.457],\"label\":\"y-axis-label\",\"text\":\"Vulcan (BC)\"},{\"bound\":[0.067,0.49,0.279,0.556],\"label\":\"y-axis-label\",\"text\":\"SWCNT-1\"},{\"bound\":[0.056,0.594,0.279,0.652],\"label\":\"y-axis-label\",\"text\":\"MWCNT-R\"},{\"bound\":[0.058,0.699,0.276,0.75],\"label\":\"y-axis-label\",\"text\":\"MWCNT-N\"},{\"bound\":[0.405,0.913,0.853,0.973],\"label\":\"x-axis-title\",\"text\":\"Relative Cell Viability\"},{\"bound\":[0.262,0.826,0.332,0.879],\"label\":\"x-axis-label\",\"text\":\"0.0\"},{\"bound\":[0.473,0.822,0.547,0.88],\"label\":\"x-axis-label\",\"text\":\"0.5\"},{\"bound\":[0.697,0.827,0.764,0.879],\"label\":\"x-axis-label\",\"text\":\"1.0\"},{\"bound\":[0.912,0.824,0.979,0.879],\"label\":\"x-axis-label\",\"text\":\"1.5\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Relative Cell Viability\",\"type\":\"quantitative\",\"labels\":[\"0.0\",\"0.5\",\"1.0\",\"1.5\"],\"precision\":2,\"unit\":\"decimal\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.003521960657857802,\"encoding\":\"width\"},{\"dir\":\"y\",\"title\":\"Unknown Y Axis\",\"type\":\"nominal\",\"labels\":[\"Media\",\"DMSO\",\"Asbestos\",\"Vulcan (BC)\",\"SWCNT-1\",\"MWCNT-R\",\"MWCNT-N\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"y-position\"}],\"custom\":[]},\"raw\":[{\"Relative Cell Viability\":1.08,\"Unknown Y Axis\":\"Media\"},{\"Relative Cell Viability\":1.17,\"Unknown Y Axis\":\"DMSO\"},{\"Relative Cell Viability\":0.37,\"Unknown Y Axis\":\"Asbestos\"},{\"Relative Cell Viability\":0.5,\"Unknown Y Axis\":\"Vulcan (BC)\"},{\"Relative Cell Viability\":0.33,\"Unknown Y Axis\":\"SWCNT-1\"},{\"Relative Cell Viability\":0.35,\"Unknown Y Axis\":\"MWCNT-R\"},{\"Relative Cell Viability\":0.4,\"Unknown Y Axis\":\"MWCNT-N\"}]}");
+    /***/
+  },
+
+  /***/
+  "./src/app/edit/demo/quiz_line_data.json":
+  /*!***********************************************!*\
+    !*** ./src/app/edit/demo/quiz_line_data.json ***!
+    \***********************************************/
+
+  /*! exports provided: marks, texts, spec, raw, default */
+
+  /***/
+  function srcAppEditDemoQuiz_line_dataJson(module) {
+    module.exports = JSON.parse("{\"marks\":[{\"bound\":[0.19,0.767,0.2,0.779],\"label\":\"object\"},{\"bound\":[0.188,0.665,0.198,0.677],\"label\":\"object\"},{\"bound\":[0.277,0.755,0.287,0.767],\"label\":\"object\"},{\"bound\":[0.277,0.554,0.287,0.566],\"label\":\"object\"},{\"bound\":[0.367,0.75,0.377,0.761],\"label\":\"object\"},{\"bound\":[0.367,0.536,0.377,0.548],\"label\":\"object\"},{\"bound\":[0.453,0.724,0.463,0.736],\"label\":\"object\"},{\"bound\":[0.453,0.578,0.463,0.59],\"label\":\"object\"},{\"bound\":[0.542,0.606,0.552,0.617],\"label\":\"object\"},{\"bound\":[0.542,0.746,0.552,0.757],\"label\":\"object\"},{\"bound\":[0.63,0.695,0.64,0.707],\"label\":\"object\"},{\"bound\":[0.629,0.689,0.639,0.701],\"label\":\"object\"},{\"bound\":[0.718,0.685,0.728,0.697],\"label\":\"object\"},{\"bound\":[0.718,0.656,0.728,0.668],\"label\":\"object\"},{\"bound\":[0.807,0.645,0.817,0.657],\"label\":\"object\"},{\"bound\":[0.807,0.527,0.817,0.539],\"label\":\"object\"},{\"bound\":[0.895,0.661,0.905,0.673],\"label\":\"object\"},{\"bound\":[0.895,0.11,0.905,0.122],\"label\":\"object\"}],\"texts\":[{\"bound\":[0.198,0.087,0.257,0.118],\"label\":\"legend-label\",\"text\":\"Male\"},{\"bound\":[0.2,0.124,0.277,0.154],\"label\":\"legend-label\",\"text\":\"Female\"},{\"bound\":[0.055,0.043,0.092,0.073],\"label\":\"y-axis-label\",\"text\":\"300\"},{\"bound\":[0.055,0.176,0.093,0.203],\"label\":\"y-axis-label\",\"text\":\"250\"},{\"bound\":[0.053,0.31,0.093,0.335],\"label\":\"y-axis-label\",\"text\":\"200\"},{\"bound\":[0.055,0.442,0.093,0.465],\"label\":\"y-axis-label\",\"text\":\"150\"},{\"bound\":[0.055,0.574,0.093,0.6],\"label\":\"y-axis-label\",\"text\":\"100\"},{\"bound\":[0.065,0.706,0.092,0.73],\"label\":\"y-axis-label\",\"text\":\"50\"},{\"bound\":[0.077,0.84,0.092,0.862],\"label\":\"y-axis-label\",\"text\":\"0\"},{\"bound\":[0.49,0.951,0.602,0.982],\"label\":\"x-axis-title\",\"text\":\"Age groups\"},{\"bound\":[0.177,0.913,0.212,0.937],\"label\":\"x-axis-label\",\"text\":\"1-9\"},{\"bound\":[0.255,0.913,0.312,0.941],\"label\":\"x-axis-label\",\"text\":\"10-19\"},{\"bound\":[0.342,0.909,0.4,0.939],\"label\":\"x-axis-label\",\"text\":\"20-29\"},{\"bound\":[0.43,0.911,0.488,0.941],\"label\":\"x-axis-label\",\"text\":\"30-39\"},{\"bound\":[0.517,0.911,0.577,0.941],\"label\":\"x-axis-label\",\"text\":\"40-49\"},{\"bound\":[0.607,0.911,0.665,0.941],\"label\":\"x-axis-label\",\"text\":\"50-59\"},{\"bound\":[0.693,0.911,0.753,0.939],\"label\":\"x-axis-label\",\"text\":\"60-69\"},{\"bound\":[0.782,0.909,0.843,0.941],\"label\":\"x-axis-label\",\"text\":\"70-79\"},{\"bound\":[0.878,0.911,0.92,0.941],\"label\":\"x-axis-label\",\"text\":\"80+\"}],\"spec\":{\"title\":\"Unknown Title\",\"axis\":[{\"dir\":\"x\",\"title\":\"Age groups\",\"type\":\"nominal\",\"labels\":[\"1-9\",\"10-19\",\"20-29\",\"30-39\",\"40-49\",\"50-59\",\"60-69\",\"70-79\",\"80+\"],\"precision\":0,\"unit\":\"\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0,\"encoding\":\"x-position\"},{\"dir\":\"y\",\"title\":\"Incidence (Per 1000 Population)\",\"type\":\"quantitative\",\"labels\":[\"300\",\"250\",\"200\",\"150\",\"100\",\"50\",\"0\"],\"precision\":0,\"unit\":\"integer\",\"labeled\":false,\"markLabels\":[],\"valuePerPixel\":0.7462190828278095,\"encoding\":\"y-position\"}],\"custom\":[],\"legend\":{\"title\":\"Unknown Legend\",\"labels\":[\"Male\",\"Female\"],\"encoding\":\"color\"}},\"raw\":[{\"Age groups\":\"1-9\",\"Incidence (Per 1000 Population)\":30,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"1-9\",\"Incidence (Per 1000 Population)\":68,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"10-19\",\"Incidence (Per 1000 Population)\":34,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"10-19\",\"Incidence (Per 1000 Population)\":110,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"20-29\",\"Incidence (Per 1000 Population)\":36,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"20-29\",\"Incidence (Per 1000 Population)\":117,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"30-39\",\"Incidence (Per 1000 Population)\":46,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"30-39\",\"Incidence (Per 1000 Population)\":101,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"40-49\",\"Incidence (Per 1000 Population)\":91,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"40-49\",\"Incidence (Per 1000 Population)\":38,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"50-59\",\"Incidence (Per 1000 Population)\":57,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"50-59\",\"Incidence (Per 1000 Population)\":59,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"60-69\",\"Incidence (Per 1000 Population)\":61,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"60-69\",\"Incidence (Per 1000 Population)\":72,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"70-79\",\"Incidence (Per 1000 Population)\":76,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"70-79\",\"Incidence (Per 1000 Population)\":120,\"Unknown Legend\":\"Female\"},{\"Age groups\":\"80+\",\"Incidence (Per 1000 Population)\":70,\"Unknown Legend\":\"Male\"},{\"Age groups\":\"80+\",\"Incidence (Per 1000 Population)\":278,\"Unknown Legend\":\"Female\"}]}");
     /***/
   },
 
@@ -12264,7 +12422,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(EditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this58 = this;
+          var _this59 = this;
 
           if (!this.configService.userName) {
             this.router.navigate(['/login']);
@@ -12273,7 +12431,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.svgS = d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgRef.nativeElement);
           this.configService.configObservable.subscribe(function (config) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this58, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this59, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee13() {
               var elem, result;
@@ -12339,44 +12497,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var imgElem = this.imgRef.nativeElement;
           this.edit.removeImage();
           imgElem.addEventListener('load', function () {
-            var boundingBox = _this58.imgRef.nativeElement.getBoundingClientRect();
+            var boundingBox = _this59.imgRef.nativeElement.getBoundingClientRect();
 
-            _this58.initSVG(boundingBox);
+            _this59.initSVG(boundingBox);
 
-            _this58.noImagesLeft = false;
-            _this58.onImageLoad = true;
+            _this59.noImagesLeft = false;
+            _this59.onImageLoad = true;
 
-            _this58.timer.start();
+            _this59.timer.start();
 
-            var path = _this58.selectedImage.path;
+            var path = _this59.selectedImage.path;
 
-            _this58.network.getPrediction(path).then(function (predictData) {
-              _this58.config.parsePrediction(predictData);
+            _this59.network.getPrediction(path).then(function (predictData) {
+              _this59.config.parsePrediction(predictData);
 
-              if (_this58.mode === 'annotation') {
-                _this58.eventSubject.next('predict');
+              if (_this59.mode === 'annotation') {
+                _this59.eventSubject.next('predict');
               }
             });
 
-            if (_this58.selectedImage.hasPrevAnnotation) {
-              var meta = _this58.selectedImage.meta;
+            if (_this59.selectedImage.hasPrevAnnotation) {
+              var meta = _this59.selectedImage.meta;
 
-              _this58.config.parsePrevAnnotation(_this58.formGroup, meta.annotation, _this58.fb);
+              _this59.config.parsePrevAnnotation(_this59.formGroup, meta.annotation, _this59.fb);
 
-              _this58.eventSubject.next('review');
+              _this59.eventSubject.next('review');
             }
           });
           this.edit.imageSubject.asObservable().subscribe(function (image) {
-            _this58.formGroup = _this58.initFormGroup(_this58.config);
-            _this58.selectedImage = image;
-            var svg = _this58.svgRef.nativeElement;
+            _this59.formGroup = _this59.initFormGroup(_this59.config);
+            _this59.selectedImage = image;
+            var svg = _this59.svgRef.nativeElement;
 
-            _this58.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this59.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
-            _this58.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this59.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
             if (!image) {
-              _this58.noImagesLeft = !!imgElem.src;
+              _this59.noImagesLeft = !!imgElem.src;
               imgElem.src = '';
               return;
             }
@@ -12384,8 +12542,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             imgElem.src = image.src;
           });
           this.edit.autoCompleteSubject.asObservable().subscribe(function (_) {
-            if (_this58.mode === 'annotation') {
-              _this58.eventSubject.next('predict');
+            if (_this59.mode === 'annotation') {
+              _this59.eventSubject.next('predict');
             }
           });
         }
@@ -12764,11 +12922,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initFormGroup",
         value: function initFormGroup(config) {
-          var _this59 = this;
+          var _this60 = this;
 
           var formGroup = this.fb.group({});
           config.tasks.forEach(function (task) {
-            task.registerControl(formGroup, _this59.fb);
+            task.registerControl(formGroup, _this60.fb);
           });
           return formGroup;
         }
@@ -13023,20 +13181,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SideNavComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this60 = this;
+          var _this61 = this;
 
           this.event.subscribe(function (key) {
             if (key === 'progress') {
-              _this60.updateProgress();
+              _this61.updateProgress();
 
-              _this60.updateModelInfo();
+              _this61.updateModelInfo();
             }
           });
           this.cs.configObservable.subscribe(function (config) {
-            _this60.config = config;
+            _this61.config = config;
           });
           this.cs.userNameObservable.subscribe(function (name) {
-            _this60.userName = name;
+            _this61.userName = name;
           });
         }
       }, {
@@ -13053,10 +13211,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "removeImage",
         value: function removeImage() {
-          var _this61 = this;
+          var _this62 = this;
 
           this.edit.ignoreImage().then(function (_) {
-            _this61.remove.emit();
+            _this62.remove.emit();
           });
         } // for debug
 
@@ -13140,17 +13298,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateModelInfo",
         value: function updateModelInfo() {
-          var _this62 = this;
+          var _this63 = this;
 
           this.network.getModelInfo().then(function (modelInfos) {
-            if (!_this62.modelInfos) {
-              _this62.modelInfos = modelInfos;
+            if (!_this63.modelInfos) {
+              _this63.modelInfos = modelInfos;
             } else {
               modelInfos.forEach(function (newModelInfo, i) {
-                if (i < _this62.modelInfos.length) {
-                  _this62.modelInfos[i].score = newModelInfo.score;
+                if (i < _this63.modelInfos.length) {
+                  _this63.modelInfos[i].score = newModelInfo.score;
                 } else {
-                  _this62.modelInfos.push(newModelInfo);
+                  _this63.modelInfos.push(newModelInfo);
                 }
               });
             }
@@ -13269,18 +13427,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TimerService, [{
         key: "start",
         value: function start() {
-          var _this63 = this;
+          var _this64 = this;
 
           this.reset();
           this.timer = setInterval(function () {
-            _this63.sec += 1;
+            _this64.sec += 1;
 
-            if (_this63.sec >= 1200) {
-              _this63.router.navigate(['/login']);
+            if (_this64.sec >= 1200) {
+              _this64.router.navigate(['/login']);
 
-              _this63.demo.init();
+              _this64.demo.init();
 
-              _this63.sec = 0;
+              _this64.sec = 0;
             }
           }, 1000);
         }
@@ -14292,10 +14450,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addMarkFeedback",
         value: function addMarkFeedback() {
-          var _this64 = this;
+          var _this65 = this;
 
           var markIndex = this.data.marks.findIndex(function (mark) {
-            return mark.key === _this64.focusedKey;
+            return mark.key === _this65.focusedKey;
           });
           var numOtherFeedback = this.markFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('mark.other');
@@ -14320,10 +14478,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTextFeedback",
         value: function addTextFeedback() {
-          var _this65 = this;
+          var _this66 = this;
 
           var textIndex = this.data.texts.findIndex(function (text) {
-            return text.key === _this65.focusedKey;
+            return text.key === _this66.focusedKey;
           });
           var numOtherFeedback = this.textFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('text.other');
@@ -14413,7 +14571,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initMarks",
         value: function initMarks() {
-          var _this66 = this;
+          var _this67 = this;
 
           var _this$imgRef$nativeEl4 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl4.width,
@@ -14428,16 +14586,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('mark', true).classed('focused', function (mark) {
-            return _this66.focusedKey === mark.key;
+            return _this67.focusedKey === mark.key;
           }).on('click', function (mark) {
-            _this66.clickMark(mark);
+            _this67.clickMark(mark);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "initTexts",
         value: function initTexts() {
-          var _this67 = this;
+          var _this68 = this;
 
           var _this$imgRef$nativeEl5 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl5.width,
@@ -14452,22 +14610,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('text', true).classed('focused', function (text) {
-            return _this67.focusedKey === text.key;
+            return _this68.focusedKey === text.key;
           }).on('click', function (text) {
-            _this67.clickText(text);
+            _this68.clickText(text);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "updateFocus",
         value: function updateFocus(key) {
-          var _this68 = this;
+          var _this69 = this;
 
           var g = this.svgS.selectAll('g');
           g.selectAll('rect').classed('focused', function (d) {
             return d.key === key;
           }).style('stroke-width', function (d) {
-            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this68.svgS, d.key === key);
+            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this69.svgS, d.key === key);
           });
           g.select('.focused').raise();
 
@@ -14665,7 +14823,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee22() {
-            var _this69 = this;
+            var _this70 = this;
 
             return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
@@ -14677,7 +14835,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         response: 'ok'
                       }
                     }).afterClosed().subscribe(function (result) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this69, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this70, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee21() {
                         var feedbacks, path;
@@ -14685,39 +14843,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           while (1) {
                             switch (_context21.prev = _context21.next) {
                               case 0:
-                                console.log({
-                                  result: result
-                                });
-
                                 if (!(result.response !== 'ok')) {
-                                  _context21.next = 3;
+                                  _context21.next = 2;
                                   break;
                                 }
 
                                 return _context21.abrupt("return");
 
-                              case 3:
+                              case 2:
                                 feedbacks = this.feedbackForms.map(function (d) {
                                   return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(d);
                                 });
                                 path = this.edit.image.path;
 
                                 if (!(this.config.service === 'normal')) {
-                                  _context21.next = 8;
+                                  _context21.next = 7;
                                   break;
                                 }
 
-                                _context21.next = 8;
+                                _context21.next = 7;
                                 return this.network.registerReview({
                                   path: path,
                                   approved: approved,
                                   feedbacks: feedbacks
                                 });
 
-                              case 8:
+                              case 7:
                                 this.reviewEmitter.emit();
 
-                              case 9:
+                              case 8:
                               case "end":
                                 return _context21.stop();
                             }
@@ -14845,7 +14999,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function LocaleService() {
-        var _this70 = this,
+        var _this71 = this,
             _this$labelMap;
 
         _classCallCheck(this, LocaleService);
@@ -14944,7 +15098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             spec: '명세 정보',
             rawData: '원본 데이터',
             label: function label(input) {
-              return _this70.labelMap[input];
+              return _this71.labelMap[input];
             }
           }
         };
@@ -14958,7 +15112,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: 'Labels',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           },
           ko: {
@@ -14970,7 +15124,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: '라벨',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           }
         };
@@ -14980,7 +15134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             labels: 'Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           },
           ko: {
@@ -14988,7 +15142,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             labels: '라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           }
         };
@@ -15000,7 +15154,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           },
           ko: {
@@ -15010,7 +15164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           }
         };
@@ -15099,7 +15253,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: '제목',
             numMarks: '마크의 개수',
             label: function label(input) {
-              return _this70.labelMap[input];
+              return _this71.labelMap[input];
             },
             refreshWarning: '전 단계에서 변경 사항을 반영하려면 새로 고침 버튼을 누르세요',
             controlDelete: "\uC9C0\uC6B0\uAE30",
@@ -15163,7 +15317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           en: {
             encoding: 'Encoding',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             clear: 'Clear',
             predict: 'Predict'
@@ -15171,7 +15325,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           ko: {
             encoding: '인코딩',
             encodingLabel: function encodingLabel(label) {
-              return _this70.encodingMap[label][_this70.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             clear: '모두 삭제',
             predict: '값 계산'
@@ -15417,25 +15571,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this71 = this;
+          var _this72 = this;
 
           this.configService.configObservable.subscribe(function (config) {
-            _this71.config = config;
+            _this72.config = config;
 
-            if (_this71.config.service !== 'normal') {
-              _this71.name = _this71.config.service;
-              _this71.password = _this71.config.service;
+            if (_this72.config.service !== 'normal') {
+              _this72.name = _this72.config.service;
+              _this72.password = _this72.config.service;
 
-              _this71.configService.setUserName(_this71.name);
+              _this72.configService.setUserName(_this72.name);
 
-              _this71.login(false);
+              _this72.login(false);
             }
           });
         }
       }, {
         key: "login",
         value: function login() {
-          var _this72 = this;
+          var _this73 = this;
 
           var validation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var re = /[A-Za-z0-9_]\w+/g;
@@ -15450,13 +15604,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.network.login(this.config.key, this.name, this.password).then(function (res) {
             if (res.code !== 0) {
-              _this72.warnMessage = res.message;
+              _this73.warnMessage = res.message;
             } else {
-              _this72.configService.userNameObservable.subscribe(function (_) {
-                _this72.router.navigate(['/edit']);
+              _this73.configService.userNameObservable.subscribe(function (_) {
+                _this73.router.navigate(['/edit']);
               });
 
-              _this72.configService.setUserName(_this72.name);
+              _this73.configService.setUserName(_this73.name);
             }
           })["catch"](function (err) {
             console.error(err);
@@ -15575,7 +15729,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(NetworkService, [{
         key: "login",
         value: function login(key, userName, password) {
-          var _this73 = this;
+          var _this74 = this;
 
           var body = {
             key: key,
@@ -15583,10 +15737,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             password: password
           };
           return this.http.post("".concat(this.BASE_URL, "login"), body, this.userOptions).toPromise().then(function (raw) {
-            return _this73.parseResponse(raw);
+            return _this74.parseResponse(raw);
           }).then(function (data) {
             if (data.data.token) {
-              _this73.token = data.data.token;
+              _this74.token = data.data.token;
             }
 
             return data;
@@ -15669,15 +15823,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getRandomElem",
         value: function getRandomElem() {
-          var _this74 = this;
+          var _this75 = this;
 
           return this.httpGetWithUser('random_image').then(function (raw) {
-            return _this74.parseResponse(raw);
+            return _this75.parseResponse(raw);
           }).then(function (response) {
             var data = response.data;
 
             if (data) {
-              return Promise.all([data, _this74.getImage(data.path)]);
+              return Promise.all([data, _this75.getImage(data.path)]);
             } else {
               return null;
             }
@@ -15686,7 +15840,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVerificationRandomElem",
         value: function getVerificationRandomElem() {
-          var _this75 = this;
+          var _this76 = this;
 
           return this.httpGetWithUser('verification_image').then(function (response) {
             if (response.data) {
@@ -15696,7 +15850,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }).then(function (meta) {
             if (meta) {
-              return Promise.all([meta, _this75.getImage(meta.path)]);
+              return Promise.all([meta, _this76.getImage(meta.path)]);
             } else {
               return null;
             }
@@ -15742,10 +15896,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerReview",
         value: function registerReview(review) {
-          var _this76 = this;
+          var _this77 = this;
 
           return this.http.post(this.BASE_URL + 'register_review', review, this.userOptions).toPromise().then(function (d) {
-            return _this76.parseResponse(d);
+            return _this77.parseResponse(d);
           });
         }
       }, {
