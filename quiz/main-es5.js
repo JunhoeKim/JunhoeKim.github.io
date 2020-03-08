@@ -61,7 +61,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-between submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-end submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -221,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-icon-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"3\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-icon-button (click)=\"clearBoxes()\" color=\"warn\">\r\n            <mat-icon>delete</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\"\r\n            (outdatedFeedback)=\"outdatedFeedback.emit()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div *ngIf=\"stage == 0\">\r\n<div class=\"p-2 w-100\">\r\n    <mat-button-toggle-group\r\n        [value]=\"boxMode\"\r\n        (change)=\"onBoxModeChange($event)\"\r\n        class=\"mr-3\">\r\n        <mat-button-toggle value=\"text\" id=\"text-mode-button\">\r\n            {{ L.textMode }}\r\n        </mat-button-toggle>\r\n        <mat-button-toggle value=\"mark\" id=\"mark-mode-button\">\r\n            {{ L.markMode }}\r\n        </mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n</div>\r\n<div *ngIf=\"boxMode === 'mark'\">\r\n    <div class=\"d-flex align-items-center justify-content-between w-100\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.marks }}\r\n        </div>\r\n        <button mat-button\r\n            (click)=\"clearBoxes()\"\r\n            color=\"warn\"\r\n            clss=\"mr-2\">\r\n            {{ L.deleteAll }}\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('mark.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <button mat-stroked-button\r\n        *ngIf=\"task.inputType === 'rect'\"\r\n        (click)=\"onCheckBoxRegression()\">\r\n        {{ L.regression }}\r\n    </button>\r\n    <div *ngIf=\"task.inputType === 'point'\">\r\n        <div>\r\n            {{ L.radius }}\r\n        </div>\r\n        <div class=\"d-flex align-items-center\">\r\n            <mat-slider\r\n                min=\"2\"\r\n                max=\"15\"\r\n                step=\"1\"\r\n                [(ngModel)]=\"pointRadius\"\r\n                class=\"mr-3 w-25\"\r\n                (change)=\"onPointSizeChange($event)\"\r\n            >\r\n            </mat-slider>\r\n            <div class=\"mr-1\">\r\n                <svg height=\"48px\" width=\"48px\">\r\n                    <circle cx=\"24px\" cy=\"24px\" r=\"8px\"\r\n                        fill=\"darkorange\" #pointMark>\r\n                    </circle>\r\n                </svg>\r\n            </div>\r\n            <div>\r\n                {{ pointRadius }}px\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\" #markScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div class=\"w-20 text-center py-1\">\r\n                INDEX\r\n            </div>\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"w-20 text-center\">\r\n                {{feature}}\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of marks; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            [class.even]=\"i % 2 == 0\"\r\n            #markRows>\r\n            <div class=\"w-100 d-flex\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div class=\"w-20 text-center py-1\">\r\n                    {{ i + 1 }}\r\n                </div>\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"w-20 text-center py-1\">\r\n                    <span>{{ box.points[feature].value }}</span>\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"boxMode === 'text'\">\r\n    <div class=\"d-flex w-100 justify-content-between\">\r\n        <div class=\"subtitle py-2 mr-1\">\r\n            {{ L.texts }}\r\n        </div>\r\n        <button mat-button\r\n            (click)=\"clearBoxes()\" color=\"warn\">\r\n            {{ L.deleteAll }}\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('text.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n    <div class=\"w-100 my-3\">\r\n        <mat-slide-toggle\r\n            [(ngModel)]=\"sortText\"\r\n            (change)=\"updateTextSortOption($event)\">\r\n            {{ L.sort }}\r\n        </mat-slide-toggle>\r\n    </div>\r\n    <mat-divider class=\"w-100\"></mat-divider>\r\n    <div class=\"p-2 d-flex flex-wrap table styled-scroll\" #textScroll>\r\n        <div class=\"d-flex w-100 py-1 border-bottom\">\r\n            <div\r\n                *ngFor=\"let feature of task.features\"\r\n                class=\"feature-cell\">\r\n                {{feature}}\r\n            </div>\r\n            <div\r\n                *ngIf=\"task.textLabels.length > 1\"\r\n                class=\"w-25 text-center label-cell\">\r\n                Label\r\n            </div>\r\n            <div\r\n                class=\"input-cell text-center\">\r\n                Text\r\n            </div>\r\n        </div>\r\n        <div\r\n            *ngFor=\"let box of texts; let i = index\"\r\n            [class]=\"'d-flex flex-wrap w-100 focus-box elem-' + box.key\"\r\n            (click)=\"updateFocus(box.key)\"\r\n            #textRows>\r\n            <div class=\"d-flex w-100\"\r\n                [class.focused]=\"focusedBoxIndex === box.key\">\r\n                <div\r\n                    *ngFor=\"let feature of task.features\"\r\n                    class=\"feature-cell py-1\">\r\n                    <span>{{ box.points[feature].value }} </span>\r\n                </div>\r\n                <div\r\n                    *ngIf=\"task.textLabels.length > 1\"\r\n                    class=\"w-25 text-center px-2 py-1\">\r\n                    <select [formControl]=\"box.label\"\r\n                        class=\"label-select\"\r\n                        (change)=\"onLabelChange()\"\r\n                        (focus)=\"onBlurEvent(box)\">\r\n                        <option *ngFor=\"let label of task.textLabels\" [value]=\"label\">\r\n                                {{ L.label(label) }}\r\n                        </option>\r\n                    </select>\r\n                </div>\r\n                <div\r\n                    class=\"input-cell px-2 py-1\">\r\n                    <input [formControl]=\"box.text\"\r\n                        (focusin)=\"onBlurEvent(box)\"\r\n                        (keypress)=\"inputKeyPress($event)\"\r\n                        type=\"search\">\r\n                </div>\r\n            </div>\r\n            <div\r\n                [hidden]=\"!focusedFeedback || focusedFeedbackKey !== box.key\"\r\n                class=\"w-100 feedback-region\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback ? focusedFeedback.comment : '' }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"validate-feedback w-100 py-2\">\r\n    <ng-container *ngFor=\"let msg of task.msgs\">\r\n        *{{ msg }} <br/>\r\n    </ng-container>\r\n</div>\r\n</div>\r\n<div *ngIf=\"stage == 1\">\r\n    <div class=\"w-100 position-relative\">\r\n        <app-sub-header [title]=\"L.spec\"></app-sub-header>\r\n        <div class=\"refresh-warning\">\r\n            {{ L.refreshWarning }}\r\n        </div>\r\n        <button mat-icon-button\r\n            class=\"close-button\"\r\n            (click)=\"refresh(1)\">\r\n            <mat-icon>refresh</mat-icon>\r\n        </button>\r\n    </div>\r\n    <div\r\n        *ngIf=\"focusedFeedback && focusedFeedbackKey.startsWith('spec.other')\"\r\n        class=\"w-100 feedback-region my-2 justify-content-start\">\r\n        <div class=\"mr-3\">\r\n            {{ focusedFeedback.comment }}\r\n        </div>\r\n        <app-resolve-button></app-resolve-button>\r\n    </div>\r\n     <div\r\n        class=\"p-2 d-flex flex-wrap table styled-scroll\"\r\n        [formGroup]=\"specGroup\"\r\n        #specScroll>\r\n        <div class=\"w-100 d-flex flex-wrap spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput formControlName=\"title\"\r\n                    [placeholder]=\"L.title\"\r\n                    (change)=\"onChangeTitleSpec($event)\">\r\n            </mat-form-field>\r\n            <div\r\n                *ngIf=\"focusedFeedback && focusedFeedbackKey === 'title'\"\r\n                class=\"w-100 feedback-region title\">\r\n                <div class=\"mr-3\">\r\n                    {{ focusedFeedback.comment }}\r\n                </div>\r\n                <app-resolve-button></app-resolve-button>\r\n            </div>\r\n        </div>\r\n        <div class=\"w-100 d-flex spec\">\r\n            <mat-form-field class=\"w-100\">\r\n                <input matInput readonly\r\n                    [placeholder]=\"L.numMarks\"\r\n                    [value]=\"marks.length\">\r\n            </mat-form-field>\r\n        </div>\r\n        <app-sub-header *ngIf=\"axesGroup.length > 0\"\r\n            [title]=\"L.axis\">\r\n        </app-sub-header>\r\n        <div *ngFor=\"let axisGroup of axesGroup; let i = index\"\r\n            class=\"w-100 spec\">\r\n            <app-axis-spec\r\n                [auto]=\"auto\"\r\n                [index]=\"i\"\r\n                [group]=\"axisGroup\"\r\n                [imgRef]=\"imgRef\"\r\n                [task]=\"task\"\r\n                [texts]=\"texts\"\r\n                (scroll)=\"onSpecScroll($event)\">\r\n            </app-axis-spec>\r\n        </div>\r\n        <ng-container *ngIf=\"hasLegend\">\r\n            <app-sub-header [title]=\"L.legend\"> </app-sub-header>\r\n            <div class=\"w-100 spec\">\r\n                <app-legend-spec\r\n                    [auto]=\"auto\"\r\n                    [group]=\"legendGroup\"\r\n                    [task]=\"task\"\r\n                    (scroll)=\"onSpecScroll($event)\">\r\n                </app-legend-spec>\r\n            </div>\r\n        </ng-container>\r\n        <app-custom-spec\r\n            class=\"w-100\"\r\n            *ngFor=\"let group of customGroups; let i = index\"\r\n            [index]=\"i\"\r\n            [group]=\"group\"\r\n            [task]=\"task\"\r\n            [texts]=\"texts\"\r\n            (closed)=\"deleteCustomColumn($event)\"\r\n            (scroll)=\"onSpecScroll($event)\">\r\n\r\n        </app-custom-spec>\r\n        <div class=\"mt-2 d-flex w-100\">\r\n            <button mat-stroked-button\r\n                class=\"mr-2\"\r\n                (click)=\"addCustomColumn(false)\">\r\n                {{ L.addCustomColumn }}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div *ngIf=\"stage == 2\">\r\n    <div class=\"subtitle py-2\">{{ L.rawData }}</div>\r\n    <div class=\"p-2 d-flex flex-wrap w-100\">\r\n        <app-raw-table\r\n            class=\"w-100\"\r\n            [imgRef]=\"imgRef\"\r\n            [formGroup]=\"formGroup.get(task.key)\"\r\n            [task]=\"task\"\r\n            [boxes]=\"boxes\"\r\n            [hasLegend]=\"hasLegend\"\r\n            [focusedBoxIndex]=\"focusedBoxIndex\"\r\n            [inputType]=\"task.inputType\"\r\n            [pointRadius]=\"pointRadius\"\r\n            [auto]=\"auto\"\r\n            [mode]=\"mode\"\r\n            (focusEmitter)=\"updateFocus($event)\"\r\n            (submitEmitter)=\"onSubmitReady()\"\r\n            (outdatedFeedback)=\"outdatedFeedback.emit()\">\r\n\r\n        </app-raw-table>\r\n    </div>\r\n</div>\r\n<div class=\"mt-2 w-100 d-flex justify-content-end\">\r\n    <button mat-button class=\"mr-2\"\r\n        (click)=\"goPrevStage()\"\r\n        [disabled]=\"stage === 0\">\r\n        << {{ L.prev }}\r\n    </button>\r\n    <button mat-button\r\n        (click)=\"goNextStage()\"\r\n        [disabled]=\"stage === 2\">\r\n        >> {{ L.next }}\r\n    </button>\r\n</div>\r\n\r\n<div\r\n    class=\"control-panel p-2 px-3 border-bottom\"\r\n    #controlPanel>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"deleteBox(focusedBoxIndex)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press (d / delete)\"\r\n        class=\"mr-2\">\r\n        {{ L.controlDelete }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, true)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press f\"\r\n        class=\"mr-2\">\r\n        {{ L.controlForward }}\r\n    </button>\r\n\r\n    <button mat-stroked-button\r\n        (click)=\"sortDrawOrder(focusedBoxIndex, false)\"\r\n        [disabled]=\"!focusedBoxIndex || stage !== 0\"\r\n        matTooltip=\"Press b\"\r\n        class=\"mr-2\">\r\n        {{ L.controlBackward }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -461,7 +461,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div\r\n        class=\"w-100 elapsed-time\">\r\n        {{ L.sideNav.elapsedTime }} : {{ timer.sec }}\r\n    </div>\r\n    <div *ngIf=\"edit.image && mode === 'annotation'\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div>\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
+    __webpack_exports__["default"] = "<div\r\n    class=\"d-flex align-items-center justify-content-between w-100\r\n        side-panel\">\r\n\r\n</div>\r\n<mat-list *ngIf=\"progress\">\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.progress }}:\r\n        <span class=\"annotated mx-1\">{{ progress.approved }}</span>\r\n        /\r\n        {{ progress.total - progress.ignored}}\r\n        <span class=\"ignored mx-1\">({{progress.ignored}})</span>\r\n    </div>\r\n    <div mat-list-item mat-subheader class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userName }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userName }}</strong>\r\n        </span>\r\n    </div>\r\n    <div mat-list-item mat-subheader\r\n        *ngIf=\"config && config.isNormalMode && config.sharedDataset\"\r\n        class=\"p-2 pl-3 progress-info\">\r\n        {{ L.sideNav.userProgress }}:\r\n        <span class=\"mx-1 annotated\">\r\n            <strong>{{ userProgress }}</strong>\r\n        </span>\r\n    </div>\r\n</mat-list>\r\n<mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"autoListShow= !autoListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>\r\n                {{ L.sideNav.useSuggestions }}\r\n            </div>\r\n            <div>\r\n                <mat-icon>{{ autoListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"autoListShow\">\r\n        <div *ngFor=\"let modelInfo of modelInfos\" mat-list-item class=\"py-2\">\r\n            <mat-checkbox mat-subheader (change)=\"onChangeAutoComplete($event, modelInfo)\">{{ modelInfo.name }} ({{ modelInfo.scoreFormat }})</mat-checkbox>\r\n        </div>\r\n    </ng-container>\r\n</mat-action-list>\r\n<ng-container *ngIf=\"config && config.isNormalMode\">\r\n\r\n    <!-- <div *ngIf=\"edit.image\" class=\"p-3 w-100 justify-content-center\">\r\n        {{ imageName }}\r\n    </div> -->\r\n    <div\r\n        class=\"w-100 elapsed-time\">\r\n        {{ L.sideNav.elapsedTime }} : {{ timer.sec }}\r\n    </div>\r\n    <div *ngIf=\"edit.image && mode === 'annotation'\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"removeImage()\">\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <mat-icon class=\"mr-1\">delete_outline</mat-icon>\r\n                <div>\r\n                    {{ L.sideNav.removeButton }}\r\n                </div>\r\n            </div>\r\n        </button>\r\n    </div>\r\n    <!-- <div *ngIf=\"edit.image\"\r\n        class=\"d-flex align-items-center justify-content-between w-100\r\n            side-panel mt-2\">\r\n        <button mat-stroked-button color=\"warn\" (click)=\"getRandImage()\">\r\n            SKIP\r\n        </button>\r\n    </div> -->\r\n</ng-container>\r\n\r\n<!-- <mat-action-list>\r\n    <button mat-list-item mat-subheader\r\n        (click)=\"imageListShow = !imageListShow\">\r\n        <div class=\"w-100 px-1\r\n            d-flex justify-content-between align-items-center\">\r\n            <div>Image List</div>\r\n            <div>\r\n                <mat-icon>{{ imageListShow ? 'remove' : 'add_circle_outline'}}</mat-icon>\r\n            </div>\r\n        </div>\r\n    </button>\r\n    <ng-container *ngIf=\"imageListShow\">\r\n        <button mat-list-item *ngFor=\"let image of edit.images; let i=index\"\r\n        [class.selected]=\"edit.selectedImage && image.path === edit.selectedImage.path\"\r\n        (click)=\"selectImage(image)\">\r\n\r\n        </button>\r\n    </ng-container>\r\n    <mat-divider></mat-divider>\r\n</mat-action-list> -->\r\n";
     /***/
   },
 
@@ -541,7 +541,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.axis }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.dir.key\"\r\n            (click)=\"emit(data.dir)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.dir }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.dir.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.type }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.unit }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.unit.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.encoding }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ L.encodingLabel(data.encoding.value) }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.labels.key\"\r\n            (click)=\"emit(data.labels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.labels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ labels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\"\r\n        *ngIf=\"data.markLabels && data.markLabels.value.length > 0\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.markLabels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 mt-2 spec-table\">\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.title.key\"\r\n            (click)=\"emit(data.title)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.axis }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ data.title.value }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.dir.key\"\r\n            (click)=\"emit(data.dir)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.dir }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.dir.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.type.key\"\r\n            (click)=\"emit(data.type)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.type }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ data.type.value }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.unit.key\"\r\n            (click)=\"emit(data.unit)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.unit }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ L.selectedUnit(data.unit.value) }}\r\n            </div>\r\n        </div>\r\n        <div class=\"focus-unit w-25\"\r\n            [class.focused]=\"focusedKey === data.encoding.key\"\r\n            (click)=\"emit(data.encoding)\">\r\n            <div class=\"w-50 p-2 cell-title\">\r\n                {{ L.encoding }}\r\n            </div>\r\n            <div class=\"w-50 p-2\">\r\n                {{ L.encodingLabel(data.encoding.value) }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.labels.key\"\r\n            (click)=\"emit(data.labels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.labels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ labels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"d-flex w-100\"\r\n        *ngIf=\"data.markLabels && data.markLabels.value.length > 0\">\r\n        <div class=\"focus-unit w-100\"\r\n            [class.focused]=\"focusedKey === data.markLabels.key\"\r\n            (click)=\"emit(data.markLabels)\">\r\n            <div class=\"w-125 p-2 cell-title\">\r\n                {{ L.markLabels }}\r\n            </div>\r\n            <div class=\"w-875 p-2\">\r\n                {{ markLabels }}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -6746,10 +6746,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AxisSpecComponent =
     /*#__PURE__*/
     function () {
-      function AxisSpecComponent(fs, _L) {
+      function AxisSpecComponent(fs, fb, _L) {
         _classCallCheck(this, AxisSpecComponent);
 
         this.fs = fs;
+        this.fb = fb;
         this.texts = [];
         this.scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.hasMarkLabels = false;
@@ -6785,6 +6786,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.hasMarkLabels = this.texts.filter(function (d) {
             return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_MARK_LABEL"];
           }).length > 0;
+          this.mapMarkLabelToAxis();
         }
       }, {
         key: "ngAfterViewInit",
@@ -6807,6 +6809,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.group.get('unit').setValue('');
           }
+
+          this.mapMarkLabelToAxis();
         }
       }, {
         key: "scrollEvent",
@@ -6865,6 +6869,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var valuePerPixel = +d3__WEBPACK_IMPORTED_MODULE_7__["mean"](valuesPerPixel);
           this.group.get('valuePerPixel').setValue(valuePerPixel);
         }
+      }, {
+        key: "mapMarkLabelToAxis",
+        value: function mapMarkLabelToAxis() {
+          var _this29 = this;
+
+          var markLabelBoxes = this.texts.filter(function (d) {
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_MARK_LABEL"];
+          });
+          var group = this.group;
+          var groupType = group.get('type').value;
+          var markLabelsForm = group.get('markLabels');
+
+          while (markLabelsForm.length > 0) {
+            markLabelsForm.removeAt(0);
+          }
+
+          var filterInsertLabels = function filterInsertLabels(s) {
+            if (groupType === 'quantitative') {
+              var values = group.get('labels').controls.map(function (d) {
+                return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+              });
+              var extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
+              var value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+              return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(s) && value >= extent[0] && value <= extent[1];
+            } else {
+              var axisLabels = group.get('labels').value;
+              return axisLabels.includes(s);
+            }
+          };
+
+          var insertedMarkLabels = markLabelBoxes.filter(function (box) {
+            return filterInsertLabels(box.text.value);
+          });
+          insertedMarkLabels.filter(function (box) {
+            markLabelsForm.push(_this29.fb.control(box.text.value));
+          });
+          group.get('labeled').setValue(insertedMarkLabels.length > 0);
+        }
       }]);
 
       return AxisSpecComponent;
@@ -6873,6 +6915,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AxisSpecComponent.ctorParameters = function () {
       return [{
         type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"]
+      }, {
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
       }, {
         type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]
       }];
@@ -6916,7 +6960,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/annotation-module/overall/axis-spec/axis-spec.component.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], AxisSpecComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_5__["FeedbackService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_6__["LocaleService"]])], AxisSpecComponent);
     /***/
   },
 
@@ -7125,26 +7169,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CustomSpecComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this29 = this;
+          var _this30 = this;
 
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this29.focusedFeedbackKey = '';
-            _this29.focusedFeedback = null;
+            _this30.focusedFeedbackKey = '';
+            _this30.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this29.task.key) {
+            if (feedback.taskKey !== _this30.task.key) {
               return;
             }
 
             var splited = feedback.annotationKey.split('.');
 
-            if (splited[0] !== 'spec' || splited[1] !== 'custom' || +splited[2] !== _this29.index) {
+            if (splited[0] !== 'spec' || splited[1] !== 'custom' || +splited[2] !== _this30.index) {
               return;
             }
 
-            _this29.focusedFeedbackKey = splited[3];
-            _this29.focusedFeedback = feedback;
+            _this30.focusedFeedbackKey = splited[3];
+            _this30.focusedFeedback = feedback;
             setTimeout(function () {
-              _this29.scrollEvent();
+              _this30.scrollEvent();
             }, 0);
           });
           this.markLabels = this.texts.filter(function (d) {
@@ -7179,7 +7223,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "resetMarkLabels",
         value: function resetMarkLabels() {
-          var _this30 = this;
+          var _this31 = this;
 
           var labelForms = this.group.get('markLabels');
 
@@ -7204,8 +7248,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           filteredMarkLabels.forEach(function (label) {
             var isNumber = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(label.text.value);
+            var bothNominal = _this31.valueType === 'nominal' && !isNumber;
+            var bothQuan = _this31.valueType === 'quantitative' && isNumber;
+            var alreadyContains = labelForms.value.includes(label.text.value);
 
-            if (_this30.valueType === 'nominal' && !isNumber || _this30.valueType === 'quantitative' && isNumber) {
+            if ((bothNominal || bothQuan) && !alreadyContains) {
               labelForms.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](label.text.value));
             }
           });
@@ -7647,13 +7694,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LegendSpecComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this31 = this;
+          var _this32 = this;
 
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this31.focusedFeedbackKey = '';
-            _this31.focusedFeedback = null;
+            _this32.focusedFeedbackKey = '';
+            _this32.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this31.task.key) {
+            if (feedback.taskKey !== _this32.task.key) {
               return;
             }
 
@@ -7663,10 +7710,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return;
             }
 
-            _this31.focusedFeedbackKey = splited[2];
-            _this31.focusedFeedback = feedback;
+            _this32.focusedFeedbackKey = splited[2];
+            _this32.focusedFeedback = feedback;
             setTimeout(function () {
-              _this31.scrollEvent();
+              _this32.scrollEvent();
             }, 0);
           });
         }
@@ -7876,66 +7923,66 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OverallComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this32 = this;
+          var _this33 = this;
 
           var sub1 = this.event.subscribe(function (key) {
-            _this32.isDrawing = false;
-            _this32.isMerging = false;
+            _this33.isDrawing = false;
+            _this33.isMerging = false;
 
-            if (key === 'predict' && _this32.edit.autoCompleteSubject.getValue()[_this32.task.key]) {
-              _this32.task.registerControl(_this32.formGroup, _this32.fb);
+            if (key === 'predict' && _this33.edit.autoCompleteSubject.getValue()[_this33.task.key]) {
+              _this33.task.registerControl(_this33.formGroup, _this33.fb);
 
-              _this32.task.applyPrediction(_this32.formGroup);
+              _this33.task.applyPrediction(_this33.formGroup);
 
-              _this32.updateBoxes();
+              _this33.updateBoxes();
 
-              if (_this32.currIndex === _this32.index) {
-                _this32.createEventArea();
+              if (_this33.currIndex === _this33.index) {
+                _this33.createEventArea();
               }
             }
 
             if (key === 'review') {
-              _this32.updateBoxes();
+              _this33.updateBoxes();
 
-              _this32.createEventArea();
+              _this33.createEventArea();
             }
 
             if (key === 'finish') {
-              _this32.reset();
+              _this33.reset();
 
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(_this32);
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(_this33);
             }
           });
           this.subscriptions.push(sub1);
           var sub2 = this.edit.autoCompleteSubject.asObservable().subscribe(function (map) {
-            _this32.auto = map[_this32.task.key];
+            _this33.auto = map[_this33.task.key];
           });
           this.subscriptions.push(sub2);
           var sub3 = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this32.focusedFeedback = null;
-            _this32.focusedFeedbackKey = null;
+            _this33.focusedFeedback = null;
+            _this33.focusedFeedbackKey = null;
 
-            if (feedback.taskKey === _this32.task.key) {
+            if (feedback.taskKey === _this33.task.key) {
               var splited = feedback.annotationKey.split('.');
 
               switch (splited[0]) {
                 case 'mark':
                   {
-                    _this32.stage = 0;
+                    _this33.stage = 0;
 
                     if (splited[1] === 'other') {
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = feedback.annotationKey;
-                      _this32.boxMode = 'mark';
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = feedback.annotationKey;
+                      _this33.boxMode = 'mark';
 
-                      _this32.updateFocus(null);
+                      _this33.updateFocus(null);
                     } else {
                       var markIndex = +splited[1];
-                      var key = _this32.marks[markIndex].key;
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = key;
+                      var key = _this33.marks[markIndex].key;
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = key;
 
-                      _this32.updateFocus(key);
+                      _this33.updateFocus(key);
                     }
 
                     break;
@@ -7943,21 +7990,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 case 'text':
                   {
-                    _this32.stage = 0;
+                    _this33.stage = 0;
 
                     if (splited[1] === 'other') {
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = feedback.annotationKey;
-                      _this32.boxMode = 'text';
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = feedback.annotationKey;
+                      _this33.boxMode = 'text';
 
-                      _this32.updateFocus(null);
+                      _this33.updateFocus(null);
                     } else {
                       var textIndex = +splited[1];
-                      var _key = _this32.texts[textIndex].key;
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = _key;
+                      var _key = _this33.texts[textIndex].key;
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = _key;
 
-                      _this32.updateFocus(_key);
+                      _this33.updateFocus(_key);
                     }
 
                     break;
@@ -7966,37 +8013,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 case 'spec':
                   {
                     if (splited[splited.length - 1] === 'encoding') {
-                      _this32.stage = 2;
+                      _this33.stage = 2;
                     } else {
-                      _this32.stage = 1;
+                      _this33.stage = 1;
                     }
 
                     if (splited[1] === 'other') {
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = feedback.annotationKey;
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = feedback.annotationKey;
 
-                      _this32.updateFocus(null);
+                      _this33.updateFocus(null);
                     }
 
                     if (splited[1] === 'title') {
-                      _this32.focusedFeedback = feedback;
-                      _this32.focusedFeedbackKey = 'title';
+                      _this33.focusedFeedback = feedback;
+                      _this33.focusedFeedbackKey = 'title';
                     }
 
-                    _this32.changeDetector.detectChanges();
+                    _this33.changeDetector.detectChanges();
 
-                    _this32.updateFocus(null);
+                    _this33.updateFocus(null);
 
                     break;
                   }
 
                 case 'raw':
                   {
-                    _this32.stage = 2;
+                    _this33.stage = 2;
 
-                    _this32.changeDetector.detectChanges();
+                    _this33.changeDetector.detectChanges();
 
-                    _this32.updateFocus(null);
+                    _this33.updateFocus(null);
 
                     break;
                   }
@@ -8103,18 +8150,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createEventArea",
         value: function createEventArea() {
-          var _this33 = this;
+          var _this34 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeEventArea"])(this);
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["createEventArea"])(this, true, this.task.inputType);
           this.svgS.on('contextmenu', function () {
-            if (_this33.isMerging) {
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeMergeLine"])(_this33);
+            if (_this34.isMerging) {
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["removeMergeLine"])(_this34);
               d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
-            } else if (_this33.task.inputType === 'rect' && _this33.boxMode === 'mark' && !_this33.isDrawing) {
-              _this33.isDrawing = true;
-              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["drawBoxBySelectedPixel"])(_this33);
-              _this33.isDrawing = false;
+            } else if (_this34.task.inputType === 'rect' && _this34.boxMode === 'mark' && !_this34.isDrawing) {
+              _this34.isDrawing = true;
+              Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["drawBoxBySelectedPixel"])(_this34);
+              _this34.isDrawing = false;
             }
 
             d3__WEBPACK_IMPORTED_MODULE_7__["event"].preventDefault();
@@ -8175,13 +8222,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateFocus",
         value: function updateFocus(boxIndex) {
-          var _this34 = this;
+          var _this35 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["updateBoxStyleByFocus"])(boxIndex, this.svgS);
           this.sortDrawOrder(boxIndex, true);
           this.focusedBoxIndex = boxIndex;
           var box = this.boxes.find(function (d) {
-            return d.key === _this34.focusedBoxIndex;
+            return d.key === _this35.focusedBoxIndex;
           });
 
           if (!box) {
@@ -8222,7 +8269,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var findIndex = this.boxes.filter(function (d) {
               return d.isText;
             }).findIndex(function (d) {
-              return d.key === _this34.focusedBoxIndex;
+              return d.key === _this35.focusedBoxIndex;
             });
             var focusedBottom = rowHeight * (findIndex + 1);
             var focusedTop = rowHeight * findIndex;
@@ -8261,19 +8308,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "clearBoxes",
         value: function clearBoxes() {
-          var _this35 = this;
+          var _this36 = this;
 
           var deletedBoxIndices = this.boxes.filter(function (d) {
-            return _this35.boxMode === 'mark' ? d.text === null : d.text !== null;
+            return _this36.boxMode === 'mark' ? d.text === null : d.text !== null;
           }).map(function (d) {
             return d.key;
           });
           deletedBoxIndices.forEach(function (boxIndex) {
-            _this35.g.select(".rect-".concat(boxIndex)).remove();
+            _this36.g.select(".rect-".concat(boxIndex)).remove();
 
-            _this35.g.selectAll(".circle-".concat(boxIndex)).remove();
+            _this36.g.selectAll(".circle-".concat(boxIndex)).remove();
 
-            _this35.task.deleteBox(_this35.formGroup, boxIndex);
+            _this36.task.deleteBox(_this36.formGroup, boxIndex);
           });
           this.updateBoxes();
         }
@@ -8388,7 +8435,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "detectAxes",
         value: function detectAxes() {
-          var _this36 = this;
+          var _this37 = this;
 
           var axesGroup = this.formGroup.get(this.task.key).get('spec').get('axis');
 
@@ -8444,32 +8491,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               var valuePerPixel = +d3__WEBPACK_IMPORTED_MODULE_7__["mean"](valuesPerPixel);
 
-              var labels = _this36.boxes.filter(function (d) {
+              var labels = _this37.boxes.filter(function (d) {
                 return d.label.value === "".concat(dir, "-axis-label");
               }).map(function (d) {
                 return d.text.value;
               });
 
-              _this36.addAxis(dir, title, 'quantitative', labels, pre, valuePerPixel);
+              _this37.addAxis(dir, title, 'quantitative', labels, pre, valuePerPixel);
             } else {
-              var _labels = _this36.boxes.filter(function (d) {
+              var _labels = _this37.boxes.filter(function (d) {
                 return d.label.value === "".concat(dir, "-axis-label");
               }).map(function (d) {
                 return d.text.value;
               });
 
-              _this36.addAxis(dir, title, 'nominal', _labels);
+              _this37.addAxis(dir, title, 'nominal', _labels);
             }
           };
 
           var detectAxis = function detectAxis(dir) {
-            var axis = _this36.boxes.filter(function (d) {
+            var axis = _this37.boxes.filter(function (d) {
               return d.label.value === "".concat(dir, "-axis-label");
             });
 
             var title = "Unknown ".concat(dir.toUpperCase(), " Axis");
 
-            var axisTitleBox = _this36.boxes.find(function (d) {
+            var axisTitleBox = _this37.boxes.find(function (d) {
               return d.label.value === "".concat(dir, "-axis-title");
             });
 
@@ -8487,19 +8534,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           detectAxis('x');
           detectAxis('y');
-
-          if (this.hasXAxis || this.hasYAxis) {
-            this.mapMarkLabelToAxis();
-          }
         }
       }, {
         key: "onCheckBoxRegression",
         value: function onCheckBoxRegression() {
-          var _this37 = this;
+          var _this38 = this;
 
           Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["regressBoxesByColor"])(this);
           this.marks.forEach(function (mark) {
-            _this37.sortDrawOrder(mark.key, false);
+            _this38.sortDrawOrder(mark.key, false);
           });
         }
       }, {
@@ -8513,19 +8556,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "applyPointSizeToMarkForm",
         value: function applyPointSizeToMarkForm() {
-          var _this38 = this;
+          var _this39 = this;
 
           var r = this.pointRadius;
           this.marks.forEach(function (mark) {
             var boxIndex = mark.key;
 
-            var sel = _this38.g.select(".rect-".concat(boxIndex));
+            var sel = _this39.g.select(".rect-".concat(boxIndex));
 
             sel.attr('r', r);
             var x = +sel.attr('cx');
             var y = +sel.attr('cy');
 
-            _this38.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
+            _this39.writeForm(boxIndex, x - r, y - r, 2 * r, 2 * r);
           });
           this.updateBoxes();
         }
@@ -8546,7 +8589,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapBoxesToLegend",
         value: function mapBoxesToLegend() {
-          var _this39 = this;
+          var _this40 = this;
 
           var titleBox = this.boxes.find(function (d) {
             return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_LEGEND_TITLE"];
@@ -8564,7 +8607,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           legendBoxes.map(function (d) {
             return d.text.value;
           }).forEach(function (legend) {
-            group.get('labels').push(_this39.fb.control(legend));
+            group.get('labels').push(_this40.fb.control(legend));
           });
           this.specGroup.setControl('legend', group);
           return true;
@@ -8572,49 +8615,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "mapMarkLabelToAxis",
         value: function mapMarkLabelToAxis() {
-          var _this40 = this;
+          var _this41 = this;
 
           var markLabelBoxes = this.boxes.filter(function (d) {
             return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
           });
-          var markLabelType = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberTexts"])(markLabelBoxes) ? 'quantitative' : 'nominal';
           var axesGroup = this.specGroup.get('axis');
           axesGroup.controls.forEach(function (group) {
-            if (group.get('type').value === markLabelType) {
-              if (markLabelType === 'quantitative') {
+            var groupType = group.get('type').value;
+            var markLabelsForm = group.get('markLabels');
+
+            var filterInsertLabels = function filterInsertLabels(s) {
+              if (groupType === 'quantitative') {
                 var values = group.get('labels').controls.map(function (d) {
                   return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], '');
                 });
                 var extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
-                var numIncludedValues = markLabelBoxes.map(function (d) {
-                  return +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], '');
-                }).map(function (d) {
-                  return d >= extent[0] && d <= extent[1] ? 1 : 0;
-                }).reduce(function (acc, curr) {
-                  return acc + curr;
-                }, 0);
-                var labeled = numIncludedValues > 0.5 * markLabelBoxes.length;
-                group.get('labeled').setValue(labeled);
-                var markLabelsForm = group.get('markLabels');
-                markLabelBoxes.forEach(function (box) {
-                  markLabelsForm.push(_this40.fb.control(box.text.value));
-                });
+                var value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["WITHOUT_NUM_REG"], '');
+                return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) && value >= extent[0] && value <= extent[1];
               } else {
                 var axisLabels = group.get('labels').value;
-                var allIncluded = markLabelBoxes.every(function (d) {
-                  return axisLabels.includes(d.text.value);
-                });
-                group.get('labeled').setValue(allIncluded);
-
-                var _markLabelsForm = group.get('markLabels');
-
-                markLabelBoxes.forEach(function (box) {
-                  _markLabelsForm.push(_this40.fb.control(box.text.value));
-                });
+                return !Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) && axisLabels.includes(s);
               }
-            } else {
-              group.addControl('labeled', _this40.fb.control(false));
-            }
+            };
+
+            var insertedMarkLabels = markLabelBoxes.filter(function (box) {
+              return filterInsertLabels(box.text.value);
+            });
+            markLabelBoxes = markLabelBoxes.filter(function (box) {
+              return !filterInsertLabels(box.text.value);
+            });
+            insertedMarkLabels.filter(function (box) {
+              markLabelsForm.push(_this41.fb.control(box.text.value));
+            });
+            group.get('labeled').setValue(insertedMarkLabels.length > 0);
           });
         }
       }, {
@@ -8989,7 +9023,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RawTableComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this41 = this;
+          var _this42 = this;
 
           var specGroup = this.formGroup.get('spec');
           specGroup.get('axis').controls.forEach(function (group, i) {
@@ -8998,7 +9032,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "axis.".concat(i)
             };
 
-            var targetGroup = _this41.fromPath(specGroup, column.path);
+            var targetGroup = _this42.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -9006,7 +9040,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('labels').value;
             }
 
-            _this41.columns.push(column);
+            _this42.columns.push(column);
           });
           specGroup.get('custom').controls.forEach(function (group, i) {
             var column = {
@@ -9014,7 +9048,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "custom.".concat(i)
             };
 
-            var targetGroup = _this41.fromPath(specGroup, column.path);
+            var targetGroup = _this42.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -9022,7 +9056,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('markLabels').value;
             }
 
-            _this41.columns.push(column);
+            _this42.columns.push(column);
           });
 
           if (this.hasLegend) {
@@ -9046,10 +9080,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.rawGroup = this.formGroup.get('raw');
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this41.focusedFeedbackKey = '';
-            _this41.focusedFeedback = null;
+            _this42.focusedFeedbackKey = '';
+            _this42.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this41.task.key) {
+            if (feedback.taskKey !== _this42.task.key) {
               return;
             }
 
@@ -9057,19 +9091,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var lastKey = splited[splited.length - 1];
 
             if (lastKey === 'encoding') {
-              _this41.focusedFeedback = feedback;
-              _this41.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
+              _this42.focusedFeedback = feedback;
+              _this42.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
             } else if (splited[0] === 'raw') {
-              _this41.focusedFeedback = feedback;
+              _this42.focusedFeedback = feedback;
 
               if (splited[1] === 'other') {
-                _this41.focusedFeedbackKey = 'other';
+                _this42.focusedFeedbackKey = 'other';
               } else {
-                _this41.focusedFeedbackKey = _this41.marks[+splited[1]].key;
+                _this42.focusedFeedbackKey = _this42.marks[+splited[1]].key;
               }
 
               setTimeout(function () {
-                _this41.focusEmitter.emit(_this41.focusedFeedbackKey);
+                _this42.focusEmitter.emit(_this42.focusedFeedbackKey);
               }, 0);
             } else {
               return;
@@ -9142,7 +9176,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee2() {
-            var _this42 = this;
+            var _this43 = this;
 
             var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, column, encoding;
 
@@ -9151,7 +9185,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context2.prev = _context2.next) {
                   case 0:
                     this.allChannelsEncoded = this.columns.every(function (column) {
-                      var targetGroup = _this42.fromPath(_this42.formGroup.get('spec'), column.path);
+                      var targetGroup = _this43.fromPath(_this43.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding');
                     });
@@ -9243,7 +9277,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee3() {
-            var _this43 = this;
+            var _this44 = this;
 
             var path, k, boxes, _ref3, centers, labels;
 
@@ -9278,7 +9312,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centers = _ref3.centers;
                     labels = _ref3.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this43.rows.find(function (d) {
+                      var row = _this44.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -9301,7 +9335,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee4() {
-            var _this44 = this;
+            var _this45 = this;
 
             var path, k, boxes, _ref4, centerPatches, labels;
 
@@ -9328,7 +9362,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centerPatches = _ref4.centerPatches;
                     labels = _ref4.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this44.rows.find(function (d) {
+                      var row = _this45.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -9367,7 +9401,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee6() {
-            var _this45 = this;
+            var _this46 = this;
 
             var colorEncodingIndex;
             return regeneratorRuntime.wrap(function _callee6$(_context6) {
@@ -9376,7 +9410,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     _context6.next = 2;
                     return Promise.all(this.columns.map(function (column) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this45, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this46, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee5() {
                         var targetGroup;
@@ -9413,7 +9447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 2:
                     colorEncodingIndex = this.columns.findIndex(function (column) {
-                      var targetGroup = _this45.fromPath(_this45.formGroup.get('spec'), column.path);
+                      var targetGroup = _this46.fromPath(_this46.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding') && targetGroup.get('encoding').value === 'color';
                     });
@@ -9466,68 +9500,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     targetGroup = this.fromPath(this.formGroup.get('spec'), column.path);
                     _context7.t0 = encoding;
-                    _context7.next = _context7.t0 === 'width' ? 4 : _context7.t0 === 'height' ? 7 : _context7.t0 === 'x-position' ? 10 : _context7.t0 === 'y-position' ? 13 : _context7.t0 === 'color' ? 16 : _context7.t0 === 'shape' ? 19 : _context7.t0 === 'area' ? 22 : _context7.t0 === 'none' ? 25 : 26;
+                    _context7.next = _context7.t0 === 'width' ? 4 : _context7.t0 === 'height' ? 6 : _context7.t0 === 'x-position' ? 8 : _context7.t0 === 'y-position' ? 10 : _context7.t0 === 'color' ? 12 : _context7.t0 === 'shape' ? 14 : _context7.t0 === 'area' ? 16 : _context7.t0 === 'none' ? 19 : 20;
                     break;
 
                   case 4:
-                    _context7.next = 6;
-                    return this.predictWidth(targetGroup, column);
+                    this.predictWidth(targetGroup, column);
+                    return _context7.abrupt("break", 21);
 
                   case 6:
-                    return _context7.abrupt("break", 27);
+                    this.predictHeight(targetGroup, column);
+                    return _context7.abrupt("break", 21);
 
-                  case 7:
-                    _context7.next = 9;
-                    return this.predictHeight(targetGroup, column);
-
-                  case 9:
-                    return _context7.abrupt("break", 27);
+                  case 8:
+                    this.predictPosition(targetGroup, column, 'x');
+                    return _context7.abrupt("break", 21);
 
                   case 10:
-                    _context7.next = 12;
-                    return this.predictPosition(targetGroup, column, 'x');
+                    this.predictPosition(targetGroup, column, 'y');
+                    return _context7.abrupt("break", 21);
 
                   case 12:
-                    return _context7.abrupt("break", 27);
+                    this.predictByClusterLabels(column);
+                    return _context7.abrupt("break", 21);
 
-                  case 13:
-                    _context7.next = 15;
-                    return this.predictPosition(targetGroup, column, 'y');
-
-                  case 15:
-                    return _context7.abrupt("break", 27);
+                  case 14:
+                    this.predictByClusterLabels(column);
+                    return _context7.abrupt("break", 21);
 
                   case 16:
                     _context7.next = 18;
-                    return this.predictByClusterLabels(column);
-
-                  case 18:
-                    return _context7.abrupt("break", 27);
-
-                  case 19:
-                    _context7.next = 21;
-                    return this.predictByClusterLabels(column);
-
-                  case 21:
-                    return _context7.abrupt("break", 27);
-
-                  case 22:
-                    _context7.next = 24;
                     return this.predictArea(targetGroup, column);
 
-                  case 24:
-                    return _context7.abrupt("break", 27);
+                  case 18:
+                    return _context7.abrupt("break", 21);
 
-                  case 25:
-                    return _context7.abrupt("break", 27);
+                  case 19:
+                    return _context7.abrupt("break", 21);
 
-                  case 26:
-                    return _context7.abrupt("break", 27);
+                  case 20:
+                    return _context7.abrupt("break", 21);
 
-                  case 27:
+                  case 21:
                     this.submitEmitter.emit();
 
-                  case 28:
+                  case 22:
                   case "end":
                     return _context7.stop();
                 }
@@ -9538,7 +9554,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initTable",
         value: function initTable() {
-          var _this46 = this;
+          var _this47 = this;
 
           var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           this.rows = [];
@@ -9548,13 +9564,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var initCells = function initCells() {
             var _loop3 = function _loop3(i) {
-              var group = _this46.fb.group({});
+              var group = _this47.fb.group({});
 
-              _this46.columns.forEach(function (column) {
-                group.addControl(column.title, _this46.fb.control(''));
+              _this47.columns.forEach(function (column) {
+                group.addControl(column.title, _this47.fb.control(''));
               });
 
-              _this46.rawGroup.push(group);
+              _this47.rawGroup.push(group);
             };
 
             for (var i = 0; i < markIndices.length; i++) {
@@ -9610,7 +9626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictWidth",
         value: function predictWidth(targetGroup, column) {
-          var _this47 = this;
+          var _this48 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9650,13 +9666,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.width * imgWidth) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this47.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this48.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictHeight",
         value: function predictHeight(targetGroup, column) {
-          var _this48 = this;
+          var _this49 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9696,13 +9712,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.height * imgHeight) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this48.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this49.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictPosition",
         value: function predictPosition(targetGroup, column, dir) {
-          var _this49 = this;
+          var _this50 = this;
 
           var _this$imgRef$nativeEl3 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl3.width,
@@ -9748,7 +9764,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var maxValue = +maxLabel.text.value.replace(this.re, '');
             centers.forEach(function (center) {
               var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
-              result.push(_this49.format(currValue, pre, unit));
+              result.push(_this50.format(currValue, pre, unit));
             });
           }
 
@@ -9812,7 +9828,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "assignMarkLabels",
         value: function assignMarkLabels(targetGroup, column) {
-          var _this50 = this;
+          var _this51 = this;
 
           var targetMarkLabels = targetGroup.get('markLabels').value;
           var markLabelBoxes = this.boxes.filter(function (d) {
@@ -9825,20 +9841,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           markLabelBoxes.forEach(function (box) {
             var value = box.text.value;
 
-            var targetIndex = _this50.findNearestBoxIndex(box, targetGroup);
+            var targetIndex = _this51.findNearestBoxIndex(box, targetGroup);
 
-            _this50.rows[targetIndex].group.get([column.title]).setValue(value);
+            _this51.rows[targetIndex].group.get([column.title]).setValue(value);
           });
         }
       }, {
         key: "findNearestBoxIndex",
         value: function findNearestBoxIndex(queryBox, targetGroup) {
-          var _this51 = this;
+          var _this52 = this;
 
           var axisDir = targetGroup.contains('dir') ? targetGroup.get('dir').value : 'none'; // First, find the marks which contains the target mark label
 
           var innerRows = this.rows.filter(function (row) {
-            var mark = _this51.marks.find(function (m) {
+            var mark = _this52.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9852,7 +9868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           var rowsForSearch = innerRows.length > 0 ? innerRows : this.rows;
           var minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinElem"])(rowsForSearch, function (row) {
-            var mark = _this51.marks.find(function (m) {
+            var mark = _this52.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9921,15 +9937,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictByClusterLabels",
         value: function predictByClusterLabels(column) {
-          var _this52 = this;
+          var _this53 = this;
 
           var key = column.title;
           var definedPairs = this.marks.map(function (mark, i) {
-            var group = _this52.rawGroup.at(i);
+            var group = _this53.rawGroup.at(i);
 
             return {
               value: group.get([key]).value,
-              label: _this52.rows.find(function (d) {
+              label: _this53.rows.find(function (d) {
                 return d.markKey === mark.key;
               }).clusterLabels[key]
             };
@@ -9942,8 +9958,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.rawGroup.controls.forEach(function (control, i) {
-            var row = _this52.rows.find(function (d) {
-              return d.markKey === _this52.marks[i].key;
+            var row = _this53.rows.find(function (d) {
+              return d.markKey === _this53.marks[i].key;
             });
 
             var defined = definedPairs.find(function (d) {
@@ -9956,7 +9972,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addColumn",
         value: function addColumn() {
-          var _this53 = this;
+          var _this54 = this;
 
           var dialogRef = this.dialog.open(ColumnAdditionDialogComponent, {
             width: '500px',
@@ -9969,32 +9985,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           dialogRef.afterClosed().subscribe(function (newColumn) {
             var path = "custom-".concat(newColumn.title);
 
-            var specGroup = _this53.formGroup.get('spec');
+            var specGroup = _this54.formGroup.get('spec');
 
             newColumn.path = path;
-            specGroup.addControl(path, _this53.fb.group({
-              title: _this53.fb.control(newColumn.title)
+            specGroup.addControl(path, _this54.fb.group({
+              title: _this54.fb.control(newColumn.title)
             }));
 
             if (newColumn.labels && newColumn.labels.length > 0) {
-              specGroup.get(path).addControl('labels', _this53.fb.array(newColumn.labels));
+              specGroup.get(path).addControl('labels', _this54.fb.array(newColumn.labels));
             }
 
-            _this53.columns.push(newColumn);
+            _this54.columns.push(newColumn);
 
-            _this53.rawGroup.controls.forEach(function (control) {
-              control.addControl(newColumn.title, _this53.fb.control(''));
+            _this54.rawGroup.controls.forEach(function (control) {
+              control.addControl(newColumn.title, _this54.fb.control(''));
             });
           });
         }
       }, {
         key: "addRow",
         value: function addRow() {
-          var _this54 = this;
+          var _this55 = this;
 
           var group = this.fb.group({});
           this.columns.forEach(function (column) {
-            group.addControl(column.title, _this54.fb.control(''));
+            group.addControl(column.title, _this55.fb.control(''));
           });
           this.rawGroup.push(group);
           this.rows.push({
@@ -10174,11 +10190,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RegressionComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this55 = this;
+          var _this56 = this;
 
           this.event.subscribe(function (key) {
-            if (key === 'predict' && _this55.edit.autoCompleteSubject.getValue()[_this55.task.key]) {
-              _this55.task.applyPrediction(_this55.formGroup);
+            if (key === 'predict' && _this56.edit.autoCompleteSubject.getValue()[_this56.task.key]) {
+              _this56.task.applyPrediction(_this56.formGroup);
             }
           });
         }
@@ -10324,21 +10340,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TextComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this56 = this;
+          var _this57 = this;
 
           this.event.subscribe(function (key) {
-            _this56.isDrawing = false;
-            _this56.isMerging = false;
+            _this57.isDrawing = false;
+            _this57.isMerging = false;
 
-            if (key === 'predict' && _this56.edit.autoCompleteSubject.getValue()[_this56.task.key]) {
-              _this56.task.registerControl(_this56.formGroup, _this56.fb);
+            if (key === 'predict' && _this57.edit.autoCompleteSubject.getValue()[_this57.task.key]) {
+              _this57.task.registerControl(_this57.formGroup, _this57.fb);
 
-              _this56.task.applyPrediction(_this56.formGroup);
+              _this57.task.applyPrediction(_this57.formGroup);
 
-              _this56.updateBoxes();
+              _this57.updateBoxes();
 
-              if (_this56.currIndex === _this56.index) {
-                _this56.createEventArea();
+              if (_this57.currIndex === _this57.index) {
+                _this57.createEventArea();
               }
             }
           });
@@ -10660,23 +10676,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this57 = this;
+          var _this58 = this;
 
           this.sub = this.fs.showObservable.subscribe(function (data) {
-            _this57.displayModal = true;
+            _this58.displayModal = true;
             var left = data.left,
                 top = data.top,
                 feedback = data.feedback;
-            _this57.feedback = feedback;
+            _this58.feedback = feedback;
 
-            _this57.changeDetector.detectChanges();
+            _this58.changeDetector.detectChanges();
 
-            var el = _this57.ref.nativeElement;
+            var el = _this58.ref.nativeElement;
             var rect = el.getBoundingClientRect();
 
-            _this57.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
+            _this58.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
 
-            _this57.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
+            _this58.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
           });
         }
       }, {
@@ -11770,7 +11786,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "grade",
         value: function grade(path, formGroup, config) {
-          var _this58 = this;
+          var _this59 = this;
 
           var result = {};
           var _iteratorNormalCompletion4 = true;
@@ -11811,11 +11827,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           submitted.marks.forEach(function (mark, i) {
-            var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_this58.data.marks, function (d) {
-              return _this58.iou(mark.bound, d.bound);
+            var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_this59.data.marks, function (d) {
+              return _this59.iou(mark.bound, d.bound);
             });
 
-            if (maxIou <= _this58.params.iou) {
+            if (maxIou <= _this59.params.iou) {
               feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "mark.".concat(i),
@@ -11902,14 +11918,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             xLabelIndices.forEach(function (index) {
               var text = submitted.texts[index];
               var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](targetTexts, function (d) {
-                return _this58.iou(text.bound, d.bound);
+                return _this59.iou(text.bound, d.bound);
               });
               var ious = targetTexts.map(function (d) {
-                return _this58.iou(text.bound, d.bound);
+                return _this59.iou(text.bound, d.bound);
               });
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
-              if (maxIou <= _this58.textIOU) {
+              if (maxIou <= _this59.textIOU) {
                 feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
@@ -11941,13 +11957,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var text = submitted.texts[index];
 
               var ious = _targetTexts.map(function (d) {
-                return _this58.iou(text.bound, d.bound);
+                return _this59.iou(text.bound, d.bound);
               });
 
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
               var maxIou = ious[maxIndex];
 
-              if (maxIou <= _this58.textIOU) {
+              if (maxIou <= _this59.textIOU) {
                 feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
@@ -11991,16 +12007,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               legendIndices.forEach(function (index) {
                 var text = submitted.texts[index];
                 var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_targetTexts2, function (d) {
-                  return _this58.iou(text.bound, d.bound);
+                  return _this59.iou(text.bound, d.bound);
                 });
 
                 var ious = _targetTexts2.map(function (d) {
-                  return _this58.iou(text.bound, d.bound);
+                  return _this59.iou(text.bound, d.bound);
                 });
 
                 var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
-                if (maxIou <= _this58.textIOU) {
+                if (maxIou <= _this59.textIOU) {
                   feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: "text.".concat(index),
@@ -12019,7 +12035,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var checkAxis = function checkAxis(index) {
             var axis = submitted.spec.axes[index];
-            var target = _this58.data.spec.axes[index];
+            var target = _this59.data.spec.axes[index];
 
             if (axis.title.value !== target.title.value) {
               feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
@@ -12422,7 +12438,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(EditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this59 = this;
+          var _this60 = this;
 
           if (!this.configService.userName) {
             this.router.navigate(['/login']);
@@ -12431,7 +12447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.svgS = d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgRef.nativeElement);
           this.configService.configObservable.subscribe(function (config) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this59, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this60, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee13() {
               var elem, result;
@@ -12497,44 +12513,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var imgElem = this.imgRef.nativeElement;
           this.edit.removeImage();
           imgElem.addEventListener('load', function () {
-            var boundingBox = _this59.imgRef.nativeElement.getBoundingClientRect();
+            var boundingBox = _this60.imgRef.nativeElement.getBoundingClientRect();
 
-            _this59.initSVG(boundingBox);
+            _this60.initSVG(boundingBox);
 
-            _this59.noImagesLeft = false;
-            _this59.onImageLoad = true;
+            _this60.noImagesLeft = false;
+            _this60.onImageLoad = true;
 
-            _this59.timer.start();
+            _this60.timer.start();
 
-            var path = _this59.selectedImage.path;
+            var path = _this60.selectedImage.path;
 
-            _this59.network.getPrediction(path).then(function (predictData) {
-              _this59.config.parsePrediction(predictData);
+            _this60.network.getPrediction(path).then(function (predictData) {
+              _this60.config.parsePrediction(predictData);
 
-              if (_this59.mode === 'annotation') {
-                _this59.eventSubject.next('predict');
+              if (_this60.mode === 'annotation') {
+                _this60.eventSubject.next('predict');
               }
             });
 
-            if (_this59.selectedImage.hasPrevAnnotation) {
-              var meta = _this59.selectedImage.meta;
+            if (_this60.selectedImage.hasPrevAnnotation) {
+              var meta = _this60.selectedImage.meta;
 
-              _this59.config.parsePrevAnnotation(_this59.formGroup, meta.annotation, _this59.fb);
+              _this60.config.parsePrevAnnotation(_this60.formGroup, meta.annotation, _this60.fb);
 
-              _this59.eventSubject.next('review');
+              _this60.eventSubject.next('review');
             }
           });
           this.edit.imageSubject.asObservable().subscribe(function (image) {
-            _this59.formGroup = _this59.initFormGroup(_this59.config);
-            _this59.selectedImage = image;
-            var svg = _this59.svgRef.nativeElement;
+            _this60.formGroup = _this60.initFormGroup(_this60.config);
+            _this60.selectedImage = image;
+            var svg = _this60.svgRef.nativeElement;
 
-            _this59.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this60.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
-            _this59.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this60.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
             if (!image) {
-              _this59.noImagesLeft = !!imgElem.src;
+              _this60.noImagesLeft = !!imgElem.src;
               imgElem.src = '';
               return;
             }
@@ -12542,8 +12558,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             imgElem.src = image.src;
           });
           this.edit.autoCompleteSubject.asObservable().subscribe(function (_) {
-            if (_this59.mode === 'annotation') {
-              _this59.eventSubject.next('predict');
+            if (_this60.mode === 'annotation') {
+              _this60.eventSubject.next('predict');
             }
           });
         }
@@ -12886,8 +12902,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.cursorInRect(event)) {
             var scaleDelta = event.deltaY < 0 ? 0.4 : -0.4;
-            var nScaleX = Math.min(5, Math.max(1, sx + scaleDelta));
-            var nScaleY = Math.min(5, Math.max(1, sy + scaleDelta));
+            var nScaleX = Math.min(6, Math.max(1, sx + scaleDelta));
+            var nScaleY = Math.min(6, Math.max(1, sy + scaleDelta));
 
             var _this$cursorOffset = this.cursorOffset(event),
                 _this$cursorOffset2 = _slicedToArray(_this$cursorOffset, 2),
@@ -12922,11 +12938,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initFormGroup",
         value: function initFormGroup(config) {
-          var _this60 = this;
+          var _this61 = this;
 
           var formGroup = this.fb.group({});
           config.tasks.forEach(function (task) {
-            task.registerControl(formGroup, _this60.fb);
+            task.registerControl(formGroup, _this61.fb);
           });
           return formGroup;
         }
@@ -13181,20 +13197,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SideNavComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this61 = this;
+          var _this62 = this;
 
           this.event.subscribe(function (key) {
             if (key === 'progress') {
-              _this61.updateProgress();
+              _this62.updateProgress();
 
-              _this61.updateModelInfo();
+              _this62.updateModelInfo();
             }
           });
           this.cs.configObservable.subscribe(function (config) {
-            _this61.config = config;
+            _this62.config = config;
           });
           this.cs.userNameObservable.subscribe(function (name) {
-            _this61.userName = name;
+            _this62.userName = name;
           });
         }
       }, {
@@ -13211,10 +13227,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "removeImage",
         value: function removeImage() {
-          var _this62 = this;
+          var _this63 = this;
 
           this.edit.ignoreImage().then(function (_) {
-            _this62.remove.emit();
+            _this63.remove.emit();
           });
         } // for debug
 
@@ -13298,17 +13314,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateModelInfo",
         value: function updateModelInfo() {
-          var _this63 = this;
+          var _this64 = this;
 
           this.network.getModelInfo().then(function (modelInfos) {
-            if (!_this63.modelInfos) {
-              _this63.modelInfos = modelInfos;
+            if (!_this64.modelInfos) {
+              _this64.modelInfos = modelInfos;
             } else {
               modelInfos.forEach(function (newModelInfo, i) {
-                if (i < _this63.modelInfos.length) {
-                  _this63.modelInfos[i].score = newModelInfo.score;
+                if (i < _this64.modelInfos.length) {
+                  _this64.modelInfos[i].score = newModelInfo.score;
                 } else {
-                  _this63.modelInfos.push(newModelInfo);
+                  _this64.modelInfos.push(newModelInfo);
                 }
               });
             }
@@ -13427,18 +13443,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TimerService, [{
         key: "start",
         value: function start() {
-          var _this64 = this;
+          var _this65 = this;
 
           this.reset();
           this.timer = setInterval(function () {
-            _this64.sec += 1;
+            _this65.sec += 1;
 
-            if (_this64.sec >= 1200) {
-              _this64.router.navigate(['/login']);
+            if (_this65.sec >= 1200) {
+              _this65.router.navigate(['/login']);
 
-              _this64.demo.init();
+              _this65.demo.init();
 
-              _this64.sec = 0;
+              _this65.sec = 0;
             }
           }, 1000);
         }
@@ -14450,10 +14466,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addMarkFeedback",
         value: function addMarkFeedback() {
-          var _this65 = this;
+          var _this66 = this;
 
           var markIndex = this.data.marks.findIndex(function (mark) {
-            return mark.key === _this65.focusedKey;
+            return mark.key === _this66.focusedKey;
           });
           var numOtherFeedback = this.markFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('mark.other');
@@ -14478,10 +14494,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTextFeedback",
         value: function addTextFeedback() {
-          var _this66 = this;
+          var _this67 = this;
 
           var textIndex = this.data.texts.findIndex(function (text) {
-            return text.key === _this66.focusedKey;
+            return text.key === _this67.focusedKey;
           });
           var numOtherFeedback = this.textFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('text.other');
@@ -14571,7 +14587,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initMarks",
         value: function initMarks() {
-          var _this67 = this;
+          var _this68 = this;
 
           var _this$imgRef$nativeEl4 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl4.width,
@@ -14586,16 +14602,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('mark', true).classed('focused', function (mark) {
-            return _this67.focusedKey === mark.key;
+            return _this68.focusedKey === mark.key;
           }).on('click', function (mark) {
-            _this67.clickMark(mark);
+            _this68.clickMark(mark);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "initTexts",
         value: function initTexts() {
-          var _this68 = this;
+          var _this69 = this;
 
           var _this$imgRef$nativeEl5 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl5.width,
@@ -14610,22 +14626,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('text', true).classed('focused', function (text) {
-            return _this68.focusedKey === text.key;
+            return _this69.focusedKey === text.key;
           }).on('click', function (text) {
-            _this68.clickText(text);
+            _this69.clickText(text);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "updateFocus",
         value: function updateFocus(key) {
-          var _this69 = this;
+          var _this70 = this;
 
           var g = this.svgS.selectAll('g');
           g.selectAll('rect').classed('focused', function (d) {
             return d.key === key;
           }).style('stroke-width', function (d) {
-            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this69.svgS, d.key === key);
+            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this70.svgS, d.key === key);
           });
           g.select('.focused').raise();
 
@@ -14823,7 +14839,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee22() {
-            var _this70 = this;
+            var _this71 = this;
 
             return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
@@ -14835,7 +14851,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         response: 'ok'
                       }
                     }).afterClosed().subscribe(function (result) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this70, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this71, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee21() {
                         var feedbacks, path;
@@ -14999,7 +15015,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function LocaleService() {
-        var _this71 = this,
+        var _this72 = this,
             _this$labelMap;
 
         _classCallCheck(this, LocaleService);
@@ -15054,7 +15070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         this._resolveBtn = {
           en: 'Resolve',
-          ko: '해결'
+          ko: '수정 완료'
         };
         this._vOverall = {
           en: {
@@ -15098,7 +15114,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             spec: '명세 정보',
             rawData: '원본 데이터',
             label: function label(input) {
-              return _this71.labelMap[input];
+              return _this72.labelMap[input];
             }
           }
         };
@@ -15112,7 +15128,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: 'Labels',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
+            },
+            selectedUnit: function selectedUnit(unit) {
+              return unit;
             }
           },
           ko: {
@@ -15124,7 +15143,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: '라벨',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
+            },
+            selectedUnit: function selectedUnit(unit) {
+              return unit === 'integer' ? '정수 단위' : '소수 단위';
             }
           }
         };
@@ -15134,7 +15156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             labels: 'Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             }
           },
           ko: {
@@ -15142,7 +15164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             labels: '라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             }
           }
         };
@@ -15154,7 +15176,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             }
           },
           ko: {
@@ -15164,7 +15186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             }
           }
         };
@@ -15233,7 +15255,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             refreshWarning: 'Click refresh button if you change the label in the previous stage',
             controlDelete: "Delete",
             controlForward: "Send forward",
-            controlBackward: "Send backward"
+            controlBackward: "Send backward",
+            deleteAll: 'Delete All'
           },
           ko: {
             textMode: '텍스트 모드',
@@ -15253,12 +15276,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: '제목',
             numMarks: '마크의 개수',
             label: function label(input) {
-              return _this71.labelMap[input];
+              return _this72.labelMap[input];
             },
             refreshWarning: '전 단계에서 변경 사항을 반영하려면 새로 고침 버튼을 누르세요',
             controlDelete: "\uC9C0\uC6B0\uAE30",
             controlForward: "\uC55E\uC73C\uB85C \uAC00\uC838\uC624\uAE30",
-            controlBackward: "\uB4A4\uB85C \uBCF4\uB0B4\uAE30"
+            controlBackward: "\uB4A4\uB85C \uBCF4\uB0B4\uAE30",
+            deleteAll: '전체 삭제'
           }
         };
         this._axisSpec = {
@@ -15317,7 +15341,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           en: {
             encoding: 'Encoding',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             },
             clear: 'Clear',
             predict: 'Predict'
@@ -15325,7 +15349,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           ko: {
             encoding: '인코딩',
             encodingLabel: function encodingLabel(label) {
-              return _this71.encodingMap[label][_this71.l];
+              return _this72.encodingMap[label][_this72.l];
             },
             clear: '모두 삭제',
             predict: '값 계산'
@@ -15381,7 +15405,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "completeMsg2",
         get: function get() {
-          return this.l === 'en' ? 'There are no more images left.' : '더 이상의 이미지가 남지 않았습니다.';
+          return this.l === 'en' ? 'There are no more images left.' : '실험 참여비는 공지에 따라 추후에 제공됩니다. 감사합니다!';
         }
       }, {
         key: "submit",
@@ -15571,25 +15595,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this72 = this;
+          var _this73 = this;
 
           this.configService.configObservable.subscribe(function (config) {
-            _this72.config = config;
+            _this73.config = config;
 
-            if (_this72.config.service !== 'normal') {
-              _this72.name = _this72.config.service;
-              _this72.password = _this72.config.service;
+            if (_this73.config.service !== 'normal') {
+              _this73.name = _this73.config.service;
+              _this73.password = _this73.config.service;
 
-              _this72.configService.setUserName(_this72.name);
+              _this73.configService.setUserName(_this73.name);
 
-              _this72.login(false);
+              _this73.login(false);
             }
           });
         }
       }, {
         key: "login",
         value: function login() {
-          var _this73 = this;
+          var _this74 = this;
 
           var validation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var re = /[A-Za-z0-9_]\w+/g;
@@ -15604,13 +15628,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.network.login(this.config.key, this.name, this.password).then(function (res) {
             if (res.code !== 0) {
-              _this73.warnMessage = res.message;
+              _this74.warnMessage = res.message;
             } else {
-              _this73.configService.userNameObservable.subscribe(function (_) {
-                _this73.router.navigate(['/edit']);
+              _this74.configService.userNameObservable.subscribe(function (_) {
+                _this74.router.navigate(['/edit']);
               });
 
-              _this73.configService.setUserName(_this73.name);
+              _this74.configService.setUserName(_this74.name);
             }
           })["catch"](function (err) {
             console.error(err);
@@ -15729,7 +15753,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(NetworkService, [{
         key: "login",
         value: function login(key, userName, password) {
-          var _this74 = this;
+          var _this75 = this;
 
           var body = {
             key: key,
@@ -15737,10 +15761,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             password: password
           };
           return this.http.post("".concat(this.BASE_URL, "login"), body, this.userOptions).toPromise().then(function (raw) {
-            return _this74.parseResponse(raw);
+            return _this75.parseResponse(raw);
           }).then(function (data) {
             if (data.data.token) {
-              _this74.token = data.data.token;
+              _this75.token = data.data.token;
             }
 
             return data;
@@ -15823,15 +15847,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getRandomElem",
         value: function getRandomElem() {
-          var _this75 = this;
+          var _this76 = this;
 
           return this.httpGetWithUser('random_image').then(function (raw) {
-            return _this75.parseResponse(raw);
+            return _this76.parseResponse(raw);
           }).then(function (response) {
             var data = response.data;
 
             if (data) {
-              return Promise.all([data, _this75.getImage(data.path)]);
+              return Promise.all([data, _this76.getImage(data.path)]);
             } else {
               return null;
             }
@@ -15840,7 +15864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVerificationRandomElem",
         value: function getVerificationRandomElem() {
-          var _this76 = this;
+          var _this77 = this;
 
           return this.httpGetWithUser('verification_image').then(function (response) {
             if (response.data) {
@@ -15850,7 +15874,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }).then(function (meta) {
             if (meta) {
-              return Promise.all([meta, _this76.getImage(meta.path)]);
+              return Promise.all([meta, _this77.getImage(meta.path)]);
             } else {
               return null;
             }
@@ -15896,10 +15920,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerReview",
         value: function registerReview(review) {
-          var _this77 = this;
+          var _this78 = this;
 
           return this.http.post(this.BASE_URL + 'register_review', review, this.userOptions).toPromise().then(function (d) {
-            return _this77.parseResponse(d);
+            return _this78.parseResponse(d);
           });
         }
       }, {
@@ -15915,7 +15939,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.http.post("".concat(this.BASE_URL, "time"), {
             mode: mode,
             path: path,
-            time: time
+            time: time,
+            userName: this.configService.userName
           }).toPromise();
         }
       }, {
