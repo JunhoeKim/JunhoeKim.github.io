@@ -1,0 +1,33 @@
+{
+  "files": {
+    "static/js/0.d45fdaeb.chunk.js": "/tutorial/static/js/0.d45fdaeb.chunk.js",
+    "static/js/0.d45fdaeb.chunk.js.map": "/tutorial/static/js/0.d45fdaeb.chunk.js.map",
+    "main.js": "/tutorial/static/js/main.b246ddf1.chunk.js",
+    "main.js.map": "/tutorial/static/js/main.b246ddf1.chunk.js.map",
+    "runtime-main.js": "/tutorial/static/js/runtime-main.4596d74d.js",
+    "runtime-main.js.map": "/tutorial/static/js/runtime-main.4596d74d.js.map",
+    "static/js/3.b7f0acf6.chunk.js": "/tutorial/static/js/3.b7f0acf6.chunk.js",
+    "static/js/3.b7f0acf6.chunk.js.map": "/tutorial/static/js/3.b7f0acf6.chunk.js.map",
+    "static/js/4.ec505971.chunk.js": "/tutorial/static/js/4.ec505971.chunk.js",
+    "static/js/4.ec505971.chunk.js.map": "/tutorial/static/js/4.ec505971.chunk.js.map",
+    "static/js/5.a9a28eb0.chunk.js": "/tutorial/static/js/5.a9a28eb0.chunk.js",
+    "static/js/5.a9a28eb0.chunk.js.map": "/tutorial/static/js/5.a9a28eb0.chunk.js.map",
+    "static/js/6.17194b3b.chunk.js": "/tutorial/static/js/6.17194b3b.chunk.js",
+    "static/js/6.17194b3b.chunk.js.map": "/tutorial/static/js/6.17194b3b.chunk.js.map",
+    "static/js/7.9d22fd0e.chunk.js": "/tutorial/static/js/7.9d22fd0e.chunk.js",
+    "static/js/7.9d22fd0e.chunk.js.map": "/tutorial/static/js/7.9d22fd0e.chunk.js.map",
+    "static/js/8.35d04921.chunk.js": "/tutorial/static/js/8.35d04921.chunk.js",
+    "static/js/8.35d04921.chunk.js.map": "/tutorial/static/js/8.35d04921.chunk.js.map",
+    "index.html": "/tutorial/index.html",
+    "precache-manifest.c7aeb373abc472caab7a32b010253b50.js": "/tutorial/precache-manifest.c7aeb373abc472caab7a32b010253b50.js",
+    "service-worker.js": "/tutorial/service-worker.js",
+    "static/js/3.b7f0acf6.chunk.js.LICENSE.txt": "/tutorial/static/js/3.b7f0acf6.chunk.js.LICENSE.txt",
+    "static/js/4.ec505971.chunk.js.LICENSE.txt": "/tutorial/static/js/4.ec505971.chunk.js.LICENSE.txt",
+    "static/media/annotation_interface.png": "/tutorial/static/media/annotation_interface.6747fb5f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4596d74d.js",
+    "static/js/3.b7f0acf6.chunk.js",
+    "static/js/main.b246ddf1.chunk.js"
+  ]
+}
