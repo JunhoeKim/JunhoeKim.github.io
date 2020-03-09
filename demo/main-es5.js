@@ -15125,6 +15125,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: 'Labels',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return 'Not Selected';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             },
             selectedUnit: function selectedUnit(unit) {
@@ -15140,6 +15144,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             labels: '라벨',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return '선택 안함';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             },
             selectedUnit: function selectedUnit(unit) {
@@ -15153,6 +15161,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             labels: 'Labels',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return 'Not Selected';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             }
           },
@@ -15161,6 +15173,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             labels: '라벨',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return '선택 안함';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             }
           }
@@ -15173,6 +15189,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: 'Encoding',
             markLabels: 'Mark Labels',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return 'Not Selected';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             }
           },
@@ -15183,6 +15203,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             encoding: '인코딩',
             markLabels: '마크 라벨',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return '선택 안함';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             }
           }
@@ -15338,6 +15362,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           en: {
             encoding: 'Encoding',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return 'Not Selected';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             },
             clear: 'Clear',
@@ -15346,6 +15374,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           ko: {
             encoding: '인코딩',
             encodingLabel: function encodingLabel(label) {
+              if (!label) {
+                return '선택 안함';
+              }
+
               return _this72.encodingMap[label][_this72.l];
             },
             clear: '모두 삭제',
@@ -16258,14 +16290,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
+    "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
+    // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+    // The list of file replacements can be found in `angular.json`.
+
 
     var environment = {
-      production: true,
-      mode: 'demo',
+      production: false,
+      mode: 'normal',
       chartType: 'bar',
       locale: 'ko'
-    }; //# sourceMappingURL=environment.js.map
+    };
+    /*
+     * For easier debugging in development mode, you can import the following file
+     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+     *
+     * This import should be commented out in production mode because it will have a negative impact
+     * on performance if an error is thrown.
+     */
+    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+    //# sourceMappingURL=environment.js.map
 
     /***/
   },
@@ -16294,14 +16338,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
+    "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
+    // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+    // The list of file replacements can be found in `angular.json`.
+
 
     var environment = {
-      production: true,
-      mode: 'demo',
+      production: false,
+      mode: 'normal',
       chartType: 'bar',
       locale: 'ko'
     };
+    /*
+     * For easier debugging in development mode, you can import the following file
+     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+     *
+     * This import should be commented out in production mode because it will have a negative impact
+     * on performance if an error is thrown.
+     */
+    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
     /***/
   },
 

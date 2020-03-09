@@ -9603,6 +9603,9 @@ let LocaleService = class LocaleService {
                 labels: 'Labels',
                 markLabels: 'Mark Labels',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return 'Not Selected';
+                    }
                     return this.encodingMap[label][this.l];
                 },
                 selectedUnit: (unit) => {
@@ -9618,6 +9621,9 @@ let LocaleService = class LocaleService {
                 labels: '라벨',
                 markLabels: '마크 라벨',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return '선택 안함';
+                    }
                     return this.encodingMap[label][this.l];
                 },
                 selectedUnit: (unit) => {
@@ -9631,6 +9637,9 @@ let LocaleService = class LocaleService {
                 encoding: 'Encoding',
                 labels: 'Labels',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return 'Not Selected';
+                    }
                     return this.encodingMap[label][this.l];
                 },
             },
@@ -9639,6 +9648,9 @@ let LocaleService = class LocaleService {
                 encoding: '인코딩',
                 labels: '라벨',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return '선택 안함';
+                    }
                     return this.encodingMap[label][this.l];
                 },
             }
@@ -9651,6 +9663,9 @@ let LocaleService = class LocaleService {
                 encoding: 'Encoding',
                 markLabels: 'Mark Labels',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return 'Not Selected';
+                    }
                     return this.encodingMap[label][this.l];
                 },
             },
@@ -9661,6 +9676,9 @@ let LocaleService = class LocaleService {
                 encoding: '인코딩',
                 markLabels: '마크 라벨',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return '선택 안함';
+                    }
                     return this.encodingMap[label][this.l];
                 },
             }
@@ -9825,6 +9843,9 @@ let LocaleService = class LocaleService {
             en: {
                 encoding: 'Encoding',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return 'Not Selected';
+                    }
                     return this.encodingMap[label][this.l];
                 },
                 clear: 'Clear',
@@ -9833,6 +9854,9 @@ let LocaleService = class LocaleService {
             ko: {
                 encoding: '인코딩',
                 encodingLabel: (label) => {
+                    if (!label) {
+                        return '선택 안함';
+                    }
                     return this.encodingMap[label][this.l];
                 },
                 clear: '모두 삭제',
@@ -10393,13 +10417,24 @@ PredictionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: true,
-    mode: 'demo',
+    production: false,
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 //# sourceMappingURL=environment.js.map
 
 /***/ }),
@@ -10415,13 +10450,24 @@ const environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: true,
-    mode: 'demo',
+    production: false,
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
