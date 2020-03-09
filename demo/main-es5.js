@@ -61,7 +61,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-end submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-end submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -4987,11 +4987,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "onSubmitReady",
-        value: function onSubmitReady() {
+        value: function onSubmitReady(ready) {
           var _this24 = this;
 
           setTimeout(function () {
-            _this24.submitReady = true;
+            _this24.submitReady = ready;
           }, 0);
         }
       }, {
@@ -5081,7 +5081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/edit/annotation-module/annotation-util.ts ***!
     \***********************************************************/
 
-  /*! exports provided: NUM_REG, WITHOUT_NUM_REG, getCurrRadius, getCurrStrokeWidth, updateBoxStyleByFocus, updateBoxStyleByScroll, AnnotationBox, isNumberTexts, isNumberText, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
+  /*! exports provided: NUM_REG, getCurrRadius, getCurrStrokeWidth, updateBoxStyleByFocus, updateBoxStyleByScroll, AnnotationBox, isNumberTexts, isNumberText, extractNumber, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
 
   /***/
   function srcAppEditAnnotationModuleAnnotationUtilTs(module, __webpack_exports__, __webpack_require__) {
@@ -5093,12 +5093,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "NUM_REG", function () {
       return NUM_REG;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "WITHOUT_NUM_REG", function () {
-      return WITHOUT_NUM_REG;
     });
     /* harmony export (binding) */
 
@@ -5141,6 +5135,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "isNumberText", function () {
       return isNumberText;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "extractNumber", function () {
+      return extractNumber;
     });
     /* harmony export (binding) */
 
@@ -5257,8 +5257,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! src/app/common/task */
     "./src/app/common/task/index.ts");
 
-    var NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,|B|b| ]/g;
-    var WITHOUT_NUM_REG = /[^.0-9]/g;
+    var NUM_REG = /[-+]?[0-9]*\.?[0-9]+/g;
 
     function getCurrRadius(svgS) {
       var focused = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -5391,39 +5390,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function isNumberText(v) {
-      var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-      var findNum = false;
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
+      var result = v.match(NUM_REG);
+      return result && result.length > 0;
+    }
 
-      try {
-        var _loop = function _loop() {
-          var c = _step2.value;
-          findNum = findNum || nums.findIndex(function (n) {
-            return n === c;
-          }) !== -1;
-        };
-
-        for (var _iterator2 = v[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          _loop();
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-            _iterator2["return"]();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
-      }
-
-      return findNum && !isNaN(+v.replace(NUM_REG, ''));
+    function extractNumber(v) {
+      var result = v.match(NUM_REG);
+      return result ? +result[0] : 0;
     }
 
     function removeEventArea(comp) {
@@ -5973,7 +5946,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       });
       var directions = [[-1, 0], [1, 0], [0, 1], [0, -1]];
 
-      var _loop2 = function _loop2() {
+      var _loop = function _loop() {
         var currIndex = queue[0];
         queue.shift();
 
@@ -6006,7 +5979,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
 
       while (queue.length > 0) {
-        _loop2();
+        _loop();
       }
 
       return points;
@@ -6474,7 +6447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var annotationLength = Object.keys(this.formGroup.value).length;
 
             if (annotationLength - 1 === this.index) {
-              this.submitEmitter.emit();
+              this.submitEmitter.emit(true);
             }
           }
         }
@@ -6849,7 +6822,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           var axisValues = axis.map(function (d) {
             return {
-              value: +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], ''),
+              value: +d.text.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0],
               center: d.center
             };
           }).sort(function (a, b) {
@@ -6886,10 +6859,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var filterInsertLabels = function filterInsertLabels(s) {
             if (groupType === 'quantitative') {
               var values = group.get('labels').controls.map(function (d) {
-                return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+                return +d.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0];
               });
               var extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
-              var value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+              var value = +s.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0];
               return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(s) && value >= extent[0] && value <= extent[1];
             } else {
               var axisLabels = group.get('labels').value;
@@ -8467,7 +8440,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberTexts"])(axis)) {
               var axisValues = axis.map(function (d) {
                 return {
-                  value: +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], ''),
+                  value: +d.text.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"])[0],
                   center: d.center
                 };
               }).sort(function (a, b) {
@@ -8611,45 +8584,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return true;
         }
       }, {
-        key: "mapMarkLabelToAxis",
-        value: function mapMarkLabelToAxis() {
-          var _this41 = this;
-
-          var markLabelBoxes = this.boxes.filter(function (d) {
-            return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
-          });
-          var axesGroup = this.specGroup.get('axis');
-          axesGroup.controls.forEach(function (group) {
-            var groupType = group.get('type').value;
-            var markLabelsForm = group.get('markLabels');
-
-            var filterInsertLabels = function filterInsertLabels(s) {
-              if (groupType === 'quantitative') {
-                var values = group.get('labels').controls.map(function (d) {
-                  return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], '');
-                });
-                var extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
-                var value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["WITHOUT_NUM_REG"], '');
-                return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) && value >= extent[0] && value <= extent[1];
-              } else {
-                var axisLabels = group.get('labels').value;
-                return !Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) && axisLabels.includes(s);
-              }
-            };
-
-            var insertedMarkLabels = markLabelBoxes.filter(function (box) {
-              return filterInsertLabels(box.text.value);
-            });
-            markLabelBoxes = markLabelBoxes.filter(function (box) {
-              return !filterInsertLabels(box.text.value);
-            });
-            insertedMarkLabels.filter(function (box) {
-              markLabelsForm.push(_this41.fb.control(box.text.value));
-            });
-            group.get('labeled').setValue(insertedMarkLabels.length > 0);
-          });
-        }
-      }, {
         key: "sortDrawOrder",
         value: function sortDrawOrder(boxIndex) {
           var forward = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -8670,7 +8604,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onSubmitReady",
         value: function onSubmitReady() {
           if (this.index === Object.keys(this.formGroup.value).length - 1) {
-            this.submitEmitter.emit();
+            this.submitEmitter.emit(true);
           }
         }
       }, {
@@ -8741,6 +8675,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this._stage;
         },
         set: function set(value) {
+          if (value < 2) {
+            this.submitEmitter.emit(false);
+          }
+
           this._stage = value;
           this.visited[value] = true;
         }
@@ -8881,55 +8819,61 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _annotation_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../annotation-util */
+    "./src/app/edit/annotation-module/annotation-util.ts");
+    /* harmony import */
+
+
+    var src_app_common_task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/common/task */
     "./src/app/common/task/index.ts");
     /* harmony import */
 
 
-    var d3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var d3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! d3 */
     "./node_modules/d3/index.js");
     /* harmony import */
 
 
-    var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
     /* harmony import */
 
 
-    var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/cdk/keycodes */
     "./node_modules/@angular/cdk/esm2015/keycodes.js");
     /* harmony import */
 
 
-    var src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! src/app/d3-utils */
     "./src/app/d3-utils.ts");
     /* harmony import */
 
 
-    var src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! src/app/prediction.service */
     "./src/app/prediction.service.ts");
     /* harmony import */
 
 
-    var src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! src/app/edit.service */
     "./src/app/edit.service.ts");
     /* harmony import */
 
 
-    var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! src/app/edit/common/feedback.service */
     "./src/app/edit/common/feedback.service.ts");
     /* harmony import */
 
 
-    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! src/app/locale.service */
     "./src/app/locale.service.ts");
 
@@ -8941,7 +8885,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.dialogRef = dialogRef;
         this.column = column;
-        this.separatorKeyCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["TAB"]];
+        this.separatorKeyCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["TAB"]];
       }
 
       _createClass(ColumnAdditionDialogComponent, [{
@@ -8976,12 +8920,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     ColumnAdditionDialogComponent.ctorParameters = function () {
       return [{
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogRef"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"]
       }, {
         type: undefined,
         decorators: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
-          args: [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DIALOG_DATA"]]
+          args: [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"]]
         }]
       }];
     };
@@ -8991,7 +8935,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./column-addition-dialog.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/annotation-module/overall/raw-table/column-addition-dialog.html"))["default"]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DIALOG_DATA"])), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogRef"], Object])], ColumnAdditionDialogComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"], Object])], ColumnAdditionDialogComponent);
 
     var RawTableComponent =
     /*#__PURE__*/
@@ -9014,14 +8958,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.focusedFeedbackKey = '';
         this.dummyForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
         this.encodings = ['x-position', 'y-position', 'height', 'width', 'area', 'color', 'none'];
-        this.re = /[^.0-9]/g;
         this.L = _L.rawTable;
       }
 
       _createClass(RawTableComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this42 = this;
+          var _this41 = this;
 
           var specGroup = this.formGroup.get('spec');
           specGroup.get('axis').controls.forEach(function (group, i) {
@@ -9030,7 +8973,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "axis.".concat(i)
             };
 
-            var targetGroup = _this42.fromPath(specGroup, column.path);
+            var targetGroup = _this41.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -9038,7 +8981,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('labels').value;
             }
 
-            _this42.columns.push(column);
+            _this41.columns.push(column);
           });
           specGroup.get('custom').controls.forEach(function (group, i) {
             var column = {
@@ -9046,7 +8989,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               path: "custom.".concat(i)
             };
 
-            var targetGroup = _this42.fromPath(specGroup, column.path);
+            var targetGroup = _this41.fromPath(specGroup, column.path);
 
             column.encoding = targetGroup.get('encoding');
 
@@ -9054,7 +8997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               column['labels'] = group.get('markLabels').value;
             }
 
-            _this42.columns.push(column);
+            _this41.columns.push(column);
           });
 
           if (this.hasLegend) {
@@ -9078,10 +9021,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.rawGroup = this.formGroup.get('raw');
           this.sub = this.fs.feedbackObservable.subscribe(function (feedback) {
-            _this42.focusedFeedbackKey = '';
-            _this42.focusedFeedback = null;
+            _this41.focusedFeedbackKey = '';
+            _this41.focusedFeedback = null;
 
-            if (feedback.taskKey !== _this42.task.key) {
+            if (feedback.taskKey !== _this41.task.key) {
               return;
             }
 
@@ -9089,19 +9032,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var lastKey = splited[splited.length - 1];
 
             if (lastKey === 'encoding') {
-              _this42.focusedFeedback = feedback;
-              _this42.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
+              _this41.focusedFeedback = feedback;
+              _this41.focusedFeedbackKey = splited.slice(1, splited.length - 1).join('.');
             } else if (splited[0] === 'raw') {
-              _this42.focusedFeedback = feedback;
+              _this41.focusedFeedback = feedback;
 
               if (splited[1] === 'other') {
-                _this42.focusedFeedbackKey = 'other';
+                _this41.focusedFeedbackKey = 'other';
               } else {
-                _this42.focusedFeedbackKey = _this42.marks[+splited[1]].key;
+                _this41.focusedFeedbackKey = _this41.marks[+splited[1]].key;
               }
 
               setTimeout(function () {
-                _this42.focusEmitter.emit(_this42.focusedFeedbackKey);
+                _this41.focusEmitter.emit(_this41.focusedFeedbackKey);
               }, 0);
             } else {
               return;
@@ -9127,7 +9070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
 
             if (divIndex !== -1) {
-              var focusedDiv = d3__WEBPACK_IMPORTED_MODULE_4__["select"](tableEl).selectAll('.focus-box').nodes()[divIndex];
+              var focusedDiv = d3__WEBPACK_IMPORTED_MODULE_5__["select"](tableEl).selectAll('.focus-box').nodes()[divIndex];
 
               if (focusedDiv) {
                 var focusedRect = focusedDiv.getBoundingClientRect();
@@ -9174,16 +9117,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee2() {
-            var _this43 = this;
+            var _this42 = this;
 
-            var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, column, encoding;
+            var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, column, encoding;
 
             return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
                     this.allChannelsEncoded = this.columns.every(function (column) {
-                      var targetGroup = _this43.fromPath(_this43.formGroup.get('spec'), column.path);
+                      var targetGroup = _this42.fromPath(_this42.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding');
                     });
@@ -9193,19 +9136,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       break;
                     }
 
-                    _iteratorNormalCompletion3 = true;
-                    _didIteratorError3 = false;
-                    _iteratorError3 = undefined;
+                    _iteratorNormalCompletion2 = true;
+                    _didIteratorError2 = false;
+                    _iteratorError2 = undefined;
                     _context2.prev = 5;
-                    _iterator3 = this.columns[Symbol.iterator]();
+                    _iterator2 = this.columns[Symbol.iterator]();
 
                   case 7:
-                    if (_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done) {
+                    if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
                       _context2.next = 21;
                       break;
                     }
 
-                    column = _step3.value;
+                    column = _step2.value;
                     encoding = column.encoding.value;
                     _context2.t0 = encoding;
                     _context2.next = _context2.t0 === 'color' ? 13 : _context2.t0 === 'shape' ? 15 : 17;
@@ -9223,7 +9166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     return _context2.abrupt("break", 18);
 
                   case 18:
-                    _iteratorNormalCompletion3 = true;
+                    _iteratorNormalCompletion2 = true;
                     _context2.next = 7;
                     break;
 
@@ -9234,26 +9177,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 23:
                     _context2.prev = 23;
                     _context2.t1 = _context2["catch"](5);
-                    _didIteratorError3 = true;
-                    _iteratorError3 = _context2.t1;
+                    _didIteratorError2 = true;
+                    _iteratorError2 = _context2.t1;
 
                   case 27:
                     _context2.prev = 27;
                     _context2.prev = 28;
 
-                    if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-                      _iterator3["return"]();
+                    if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                      _iterator2["return"]();
                     }
 
                   case 30:
                     _context2.prev = 30;
 
-                    if (!_didIteratorError3) {
+                    if (!_didIteratorError2) {
                       _context2.next = 33;
                       break;
                     }
 
-                    throw _iteratorError3;
+                    throw _iteratorError2;
 
                   case 33:
                     return _context2.finish(30);
@@ -9275,7 +9218,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee3() {
-            var _this44 = this;
+            var _this43 = this;
 
             var path, k, boxes, _ref3, centers, labels;
 
@@ -9310,12 +9253,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centers = _ref3.centers;
                     labels = _ref3.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this44.rows.find(function (d) {
+                      var row = _this43.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
                       var label = labels[i];
-                      row.attrs[column.title] = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["rgb2Hex"])(centers[label]);
+                      row.attrs[column.title] = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["rgb2Hex"])(centers[label]);
                       row.clusterLabels[column.title] = label;
                     });
 
@@ -9333,7 +9276,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee4() {
-            var _this45 = this;
+            var _this44 = this;
 
             var path, k, boxes, _ref4, centerPatches, labels;
 
@@ -9360,7 +9303,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     centerPatches = _ref4.centerPatches;
                     labels = _ref4.labels;
                     this.marks.forEach(function (mark, i) {
-                      var row = _this45.rows.find(function (d) {
+                      var row = _this44.rows.find(function (d) {
                         return d.markKey === mark.key;
                       });
 
@@ -9399,7 +9342,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee6() {
-            var _this46 = this;
+            var _this45 = this;
 
             var colorEncodingIndex;
             return regeneratorRuntime.wrap(function _callee6$(_context6) {
@@ -9408,7 +9351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     _context6.next = 2;
                     return Promise.all(this.columns.map(function (column) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this46, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this45, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee5() {
                         var targetGroup;
@@ -9445,7 +9388,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 2:
                     colorEncodingIndex = this.columns.findIndex(function (column) {
-                      var targetGroup = _this46.fromPath(_this46.formGroup.get('spec'), column.path);
+                      var targetGroup = _this45.fromPath(_this45.formGroup.get('spec'), column.path);
 
                       return targetGroup.contains('encoding') && targetGroup.get('encoding').value === 'color';
                     });
@@ -9552,7 +9495,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initTable",
         value: function initTable() {
-          var _this47 = this;
+          var _this46 = this;
 
           var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           this.rows = [];
@@ -9561,18 +9504,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
 
           var initCells = function initCells() {
-            var _loop3 = function _loop3(i) {
-              var group = _this47.fb.group({});
+            var _loop2 = function _loop2(i) {
+              var group = _this46.fb.group({});
 
-              _this47.columns.forEach(function (column) {
-                group.addControl(column.title, _this47.fb.control(''));
+              _this46.columns.forEach(function (column) {
+                group.addControl(column.title, _this46.fb.control(''));
               });
 
-              _this47.rawGroup.push(group);
+              _this46.rawGroup.push(group);
             };
 
             for (var i = 0; i < markIndices.length; i++) {
-              _loop3(i);
+              _loop2(i);
             }
           }; // check the raw group is empty
 
@@ -9624,7 +9567,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictWidth",
         value: function predictWidth(targetGroup, column) {
-          var _this48 = this;
+          var _this47 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9638,22 +9581,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return d.center[0] * imgWidth;
           });
           var labels = this.boxes.filter(function (d) {
-            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_LABEL"];
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_X_AXIS_LABEL"];
           });
           var minLabel = labels.find(function (label) {
-            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, function (d) {
+            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, function (d) {
               return d.center[0];
             });
           });
           var minPos = minLabel.center[0] * imgWidth;
-          var minValue = +minLabel.text.value.replace(this.re, '');
+          var minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
           var maxLabel = labels.find(function (label) {
-            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, function (d) {
+            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, function (d) {
               return d.center[0];
             });
           });
           var maxPos = maxLabel.center[0] * imgWidth;
-          var maxValue = +maxLabel.text.value.replace(this.re, '');
+          var maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
           var positions = [];
           centers.forEach(function (center) {
             var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
@@ -9664,13 +9607,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.width * imgWidth) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this48.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this47.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictHeight",
         value: function predictHeight(targetGroup, column) {
-          var _this49 = this;
+          var _this48 = this;
 
           if (!targetGroup.contains('type') || targetGroup.get('type').value !== 'quantitative' || !targetGroup.contains('valuePerPixel') || !targetGroup.contains('precision') || !targetGroup.contains('unit')) {
             return;
@@ -9684,22 +9627,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return d.center[1] * imgHeight;
           });
           var labels = this.boxes.filter(function (d) {
-            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_LABEL"];
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"];
           });
           var minLabel = labels.find(function (label) {
-            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, function (d) {
+            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, function (d) {
               return d.center[1];
             });
           });
           var minPos = minLabel.center[1] * imgHeight;
-          var minValue = +minLabel.text.value.replace(this.re, '');
+          var minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
           var maxLabel = labels.find(function (label) {
-            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, function (d) {
+            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, function (d) {
               return d.center[1];
             });
           });
           var maxPos = maxLabel.center[1] * imgHeight;
-          var maxValue = +maxLabel.text.value.replace(this.re, '');
+          var maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
           var positions = [];
           centers.forEach(function (center) {
             var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
@@ -9710,13 +9653,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return sign * Math.round(d.height * imgHeight) * valuePerPixel;
           });
           this.rawGroup.controls.forEach(function (control, i) {
-            control.get([column.title]).setValue(_this49.format(result[i], pre, unit));
+            control.get([column.title]).setValue(_this48.format(result[i], pre, unit));
           });
         }
       }, {
         key: "predictPosition",
         value: function predictPosition(targetGroup, column, dir) {
-          var _this50 = this;
+          var _this49 = this;
 
           var _this$imgRef$nativeEl3 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl3.width,
@@ -9727,7 +9670,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return d.center[offset] * mul;
           });
           var labels = this.boxes.filter(function (d) {
-            return d.label.value === (dir === 'x' ? src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_LABEL"] : src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_LABEL"]);
+            return d.label.value === (dir === 'x' ? src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_X_AXIS_LABEL"] : src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"]);
           });
 
           if (labels.length === 0 || !targetGroup.contains('type')) {
@@ -9738,7 +9681,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (targetGroup.get('type').value === 'nominal') {
             centers.forEach(function (center) {
-              var minIndex = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinIndex"])(labels, function (label) {
+              var minIndex = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["getMinIndex"])(labels, function (label) {
                 return Math.abs(label.center[offset] * mul - center);
               });
               result.push(labels[minIndex].text.value);
@@ -9747,22 +9690,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var pre = +targetGroup.get('precision').value;
             var unit = targetGroup.get('unit').value;
             var minLabel = labels.find(function (label) {
-              return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, function (d) {
+              return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, function (d) {
                 return d.center[offset];
               });
             });
             var minPos = minLabel.center[offset] * mul;
-            var minValue = +minLabel.text.value.replace(this.re, '');
+            var minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
             var maxLabel = labels.find(function (label) {
-              return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, function (d) {
+              return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, function (d) {
                 return d.center[offset];
               });
             });
             var maxPos = maxLabel.center[offset] * mul;
-            var maxValue = +maxLabel.text.value.replace(this.re, '');
+            var maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
             centers.forEach(function (center) {
               var currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
-              result.push(_this50.format(currValue, pre, unit));
+              result.push(_this49.format(currValue, pre, unit));
             });
           }
 
@@ -9803,7 +9746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 7:
                     areas = _context8.sent;
-                    sumOfAreas = d3__WEBPACK_IMPORTED_MODULE_4__["sum"](areas);
+                    sumOfAreas = d3__WEBPACK_IMPORTED_MODULE_5__["sum"](areas);
                     ratios = areas.map(function (area) {
                       return area / sumOfAreas;
                     }).map(function (ratio) {
@@ -9826,11 +9769,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "assignMarkLabels",
         value: function assignMarkLabels(targetGroup, column) {
-          var _this51 = this;
+          var _this50 = this;
 
           var targetMarkLabels = targetGroup.get('markLabels').value;
           var markLabelBoxes = this.boxes.filter(function (d) {
-            return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
+            return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_MARK_LABEL"];
           }).filter(function (d) {
             return targetMarkLabels.findIndex(function (label) {
               return label === d.text.value;
@@ -9839,20 +9782,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           markLabelBoxes.forEach(function (box) {
             var value = box.text.value;
 
-            var targetIndex = _this51.findNearestBoxIndex(box, targetGroup);
+            var targetIndex = _this50.findNearestBoxIndex(box, targetGroup);
 
-            _this51.rows[targetIndex].group.get([column.title]).setValue(value);
+            _this50.rows[targetIndex].group.get([column.title]).setValue(value);
           });
         }
       }, {
         key: "findNearestBoxIndex",
         value: function findNearestBoxIndex(queryBox, targetGroup) {
-          var _this52 = this;
+          var _this51 = this;
 
           var axisDir = targetGroup.contains('dir') ? targetGroup.get('dir').value : 'none'; // First, find the marks which contains the target mark label
 
           var innerRows = this.rows.filter(function (row) {
-            var mark = _this52.marks.find(function (m) {
+            var mark = _this51.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9865,8 +9808,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return queryBox.center[0] >= x0 && queryBox.center[0] <= x1 && queryBox.center[1] >= y0 && queryBox.center[1] <= y1;
           });
           var rowsForSearch = innerRows.length > 0 ? innerRows : this.rows;
-          var minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinElem"])(rowsForSearch, function (row) {
-            var mark = _this52.marks.find(function (m) {
+          var minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["getMinElem"])(rowsForSearch, function (row) {
+            var mark = _this51.marks.find(function (m) {
               return m.key === row.markKey;
             });
 
@@ -9935,15 +9878,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "predictByClusterLabels",
         value: function predictByClusterLabels(column) {
-          var _this53 = this;
+          var _this52 = this;
 
           var key = column.title;
           var definedPairs = this.marks.map(function (mark, i) {
-            var group = _this53.rawGroup.at(i);
+            var group = _this52.rawGroup.at(i);
 
             return {
               value: group.get([key]).value,
-              label: _this53.rows.find(function (d) {
+              label: _this52.rows.find(function (d) {
                 return d.markKey === mark.key;
               }).clusterLabels[key]
             };
@@ -9956,8 +9899,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.rawGroup.controls.forEach(function (control, i) {
-            var row = _this53.rows.find(function (d) {
-              return d.markKey === _this53.marks[i].key;
+            var row = _this52.rows.find(function (d) {
+              return d.markKey === _this52.marks[i].key;
             });
 
             var defined = definedPairs.find(function (d) {
@@ -9970,7 +9913,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addColumn",
         value: function addColumn() {
-          var _this54 = this;
+          var _this53 = this;
 
           var dialogRef = this.dialog.open(ColumnAdditionDialogComponent, {
             width: '500px',
@@ -9983,32 +9926,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           dialogRef.afterClosed().subscribe(function (newColumn) {
             var path = "custom-".concat(newColumn.title);
 
-            var specGroup = _this54.formGroup.get('spec');
+            var specGroup = _this53.formGroup.get('spec');
 
             newColumn.path = path;
-            specGroup.addControl(path, _this54.fb.group({
-              title: _this54.fb.control(newColumn.title)
+            specGroup.addControl(path, _this53.fb.group({
+              title: _this53.fb.control(newColumn.title)
             }));
 
             if (newColumn.labels && newColumn.labels.length > 0) {
-              specGroup.get(path).addControl('labels', _this54.fb.array(newColumn.labels));
+              specGroup.get(path).addControl('labels', _this53.fb.array(newColumn.labels));
             }
 
-            _this54.columns.push(newColumn);
+            _this53.columns.push(newColumn);
 
-            _this54.rawGroup.controls.forEach(function (control) {
-              control.addControl(newColumn.title, _this54.fb.control(''));
+            _this53.rawGroup.controls.forEach(function (control) {
+              control.addControl(newColumn.title, _this53.fb.control(''));
             });
           });
         }
       }, {
         key: "addRow",
         value: function addRow() {
-          var _this55 = this;
+          var _this54 = this;
 
           var group = this.fb.group({});
           this.columns.forEach(function (column) {
-            group.addControl(column.title, _this55.fb.control(''));
+            group.addControl(column.title, _this54.fb.control(''));
           });
           this.rawGroup.push(group);
           this.rows.push({
@@ -10055,21 +9998,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [{
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
       }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]
+        type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]
       }, {
-        type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"]
+        type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__["EditService"]
       }, {
-        type: src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"]
+        type: src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__["PredictionService"]
       }, {
-        type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"]
+        type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__["FeedbackService"]
       }, {
-        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"]
+        type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"]
       }];
     };
 
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])], RawTableComponent.prototype, "imgRef", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"])], RawTableComponent.prototype, "formGroup", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["Overall"])], RawTableComponent.prototype, "task", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["Overall"])], RawTableComponent.prototype, "task", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)], RawTableComponent.prototype, "hasLegend", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)], RawTableComponent.prototype, "boxes", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)], RawTableComponent.prototype, "focusedBoxIndex", void 0);
@@ -10095,7 +10038,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/edit/edit-module.scss"))["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ../overall.component.scss */
       "./src/app/edit/annotation-module/overall/overall.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"], src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"], src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"]])], RawTableComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"], src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__["EditService"], src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__["PredictionService"], src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__["FeedbackService"], src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"]])], RawTableComponent);
     /***/
   },
 
@@ -10188,11 +10131,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(RegressionComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this56 = this;
+          var _this55 = this;
 
           this.event.subscribe(function (key) {
-            if (key === 'predict' && _this56.edit.autoCompleteSubject.getValue()[_this56.task.key]) {
-              _this56.task.applyPrediction(_this56.formGroup);
+            if (key === 'predict' && _this55.edit.autoCompleteSubject.getValue()[_this55.task.key]) {
+              _this55.task.applyPrediction(_this55.formGroup);
             }
           });
         }
@@ -10338,21 +10281,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TextComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this57 = this;
+          var _this56 = this;
 
           this.event.subscribe(function (key) {
-            _this57.isDrawing = false;
-            _this57.isMerging = false;
+            _this56.isDrawing = false;
+            _this56.isMerging = false;
 
-            if (key === 'predict' && _this57.edit.autoCompleteSubject.getValue()[_this57.task.key]) {
-              _this57.task.registerControl(_this57.formGroup, _this57.fb);
+            if (key === 'predict' && _this56.edit.autoCompleteSubject.getValue()[_this56.task.key]) {
+              _this56.task.registerControl(_this56.formGroup, _this56.fb);
 
-              _this57.task.applyPrediction(_this57.formGroup);
+              _this56.task.applyPrediction(_this56.formGroup);
 
-              _this57.updateBoxes();
+              _this56.updateBoxes();
 
-              if (_this57.currIndex === _this57.index) {
-                _this57.createEventArea();
+              if (_this56.currIndex === _this56.index) {
+                _this56.createEventArea();
               }
             }
           });
@@ -10674,23 +10617,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this58 = this;
+          var _this57 = this;
 
           this.sub = this.fs.showObservable.subscribe(function (data) {
-            _this58.displayModal = true;
+            _this57.displayModal = true;
             var left = data.left,
                 top = data.top,
                 feedback = data.feedback;
-            _this58.feedback = feedback;
+            _this57.feedback = feedback;
 
-            _this58.changeDetector.detectChanges();
+            _this57.changeDetector.detectChanges();
 
-            var el = _this58.ref.nativeElement;
+            var el = _this57.ref.nativeElement;
             var rect = el.getBoundingClientRect();
 
-            _this58.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
+            _this57.renderer.setStyle(el, 'left', "".concat(left - rect.width, "px"));
 
-            _this58.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
+            _this57.renderer.setStyle(el, 'top', "".concat(top - rect.height / 2, "px"));
           });
         }
       }, {
@@ -11783,29 +11726,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "grade",
         value: function grade(path, formGroup, config) {
-          var _this59 = this;
+          var _this58 = this;
 
           var result = {};
-          var _iteratorNormalCompletion4 = true;
-          var _didIteratorError4 = false;
-          var _iteratorError4 = undefined;
+          var _iteratorNormalCompletion3 = true;
+          var _didIteratorError3 = false;
+          var _iteratorError3 = undefined;
 
           try {
-            for (var _iterator4 = config.tasks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-              var task = _step4.value;
+            for (var _iterator3 = config.tasks[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+              var task = _step3.value;
               result[task.key] = task.getFormValue(formGroup);
             }
           } catch (err) {
-            _didIteratorError4 = true;
-            _iteratorError4 = err;
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
-                _iterator4["return"]();
+              if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                _iterator3["return"]();
               }
             } finally {
-              if (_didIteratorError4) {
-                throw _iteratorError4;
+              if (_didIteratorError3) {
+                throw _iteratorError3;
               }
             }
           }
@@ -11824,11 +11767,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           submitted.marks.forEach(function (mark, i) {
-            var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_this59.data.marks, function (d) {
-              return _this59.iou(mark.bound, d.bound);
+            var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_this58.data.marks, function (d) {
+              return _this58.iou(mark.bound, d.bound);
             });
 
-            if (maxIou <= _this59.params.iou) {
+            if (maxIou <= _this58.params.iou) {
               feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                 taskKey: 'key_0',
                 annotationKey: "mark.".concat(i),
@@ -11915,14 +11858,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             xLabelIndices.forEach(function (index) {
               var text = submitted.texts[index];
               var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](targetTexts, function (d) {
-                return _this59.iou(text.bound, d.bound);
+                return _this58.iou(text.bound, d.bound);
               });
               var ious = targetTexts.map(function (d) {
-                return _this59.iou(text.bound, d.bound);
+                return _this58.iou(text.bound, d.bound);
               });
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
-              if (maxIou <= _this59.textIOU) {
+              if (maxIou <= _this58.textIOU) {
                 feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
@@ -11954,13 +11897,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               var text = submitted.texts[index];
 
               var ious = _targetTexts.map(function (d) {
-                return _this59.iou(text.bound, d.bound);
+                return _this58.iou(text.bound, d.bound);
               });
 
               var maxIndex = ious.indexOf(Math.max.apply(null, ious));
               var maxIou = ious[maxIndex];
 
-              if (maxIou <= _this59.textIOU) {
+              if (maxIou <= _this58.textIOU) {
                 feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                   taskKey: 'key_0',
                   annotationKey: "text.".concat(index),
@@ -12004,16 +11947,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               legendIndices.forEach(function (index) {
                 var text = submitted.texts[index];
                 var maxIou = d3__WEBPACK_IMPORTED_MODULE_7__["max"](_targetTexts2, function (d) {
-                  return _this59.iou(text.bound, d.bound);
+                  return _this58.iou(text.bound, d.bound);
                 });
 
                 var ious = _targetTexts2.map(function (d) {
-                  return _this59.iou(text.bound, d.bound);
+                  return _this58.iou(text.bound, d.bound);
                 });
 
                 var maxIndex = ious.indexOf(Math.max.apply(null, ious));
 
-                if (maxIou <= _this59.textIOU) {
+                if (maxIou <= _this58.textIOU) {
                   feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
                     taskKey: 'key_0',
                     annotationKey: "text.".concat(index),
@@ -12032,7 +11975,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var checkAxis = function checkAxis(index) {
             var axis = submitted.spec.axes[index];
-            var target = _this59.data.spec.axes[index];
+            var target = _this58.data.spec.axes[index];
 
             if (axis.title.value !== target.title.value) {
               feedbacks.push(new src_app_common_verification_data_js__WEBPACK_IMPORTED_MODULE_6__["Feedback"]({
@@ -12274,7 +12217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n@media (min-width: 1360px) and (max-width: 1919px) {\n  img {\n    max-width: 500px;\n    max-height: 400px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n@media (min-width: 1920px) {\n  img {\n    max-width: 700px;\n    max-height: 600px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\nsvg.move {\n  cursor: move;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBRE1BO0VBQ0k7SUFDSSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0Esc0JBQUE7T0FBQSxtQkFBQTtFQ0hOO0FBQ0Y7O0FETUE7RUFDSTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxzQkFBQTtPQUFBLG1CQUFBO0VDSk47QUFDRjs7QURVSTtFQUNJLGlCQUFBO0FDUlI7O0FEV0k7RUFDSSxvQkFBQTtFQUFBLFlBQUE7QUNUUjs7QURZSTtFQUNJLGVBQUE7QUNWUjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLFlBQUE7QUNYSjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLDRCQUFBO0VBQ0EscUJBQUE7QUNYSjs7QURjQTtFQUNJLGNBQUE7QUNYSjs7QURlQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FDWko7O0FEZUE7RUFDSSxXQUFBO0FDWko7O0FEZUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7QUNaSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgzLnNlbGVjdGVkIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5yaWdodC1wYW5lbCB7XHJcbiAgICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuLmVkaXQtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbiAgICBmb250LXNpemU6IDEuM3JlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG59XHJcblxyXG4jaW1hZ2Utem9uZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAuZGVzYyB7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi8vIC5pbWFnZS1yZWdpb24ge1xyXG4vLyAgICAgbWF4LXdpZHRoOiA5NSU7XHJcbi8vIH1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcclxuICAgIGltZyB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA0MDBweDtcclxuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XHJcbiAgICBpbWcge1xyXG4gICAgICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNjAwcHg7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxuICAgIH1cclxufVxyXG5pbWcge1xyXG59XHJcblxyXG46Om5nLWRlZXAge1xyXG4gICAgY2lyY2xlLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgcmVjdC5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogZ3JhYjtcclxuICAgIH1cclxuXHJcbiAgICAubWF0LXJhZGlvLWxhYmVsLWNvbnRlbnQge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIH1cclxufVxyXG5cclxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG5zdmcubW92ZSB7XHJcbiAgICBjdXJzb3I6IG1vdmU7XHJcbn1cclxuXHJcbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNzaWRlLW5hdiB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCAjQUFBO1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbjogMCAxMnB4O1xyXG59XHJcblxyXG5cclxuLnZhbGlkYXRlLWZlZWRiYWNrIHtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4uZm9ybS1sYWJlbCB7XHJcbiAgICB3aWR0aDogNTBweDtcclxufVxyXG5cclxuLnN1Ym1pdC1zZWN0aW9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG59XHJcbiIsImgzLnNlbGVjdGVkIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLnJpZ2h0LXBhbmVsIHtcbiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCAjYWFhO1xuICBvdmVyZmxvdy15OiBzY3JvbGw7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gNjRweCkgIWltcG9ydGFudDtcbn1cblxuLmVkaXQtaGVhZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcbiAgZm9udC1zaXplOiAxLjNyZW07XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xufVxuXG4jaW1hZ2Utem9uZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG4jaW1hZ2Utem9uZSAuZGVzYyB7XG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgZm9udC1zaXplOiAxLjJyZW07XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDQwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAxOTIwcHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDcwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDYwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbjo6bmctZGVlcCBjaXJjbGUuaGFuZGxlIHtcbiAgY3Vyc29yOiBjcm9zc2hhaXI7XG59XG46Om5nLWRlZXAgcmVjdC5oYW5kbGUge1xuICBjdXJzb3I6IGdyYWI7XG59XG46Om5nLWRlZXAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4uaW1hZ2UtcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuc3ZnLm1vdmUge1xuICBjdXJzb3I6IG1vdmU7XG59XG5cbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n@media (min-width: 1360px) and (max-width: 1919px) {\n  img {\n    max-width: 500px;\n    max-height: 400px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n@media (min-width: 1920px) {\n  img {\n    max-width: 700px;\n    max-height: 600px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\nsvg.move {\n  cursor: move;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBRE1BO0VBQ0k7SUFDSSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0Esc0JBQUE7T0FBQSxtQkFBQTtFQ0hOO0FBQ0Y7O0FETUE7RUFDSTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxzQkFBQTtPQUFBLG1CQUFBO0VDSk47QUFDRjs7QURRSTtFQUNJLGlCQUFBO0FDTlI7O0FEU0k7RUFDSSxvQkFBQTtFQUFBLFlBQUE7QUNQUjs7QURVSTtFQUNJLGVBQUE7QUNSUjs7QURZQTtFQUNJLGFBQUE7QUNUSjs7QURZQTtFQUNJLFlBQUE7QUNUSjs7QURZQTtFQUNJLGFBQUE7QUNUSjs7QURZQTtFQUNJLDRCQUFBO0VBQ0EscUJBQUE7QUNUSjs7QURZQTtFQUNJLGNBQUE7QUNUSjs7QURhQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FDVko7O0FEYUE7RUFDSSxXQUFBO0FDVko7O0FEYUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7QUNWSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgzLnNlbGVjdGVkIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5yaWdodC1wYW5lbCB7XHJcbiAgICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuLmVkaXQtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbiAgICBmb250LXNpemU6IDEuM3JlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG59XHJcblxyXG4jaW1hZ2Utem9uZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAuZGVzYyB7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi8vIC5pbWFnZS1yZWdpb24ge1xyXG4vLyAgICAgbWF4LXdpZHRoOiA5NSU7XHJcbi8vIH1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcclxuICAgIGltZyB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA0MDBweDtcclxuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XHJcbiAgICBpbWcge1xyXG4gICAgICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNjAwcHg7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxuICAgIH1cclxufVxyXG5cclxuOjpuZy1kZWVwIHtcclxuICAgIGNpcmNsZS5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgfVxyXG5cclxuICAgIHJlY3QuaGFuZGxlIHtcclxuICAgICAgICBjdXJzb3I6IGdyYWI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5pbWFnZS1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuc3ZnLm1vdmUge1xyXG4gICAgY3Vyc29yOiBtb3ZlO1xyXG59XHJcblxyXG4uc3ZnLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4jc2lkZS1uYXYge1xyXG4gICAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcclxuICAgIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcclxufVxyXG5cclxubWF0LXJhZGlvLWJ1dHRvbiB7XHJcbiAgICBtYXJnaW46IDAgMTJweDtcclxufVxyXG5cclxuXHJcbi52YWxpZGF0ZS1mZWVkYmFjayB7XHJcbiAgICBjb2xvcjogI2Y0NDMzNjtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxufVxyXG5cclxuLmZvcm0tbGFiZWwge1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbn1cclxuXHJcbi5zdWJtaXQtc2VjdGlvbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGhlaWdodDogNjBweDtcclxufVxyXG4iLCJoMy5zZWxlY3RlZCB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5yaWdodC1wYW5lbCB7XG4gIGJvcmRlci1sZWZ0OiAycHggc29saWQgI2FhYTtcbiAgb3ZlcmZsb3cteTogc2Nyb2xsO1xuICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XG59XG5cbi5lZGl0LWhlYWRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XG4gIGZvbnQtc2l6ZTogMS4zcmVtO1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbn1cblxuI2ltYWdlLXpvbmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuI2ltYWdlLXpvbmUgLmRlc2Mge1xuICBmb250LXN0eWxlOiBpdGFsaWM7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGZvbnQtc2l6ZTogMS4ycmVtO1xufVxuXG5AbWVkaWEgKG1pbi13aWR0aDogMTM2MHB4KSBhbmQgKG1heC13aWR0aDogMTkxOXB4KSB7XG4gIGltZyB7XG4gICAgbWF4LXdpZHRoOiA1MDBweDtcbiAgICBtYXgtaGVpZ2h0OiA0MDBweDtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XG4gIGltZyB7XG4gICAgbWF4LXdpZHRoOiA3MDBweDtcbiAgICBtYXgtaGVpZ2h0OiA2MDBweDtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xuICB9XG59XG46Om5nLWRlZXAgY2lyY2xlLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIHJlY3QuaGFuZGxlIHtcbiAgY3Vyc29yOiBncmFiO1xufVxuOjpuZy1kZWVwIC5tYXQtcmFkaW8tbGFiZWwtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbnN2Zy5tb3ZlIHtcbiAgY3Vyc29yOiBtb3ZlO1xufVxuXG4uc3ZnLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNzaWRlLW5hdiB7XG4gIGJvcmRlci1yaWdodDogMnB4IHNvbGlkICNBQUE7XG4gIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcbn1cblxubWF0LXJhZGlvLWJ1dHRvbiB7XG4gIG1hcmdpbjogMCAxMnB4O1xufVxuXG4udmFsaWRhdGUtZmVlZGJhY2sge1xuICBjb2xvcjogI2Y0NDMzNjtcbiAgZm9udC1zaXplOiAxMnB4O1xufVxuXG4uZm9ybS1sYWJlbCB7XG4gIHdpZHRoOiA1MHB4O1xufVxuXG4uc3VibWl0LXNlY3Rpb24ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgaGVpZ2h0OiA2MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -12435,7 +12378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(EditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this60 = this;
+          var _this59 = this;
 
           if (!this.configService.userName) {
             this.router.navigate(['/login']);
@@ -12444,7 +12387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.svgS = d3__WEBPACK_IMPORTED_MODULE_3__["select"](this.svgRef.nativeElement);
           this.configService.configObservable.subscribe(function (config) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this60, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this59, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee13() {
               var elem, result;
@@ -12510,44 +12453,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var imgElem = this.imgRef.nativeElement;
           this.edit.removeImage();
           imgElem.addEventListener('load', function () {
-            var boundingBox = _this60.imgRef.nativeElement.getBoundingClientRect();
+            var boundingBox = _this59.imgRef.nativeElement.getBoundingClientRect();
 
-            _this60.initSVG(boundingBox);
+            _this59.initSVG(boundingBox);
 
-            _this60.noImagesLeft = false;
-            _this60.onImageLoad = true;
+            _this59.noImagesLeft = false;
+            _this59.onImageLoad = true;
 
-            _this60.timer.start();
+            _this59.timer.start();
 
-            var path = _this60.selectedImage.path;
+            var path = _this59.selectedImage.path;
 
-            _this60.network.getPrediction(path).then(function (predictData) {
-              _this60.config.parsePrediction(predictData);
+            _this59.network.getPrediction(path).then(function (predictData) {
+              _this59.config.parsePrediction(predictData);
 
-              if (_this60.mode === 'annotation') {
-                _this60.eventSubject.next('predict');
+              if (_this59.mode === 'annotation') {
+                _this59.eventSubject.next('predict');
               }
             });
 
-            if (_this60.selectedImage.hasPrevAnnotation) {
-              var meta = _this60.selectedImage.meta;
+            if (_this59.selectedImage.hasPrevAnnotation) {
+              var meta = _this59.selectedImage.meta;
 
-              _this60.config.parsePrevAnnotation(_this60.formGroup, meta.annotation, _this60.fb);
+              _this59.config.parsePrevAnnotation(_this59.formGroup, meta.annotation, _this59.fb);
 
-              _this60.eventSubject.next('review');
+              _this59.eventSubject.next('review');
             }
           });
           this.edit.imageSubject.asObservable().subscribe(function (image) {
-            _this60.formGroup = _this60.initFormGroup(_this60.config);
-            _this60.selectedImage = image;
-            var svg = _this60.svgRef.nativeElement;
+            _this59.formGroup = _this59.initFormGroup(_this59.config);
+            _this59.selectedImage = image;
+            var svg = _this59.svgRef.nativeElement;
 
-            _this60.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this59.renderer.setStyle(imgElem, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
-            _this60.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
+            _this59.renderer.setStyle(svg, 'transform', Object(_d3_utils__WEBPACK_IMPORTED_MODULE_6__["transform"])(1, 1, 0, 0));
 
             if (!image) {
-              _this60.noImagesLeft = !!imgElem.src;
+              _this59.noImagesLeft = !!imgElem.src;
               imgElem.src = '';
               return;
             }
@@ -12555,8 +12498,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             imgElem.src = image.src;
           });
           this.edit.autoCompleteSubject.asObservable().subscribe(function (_) {
-            if (_this60.mode === 'annotation') {
-              _this60.eventSubject.next('predict');
+            if (_this59.mode === 'annotation') {
+              _this59.eventSubject.next('predict');
             }
           });
         }
@@ -12935,11 +12878,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initFormGroup",
         value: function initFormGroup(config) {
-          var _this61 = this;
+          var _this60 = this;
 
           var formGroup = this.fb.group({});
           config.tasks.forEach(function (task) {
-            task.registerControl(formGroup, _this61.fb);
+            task.registerControl(formGroup, _this60.fb);
           });
           return formGroup;
         }
@@ -13194,20 +13137,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SideNavComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this62 = this;
+          var _this61 = this;
 
           this.event.subscribe(function (key) {
             if (key === 'progress') {
-              _this62.updateProgress();
+              _this61.updateProgress();
 
-              _this62.updateModelInfo();
+              _this61.updateModelInfo();
             }
           });
           this.cs.configObservable.subscribe(function (config) {
-            _this62.config = config;
+            _this61.config = config;
           });
           this.cs.userNameObservable.subscribe(function (name) {
-            _this62.userName = name;
+            _this61.userName = name;
           });
         }
       }, {
@@ -13224,10 +13167,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "removeImage",
         value: function removeImage() {
-          var _this63 = this;
+          var _this62 = this;
 
           this.edit.ignoreImage().then(function (_) {
-            _this63.remove.emit();
+            _this62.remove.emit();
           });
         } // for debug
 
@@ -13311,17 +13254,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateModelInfo",
         value: function updateModelInfo() {
-          var _this64 = this;
+          var _this63 = this;
 
           this.network.getModelInfo().then(function (modelInfos) {
-            if (!_this64.modelInfos) {
-              _this64.modelInfos = modelInfos;
+            if (!_this63.modelInfos) {
+              _this63.modelInfos = modelInfos;
             } else {
               modelInfos.forEach(function (newModelInfo, i) {
-                if (i < _this64.modelInfos.length) {
-                  _this64.modelInfos[i].score = newModelInfo.score;
+                if (i < _this63.modelInfos.length) {
+                  _this63.modelInfos[i].score = newModelInfo.score;
                 } else {
-                  _this64.modelInfos.push(newModelInfo);
+                  _this63.modelInfos.push(newModelInfo);
                 }
               });
             }
@@ -13440,18 +13383,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(TimerService, [{
         key: "start",
         value: function start() {
-          var _this65 = this;
+          var _this64 = this;
 
           this.reset();
           this.timer = setInterval(function () {
-            _this65.sec += 1;
+            _this64.sec += 1;
 
-            if (_this65.sec >= 1200) {
-              _this65.router.navigate(['/login']);
+            if (_this64.sec >= 1200) {
+              _this64.router.navigate(['/login']);
 
-              _this65.demo.init();
+              _this64.demo.init();
 
-              _this65.sec = 0;
+              _this64.sec = 0;
             }
           }, 1000);
         }
@@ -14432,7 +14375,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (key) {
               this.updateFocus(key);
-              console.log('focused key');
             }
           }
         }
@@ -14463,10 +14405,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addMarkFeedback",
         value: function addMarkFeedback() {
-          var _this66 = this;
+          var _this65 = this;
 
           var markIndex = this.data.marks.findIndex(function (mark) {
-            return mark.key === _this66.focusedKey;
+            return mark.key === _this65.focusedKey;
           });
           var numOtherFeedback = this.markFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('mark.other');
@@ -14491,10 +14433,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTextFeedback",
         value: function addTextFeedback() {
-          var _this67 = this;
+          var _this66 = this;
 
           var textIndex = this.data.texts.findIndex(function (text) {
-            return text.key === _this67.focusedKey;
+            return text.key === _this66.focusedKey;
           });
           var numOtherFeedback = this.textFeedbacks.filter(function (d) {
             return d.get('annotationKey').value.startsWith('text.other');
@@ -14568,8 +14510,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "initEventArea",
         value: function initEventArea() {
           this.svgS.selectAll('g').remove();
-          var horLine = this.svgS.append('line').attr('class', 'guide-horizontal').attr('x1', 0).attr('x2', 1000).attr('y1', 0).attr('y2', 0).attr('stroke-width', 1).attr('stroke', 'rgba(0, 0, 0, 0.3)').style('pointer-events', 'none');
-          var verLine = this.svgS.append('line').attr('class', 'guide-vertical').attr('y1', 0).attr('y2', 1000).attr('x1', 0).attr('x2', 0).attr('stroke-width', 1).attr('stroke', 'rgba(0, 0, 0, 0.3)').style('pointer-events', 'none');
+          var g = this.svgS.append('g');
+          var horLine = g.append('line').attr('class', 'guide-horizontal').attr('x1', 0).attr('x2', 1000).attr('y1', 0).attr('y2', 0).attr('stroke-width', 1).attr('stroke', 'rgba(0, 0, 0, 0.3)').style('pointer-events', 'none');
+          var verLine = g.append('line').attr('class', 'guide-vertical').attr('y1', 0).attr('y2', 1000).attr('x1', 0).attr('x2', 0).attr('stroke-width', 1).attr('stroke', 'rgba(0, 0, 0, 0.3)').style('pointer-events', 'none');
           this.svgS.on('mouseenter', function () {
             horLine.attr('visibility', 'visible');
             verLine.attr('visibility', 'visible');
@@ -14584,7 +14527,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initMarks",
         value: function initMarks() {
-          var _this68 = this;
+          var _this67 = this;
 
           var _this$imgRef$nativeEl4 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl4.width,
@@ -14599,16 +14542,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('mark', true).classed('focused', function (mark) {
-            return _this68.focusedKey === mark.key;
+            return _this67.focusedKey === mark.key;
           }).on('click', function (mark) {
-            _this68.clickMark(mark);
+            _this67.clickMark(mark);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "initTexts",
         value: function initTexts() {
-          var _this69 = this;
+          var _this68 = this;
 
           var _this$imgRef$nativeEl5 = this.imgRef.nativeElement,
               width = _this$imgRef$nativeEl5.width,
@@ -14623,22 +14566,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).attr('height', function (d) {
             return (d.bound[3] - d.bound[1]) * height;
           }).classed('text', true).classed('focused', function (text) {
-            return _this69.focusedKey === text.key;
+            return _this68.focusedKey === text.key;
           }).on('click', function (text) {
-            _this69.clickText(text);
+            _this68.clickText(text);
           });
           g.select('.focused').raise();
         }
       }, {
         key: "updateFocus",
         value: function updateFocus(key) {
-          var _this70 = this;
+          var _this69 = this;
 
           var g = this.svgS.selectAll('g');
           g.selectAll('rect').classed('focused', function (d) {
             return d.key === key;
           }).style('stroke-width', function (d) {
-            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this70.svgS, d.key === key);
+            return Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(_this69.svgS, d.key === key);
           });
           g.select('.focused').raise();
 
@@ -14836,7 +14779,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee22() {
-            var _this71 = this;
+            var _this70 = this;
 
             return regeneratorRuntime.wrap(function _callee22$(_context22) {
               while (1) {
@@ -14848,7 +14791,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         response: 'ok'
                       }
                     }).afterClosed().subscribe(function (result) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this71, void 0, void 0,
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this70, void 0, void 0,
                       /*#__PURE__*/
                       regeneratorRuntime.mark(function _callee21() {
                         var feedbacks, path;
@@ -15012,7 +14955,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function LocaleService() {
-        var _this72 = this,
+        var _this71 = this,
             _this$labelMap;
 
         _classCallCheck(this, LocaleService);
@@ -15111,7 +15054,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             spec: '명세 정보',
             rawData: '원본 데이터',
             label: function label(input) {
-              return _this72.labelMap[input];
+              return _this71.labelMap[input];
             }
           }
         };
@@ -15129,7 +15072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return 'Not Selected';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             selectedUnit: function selectedUnit(unit) {
               return unit;
@@ -15148,10 +15091,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return '선택 안함';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             selectedUnit: function selectedUnit(unit) {
-              return unit === 'integer' ? '정수 단위' : '소수 단위';
+              switch (unit) {
+                case 'integer':
+                  return '정수 단위';
+
+                case 'decimal':
+                  return '소수 단위';
+
+                default:
+                  return '';
+              }
             }
           }
         };
@@ -15165,7 +15117,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return 'Not Selected';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           },
           ko: {
@@ -15177,7 +15129,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return '선택 안함';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           }
         };
@@ -15193,7 +15145,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return 'Not Selected';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           },
           ko: {
@@ -15207,7 +15159,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return '선택 안함';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             }
           }
         };
@@ -15297,7 +15249,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: '제목',
             numMarks: '마크의 개수',
             label: function label(input) {
-              return _this72.labelMap[input];
+              return _this71.labelMap[input];
             },
             refreshWarning: '전 단계에서 변경 사항을 반영하려면 새로 고침 버튼을 누르세요',
             controlDelete: "\uC9C0\uC6B0\uAE30",
@@ -15366,7 +15318,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return 'Not Selected';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             clear: 'Clear',
             predict: 'Predict'
@@ -15378,7 +15330,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return '선택 안함';
               }
 
-              return _this72.encodingMap[label][_this72.l];
+              return _this71.encodingMap[label][_this71.l];
             },
             clear: '모두 삭제',
             predict: '값 계산'
@@ -15624,25 +15576,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LoginComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this73 = this;
+          var _this72 = this;
 
           this.configService.configObservable.subscribe(function (config) {
-            _this73.config = config;
+            _this72.config = config;
 
-            if (_this73.config.service !== 'normal') {
-              _this73.name = _this73.config.service;
-              _this73.password = _this73.config.service;
+            if (_this72.config.service !== 'normal') {
+              _this72.name = _this72.config.service;
+              _this72.password = _this72.config.service;
 
-              _this73.configService.setUserName(_this73.name);
+              _this72.configService.setUserName(_this72.name);
 
-              _this73.login(false);
+              _this72.login(false);
             }
           });
         }
       }, {
         key: "login",
         value: function login() {
-          var _this74 = this;
+          var _this73 = this;
 
           var validation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var re = /[A-Za-z0-9_]\w+/g;
@@ -15657,13 +15609,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.network.login(this.config.key, this.name, this.password).then(function (res) {
             if (res.code !== 0) {
-              _this74.warnMessage = res.message;
+              _this73.warnMessage = res.message;
             } else {
-              _this74.configService.userNameObservable.subscribe(function (_) {
-                _this74.router.navigate(['/edit']);
+              _this73.configService.userNameObservable.subscribe(function (_) {
+                _this73.router.navigate(['/edit']);
               });
 
-              _this74.configService.setUserName(_this74.name);
+              _this73.configService.setUserName(_this73.name);
             }
           })["catch"](function (err) {
             console.error(err);
@@ -15782,7 +15734,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(NetworkService, [{
         key: "login",
         value: function login(key, userName, password) {
-          var _this75 = this;
+          var _this74 = this;
 
           var body = {
             key: key,
@@ -15790,10 +15742,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             password: password
           };
           return this.http.post("".concat(this.BASE_URL, "login"), body, this.userOptions).toPromise().then(function (raw) {
-            return _this75.parseResponse(raw);
+            return _this74.parseResponse(raw);
           }).then(function (data) {
             if (data.data.token) {
-              _this75.token = data.data.token;
+              _this74.token = data.data.token;
             }
 
             return data;
@@ -15876,15 +15828,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getRandomElem",
         value: function getRandomElem() {
-          var _this76 = this;
+          var _this75 = this;
 
           return this.httpGetWithUser('random_image').then(function (raw) {
-            return _this76.parseResponse(raw);
+            return _this75.parseResponse(raw);
           }).then(function (response) {
             var data = response.data;
 
             if (data) {
-              return Promise.all([data, _this76.getImage(data.path)]);
+              return Promise.all([data, _this75.getImage(data.path)]);
             } else {
               return null;
             }
@@ -15893,7 +15845,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getVerificationRandomElem",
         value: function getVerificationRandomElem() {
-          var _this77 = this;
+          var _this76 = this;
 
           return this.httpGetWithUser('verification_image').then(function (response) {
             if (response.data) {
@@ -15903,7 +15855,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }).then(function (meta) {
             if (meta) {
-              return Promise.all([meta, _this77.getImage(meta.path)]);
+              return Promise.all([meta, _this76.getImage(meta.path)]);
             } else {
               return null;
             }
@@ -15917,27 +15869,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             path: imageElem.path,
             semi: imageElem.semi
           };
-          var _iteratorNormalCompletion5 = true;
-          var _didIteratorError5 = false;
-          var _iteratorError5 = undefined;
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = undefined;
 
           try {
-            for (var _iterator5 = config.tasks[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-              var task = _step5.value;
+            for (var _iterator4 = config.tasks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var task = _step4.value;
               var key = task.key;
               body.raw[key] = task.getFormValue(formGroup);
             }
           } catch (err) {
-            _didIteratorError5 = true;
-            _iteratorError5 = err;
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
-                _iterator5["return"]();
+              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+                _iterator4["return"]();
               }
             } finally {
-              if (_didIteratorError5) {
-                throw _iteratorError5;
+              if (_didIteratorError4) {
+                throw _iteratorError4;
               }
             }
           }
@@ -15949,10 +15901,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerReview",
         value: function registerReview(review) {
-          var _this78 = this;
+          var _this77 = this;
 
           return this.http.post(this.BASE_URL + 'register_review', review, this.userOptions).toPromise().then(function (d) {
-            return _this78.parseResponse(d);
+            return _this77.parseResponse(d);
           });
         }
       }, {
