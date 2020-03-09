@@ -1588,9 +1588,7 @@ class Overall extends _task__WEBPACK_IMPORTED_MODULE_1__["Task"] {
         const formGroup = fb.group({});
         Object.entries(elem).forEach(([key, value]) => {
             if (Array.isArray(value)) {
-                if (value.length > 0) {
-                    formGroup.addControl(key, fb.array(value));
-                }
+                formGroup.addControl(key, fb.array(value));
             }
             else {
                 formGroup.addControl(key, fb.control(value));
@@ -6982,7 +6980,6 @@ let ReviewPanelComponent = class ReviewPanelComponent {
     }
     onFeedbackFocused(feedback) {
         this.focus.emit(feedback.key);
-        console.log(feedback);
     }
     equals(form) {
         return src_app_common_verification_data__WEBPACK_IMPORTED_MODULE_2__["Feedback"].from(form).key === this.focusedKey;

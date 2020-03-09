@@ -2926,9 +2926,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 value = _ref2[1];
 
             if (Array.isArray(value)) {
-              if (value.length > 0) {
-                formGroup.addControl(key, fb.array(value));
-              }
+              formGroup.addControl(key, fb.array(value));
             } else {
               formGroup.addControl(key, fb.control(value));
             }
@@ -11108,7 +11106,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onFeedbackFocused",
         value: function onFeedbackFocused(feedback) {
           this.focus.emit(feedback.key);
-          console.log(feedback);
         }
       }, {
         key: "equals",
