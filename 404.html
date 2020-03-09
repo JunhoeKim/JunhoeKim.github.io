@@ -6,7 +6,7 @@
     <script type="text/javascript">
 
       var l = window.location;
-      if l.pathname.split('/')[1] == '':
+      if l.pathname == '/':
         l.replace('http://www.autotator.com/tutorial');
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/' + l.pathname.split('/')[1]
