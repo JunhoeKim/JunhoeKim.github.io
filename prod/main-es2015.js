@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady()\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-end submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-vertical-stepper linear\r\n    (selectionChange)=\"onStepChange($event)\"\r\n    #stepper>\r\n    <ng-container *ngIf=\"config\">\r\n        <ng-container *ngFor=\"let task of config.tasks; let i = index\">\r\n            <mat-step [stepControl]=\"formGroup.get(task.key)\">\r\n                <form [formGroup]=\"formGroup\">\r\n                    <ng-template matStepLabel>{{ task.command }}</ng-template>\r\n                    <ng-container [ngSwitch]=\"task.taskType\">\r\n                        <ng-container *ngSwitchCase=\"'C'\">\r\n                            <app-classification\r\n                                [formGroup]=\"formGroup\"\r\n                                [stepper]=\"stepper\"\r\n                                [index]=\"i\"\r\n                                [task]=\"task\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-classification>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'R'\">\r\n                            <app-regression\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                                >\r\n                            </app-regression>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'B'\">\r\n                            <app-bounding-box\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-bounding-box>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'T'\">\r\n                            <app-text\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                            >\r\n                            </app-text>\r\n                        </ng-container>\r\n                        <ng-container *ngSwitchCase=\"'O'\">\r\n                            <app-overall\r\n                                [formGroup]=\"formGroup\"\r\n                                [task]=\"task\"\r\n                                [index]=\"i\"\r\n                                [imgRef]=\"imgRef\"\r\n                                [svgS]=\"svgS\"\r\n                                [currIndex]=\"currIndex\"\r\n                                [event]=\"event\"\r\n                                [spacePressed]=\"spacePressed\"\r\n                                (submitEmitter)=\"onSubmitReady($event)\"\r\n                                (outdatedFeedback)=\"resolveOutdatedFeedback()\"\r\n                                [mode]=\"mode\"\r\n                            >\r\n                            </app-overall>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </form>\r\n                <div *ngIf=\"i !== config.tasks.length - 1\" class=\"mt-2 text-right\">\r\n                    <button mat-stroked-button matStepperPrevious\r\n                        class=\"mr-1\">Prev</button>\r\n                    <button mat-stroked-button matStepperNext>Next</button>\r\n                </div>\r\n            </mat-step>\r\n        </ng-container>\r\n    </ng-container>\r\n</mat-vertical-stepper>\r\n<app-review-panel *ngIf=\"review && mode === 'revision'\"\r\n    [feedbacks]=\"review.feedbacks\"\r\n    [focusedKey]=\"focusedFeedbackKey\"\r\n    (focus)=\"displayFeedback($event)\">\r\n</app-review-panel>\r\n<div class=\"d-flex justify-content-end submit-section align-items-center p-3 px-4\">\r\n    <button *ngIf=\"submitReady\"\r\n        mat-stroked-button (click)=\"submit($event)\">\r\n        {{ L.submit }}\r\n    </button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -2695,9 +2695,9 @@ let AnnotationModuleComponent = class AnnotationModuleComponent {
             }
         });
     }
-    onSubmitReady() {
+    onSubmitReady(ready) {
         setTimeout(() => {
-            this.submitReady = true;
+            this.submitReady = ready;
         }, 0);
     }
     submit() {
@@ -2796,13 +2796,12 @@ AnnotationModuleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!***********************************************************!*\
   !*** ./src/app/edit/annotation-module/annotation-util.ts ***!
   \***********************************************************/
-/*! exports provided: NUM_REG, WITHOUT_NUM_REG, getCurrRadius, getCurrStrokeWidth, updateBoxStyleByFocus, updateBoxStyleByScroll, AnnotationBox, isNumberTexts, isNumberText, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
+/*! exports provided: NUM_REG, getCurrRadius, getCurrStrokeWidth, updateBoxStyleByFocus, updateBoxStyleByScroll, AnnotationBox, isNumberTexts, isNumberText, extractNumber, removeEventArea, createEventArea, removeTempBox, removeMergeLine, drawBoxMark, drawPointMark, addRectDragEvent, addMergeEvent, getImageData, drawBoxBySelectedPixel, regressBoxesByColor, regressArea, drawBoxByPoint, boxComparator, moveGuides */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NUM_REG", function() { return NUM_REG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WITHOUT_NUM_REG", function() { return WITHOUT_NUM_REG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrRadius", function() { return getCurrRadius; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrStrokeWidth", function() { return getCurrStrokeWidth; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBoxStyleByFocus", function() { return updateBoxStyleByFocus; });
@@ -2810,6 +2809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnnotationBox", function() { return AnnotationBox; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumberTexts", function() { return isNumberTexts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumberText", function() { return isNumberText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractNumber", function() { return extractNumber; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeEventArea", function() { return removeEventArea; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEventArea", function() { return createEventArea; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeTempBox", function() { return removeTempBox; });
@@ -2833,8 +2833,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const NUM_REG = /[m|mm|km|s|g|kg|K|M|%|$|,|B|b| ]/g;
-const WITHOUT_NUM_REG = /[^.0-9]/g;
+const NUM_REG = /[-+]?[0-9]*\.?[0-9]+/g;
 function getCurrRadius(svgS, focused = false) {
     const svgEl = svgS.node();
     const scale = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_2__["invertTransform"])(svgEl.style.transform).sx;
@@ -2947,19 +2946,17 @@ function isNumberTexts(boxes) {
     const numNumbers = d3__WEBPACK_IMPORTED_MODULE_1__["sum"](boxes
         .map(d => d.text.value)
         .map(d => {
-        return isNumberText(d)
-            ? 1
-            : 0;
+        return (isNumberText(d) ? 1 : 0);
     }));
     return numNumbers === boxes.length;
 }
 function isNumberText(v) {
-    const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    let findNum = false;
-    for (const c of v) {
-        findNum = findNum || (nums.findIndex(n => n === c) !== -1);
-    }
-    return findNum && !isNaN(+(v.replace(NUM_REG, '')));
+    const result = v.match(NUM_REG);
+    return result && result.length > 0;
+}
+function extractNumber(v) {
+    const result = v.match(NUM_REG);
+    return result ? +result[0] : 0;
 }
 function removeEventArea(comp) {
     comp.svgS.selectAll('g').remove();
@@ -3843,7 +3840,7 @@ let ClassificationComponent = class ClassificationComponent {
             && this.index > 0 && changes.currIndex.currentValue === this.index) {
             const annotationLength = Object.keys(this.formGroup.value).length;
             if (annotationLength - 1 === this.index) {
-                this.submitEmitter.emit();
+                this.submitEmitter.emit(true);
             }
         }
     }
@@ -4024,6 +4021,13 @@ let AxisSpecComponent = class AxisSpecComponent {
             }
             this.focusedFeedbackKey = splited[3];
             this.focusedFeedback = feedback;
+            if (this.focusedElemWithKey('unit')
+                && this.group.get('type').value !== 'quantitative') {
+                this.fs.resolve();
+            }
+            if (this.focusedElemWithKey('markLabels') && !this.hasMarkLabels) {
+                this.fs.resolve();
+            }
             setTimeout(() => {
                 this.scrollEvent();
             }, 0);
@@ -4077,7 +4081,7 @@ let AxisSpecComponent = class AxisSpecComponent {
             : this.texts.filter(text => text.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"]);
         const axisValues = axis.map(d => {
             return {
-                value: +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], ''),
+                value: +d.text.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0],
                 center: d.center
             };
         }).sort((a, b) => a.value - b.value);
@@ -4107,10 +4111,10 @@ let AxisSpecComponent = class AxisSpecComponent {
             if (groupType === 'quantitative') {
                 const values = group.get('labels')
                     .controls.map(d => {
-                    return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+                    return +d.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0];
                 });
                 const extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
-                const value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["WITHOUT_NUM_REG"], '');
+                const value = +s.match(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["NUM_REG"])[0];
                 return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["isNumberText"])(s) &&
                     value >= extent[0] && value <= extent[1];
             }
@@ -4336,6 +4340,13 @@ let CustomSpecComponent = class CustomSpecComponent {
             }
             this.focusedFeedbackKey = splited[3];
             this.focusedFeedback = feedback;
+            if (this.focusedElemWithKey('unit')
+                && this.group.get('type').value !== 'quantitative') {
+                this.fs.resolve();
+            }
+            if (this.focusedElemWithKey('markLabels') && !this.hasMarkLabels) {
+                this.fs.resolve();
+            }
             setTimeout(() => {
                 this.scrollEvent();
             }, 0);
@@ -4863,10 +4874,15 @@ let OverallComponent = class OverallComponent {
                         }
                         else {
                             const markIndex = +splited[1];
-                            const key = this.marks[markIndex].key;
-                            this.focusedFeedback = feedback;
-                            this.focusedFeedbackKey = key;
-                            this.updateFocus(key);
+                            if (markIndex >= this.marks.length) {
+                                this.fs.resolveTarget(feedback);
+                            }
+                            else {
+                                const key = this.marks[markIndex].key;
+                                this.focusedFeedback = feedback;
+                                this.focusedFeedbackKey = key;
+                                this.updateFocus(key);
+                            }
                         }
                         break;
                     }
@@ -4880,10 +4896,15 @@ let OverallComponent = class OverallComponent {
                         }
                         else {
                             const textIndex = +splited[1];
-                            const key = this.texts[textIndex].key;
-                            this.focusedFeedback = feedback;
-                            this.focusedFeedbackKey = key;
-                            this.updateFocus(key);
+                            if (textIndex >= this.texts.length) {
+                                this.fs.resolveTarget(feedback);
+                            }
+                            else {
+                                const key = this.texts[textIndex].key;
+                                this.focusedFeedback = feedback;
+                                this.focusedFeedbackKey = key;
+                                this.updateFocus(key);
+                            }
                         }
                         break;
                     }
@@ -5228,7 +5249,7 @@ let OverallComponent = class OverallComponent {
             if (Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberTexts"])(axis)) {
                 const axisValues = axis.map(d => {
                     return {
-                        value: +d.text.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], ''),
+                        value: +d.text.value.match(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"])[0],
                         center: d.center
                     };
                 }).sort((a, b) => a.value - b.value);
@@ -5318,42 +5339,6 @@ let OverallComponent = class OverallComponent {
         this.specGroup.setControl('legend', group);
         return true;
     }
-    mapMarkLabelToAxis() {
-        let markLabelBoxes = this.boxes.filter(d => {
-            return d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"];
-        });
-        const axesGroup = this.specGroup.get('axis');
-        axesGroup.controls.forEach((group) => {
-            const groupType = group.get('type').value;
-            const markLabelsForm = group.get('markLabels');
-            const filterInsertLabels = (s) => {
-                if (groupType === 'quantitative') {
-                    const values = group.get('labels')
-                        .controls.map(d => {
-                        return +d.value.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["NUM_REG"], '');
-                    });
-                    const extent = d3__WEBPACK_IMPORTED_MODULE_7__["extent"](values);
-                    const value = +s.replace(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["WITHOUT_NUM_REG"], '');
-                    return Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) &&
-                        value >= extent[0] && value <= extent[1];
-                }
-                else {
-                    const axisLabels = group.get('labels').value;
-                    return !Object(_annotation_util__WEBPACK_IMPORTED_MODULE_5__["isNumberText"])(s) && axisLabels.includes(s);
-                }
-            };
-            const insertedMarkLabels = markLabelBoxes.filter(box => {
-                return filterInsertLabels(box.text.value);
-            });
-            markLabelBoxes = markLabelBoxes.filter(box => {
-                return !filterInsertLabels(box.text.value);
-            });
-            insertedMarkLabels.filter(box => {
-                markLabelsForm.push(this.fb.control(box.text.value));
-            });
-            group.get('labeled').setValue(insertedMarkLabels.length > 0);
-        });
-    }
     sortDrawOrder(boxIndex, forward = true) {
         if (!this.focusedBoxIndex) {
             return;
@@ -5369,7 +5354,7 @@ let OverallComponent = class OverallComponent {
     }
     onSubmitReady() {
         if (this.index === Object.keys(this.formGroup.value).length - 1) {
-            this.submitEmitter.emit();
+            this.submitEmitter.emit(true);
         }
     }
     onSpecScroll(top) {
@@ -5417,6 +5402,9 @@ let OverallComponent = class OverallComponent {
         return this._stage;
     }
     set stage(value) {
+        if (value < 2) {
+            this.submitEmitter.emit(false);
+        }
         this._stage = value;
         this.visited[value] = true;
     }
@@ -5560,15 +5548,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var src_app_common_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/common/task */ "./src/app/common/task/index.ts");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm2015/keycodes.js");
-/* harmony import */ var src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/d3-utils */ "./src/app/d3-utils.ts");
-/* harmony import */ var src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/prediction.service */ "./src/app/prediction.service.ts");
-/* harmony import */ var src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/edit.service */ "./src/app/edit.service.ts");
-/* harmony import */ var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/edit/common/feedback.service */ "./src/app/edit/common/feedback.service.ts");
-/* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+/* harmony import */ var _annotation_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../annotation-util */ "./src/app/edit/annotation-module/annotation-util.ts");
+/* harmony import */ var src_app_common_task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/common/task */ "./src/app/common/task/index.ts");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm2015/keycodes.js");
+/* harmony import */ var src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/d3-utils */ "./src/app/d3-utils.ts");
+/* harmony import */ var src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/prediction.service */ "./src/app/prediction.service.ts");
+/* harmony import */ var src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/edit.service */ "./src/app/edit.service.ts");
+/* harmony import */ var src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/edit/common/feedback.service */ "./src/app/edit/common/feedback.service.ts");
+/* harmony import */ var src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/locale.service */ "./src/app/locale.service.ts");
+
 
 
 
@@ -5585,7 +5575,7 @@ let ColumnAdditionDialogComponent = class ColumnAdditionDialogComponent {
     constructor(dialogRef, column) {
         this.dialogRef = dialogRef;
         this.column = column;
-        this.separatorKeyCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__["TAB"]];
+        this.separatorKeyCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__["TAB"]];
     }
     onNoClick() {
         this.dialogRef.close();
@@ -5606,16 +5596,16 @@ let ColumnAdditionDialogComponent = class ColumnAdditionDialogComponent {
     }
 };
 ColumnAdditionDialogComponent.ctorParameters = () => [
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogRef"] },
-    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DIALOG_DATA"],] }] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"],] }] }
 ];
 ColumnAdditionDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-column-addition-dialog',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./column-addition-dialog.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit/annotation-module/overall/raw-table/column-addition-dialog.html")).default
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DIALOG_DATA"])),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogRef"], Object])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"], Object])
 ], ColumnAdditionDialogComponent);
 
 let RawTableComponent = class RawTableComponent {
@@ -5643,7 +5633,6 @@ let RawTableComponent = class RawTableComponent {
             'color',
             'none'
         ];
-        this.re = /[^.0-9]/g;
         this.L = _L.rawTable;
     }
     ngOnInit() {
@@ -5735,7 +5724,7 @@ let RawTableComponent = class RawTableComponent {
             const divIndex = this.rows
                 .findIndex(d => d.markKey === changes.focusedBoxIndex.currentValue);
             if (divIndex !== -1) {
-                const focusedDiv = d3__WEBPACK_IMPORTED_MODULE_4__["select"](tableEl)
+                const focusedDiv = d3__WEBPACK_IMPORTED_MODULE_5__["select"](tableEl)
                     .selectAll('.focus-box').nodes()[divIndex];
                 if (focusedDiv) {
                     const focusedRect = focusedDiv.getBoundingClientRect();
@@ -5805,7 +5794,7 @@ let RawTableComponent = class RawTableComponent {
             this.marks.forEach((mark, i) => {
                 const row = this.rows.find(d => d.markKey === mark.key);
                 const label = labels[i];
-                row.attrs[column.title] = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["rgb2Hex"])(centers[label]);
+                row.attrs[column.title] = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["rgb2Hex"])(centers[label]);
                 row.clusterLabels[column.title] = label;
             });
         });
@@ -5982,18 +5971,18 @@ let RawTableComponent = class RawTableComponent {
         const unit = targetGroup.get('unit').value;
         const centers = this.marks.map(d => d.center[0] * imgWidth);
         const labels = this.boxes.filter(d => {
-            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_LABEL"];
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_X_AXIS_LABEL"];
         });
         const minLabel = labels.find(label => {
-            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, d => d.center[0]);
+            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, d => d.center[0]);
         });
         const minPos = minLabel.center[0] * imgWidth;
-        const minValue = +(minLabel.text.value.replace(this.re, ''));
+        const minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
         const maxLabel = labels.find(label => {
-            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, d => d.center[0]);
+            return label.center[0] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, d => d.center[0]);
         });
         const maxPos = maxLabel.center[0] * imgWidth;
-        const maxValue = +(maxLabel.text.value.replace(this.re, ''));
+        const maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
         const positions = [];
         centers.forEach(center => {
             const currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
@@ -6021,18 +6010,18 @@ let RawTableComponent = class RawTableComponent {
         const unit = targetGroup.get('unit').value;
         const centers = this.marks.map(d => d.center[1] * imgHeight);
         const labels = this.boxes.filter(d => {
-            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_LABEL"];
+            return d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"];
         });
         const minLabel = labels.find(label => {
-            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, d => d.center[1]);
+            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, d => d.center[1]);
         });
         const minPos = minLabel.center[1] * imgHeight;
-        const minValue = +(minLabel.text.value.replace(this.re, ''));
+        const minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
         const maxLabel = labels.find(label => {
-            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, d => d.center[1]);
+            return label.center[1] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, d => d.center[1]);
         });
         const maxPos = maxLabel.center[1] * imgHeight;
-        const maxValue = +(maxLabel.text.value.replace(this.re, ''));
+        const maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
         const positions = [];
         centers.forEach(center => {
             const currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
@@ -6054,8 +6043,8 @@ let RawTableComponent = class RawTableComponent {
         const centers = this.marks.map(d => d.center[offset] * mul);
         const labels = this.boxes.filter(d => {
             return d.label.value === (dir === 'x'
-                ? src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_X_AXIS_LABEL"]
-                : src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_Y_AXIS_LABEL"]);
+                ? src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_X_AXIS_LABEL"]
+                : src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_Y_AXIS_LABEL"]);
         });
         if (labels.length === 0 ||
             !targetGroup.contains('type')) {
@@ -6064,7 +6053,7 @@ let RawTableComponent = class RawTableComponent {
         const result = [];
         if (targetGroup.get('type').value === 'nominal') {
             centers.forEach(center => {
-                const minIndex = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinIndex"])(labels, (label) => {
+                const minIndex = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["getMinIndex"])(labels, (label) => {
                     return Math.abs(label.center[offset] * mul - center);
                 });
                 result.push(labels[minIndex].text.value);
@@ -6074,15 +6063,15 @@ let RawTableComponent = class RawTableComponent {
             const pre = +targetGroup.get('precision').value;
             const unit = targetGroup.get('unit').value;
             const minLabel = labels.find(label => {
-                return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_4__["min"](labels, d => d.center[offset]);
+                return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_5__["min"](labels, d => d.center[offset]);
             });
             const minPos = minLabel.center[offset] * mul;
-            const minValue = +(minLabel.text.value.replace(this.re, ''));
+            const minValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(minLabel.text.value);
             const maxLabel = labels.find(label => {
-                return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_4__["max"](labels, d => d.center[offset]);
+                return label.center[offset] === d3__WEBPACK_IMPORTED_MODULE_5__["max"](labels, d => d.center[offset]);
             });
             const maxPos = maxLabel.center[offset] * mul;
-            const maxValue = +(maxLabel.text.value.replace(this.re, ''));
+            const maxValue = Object(_annotation_util__WEBPACK_IMPORTED_MODULE_3__["extractNumber"])(maxLabel.text.value);
             centers.forEach(center => {
                 const currValue = minValue + (center - minPos) / (maxPos - minPos) * (maxValue - minValue);
                 result.push(this.format(currValue, pre, unit));
@@ -6103,7 +6092,7 @@ let RawTableComponent = class RawTableComponent {
             }
             const body = { path, boxes };
             const areas = yield this.predictService.predictAreas(body);
-            const sumOfAreas = d3__WEBPACK_IMPORTED_MODULE_4__["sum"](areas);
+            const sumOfAreas = d3__WEBPACK_IMPORTED_MODULE_5__["sum"](areas);
             const ratios = areas.map(area => area / sumOfAreas)
                 .map(ratio => ratio.toFixed(3));
             const unit = targetGroup.get('unit').value;
@@ -6118,7 +6107,7 @@ let RawTableComponent = class RawTableComponent {
     assignMarkLabels(targetGroup, column) {
         const targetMarkLabels = targetGroup.get('markLabels').value;
         const markLabelBoxes = this.boxes
-            .filter(d => d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["KEY_MARK_LABEL"])
+            .filter(d => d.isText && d.label.value === src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["KEY_MARK_LABEL"])
             .filter(d => targetMarkLabels.findIndex(label => label === d.text.value) !== -1);
         markLabelBoxes.forEach(box => {
             const value = box.text.value;
@@ -6141,7 +6130,7 @@ let RawTableComponent = class RawTableComponent {
                 queryBox.center[1] <= y1;
         });
         const rowsForSearch = innerRows.length > 0 ? innerRows : this.rows;
-        const minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_7__["getMinElem"])(rowsForSearch, (row) => {
+        const minRow = Object(src_app_d3_utils__WEBPACK_IMPORTED_MODULE_8__["getMinElem"])(rowsForSearch, (row) => {
             const mark = this.marks.find(m => m.key === row.markKey);
             const [qx0, qy0, qx1, qy1] = queryBox.pointValues;
             const [tx0, ty0, tx1, ty1] = mark.pointValues;
@@ -6267,11 +6256,11 @@ let RawTableComponent = class RawTableComponent {
 };
 RawTableComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] },
-    { type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"] },
-    { type: src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"] },
-    { type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"] },
-    { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"] }
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"] },
+    { type: src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__["EditService"] },
+    { type: src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__["PredictionService"] },
+    { type: src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__["FeedbackService"] },
+    { type: src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -6283,7 +6272,7 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 ], RawTableComponent.prototype, "formGroup", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_3__["Overall"])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_common_task__WEBPACK_IMPORTED_MODULE_4__["Overall"])
 ], RawTableComponent.prototype, "task", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -6336,11 +6325,11 @@ RawTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./raw-table.component.scss */ "./src/app/edit/annotation-module/overall/raw-table/raw-table.component.scss")).default, tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ../../../edit-module.scss */ "./src/app/edit/edit-module.scss")).default, tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ../overall.component.scss */ "./src/app/edit/annotation-module/overall/overall.component.scss")).default]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
-        _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
-        src_app_edit_service__WEBPACK_IMPORTED_MODULE_9__["EditService"],
-        src_app_prediction_service__WEBPACK_IMPORTED_MODULE_8__["PredictionService"],
-        src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"],
-        src_app_locale_service__WEBPACK_IMPORTED_MODULE_11__["LocaleService"]])
+        _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"],
+        src_app_edit_service__WEBPACK_IMPORTED_MODULE_10__["EditService"],
+        src_app_prediction_service__WEBPACK_IMPORTED_MODULE_9__["PredictionService"],
+        src_app_edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_11__["FeedbackService"],
+        src_app_locale_service__WEBPACK_IMPORTED_MODULE_12__["LocaleService"]])
 ], RawTableComponent);
 
 
@@ -7720,7 +7709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n@media (min-width: 1360px) and (max-width: 1919px) {\n  img {\n    max-width: 500px;\n    max-height: 400px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n@media (min-width: 1920px) {\n  img {\n    max-width: 700px;\n    max-height: 600px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\nsvg.move {\n  cursor: move;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBRE1BO0VBQ0k7SUFDSSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0Esc0JBQUE7T0FBQSxtQkFBQTtFQ0hOO0FBQ0Y7O0FETUE7RUFDSTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxzQkFBQTtPQUFBLG1CQUFBO0VDSk47QUFDRjs7QURVSTtFQUNJLGlCQUFBO0FDUlI7O0FEV0k7RUFDSSxvQkFBQTtFQUFBLFlBQUE7QUNUUjs7QURZSTtFQUNJLGVBQUE7QUNWUjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLFlBQUE7QUNYSjs7QURjQTtFQUNJLGFBQUE7QUNYSjs7QURjQTtFQUNJLDRCQUFBO0VBQ0EscUJBQUE7QUNYSjs7QURjQTtFQUNJLGNBQUE7QUNYSjs7QURlQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FDWko7O0FEZUE7RUFDSSxXQUFBO0FDWko7O0FEZUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7QUNaSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgzLnNlbGVjdGVkIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5yaWdodC1wYW5lbCB7XHJcbiAgICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuLmVkaXQtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbiAgICBmb250LXNpemU6IDEuM3JlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG59XHJcblxyXG4jaW1hZ2Utem9uZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAuZGVzYyB7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi8vIC5pbWFnZS1yZWdpb24ge1xyXG4vLyAgICAgbWF4LXdpZHRoOiA5NSU7XHJcbi8vIH1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcclxuICAgIGltZyB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA0MDBweDtcclxuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XHJcbiAgICBpbWcge1xyXG4gICAgICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNjAwcHg7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxuICAgIH1cclxufVxyXG5pbWcge1xyXG59XHJcblxyXG46Om5nLWRlZXAge1xyXG4gICAgY2lyY2xlLmhhbmRsZSB7XHJcbiAgICAgICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICB9XHJcblxyXG4gICAgcmVjdC5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogZ3JhYjtcclxuICAgIH1cclxuXHJcbiAgICAubWF0LXJhZGlvLWxhYmVsLWNvbnRlbnQge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIH1cclxufVxyXG5cclxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG5zdmcubW92ZSB7XHJcbiAgICBjdXJzb3I6IG1vdmU7XHJcbn1cclxuXHJcbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbiNzaWRlLW5hdiB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCAjQUFBO1xyXG4gICAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbjogMCAxMnB4O1xyXG59XHJcblxyXG5cclxuLnZhbGlkYXRlLWZlZWRiYWNrIHtcclxuICAgIGNvbG9yOiAjZjQ0MzM2O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG59XHJcblxyXG4uZm9ybS1sYWJlbCB7XHJcbiAgICB3aWR0aDogNTBweDtcclxufVxyXG5cclxuLnN1Ym1pdC1zZWN0aW9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG59XHJcbiIsImgzLnNlbGVjdGVkIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLnJpZ2h0LXBhbmVsIHtcbiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCAjYWFhO1xuICBvdmVyZmxvdy15OiBzY3JvbGw7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gNjRweCkgIWltcG9ydGFudDtcbn1cblxuLmVkaXQtaGVhZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZmFmYTtcbiAgZm9udC1zaXplOiAxLjNyZW07XG4gIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xufVxuXG4jaW1hZ2Utem9uZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNDQ0M7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG4jaW1hZ2Utem9uZSAuZGVzYyB7XG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgZm9udC1zaXplOiAxLjJyZW07XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDQwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbkBtZWRpYSAobWluLXdpZHRoOiAxOTIwcHgpIHtcbiAgaW1nIHtcbiAgICBtYXgtd2lkdGg6IDcwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDYwMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG4gIH1cbn1cbjo6bmctZGVlcCBjaXJjbGUuaGFuZGxlIHtcbiAgY3Vyc29yOiBjcm9zc2hhaXI7XG59XG46Om5nLWRlZXAgcmVjdC5oYW5kbGUge1xuICBjdXJzb3I6IGdyYWI7XG59XG46Om5nLWRlZXAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4uaW1hZ2UtcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuc3ZnLm1vdmUge1xuICBjdXJzb3I6IG1vdmU7XG59XG5cbi5zdmctcmVnaW9uOm5vdCguc2VsZWN0ZWQpIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI3NpZGUtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcbiAgd2lkdGg6IDE1JSAhaW1wb3J0YW50O1xufVxuXG5tYXQtcmFkaW8tYnV0dG9uIHtcbiAgbWFyZ2luOiAwIDEycHg7XG59XG5cbi52YWxpZGF0ZS1mZWVkYmFjayB7XG4gIGNvbG9yOiAjZjQ0MzM2O1xuICBmb250LXNpemU6IDEycHg7XG59XG5cbi5mb3JtLWxhYmVsIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5zdWJtaXQtc2VjdGlvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDYwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("h3.selected {\n  display: none;\n}\n\n.right-panel {\n  border-left: 2px solid #aaa;\n  overflow-y: scroll;\n  height: calc(100% - 64px) !important;\n}\n\n.edit-header {\n  background-color: #fafafa;\n  font-size: 1.3rem;\n  color: rgba(0, 0, 0, 0.54);\n}\n\n#image-zone {\n  background-color: #CCC;\n  overflow: hidden;\n}\n\n#image-zone .desc {\n  font-style: italic;\n  font-weight: 700;\n  font-size: 1.2rem;\n}\n\n@media (min-width: 1360px) and (max-width: 1919px) {\n  img {\n    max-width: 500px;\n    max-height: 400px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n@media (min-width: 1920px) {\n  img {\n    max-width: 700px;\n    max-height: 600px;\n    -o-object-fit: contain;\n       object-fit: contain;\n  }\n}\n\n::ng-deep circle.handle {\n  cursor: crosshair;\n}\n\n::ng-deep rect.handle {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n::ng-deep .mat-radio-label-content {\n  font-size: 14px;\n}\n\n.image-region:not(.selected) {\n  display: none;\n}\n\nsvg.move {\n  cursor: move;\n}\n\n.svg-region:not(.selected) {\n  display: none;\n}\n\n#side-nav {\n  border-right: 2px solid #AAA;\n  width: 15% !important;\n}\n\nmat-radio-button {\n  margin: 0 12px;\n}\n\n.validate-feedback {\n  color: #f44336;\n  font-size: 12px;\n}\n\n.form-label {\n  width: 50px;\n}\n\n.submit-section {\n  background-color: white;\n  height: 60px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC9DOlxcVXNlcnNcXGp1bmhvZVxcSENJTFxcZGV2XFxBdXRvdGF0b3JcXGNsaWVudC9zcmNcXGFwcFxcZWRpdFxcZWRpdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZWRpdC9lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtBQ0NKOztBREVBO0VBQ0ksMkJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7QUNFSjs7QURDQTtFQUNJLHNCQUFBO0VBQ0EsZ0JBQUE7QUNFSjs7QURBSTtFQUNJLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQ0VSOztBRE1BO0VBQ0k7SUFDSSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0Esc0JBQUE7T0FBQSxtQkFBQTtFQ0hOO0FBQ0Y7O0FETUE7RUFDSTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxzQkFBQTtPQUFBLG1CQUFBO0VDSk47QUFDRjs7QURRSTtFQUNJLGlCQUFBO0FDTlI7O0FEU0k7RUFDSSxvQkFBQTtFQUFBLFlBQUE7QUNQUjs7QURVSTtFQUNJLGVBQUE7QUNSUjs7QURZQTtFQUNJLGFBQUE7QUNUSjs7QURZQTtFQUNJLFlBQUE7QUNUSjs7QURZQTtFQUNJLGFBQUE7QUNUSjs7QURZQTtFQUNJLDRCQUFBO0VBQ0EscUJBQUE7QUNUSjs7QURZQTtFQUNJLGNBQUE7QUNUSjs7QURhQTtFQUNJLGNBQUE7RUFDQSxlQUFBO0FDVko7O0FEYUE7RUFDSSxXQUFBO0FDVko7O0FEYUE7RUFDSSx1QkFBQTtFQUNBLFlBQUE7QUNWSiIsImZpbGUiOiJzcmMvYXBwL2VkaXQvZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgzLnNlbGVjdGVkIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuXHJcbi5yaWdodC1wYW5lbCB7XHJcbiAgICBib3JkZXItbGVmdDogMnB4IHNvbGlkICNhYWE7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XHJcbn1cclxuLmVkaXQtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XHJcbiAgICBmb250LXNpemU6IDEuM3JlbTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNTQpO1xyXG59XHJcblxyXG4jaW1hZ2Utem9uZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuXHJcbiAgICAuZGVzYyB7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICB9XHJcbn1cclxuXHJcbi8vIC5pbWFnZS1yZWdpb24ge1xyXG4vLyAgICAgbWF4LXdpZHRoOiA5NSU7XHJcbi8vIH1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiAxMzYwcHgpIGFuZCAobWF4LXdpZHRoOiAxOTE5cHgpIHtcclxuICAgIGltZyB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA0MDBweDtcclxuICAgICAgICBvYmplY3QtZml0OiBjb250YWluO1xyXG4gICAgfVxyXG59XHJcblxyXG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XHJcbiAgICBpbWcge1xyXG4gICAgICAgIG1heC13aWR0aDogNzAwcHg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNjAwcHg7XHJcbiAgICAgICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxuICAgIH1cclxufVxyXG5cclxuOjpuZy1kZWVwIHtcclxuICAgIGNpcmNsZS5oYW5kbGUge1xyXG4gICAgICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgfVxyXG5cclxuICAgIHJlY3QuaGFuZGxlIHtcclxuICAgICAgICBjdXJzb3I6IGdyYWI7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hdC1yYWRpby1sYWJlbC1jb250ZW50IHtcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5pbWFnZS1yZWdpb246bm90KC5zZWxlY3RlZCkge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuc3ZnLm1vdmUge1xyXG4gICAgY3Vyc29yOiBtb3ZlO1xyXG59XHJcblxyXG4uc3ZnLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG4jc2lkZS1uYXYge1xyXG4gICAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgI0FBQTtcclxuICAgIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcclxufVxyXG5cclxubWF0LXJhZGlvLWJ1dHRvbiB7XHJcbiAgICBtYXJnaW46IDAgMTJweDtcclxufVxyXG5cclxuXHJcbi52YWxpZGF0ZS1mZWVkYmFjayB7XHJcbiAgICBjb2xvcjogI2Y0NDMzNjtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxufVxyXG5cclxuLmZvcm0tbGFiZWwge1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbn1cclxuXHJcbi5zdWJtaXQtc2VjdGlvbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGhlaWdodDogNjBweDtcclxufVxyXG4iLCJoMy5zZWxlY3RlZCB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbi5yaWdodC1wYW5lbCB7XG4gIGJvcmRlci1sZWZ0OiAycHggc29saWQgI2FhYTtcbiAgb3ZlcmZsb3cteTogc2Nyb2xsO1xuICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDY0cHgpICFpbXBvcnRhbnQ7XG59XG5cbi5lZGl0LWhlYWRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYWZhZmE7XG4gIGZvbnQtc2l6ZTogMS4zcmVtO1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbn1cblxuI2ltYWdlLXpvbmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjQ0NDO1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuI2ltYWdlLXpvbmUgLmRlc2Mge1xuICBmb250LXN0eWxlOiBpdGFsaWM7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIGZvbnQtc2l6ZTogMS4ycmVtO1xufVxuXG5AbWVkaWEgKG1pbi13aWR0aDogMTM2MHB4KSBhbmQgKG1heC13aWR0aDogMTkxOXB4KSB7XG4gIGltZyB7XG4gICAgbWF4LXdpZHRoOiA1MDBweDtcbiAgICBtYXgtaGVpZ2h0OiA0MDBweDtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogMTkyMHB4KSB7XG4gIGltZyB7XG4gICAgbWF4LXdpZHRoOiA3MDBweDtcbiAgICBtYXgtaGVpZ2h0OiA2MDBweDtcbiAgICBvYmplY3QtZml0OiBjb250YWluO1xuICB9XG59XG46Om5nLWRlZXAgY2lyY2xlLmhhbmRsZSB7XG4gIGN1cnNvcjogY3Jvc3NoYWlyO1xufVxuOjpuZy1kZWVwIHJlY3QuaGFuZGxlIHtcbiAgY3Vyc29yOiBncmFiO1xufVxuOjpuZy1kZWVwIC5tYXQtcmFkaW8tbGFiZWwtY29udGVudCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuLmltYWdlLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbnN2Zy5tb3ZlIHtcbiAgY3Vyc29yOiBtb3ZlO1xufVxuXG4uc3ZnLXJlZ2lvbjpub3QoLnNlbGVjdGVkKSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbiNzaWRlLW5hdiB7XG4gIGJvcmRlci1yaWdodDogMnB4IHNvbGlkICNBQUE7XG4gIHdpZHRoOiAxNSUgIWltcG9ydGFudDtcbn1cblxubWF0LXJhZGlvLWJ1dHRvbiB7XG4gIG1hcmdpbjogMCAxMnB4O1xufVxuXG4udmFsaWRhdGUtZmVlZGJhY2sge1xuICBjb2xvcjogI2Y0NDMzNjtcbiAgZm9udC1zaXplOiAxMnB4O1xufVxuXG4uZm9ybS1sYWJlbCB7XG4gIHdpZHRoOiA1MHB4O1xufVxuXG4uc3VibWl0LXNlY3Rpb24ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgaGVpZ2h0OiA2MHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -9078,7 +9067,6 @@ let VOverallComponent = class VOverallComponent {
             const key = changes.focusedKey.currentValue;
             if (key) {
                 this.updateFocus(key);
-                console.log('focused key');
             }
         }
     }
@@ -9182,7 +9170,8 @@ let VOverallComponent = class VOverallComponent {
     }
     initEventArea() {
         this.svgS.selectAll('g').remove();
-        const horLine = this.svgS.append('line')
+        const g = this.svgS.append('g');
+        const horLine = g.append('line')
             .attr('class', 'guide-horizontal')
             .attr('x1', 0)
             .attr('x2', 1000)
@@ -9191,7 +9180,7 @@ let VOverallComponent = class VOverallComponent {
             .attr('stroke-width', 1)
             .attr('stroke', 'rgba(0, 0, 0, 0.3)')
             .style('pointer-events', 'none');
-        const verLine = this.svgS.append('line')
+        const verLine = g.append('line')
             .attr('class', 'guide-vertical')
             .attr('y1', 0)
             .attr('y2', 1000)
@@ -9627,7 +9616,14 @@ let LocaleService = class LocaleService {
                     return this.encodingMap[label][this.l];
                 },
                 selectedUnit: (unit) => {
-                    return unit === 'integer' ? '정수 단위' : '소수 단위';
+                    switch (unit) {
+                        case 'integer':
+                            return '정수 단위';
+                        case 'decimal':
+                            return '소수 단위';
+                        default:
+                            return '';
+                    }
                 }
             }
         };
@@ -10417,13 +10413,24 @@ PredictionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: true,
-    mode: 'demo',
+    production: false,
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 //# sourceMappingURL=environment.js.map
 
 /***/ }),
@@ -10439,13 +10446,24 @@ const environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: true,
-    mode: 'demo',
+    production: false,
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
