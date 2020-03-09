@@ -16290,26 +16290,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
-    "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
-    // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-    // The list of file replacements can be found in `angular.json`.
-
+    "./node_modules/tslib/tslib.es6.js");
 
     var environment = {
-      production: false,
-      mode: 'normal',
+      production: true,
+      mode: 'demo',
       chartType: 'bar',
       locale: 'ko'
-    };
-    /*
-     * For easier debugging in development mode, you can import the following file
-     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
-     *
-     * This import should be commented out in production mode because it will have a negative impact
-     * on performance if an error is thrown.
-     */
-    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-    //# sourceMappingURL=environment.js.map
+    }; //# sourceMappingURL=environment.js.map
 
     /***/
   },
@@ -16338,26 +16326,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
-    "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
-    // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-    // The list of file replacements can be found in `angular.json`.
-
+    "./node_modules/tslib/tslib.es6.js");
 
     var environment = {
-      production: false,
-      mode: 'normal',
+      production: true,
+      mode: 'demo',
       chartType: 'bar',
       locale: 'ko'
     };
-    /*
-     * For easier debugging in development mode, you can import the following file
-     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
-     *
-     * This import should be commented out in production mode because it will have a negative impact
-     * on performance if an error is thrown.
-     */
-    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
     /***/
   },
 
