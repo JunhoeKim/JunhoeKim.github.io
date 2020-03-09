@@ -6750,6 +6750,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this28.focusedFeedbackKey = splited[3];
             _this28.focusedFeedback = feedback;
+
+            if (_this28.focusedElemWithKey('unit') && _this28.group.get('type').value !== 'quantitative') {
+              _this28.fs.resolve();
+            }
+
+            if (_this28.focusedElemWithKey('markLabels') && !_this28.group.get('labeled').value) {
+              _this28.fs.resolve();
+            }
+
             setTimeout(function () {
               _this28.scrollEvent();
             }, 0);
@@ -7158,6 +7167,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this30.focusedFeedbackKey = splited[3];
             _this30.focusedFeedback = feedback;
+
+            if (_this30.focusedElemWithKey('unit') && _this30.group.get('type').value !== 'quantitative') {
+              _this30.fs.resolve();
+            }
+
+            if (_this30.focusedElemWithKey('markLabels') && !_this30.group.get('labeled').value) {
+              _this30.fs.resolve();
+            }
+
             setTimeout(function () {
               _this30.scrollEvent();
             }, 0);
@@ -7949,11 +7967,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       _this33.updateFocus(null);
                     } else {
                       var markIndex = +splited[1];
-                      var key = _this33.marks[markIndex].key;
-                      _this33.focusedFeedback = feedback;
-                      _this33.focusedFeedbackKey = key;
 
-                      _this33.updateFocus(key);
+                      if (markIndex >= _this33.marks.length) {
+                        _this33.fs.resolveTarget(feedback);
+                      } else {
+                        var key = _this33.marks[markIndex].key;
+                        _this33.focusedFeedback = feedback;
+                        _this33.focusedFeedbackKey = key;
+
+                        _this33.updateFocus(key);
+                      }
                     }
 
                     break;
@@ -7971,11 +7994,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       _this33.updateFocus(null);
                     } else {
                       var textIndex = +splited[1];
-                      var _key = _this33.texts[textIndex].key;
-                      _this33.focusedFeedback = feedback;
-                      _this33.focusedFeedbackKey = _key;
 
-                      _this33.updateFocus(_key);
+                      if (textIndex >= _this33.texts.length) {
+                        _this33.fs.resolveTarget(feedback);
+                      } else {
+                        var _key = _this33.texts[textIndex].key;
+                        _this33.focusedFeedback = feedback;
+                        _this33.focusedFeedbackKey = _key;
+
+                        _this33.updateFocus(_key);
+                      }
                     }
 
                     break;

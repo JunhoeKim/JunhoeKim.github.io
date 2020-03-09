@@ -4021,6 +4021,14 @@ let AxisSpecComponent = class AxisSpecComponent {
             }
             this.focusedFeedbackKey = splited[3];
             this.focusedFeedback = feedback;
+            if (this.focusedElemWithKey('unit')
+                && this.group.get('type').value !== 'quantitative') {
+                this.fs.resolve();
+            }
+            if (this.focusedElemWithKey('markLabels') &&
+                !this.group.get('labeled').value) {
+                this.fs.resolve();
+            }
             setTimeout(() => {
                 this.scrollEvent();
             }, 0);
@@ -4333,6 +4341,14 @@ let CustomSpecComponent = class CustomSpecComponent {
             }
             this.focusedFeedbackKey = splited[3];
             this.focusedFeedback = feedback;
+            if (this.focusedElemWithKey('unit')
+                && this.group.get('type').value !== 'quantitative') {
+                this.fs.resolve();
+            }
+            if (this.focusedElemWithKey('markLabels') &&
+                !this.group.get('labeled').value) {
+                this.fs.resolve();
+            }
             setTimeout(() => {
                 this.scrollEvent();
             }, 0);
@@ -4860,10 +4876,15 @@ let OverallComponent = class OverallComponent {
                         }
                         else {
                             const markIndex = +splited[1];
-                            const key = this.marks[markIndex].key;
-                            this.focusedFeedback = feedback;
-                            this.focusedFeedbackKey = key;
-                            this.updateFocus(key);
+                            if (markIndex >= this.marks.length) {
+                                this.fs.resolveTarget(feedback);
+                            }
+                            else {
+                                const key = this.marks[markIndex].key;
+                                this.focusedFeedback = feedback;
+                                this.focusedFeedbackKey = key;
+                                this.updateFocus(key);
+                            }
                         }
                         break;
                     }
@@ -4877,10 +4898,15 @@ let OverallComponent = class OverallComponent {
                         }
                         else {
                             const textIndex = +splited[1];
-                            const key = this.texts[textIndex].key;
-                            this.focusedFeedback = feedback;
-                            this.focusedFeedbackKey = key;
-                            this.updateFocus(key);
+                            if (textIndex >= this.texts.length) {
+                                this.fs.resolveTarget(feedback);
+                            }
+                            else {
+                                const key = this.texts[textIndex].key;
+                                this.focusedFeedback = feedback;
+                                this.focusedFeedbackKey = key;
+                                this.updateFocus(key);
+                            }
                         }
                         break;
                     }
