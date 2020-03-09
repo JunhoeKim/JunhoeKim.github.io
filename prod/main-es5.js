@@ -6755,7 +6755,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this28.fs.resolve();
             }
 
-            if (_this28.focusedElemWithKey('markLabels') && !_this28.hasMarkLabels) {
+            if (_this28.focusedElemWithKey('markLabels') && !_this28.group.get('labeled').value) {
               _this28.fs.resolve();
             }
 
@@ -7172,7 +7172,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this30.fs.resolve();
             }
 
-            if (_this30.focusedElemWithKey('markLabels') && !_this30.hasMarkLabels) {
+            if (_this30.focusedElemWithKey('markLabels') && !_this30.group.get('labeled').value) {
               _this30.fs.resolve();
             }
 

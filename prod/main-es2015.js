@@ -4025,7 +4025,8 @@ let AxisSpecComponent = class AxisSpecComponent {
                 && this.group.get('type').value !== 'quantitative') {
                 this.fs.resolve();
             }
-            if (this.focusedElemWithKey('markLabels') && !this.hasMarkLabels) {
+            if (this.focusedElemWithKey('markLabels') &&
+                !this.group.get('labeled').value) {
                 this.fs.resolve();
             }
             setTimeout(() => {
@@ -4344,7 +4345,8 @@ let CustomSpecComponent = class CustomSpecComponent {
                 && this.group.get('type').value !== 'quantitative') {
                 this.fs.resolve();
             }
-            if (this.focusedElemWithKey('markLabels') && !this.hasMarkLabels) {
+            if (this.focusedElemWithKey('markLabels') &&
+                !this.group.get('labeled').value) {
                 this.fs.resolve();
             }
             setTimeout(() => {
