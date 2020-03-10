@@ -7886,6 +7886,7 @@ let EditComponent = class EditComponent {
     onRemoveImage() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.timer.reset();
+            this.onImageLoad = false;
             if (!this.config.verification) {
                 yield this.loadNextData();
             }

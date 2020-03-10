@@ -12631,40 +12631,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context15.prev = _context15.next) {
                   case 0:
                     this.timer.reset();
+                    this.onImageLoad = false;
 
                     if (this.config.verification) {
-                      _context15.next = 6;
+                      _context15.next = 7;
                       break;
                     }
 
-                    _context15.next = 4;
+                    _context15.next = 5;
                     return this.loadNextData();
 
-                  case 4:
-                    _context15.next = 15;
+                  case 5:
+                    _context15.next = 16;
                     break;
 
-                  case 6:
-                    _context15.next = 8;
+                  case 7:
+                    _context15.next = 9;
                     return this.network.getVerificationRandomElem();
 
-                  case 8:
+                  case 9:
                     elem = _context15.sent;
-                    _context15.next = 11;
+                    _context15.next = 12;
                     return this.parseVerification(elem);
 
-                  case 11:
+                  case 12:
                     result = _context15.sent;
 
                     if (result) {
-                      _context15.next = 15;
+                      _context15.next = 16;
                       break;
                     }
 
-                    _context15.next = 15;
+                    _context15.next = 16;
                     return this.loadNextData();
 
-                  case 15:
+                  case 16:
                   case "end":
                     return _context15.stop();
                 }
