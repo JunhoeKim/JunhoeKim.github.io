@@ -10441,7 +10441,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    mode: 'demo',
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };
@@ -10474,7 +10474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    mode: 'demo',
+    mode: 'normal',
     chartType: 'bar',
     locale: 'ko'
 };

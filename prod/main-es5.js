@@ -16304,7 +16304,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      mode: 'demo',
+      mode: 'normal',
       chartType: 'bar',
       locale: 'ko'
     };
@@ -16352,7 +16352,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      mode: 'demo',
+      mode: 'normal',
       chartType: 'bar',
       locale: 'ko'
     };
