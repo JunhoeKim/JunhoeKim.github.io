@@ -641,7 +641,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"w-100 p-3 d-flex justify-content-center\">\r\n    <h1>\r\n        다음은 반자동 어노에티션 연구를 위한 크라우드소싱 실험 페이지입니다.\r\n    </h1>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center\">\r\n    <div class=\"mr-4 w-20\">\r\n        <mat-form-field class=\"w-100 mb-3\">\r\n            <input matInput\r\n                pattern=\"[A-Za-z0-9_]{1,10}\"\r\n                placeholder=\"Name\"\r\n                [(ngModel)]=\"name\"/>\r\n            <mat-hint>\r\n                아이디는 영문과 숫자의 조합으로만 구성해주세요.\r\n            </mat-hint>\r\n        </mat-form-field>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput\r\n                type=\"password\"\r\n                placeholder=\"Password\"\r\n                [(ngModel)]=\"password\"/>\r\n            <mat-hint>\r\n                비밀번호는 최초 1회 설정한 값으로 지속되며 암호화되서 저장됩니다 (8자리 이상으로 입력해주세요).\r\n            </mat-hint>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <button mat-flat-button\r\n        class=\"my-2\"\r\n        color=\"primary\"\r\n        (click)=\"login()\" >\r\n        LOGIN\r\n    </button>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center\"\r\n    color=\"warn\">\r\n    {{ warnMessage }}\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"w-100 p-3 d-flex justify-content-center\">\r\n    <h1>\r\n        다음은 반자동 어노에티션 연구를 위한 크라우드소싱 실험 페이지입니다.\r\n    </h1>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center\">\r\n    <div class=\"mr-4 w-20\">\r\n        <mat-form-field class=\"w-100 mb-3\">\r\n            <input matInput\r\n                pattern=\"[A-Za-z0-9_]{1,10}\"\r\n                placeholder=\"NAVER ID\"\r\n                [(ngModel)]=\"name\"/>\r\n            <mat-hint>\r\n                네이버 아이디를 입력하십시오.\r\n            </mat-hint>\r\n        </mat-form-field>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput\r\n                type=\"password\"\r\n                placeholder=\"Password\"\r\n                pattern=\".{8,}\"\r\n                [(ngModel)]=\"password\"/>\r\n            <mat-hint>\r\n                비밀번호는 최초 1회 설정한 값으로 지속되며 암호화되어 저장됩니다 (8자리 이상으로 입력해주세요).\r\n            </mat-hint>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <button mat-flat-button\r\n        class=\"my-2\"\r\n        color=\"primary\"\r\n        (click)=\"login()\" >\r\n        LOGIN\r\n    </button>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center warn\"\r\n    color=\"warn\">\r\n    {{ warnMessage }}\r\n</div>\r\n";
     /***/
   },
 
@@ -1420,17 +1420,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _locale_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./locale.service */
     "./src/app/locale.service.ts");
+    /* harmony import */
+
+
+    var _edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./edit/common/feedback.service */
+    "./src/app/edit/common/feedback.service.ts");
 
     var AppComponent =
     /*#__PURE__*/
     function () {
-      function AppComponent(network, configService, demo, L, router) {
+      function AppComponent(network, configService, demo, L, fs, router) {
         _classCallCheck(this, AppComponent);
 
         this.network = network;
         this.configService = configService;
         this.demo = demo;
         this.L = L;
+        this.fs = fs;
         this.router = router;
       }
 
@@ -1446,6 +1453,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this.router.navigate(['/login']);
 
             _this.demo.init();
+
+            _this.fs.init();
 
             alert(_this.L.resizeMessage);
           }, 2000);
@@ -1478,6 +1487,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"]
       }, {
+        type: _edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"]
+      }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }];
     };
@@ -1490,7 +1501,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./app.component.scss */
       "./src/app/app.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"], _locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_network_service__WEBPACK_IMPORTED_MODULE_2__["NetworkService"], _config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], _edit_demo_demo_service__WEBPACK_IMPORTED_MODULE_8__["DemoService"], _locale_service__WEBPACK_IMPORTED_MODULE_9__["LocaleService"], _edit_common_feedback_service__WEBPACK_IMPORTED_MODULE_10__["FeedbackService"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])], AppComponent);
     /***/
   },
 
@@ -8640,7 +8651,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onSpecScroll(top) {
           var scrollEl = this.specScrollRef.nativeElement;
           this.specScrollRef.nativeElement.scroll({
-            top: top - 500 + scrollEl.scrollTop
+            top: top - 300 + scrollEl.scrollTop
           });
         }
       }, {
@@ -10775,6 +10786,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             top: top,
             feedback: feedback
           });
+        }
+      }, {
+        key: "init",
+        value: function init() {
+          this.resolveSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          this.showSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         }
       }, {
         key: "resolve",
@@ -15629,10 +15646,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var re = /[A-Za-z0-9_]\w+/g;
 
           if (!re.test(this.name)) {
+            this.warnMessage = '아이디의 형식이 옳지 않습니다.';
             return;
           }
 
           if (validation && this.password.length < 8) {
+            this.warnMessage = '비밀번호를 확인해주세요.';
             return;
           }
 
