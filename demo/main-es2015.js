@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <img\r\n                src=\"assets/icon.png\"\r\n                height=\"24px\"\r\n                width=\"24px\"\r\n                class=\"mr-2 mt-1\">\r\n            <a [routerLink]=\"['/']\" class=\"mr-4\">Autotator</a>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <div>\r\n                <img\r\n                    src=\"assets/icon.png\"\r\n                    height=\"24px\"\r\n                    width=\"24px\"\r\n                    class=\"mr-2 mt-1\">\r\n                <a [routerLink]=\"['/']\"\r\n                    class=\"mr-4\">\r\n                    {{name}}\r\n                </a>\r\n            </div>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n            <a href=\"http://www.autotator.com/tutorial\"\r\n                target=\"_blank\">\r\n                <mat-icon>\r\n                    home\r\n                </mat-icon>\r\n            </a>\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -707,7 +707,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#wrapper {\n  height: 100vh;\n  width: 100vw;\n}\n\na {\n  color: white;\n  margin-right: 10px;\n  text-decoration: none;\n}\n\na.menu {\n  font-size: 15px;\n  color: #EEE;\n}\n\na.menu:hover {\n  opacity: 0.7;\n}\n\n.header {\n  background-color: #333333 !important;\n  font-weight: 500;\n  font-family: \"Roboto\";\n  font-size: 1.4rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxqdW5ob2VcXEhDSUxcXGRldlxcQXV0b3RhdG9yXFxjbGllbnQvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0FDQ0o7O0FERUE7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtBQ0NKOztBREVBO0VBQ0ksb0NBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EsaUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiN3cmFwcGVyIHtcclxuICAgIGhlaWdodDogMTAwdmg7XHJcbiAgICB3aWR0aDogMTAwdnc7XHJcbn1cclxuXHJcbmEge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG5hLm1lbnUge1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgY29sb3I6ICNFRUU7XHJcbn1cclxuXHJcbmEubWVudTpob3ZlciB7XHJcbiAgICBvcGFjaXR5OiAwLjc7XHJcbn1cclxuXHJcbi5oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzMzMzMzMyAhaW1wb3J0YW50O1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICAgIGZvbnQtc2l6ZTogMS40cmVtO1xyXG59XHJcbiIsIiN3cmFwcGVyIHtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgd2lkdGg6IDEwMHZ3O1xufVxuXG5hIHtcbiAgY29sb3I6IHdoaXRlO1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuYS5tZW51IHtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBjb2xvcjogI0VFRTtcbn1cblxuYS5tZW51OmhvdmVyIHtcbiAgb3BhY2l0eTogMC43O1xufVxuXG4uaGVhZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzMzMzMzMyAhaW1wb3J0YW50O1xuICBmb250LXdlaWdodDogNTAwO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIjtcbiAgZm9udC1zaXplOiAxLjRyZW07XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#wrapper {\n  height: 100vh;\n  width: 100vw;\n}\n\na {\n  color: white;\n  margin-right: 10px;\n  text-decoration: none;\n}\n\na.menu {\n  font-size: 15px;\n  color: #EEE;\n}\n\na.menu:hover {\n  opacity: 0.7;\n}\n\n.header {\n  background-color: #333333 !important;\n  font-weight: 500;\n  font-family: \"Roboto\";\n  font-size: 1.4rem;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxqdW5ob2VcXEhDSUxcXGRldlxcQXV0b3RhdG9yXFxjbGllbnQvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0FDQ0o7O0FERUE7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtBQ0NKOztBREVBO0VBQ0ksb0NBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSxvQkFBQTtFQUFBLGFBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0EseUJBQUE7VUFBQSw4QkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3dyYXBwZXIge1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgIHdpZHRoOiAxMDB2dztcclxufVxyXG5cclxuYSB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbmEubWVudSB7XHJcbiAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICBjb2xvcjogI0VFRTtcclxufVxyXG5cclxuYS5tZW51OmhvdmVyIHtcclxuICAgIG9wYWNpdHk6IDAuNztcclxufVxyXG5cclxuLmhlYWRlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzMzMzMzICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xyXG4gICAgZm9udC1zaXplOiAxLjRyZW07XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxufVxyXG4iLCIjd3JhcHBlciB7XG4gIGhlaWdodDogMTAwdmg7XG4gIHdpZHRoOiAxMDB2dztcbn1cblxuYSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbmEubWVudSB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbiAgY29sb3I6ICNFRUU7XG59XG5cbmEubWVudTpob3ZlciB7XG4gIG9wYWNpdHk6IDAuNztcbn1cblxuLmhlYWRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMzMzMzMzMgIWltcG9ydGFudDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZm9udC1mYW1pbHk6IFwiUm9ib3RvXCI7XG4gIGZvbnQtc2l6ZTogMS40cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59Il19 */");
 
 /***/ }),
 
@@ -752,6 +752,7 @@ let AppComponent = class AppComponent {
         this.L = L;
         this.fs = fs;
         this.router = router;
+        this.name = 'Autotator';
     }
     ngOnInit() {
         this.configService.checkInstanceObservable.subscribe(_ => {
@@ -771,6 +772,12 @@ let AppComponent = class AppComponent {
             if (this.status.active) {
                 this.configService
                     .setConfig(new _common_config__WEBPACK_IMPORTED_MODULE_4__["Config"](this.status.config));
+                if (this.status.config.service === 'demo') {
+                    this.name = 'Autotator [DEMO]';
+                }
+                else if (this.status.config.service === 'quiz') {
+                    this.name = 'Autotator [QUIZ]';
+                }
             }
         });
     }
