@@ -41,7 +41,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <img\r\n                src=\"../assets/favicon.ico\"\r\n                height=\"24px\"\r\n                width=\"24px\"\r\n                class=\"mr-2 mt-1\">\r\n            <a [routerLink]=\"['/']\" class=\"mr-4\">Autotator</a>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n";
+    __webpack_exports__["default"] = "<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <img\r\n                src=\"/assets/favicon.ico\"\r\n                height=\"24px\"\r\n                width=\"24px\"\r\n                class=\"mr-2 mt-1\">\r\n            <a [routerLink]=\"['/']\" class=\"mr-4\">Autotator</a>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n";
     /***/
   },
 
