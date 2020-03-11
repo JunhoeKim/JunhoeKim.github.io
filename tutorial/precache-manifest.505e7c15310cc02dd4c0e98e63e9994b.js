@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ca0f5ce0257d17a92f95762037bc0c6",
+    "revision": "f1a5a05b1d35267998b64557ee179706",
     "url": "/tutorial/index.html"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tutorial/static/js/6.db554b4f.chunk.js"
   },
   {
-    "revision": "12a87bcb0b4f844a7c21",
-    "url": "/tutorial/static/js/7.cd661768.chunk.js"
+    "revision": "b2f8394e2310eeb8f4a6",
+    "url": "/tutorial/static/js/7.9ce2f990.chunk.js"
   },
   {
     "revision": "d93c95cd54b253c4d940",
@@ -44,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tutorial/static/js/main.fe85956e.chunk.js"
   },
   {
-    "revision": "d38df22d7c82a91a1731",
-    "url": "/tutorial/static/js/runtime-main.c27868fc.js"
+    "revision": "a133fa98962895ce3824",
+    "url": "/tutorial/static/js/runtime-main.80b78392.js"
   },
   {
-    "revision": "6747fb5f88bd5977143ec37eb6baf202",
-    "url": "/tutorial/static/media/annotation_interface.6747fb5f.png"
+    "revision": "3c5dab9c6f0712d576e8551fcabceb8d",
+    "url": "/tutorial/static/media/annotation_interface.3c5dab9c.png"
   },
   {
     "revision": "24876c9100f57eae62725e0754b80b55",
