@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <div>\r\n                <img\r\n                    src=\"assets/icon.png\"\r\n                    height=\"24px\"\r\n                    width=\"24px\"\r\n                    class=\"mr-2 mt-1\">\r\n                <a [routerLink]=\"['/']\"\r\n                    class=\"mr-4\">\r\n                    {{name}}\r\n                </a>\r\n            </div>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n            <a href=\"http://www.autotator.com/tutorial\"\r\n                target=\"_blank\">\r\n                <mat-icon>\r\n                    home\r\n                </mat-icon>\r\n            </a>\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"wrapper\">\r\n    <ng-container *ngIf=\"status && status.active\">\r\n        <mat-toolbar class=\"header\">\r\n            <div>\r\n                <img\r\n                    src=\"assets/icon.png\"\r\n                    height=\"24px\"\r\n                    width=\"24px\"\r\n                    class=\"mr-2\">\r\n                <a [routerLink]=\"['/']\"\r\n                    class=\"mr-4\">\r\n                    {{name}}\r\n                </a>\r\n            </div>\r\n            <!-- <a [routerLink]=\"['/edit']\" class=\"menu\">Editor</a> -->\r\n            <!-- <a [routerLink]=\"['/gallery']\" class=\"menu\">Gallery</a> -->\r\n            <a href=\"http://www.autotator.com/tutorial\"\r\n                target=\"_blank\"\r\n                style=\"display: flex;\">\r\n                <mat-icon>\r\n                    home\r\n                </mat-icon>\r\n            </a>\r\n        </mat-toolbar>\r\n        <router-outlet></router-outlet>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"status && !status.active\">\r\n        <app-non-active-page></app-non-active-page>\r\n    </ng-container>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -399,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"w-100 p-3 d-flex justify-content-center\">\r\n    <h1>\r\n        다음은 반자동 어노에티션 연구를 위한 크라우드소싱 실험 페이지입니다.\r\n    </h1>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center\">\r\n    <div class=\"mr-4 w-20\">\r\n        <mat-form-field class=\"w-100 mb-3\">\r\n            <input matInput\r\n                pattern=\"[A-Za-z0-9_]{1,10}\"\r\n                placeholder=\"NAVER ID\"\r\n                [(ngModel)]=\"name\"/>\r\n            <mat-hint>\r\n                네이버 아이디를 입력하십시오.\r\n            </mat-hint>\r\n        </mat-form-field>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput\r\n                type=\"password\"\r\n                placeholder=\"Password\"\r\n                pattern=\".{8,}\"\r\n                [(ngModel)]=\"password\"/>\r\n            <mat-hint>\r\n                비밀번호는 최초 1회 설정한 값으로 지속되며 암호화되어 저장됩니다 (8자리 이상으로 입력해주세요).\r\n            </mat-hint>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <button mat-flat-button\r\n        class=\"my-2\"\r\n        color=\"primary\"\r\n        (click)=\"login()\" >\r\n        LOGIN\r\n    </button>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center warn\"\r\n    color=\"warn\">\r\n    {{ warnMessage }}\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"w-100 p-3 d-flex justify-content-center\">\r\n    <h3>\r\n        다음은 Autotator 크라우드소싱의 본 실험 페이지입니다. <br>\r\n        퀴즈를 통과하신 참여자분들만 로그인하실 수 있습니다.\r\n    </h3>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center\">\r\n    <div class=\"mr-4 w-20\">\r\n        <mat-form-field class=\"w-100 mb-3\">\r\n            <input matInput\r\n                pattern=\"[A-Za-z0-9_]{1,10}\"\r\n                placeholder=\"NAVER ID\"\r\n                [(ngModel)]=\"name\"/>\r\n            <mat-hint>\r\n                네이버 아이디를 입력하십시오.\r\n            </mat-hint>\r\n        </mat-form-field>\r\n        <mat-form-field class=\"w-100\">\r\n            <input matInput\r\n                type=\"password\"\r\n                placeholder=\"Password\"\r\n                pattern=\".{8,}\"\r\n                [(ngModel)]=\"password\"/>\r\n            <mat-hint>\r\n                비밀번호는 최초 1회 설정한 값으로 지속되며 암호화되어 저장됩니다 (8자리 이상으로 입력해주세요).\r\n            </mat-hint>\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <button mat-flat-button\r\n        class=\"my-2\"\r\n        color=\"primary\"\r\n        (click)=\"login()\" >\r\n        LOGIN\r\n    </button>\r\n</div>\r\n<div class=\"w-100 mt-3 p-3 d-flex justify-content-center warn\"\r\n    color=\"warn\">\r\n    {{ warnMessage }}\r\n</div>\r\n");
 
 /***/ }),
 
@@ -5008,6 +5008,9 @@ let OverallComponent = class OverallComponent {
             this.focusedBoxIndex = null;
         }
         this.updateBoxes();
+        if (this.focusedFeedbackKey === boxIndex) {
+            this.fs.resolve();
+        }
     }
     inputKeyPress(event) {
         if (event.key === 'Enter') {
@@ -9236,6 +9239,7 @@ let VOverallComponent = class VOverallComponent {
             .attr('y', d => d.bound[1] * height + 10)
             .attr('width', d => (d.bound[2] - d.bound[0]) * width)
             .attr('height', d => (d.bound[3] - d.bound[1]) * height)
+            .style('stroke-width', Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(this.svgS))
             .classed('mark', true)
             .classed('focused', mark => this.focusedKey === mark.key)
             .on('click', mark => {
@@ -9255,6 +9259,7 @@ let VOverallComponent = class VOverallComponent {
             .attr('y', d => d.bound[1] * height + 10)
             .attr('width', d => (d.bound[2] - d.bound[0]) * width)
             .attr('height', d => (d.bound[3] - d.bound[1]) * height)
+            .style('stroke-width', Object(_annotation_module_annotation_util__WEBPACK_IMPORTED_MODULE_7__["getCurrStrokeWidth"])(this.svgS))
             .classed('text', true)
             .classed('focused', text => this.focusedKey === text.key)
             .on('click', text => {
