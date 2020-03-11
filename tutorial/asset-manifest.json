@@ -4,8 +4,8 @@
     "static/js/0.6d322d0f.chunk.js.map": "/tutorial/static/js/0.6d322d0f.chunk.js.map",
     "main.js": "/tutorial/static/js/main.fe85956e.chunk.js",
     "main.js.map": "/tutorial/static/js/main.fe85956e.chunk.js.map",
-    "runtime-main.js": "/tutorial/static/js/runtime-main.07ed473e.js",
-    "runtime-main.js.map": "/tutorial/static/js/runtime-main.07ed473e.js.map",
+    "runtime-main.js": "/tutorial/static/js/runtime-main.78dbd4cb.js",
+    "runtime-main.js.map": "/tutorial/static/js/runtime-main.78dbd4cb.js.map",
     "static/js/3.673adf07.chunk.js": "/tutorial/static/js/3.673adf07.chunk.js",
     "static/js/3.673adf07.chunk.js.map": "/tutorial/static/js/3.673adf07.chunk.js.map",
     "static/js/4.e364e467.chunk.js": "/tutorial/static/js/4.e364e467.chunk.js",
@@ -14,12 +14,12 @@
     "static/js/5.1fab6133.chunk.js.map": "/tutorial/static/js/5.1fab6133.chunk.js.map",
     "static/js/6.db554b4f.chunk.js": "/tutorial/static/js/6.db554b4f.chunk.js",
     "static/js/6.db554b4f.chunk.js.map": "/tutorial/static/js/6.db554b4f.chunk.js.map",
-    "static/js/7.ce8bee17.chunk.js": "/tutorial/static/js/7.ce8bee17.chunk.js",
-    "static/js/7.ce8bee17.chunk.js.map": "/tutorial/static/js/7.ce8bee17.chunk.js.map",
+    "static/js/7.d319586a.chunk.js": "/tutorial/static/js/7.d319586a.chunk.js",
+    "static/js/7.d319586a.chunk.js.map": "/tutorial/static/js/7.d319586a.chunk.js.map",
     "static/js/8.a55a5db7.chunk.js": "/tutorial/static/js/8.a55a5db7.chunk.js",
     "static/js/8.a55a5db7.chunk.js.map": "/tutorial/static/js/8.a55a5db7.chunk.js.map",
     "index.html": "/tutorial/index.html",
-    "precache-manifest.4c2ed2358fcb935863b046033b4caf77.js": "/tutorial/precache-manifest.4c2ed2358fcb935863b046033b4caf77.js",
+    "precache-manifest.00709d0e0024391521bb57aa4d78cb8a.js": "/tutorial/precache-manifest.00709d0e0024391521bb57aa4d78cb8a.js",
     "service-worker.js": "/tutorial/service-worker.js",
     "static/js/3.673adf07.chunk.js.LICENSE.txt": "/tutorial/static/js/3.673adf07.chunk.js.LICENSE.txt",
     "static/js/4.e364e467.chunk.js.LICENSE.txt": "/tutorial/static/js/4.e364e467.chunk.js.LICENSE.txt",
@@ -27,7 +27,7 @@
     "static/media/autotator-logo.png": "/tutorial/static/media/autotator-logo.24876c91.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.07ed473e.js",
+    "static/js/runtime-main.78dbd4cb.js",
     "static/js/3.673adf07.chunk.js",
     "static/js/main.fe85956e.chunk.js"
   ]
